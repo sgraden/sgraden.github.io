@@ -1,0 +1,39 @@
+/*
+Steven Raden 1160995 AA
+Assignment to demonstrate how to code html pages with JS
+This page styles my HTML page
+*/
+body{
+	background-color: #CCCCFF;
+	text-align: center;
+}
+h1{
+	font-size: 32pt;
+	margin: 0px;
+}
+textarea{
+	width: 90%;
+	height: 400px;
+	font-size: 12pt;
+	font-family: monospace;
+}
+input, select, button, textarea, body{ /*wasn't applying to buttons when bold set to body*/
+	font-weight: bold;
+}
+fieldset{
+	display: inline;
+	vertical-align: text-top;
+	border-width: 5px;
+	border-radius: 10px;
+	border-color: black;
+}
+legend{
+	text-align: left;
+}
+input, select, button, body{ /*wasn't applying to buttons when bold set to body*/
+	font-family: sans-serif;
+	font-size: 14pt;
+}
+#validators{
+	text-align: right;
+}

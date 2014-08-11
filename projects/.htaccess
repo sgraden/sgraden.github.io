@@ -1,0 +1,4 @@
+AuthUserFile /nfs/bronfs/uwfs/dw00/d20/sraden/steven_raden/projects/.htpasswd
+AuthName "Restricted Access"
+AuthType Basic
+require user admin
