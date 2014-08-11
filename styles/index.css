@@ -8,11 +8,13 @@ body {
 	font-family: 'Roboto', 'open sans', sans-serif;
 	font-size: 18pt;
 
-	background: url('../images/snowTree.gif') no-repeat center center;
+/*	background: url('../images/snowTree.gif') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+*/
+	background-color: #333333;
 	height: 100%;
 }
 
@@ -28,9 +30,13 @@ body {
 	/*box-shadow: 0 0 200px 50px white;*/
 }
 
+header, footer {
+	background-color: #1D7EDE;
+	color: whitesmoke;
+}
+
 header {
 	height: 110px;
-	background-color: rgba(256, 256, 256 ,0.8);
 	border-bottom: 1px solid black;
 	overflow: auto;
 }
@@ -47,13 +53,24 @@ header div:nth-child(2) {
 }
 
 .box {
-	display: none;
-	position: absolute;
-	width: 100%;
-	top: 110px; /*height of banner with px*/
+/*	position: absolute;
+	width: 80%;
+	min-width: 600px;
+	top: 110px; height of banner with px
 	bottom: 0px;
 	background-color:rgba(255, 255, 255 ,0.8);
-	text-align: left;
+	text-align: left;*/
+margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	height: 70%;
+	min-height: 500px;
+	width: 65%;
+	min-width: 900px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	overflow: hidden;
 }
 .box h1 {
 	font-size: 30pt;
@@ -76,7 +93,6 @@ footer {
 	width: 100%;
 	bottom: 0px;
 	height: 60px;
-	background-color: rgba(256, 256, 256 ,0.8);
 	border-top: 1px solid black;
 	text-align: center;
 }
