@@ -14,7 +14,7 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 */
-	background-color: #333333;
+	background-color:#00423A;
 	height: 100%;
 }
 
@@ -25,19 +25,20 @@ body {
 }
 
 #content {
-	background-color:rgba(256, 256, 256 ,0.5);
+	background-color: #38342D;
 	height: 100%;
 	/*box-shadow: 0 0 200px 50px white;*/
 }
 
 header, footer {
-	background-color: #1D7EDE;
+	background-color: #4D7753;
 	color: whitesmoke;
+	box-shadow: 0px 0px 300px 0px rgb(37, 37, 37);
 }
 
 header {
 	height: 110px;
-	border-bottom: 1px solid black;
+	/*border-bottom: 1px solid black;*/
 	overflow: auto;
 }
 header div {
@@ -93,7 +94,7 @@ footer {
 	width: 100%;
 	bottom: 0px;
 	height: 60px;
-	border-top: 1px solid black;
+	/*border-top: 1px solid black;*/
 	text-align: center;
 }
 footer ul {
