@@ -13,6 +13,7 @@ body {
 	margin: 0px;
 	background-color: #406440;
 	height: 100%;
+	min-width: 860px;
 	position: relative;
 
 }
@@ -28,20 +29,29 @@ header div {
 	margin-right: auto;
 	text-align: center;
 }
+
 header > #titleName {
 	font-size: 40pt;
 }
 
+header ul {
+	width: 500px;
+	padding: 0px;
+	text-align: center;
+	/* margin: 0px; */
+	margin: 0px auto;
+	list-style-type: none;
+}
+
 header > #headerPageButtons {
 	overflow: hidden;
-	width: 520px;
 	cursor: default;
 }
 
 header .contentPageButton {
 	float: left;
-	width: 100px;
-	padding: 5px 15px;
+	width: 25%;
+	padding: 5px 0px;
 	transition: .2s ease;
 }
 
@@ -49,7 +59,7 @@ header .contentPageButton {
 	background-color: #406440;
 }
 
-.contentPageButton:after {
+.contentPageButton span:after {
 	content: '';
     display: block;
     margin: 0 auto;
@@ -59,12 +69,34 @@ header .contentPageButton {
             transition: 0.2s ease;
 }
 
-.contentPageButton:hover:after {
-	width: 100%;
+.contentPageButton:hover span:after {
+	width: 100px;
 	background-color: whitesmoke;
 }
 
 #contentContainer {
-	width: 500px;
+	position: relative;
+}
+
+#contentContainer .contentPage {
+	background-color: whitesmoke;
+	color: black;
 	margin: 0 auto;
+	width: 860px;
+	position: relative;
+	top: 20px;
+	padding: 15px;
+	font-size: 20pt;
+	overflow: hidden;
+}
+
+#about.contentPage img {
+	float: left;
+	width: 400px;
+	border-radius: 100px;
+}
+
+#about.contentPage p {
+	float: right;
+	width: 400px;
 }
