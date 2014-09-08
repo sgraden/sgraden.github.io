@@ -3,10 +3,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link href="styles/index.css" type="text/css" rel="stylesheet" />
 	<link rel="shortcut icon" href="images/favicon.ico" />
-	<link href="http://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+	<!--<link href="http://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">-->
+	<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">-->
+	<link href="styles/normalize.css" type="text/css" rel="stylesheet" />
+	<link type='text/css' rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="styles/index.css" type="text/css" rel="stylesheet" />
+
 	<script src="Plugins/jquery-1.11.0.min.js"></script>
 	<script src="Plugins/jquery-ui-1.10.4.js"></script>
 	<script src="index.js" type="text/javascript"></script>
@@ -14,24 +17,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 	
-<body>
-	<header>
-		<div id="titleName">Steven Raden</div>
-		<ul id='headerPageButtons'>
-			<li class="contentPageButton"><span>ABOUT</span></li>
-			<li class="contentPageButton"><span>EXPERIENCE</span></li>
-			<li class="contentPageButton"><span>PROJECTS</span></li>
-			<li class="contentPageButton"><span>CONTACT</span></li>
+<body class='container-fluid'>
+	<header class='row container-fluid'>
+		<div id="titleName" class='row'>Steven Raden</div>
+		<ul id='headerPageButtons' class='row'>
+			<li class="contentPageButton col-lg-1 col-lg-offset-4"><span>ABOUT</span></li>
+			<li class="contentPageButton col-lg-1"><span>EXPERIENCE</span></li>
+			<li class="contentPageButton col-lg-1"><span>PROJECTS</span></li>
+			<li class="contentPageButton col-lg-1"><span>CONTACT</span></li>
 		</ul>
 	</header>
-	<div id="contentContainer">			
-		<div id="about" class="contentPage">
-			<img src='images/profile.jpg' alt='picture of Steven' />
-			<p>I am a student in the Informatics program at the University of Washington Seattle.</p>
+	<div id="contentContainer" class='row container-fluid'>		
+		<div id="about" class="contentPage col-lg-8 col-xs-8 col-lg-offset-2 col-sm-offset-2">
+			<img src='images/profile.jpg' alt='picture of Steven' class='col-lg-6 col-sm-12'/>
+			<p class='col-lg-6 col-sm-12'>Hello how ar eyou today. I am so amazingly great except hungry</p>
 		</div>
-		<div id="experience" class="contentPage"></div>
-		<div id="projects" class="contentPage"></div>
-		<div id="contact" class="contentPage"></div>
+		<div id="experience" class="contentPage col-lg-8 col-lg-offset-2"></div>
+		<div id="projects" class="contentPage col-lg-8 col-lg-offset-2"></div>
+		<div id="contact" class="contentPage col-lg-8 col-lg-offset-2"></div>
 	</div><!--end content-->
 </body>
 </html>
