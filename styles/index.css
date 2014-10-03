@@ -5,6 +5,7 @@ html {
 	border: 0px;
 	margin: 0px;
 	padding: 0px;
+	overflow-y: hidden;
 }
 
 body {
@@ -13,6 +14,11 @@ body {
 	background-color: #406440;
 	height: 100%;
 	position: relative;
+	
+}
+
+h1 { 
+	margin: 15px 0;
 
 }
 
@@ -48,6 +54,7 @@ header .contentPageButton {
 	padding-bottom: 5px;
 	font-size: 12pt;
 	padding-top: 5px;
+	color: whitesmoke;
 }
 
 .contentPageButton:hover {
@@ -78,20 +85,38 @@ header .contentPageButton {
 	color: black;
 	position: relative;
 	top: 20px;
-	padding: 40px 0;
+	padding: 25px 0 30px 0;
 	font-size: 20pt;
 	overflow: hidden;
+	border-bottom: 1px solid black;
 }
 
 #about.contentPage img {
-	border-radius: 100px;
+	border-bottom-left-radius: 200px;
+	border-bottom-right-radius: 200px;
+}
+
+#about.contentPage {
+
+}
+
+#experience.contentPage {
+	
+}
+
+#projects.contentPage {
+	
+}
+
+#contact.contentPage {
+	
 }
 
 
 /****HIDDEN ELEMENTS****/
-#experience, #projects, #contact {
+/*#experience, #projects, #contact {
 	display: none;
-}
+}*/
 
 
 /****HIDDEN ELEMENTS -END ****/
