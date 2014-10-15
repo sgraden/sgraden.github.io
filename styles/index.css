@@ -3,6 +3,14 @@ html {
 	text-rendering: optimizelegibility;
 }
 
+/*PLUGIN MODIFICATIONS*/
+.container-fluid {
+	padding-right: 0; /*15px in bootstrap.css*/
+    padding-left: 0;  /*idem*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #fp-nav ul li div.fp-tooltip { /*applies style to nav bar right*/
 	color: black;
 	background-color: white;
@@ -13,18 +21,45 @@ html {
 	text-align: center;
 }
 
+/*PLUGIN MODIFICATIONS END*/
+
+/*GENERAL ITEMS*/
+.item {
+	text-align: center;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow:0 1px 2px #aaa;
+	padding: 15px;
+	cursor: pointer;
+}
+
+.item h1 {
+	font-size: 30px 
+}
+
+.contentOnClick {
+	display: none;
+	text-align: left;
+	font-size: 16pt;
+}
+
+/*GENERAL ITEMS END*/
+
+/*HOME*/
+
 #home {
 	position: relative;
 	text-align: center;
 }
 
 #home #homeColor {
-	background-color: green;
+	background-color: #2B803E;
 	height: 50%;
 	width: 100%;
 	position: absolute;
 	top: 0px;
 	z-index: 0;
+	box-shadow: inset 0 -10px 20px -5px rgba(0,0,0,0.4);
 }
 
 #home h1, #home h2, #home img {
@@ -35,6 +70,7 @@ html {
 #home img {
 	border-radius: 300px;
 	margin-bottom: 20px;
+	box-shadow: 0px 0px 10px black;
 }
 
 #home h1 {
@@ -46,6 +82,9 @@ html {
 	font-size: 30pt;
 	margin: 0px;
 }
+/*HOME END*/
+
+/*ABOUT*/
 
 #about div {
 	margin: 0 auto;
@@ -57,3 +96,10 @@ html {
 #about div p {
 	margin-bottom:20px;
 }
+ /*ABOUT END*/
+
+ /*PROJECTS*/
+
+
+
+ /*PROJECTS END*/

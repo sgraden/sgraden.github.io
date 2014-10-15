@@ -7,19 +7,22 @@
 	<!--<link href="http://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">-->
 	<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">-->
 	<link href="plugins/normalize.css" type="text/css" rel="stylesheet" />
+	<link href="Plugins/jquery-ui.min.css" type="text/css" rel="stylesheet" />
 	<link type='text/css' rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="Plugins/jquery.fullPage.css" type="text/css" rel="stylesheet" />
 	<link href="styles/index.css" type="text/css" rel="stylesheet" />
 	
 	<script src="Plugins/jquery-1.11.0.min.js"></script>
-	<script src="Plugins/jquery-ui-1.10.4.js"></script>
+	<script src="Plugins/jquery-ui.min.js"></script>
 	<script src="Plugins/jquery.fullPage.min.js"></script>
+	<!--<script src="Plugins/simple-expand.min.js"></script>-->
 	<script src="index.js" type="text/javascript"></script>
 	<title>Steven Raden</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 	
-<body>
+<body class="container-fluid">
 	<!--<ul id="myMenu">
 	    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>
 	    <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
@@ -38,24 +41,62 @@
 				<p>Hello! My name is Steven Raden.</p>
 				<p>I am a senior in the Informatics program at the University of Washington.</p>
 				<p>
-					I am passionate about User Interaction Design and Front End Development.
+					I am passionate about User Interaction Design and Front-End Development.
 					I want to build and design interfaces that are clear, clean, and easy to use
 					so the user can find what they need quickly.
 				</p>
 				<p>
-					Please feel free peruse the site and, if you are inclined, take a look at my resume.
-					If you have any questions or just want to get to know me better, you can contact me through email, Twitter, or Facebook.
+					Please feel free peruse the site and, if you are inclined, take a look at my <a href="Steven Raden Resume.pdf">resume</a>.
+					If you have any questions or just want to get to know me better, you can contact me at stevengraden@gmail.com, <a href="https://twitter.com/StevenRaden">Twitter</a>, or <a href="https://www.facebook.com/steven.raden.9">Facebook</a>.
 				</p>
 			</div>
 		</div>
 		<div id='projects' class="section">
-			<div class="projectItem">What To Eat (WTE)</div>
-			<div class="projectItem">Database Migration</div>
-			<div class="projectItem">PC Parts Database Design</div>
+			<div class="row">
+			<div class='col-lg-10 col-lg-offset-1'>
+				<div class="col-lg-4">
+					<div class="item">
+						<h1><i class="fa fa-cutlery"></i> What To Eat (WTE)</h1>
+						<div class="contentOnClick">
+							Collaborated with a colleague to create a web application using jQuery, Bootstrap, and Node.js. Designed and implemented the user interface with an emphasis on mobile devices. This is being continued as an Android application.
+							<a href="http://wte.herokuapp.com/" target="_blank">WTE</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="item">
+						<h1><i class="fa fa-database"></i> Database Migration</h1>
+						<div class="contentOnClick">
+							Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. Using SQL Server’s SSIS and CDC functions our group completed the project.
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="item">
+						<h1><i class="fa fa-sitemap"></i> PC Parts Database Design</h1>
+						<div class="contentOnClick">
+							Planned, designed, and built a database including stored procedures, views, and constraints on Microsoft SQL Server.
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
 		</div>
 		<div id='work' class="section">
-			<div class="workItem">Research Assistant</div>
-			<div class="workItem">Data Migration Engineer</div>
+			<div class='col-lg-10 col-lg-offset-1'>
+				<div class="col-lg-4">
+					<div class="item">
+						Research Assistant
+						<div class="contentOnClick"></div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="item">
+						Data Migration Engineer
+						<div class="contentOnClick"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div id='contact' class="section">
 			
