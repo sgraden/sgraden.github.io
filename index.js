@@ -25,10 +25,24 @@
 		$(clicked).children(".contentOnClick").toggle("slide", {direction: "up"});
 	}
 
+	//hides other item content
+	function hideOtherItemContent(elements) {
+		for (var i = 0; i < elements.length; i++) {
+			var itemContent = $(elements[i]).children('.item').children('.contentOnClick');
+			if (itemContent.is(":visible")) {
+				expandContent($(elements[i]).children('.item'));
+			}
+		}
+	}
+
 	function resetWidths(clicked) {
+		var clickedSiblings = $(clicked).parent().siblings();
+		hideOtherItemContent(clickedSiblings);
 		$(clicked).parent().siblings().removeClass("col-lg-8 col-lg-4").addClass("col-lg-2");
 		$(clicked).parent().removeClass('cold-lg-4 col-lg-2').addClass('col-lg-8');
 	}
+
+
 
 
 
