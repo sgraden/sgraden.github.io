@@ -6,7 +6,9 @@
 		$('#fullpage').fullpage({
 			//anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
 			sectionsColor: ['white', 'white', '#255E68', '#A94439', '#A97039'], //#DEDEDE
+			autoScrolling: true,
 			scrollingSpeed: 300,
+			scrollOverflow: true,
 			css3: true,
 			navigation: true,
 			navigationPosition: 'right',
