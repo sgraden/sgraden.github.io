@@ -8,6 +8,10 @@
 			scroll = false;
 		}
 
+		$(window).resize(function() {
+			$('.wow').removeClass('wow animated');
+		})
+
 		$('#fullpage').fullpage({
 			//anchors: ['homeSection', 'aboutSection', 'projectsSection', 'experienceSection', 'contactSection'],
 			sectionsColor: ['white', '#50A062', '#437882', '#A94439', '#D39D6A'], //#DEDEDE
@@ -37,6 +41,7 @@
     	});*/
 
 		new WOW().init();
+
 		$('.item').click(function() {
 			expandContent(this);
 		});
@@ -47,18 +52,25 @@
 	});
 	
 	function expandContent(clicked) {
-		$(clicked).children('.content').slideToggle();
+		$(clicked).children('.content').slideToggle().focus();
 	}
 
 	function wowAnimateIn(nextIndex, direction) {
 		if (nextIndex == 1) { //home
 
 		} else if (nextIndex == 2 && direction == 'down') { //about
-			$('#about .row div').addClass('wow animated fadeInLeftBig');
+			if(!$('#about .row div').hasClass('wow')) {
+				//console.log('hey');
+				$('#about .row div').addClass('wow animated fadeInLeftBig');
+			}
 		} else if (nextIndex == 3 && direction == 'down') { //projects
-			$('#projects .item').addClass('wow animated rotateInUpLeft');
+			if(!$('#projects .item').hasClass('wow')) {
+				$('#projects .item').addClass('wow animated rotateInUpLeft');
+			}
 		} else if (nextIndex == 4 && direction == 'down') { //experience
-			$('#experience .item').addClass('wow animated rotateInUpLeft');
+			if(!$('#experience .item').hasClass('wow')) {
+				$('#experience .item').addClass('wow animated rotateInUpLeft');
+			}
 		} else if (nextIndex == 5 && direction == 'down') { //contact
 
 		}
