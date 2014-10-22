@@ -11,12 +11,14 @@
 	<link type='text/css' rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="Plugins/jquery.fullPage.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="Plugins/animate.min.css">
 	<link href="styles/index.css" type="text/css" rel="stylesheet" />
 	
 	<script src="Plugins/jquery-1.11.0.min.js"></script>
-	<script src="Plugins/jquery-ui.min.js"></script>
+	<!--<script src="Plugins/jquery-ui.min.js"></script>-->
+	<script src="Plugins/jquery.slimscroll.min.js"></script>
 	<script src="Plugins/jquery.fullPage.min.js"></script>
-	<!--<script src="Plugins/simple-expand.min.js"></script>-->
+	<script src="Plugins/wow.min.js"></script>
 	<script src="index.js" type="text/javascript"></script>
 	<title>Steven Raden</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -30,14 +32,17 @@
 	    <li data-menuanchor="fourthPage"><a href="#fourthPage">Fourth section</a></li>
 	</ul>-->
 	<div id="fullpage">
-		<div id='home' class="section">
-			<img src='images/smallProfile.jpg'/>
-			<h1>Steven Raden</h1>
-			<h2>Front End Developer</h2>
-			<div id="homeColor"></div>
+		<div id='home' class="section" >
+			<div id='homeInfo' class="wow animated fadeInDownBig" data-wow-delay="400ms">
+				<img src='images/smallProfile.jpg'/>
+				<h1>Steven Raden</h1>
+				<h2>Front End Developer</h2>
+			</div>
+			<div id="homeColor" class="wow animated fadeInDownBig"></div>
 		</div>
 		<div id='about' class="section">
-			<div>
+			<div class="row">
+			<div id="aboutContent" class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 				<p>Hello! My name is Steven Raden.</p>
 				<p>I am a senior in the Informatics program at the University of Washington.</p>
 				<p>
@@ -46,55 +51,91 @@
 					so the user can find what they need quickly.
 				</p>
 				<p>
-					Please feel free peruse the site and, if you are inclined, take a look at my <a href="Steven Raden Resume.pdf">resume</a>.
-					If you have any questions or just want to get to know me better, you can contact me at stevengraden@gmail.com, <a href="https://twitter.com/StevenRaden">Twitter</a>, or <a href="https://www.facebook.com/steven.raden.9">Facebook</a>.
+					Please feel free peruse the site and, if you are inclined, take a look at my <a href="Steven Raden Resume.pdf" target="_blank">resume</a>.
+					<br/>If you have any questions feel free to contact me.<br/>
+					<a href="https://github.com/sgraden" target="_blank"><i class='fa fa-github-square'></i></a>
+					<a href="https://www.linkedin.com/pub/steven-raden/62/31a/760/" target="_blank"><i class='fa fa-linkedin-square'></i></a>
+					<a href="https://twitter.com/StevenRaden" target="_blank"><i class='fa fa-twitter-square'></i></a>
 				</p>
+			</div>
 			</div>
 		</div>
 		<div id='projects' class="section">
 			<div class="row">
-			<div class='col-lg-10 col-lg-offset-1'>
-				<div class="col-lg-4">
+			<div class='col-md-10 col-md-offset-1'>
+				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item">
-						<h1><i class="fa fa-cutlery"></i> What To Eat (WTE)</h1>
-						<div class="contentOnClick">
+						<div><img src="images/gidget.jpg" alt="Gidget Logo"></div>
+						<h1>Gidget</h1>
+						<div class="content">
+							Gidget is an educational programming and debugging game developed at the University of Washington. During the Summer of 2014 I worked with undergraduates and the lead Ph.D. student to finalize and release Gidget. I redesigned many elements of the game, including the start page, added new features, and optimized old ones.
+							<div>
+								<a href="helpgidget.org" target="_blank">helpgidget.org</a> <br/>
+								Worked with:
+								<ul>
+									<li><a href="http://www.linkedin.com/in/andyjko" target="_blank">Andy Ko</a></li>
+									<li><a href="http://www.linkedin.com/in/michaeljonglee" target="_blank">Michael Lee</a></li>
+									<li><a href="http://www.linkedin.com/pub/staffan-hellman/48/222/351" target="_blank">Staffan Helman</a></li>
+									<li><a href="http://www.linkedin.com/pub/christina-xiao/54/110/ba8" target="_blank">Christina Xiao</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
+					<div class="item">
+						<div><img src="images/WTE.jpg" alt="What To Eat"></div>
+						<h1>What To Eat (WTE)</h1>
+						<div class="content">
 							Collaborated with a colleague to create a web application using jQuery, Bootstrap, and Node.js. Designed and implemented the user interface with an emphasis on mobile devices. This is being continued as an Android application.
-							<a href="http://wte.herokuapp.com/" target="_blank">WTE</a>
+							<div>
+								To Site: <a href="http://wte.herokuapp.com/" target="_blank">WTE</a><br/>
+								To Github: <a href="https://github.com/saryana/WTE_V0.0.0" target="_blank">Github</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item">
-						<h1><i class="fa fa-database"></i> Database Migration</h1>
-						<div class="contentOnClick">
+						<div><img src="images/dbMigration.png" alt="PC Parts Database"></div>
+						<h1>Database Migration</h1>
+						<div class="content">
 							Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. Using SQL Server’s SSIS and CDC functions our group completed the project.
-							<a href="Steven Raden DataMigrationCDC.pdf" target="_blank">Use CDC to sync databases</a>
+							<div>
+								SQL Code: <a href="Steven Raden DataMigrationCDC.pdf" target="_blank">Data Migration CDC</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+			</div>
+			</div> <!--row-->
+
+			<div class="row">
+			<div class='col-md-10 col-md-offset-1'>
+				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item">
-						<h1><i class="fa fa-sitemap"></i> PC Parts Database Design</h1>
-						<div class="contentOnClick">
+						<div><img src="images/pcParts.jpg" alt="Gidget Logo"></div>
+						<h1>PC Parts Database</h1>
+						<div class="content">
 							Planned, designed, and built a database including stored procedures, views, and constraints on Microsoft SQL Server.
 						</div>
 					</div>
 				</div>
 			</div>
-			</div>
+			</div> <!--row-->
 		</div>
-		<div id='work' class="section">
-			<div class='col-lg-10 col-lg-offset-1'>
-				<div class="col-lg-4">
+		<div id='experience' class="section">
+			<div class='col-md-10 col-md-offset-1'>
+				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item">
-						Research Assistant
-						<div class="contentOnClick"></div>
+						<h1>Research Assistant</h1>
+						<div class="content"></div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item">
-						Data Migration Engineer
-						<div class="contentOnClick"></div>
+						<h1>Data Migration Engineer</h1>
+						<div class="content"></div>
 					</div>
 				</div>
 			</div>
