@@ -10,11 +10,13 @@
 
 		$(window).resize(function() {
 			$('.wow').removeClass('wow animated');
+			//$('#home.section .row, #about.section .row').height($('html').height());
 		})
 
 		$('#fullpage').fullpage({
 			//anchors: ['homeSection', 'aboutSection', 'projectsSection', 'experienceSection', 'contactSection'],
-			sectionsColor: ['white', '#437882', '#50A062', '#B2574D', '#D39D6A'], //#DEDEDE
+			verticalCentered: true,
+			sectionsColor: ['white', '#437882', '#50A062', '#437882', '#50A062'], //#DEDEDE
 			scrollingSpeed: 300,
 			autoScrolling: scroll,
 			css3: true,
@@ -65,11 +67,11 @@
 			}
 		} else if (nextIndex == 3 && direction == 'down') { //projects
 			if(!$('#projects .item').hasClass('wow')) {
-				$('#projects .sectionTitle, #projects .item').addClass('wow animated fadeInUpBig');
+				$('#projects .sectionTitle, #projects .item').addClass('wow animated fadeInLeftBig');
 			}
 		} else if (nextIndex == 4 && direction == 'down') { //experience
 			if(!$('#experience .item').hasClass('wow')) {
-				$('#experience .sectionTitle, #experience .item').addClass('wow animated fadeInUpBig');
+				$('#experience .sectionTitle, #experience .item').addClass('wow animated fadeInLeftBig');
 			}
 		} else if (nextIndex == 5 && direction == 'down') { //contact
 

@@ -17,7 +17,7 @@ html {
 	border-radius: 5px;
 	padding: 5px;
 	top: -10px;
-	width: 60px;
+	width: 85px;
 	text-align: center;
 }
 
@@ -30,18 +30,30 @@ html {
 
 /*GENERAL ITEMS*/
 
+/*Makes projects and experience at the top*/
+ #projects .fp-tableCell, #experience .fp-tableCell {
+	vertical-align: initial;
+	display: block;
+
+} 
+
 .sectionTitle {
 	width: 200px;
 	margin: 0px auto;
 	margin-bottom: 20px;
 	font-size: 40pt;
+	-webkit-webkit-animation-delay: 100ms;
+	-moz-webkit-animation-delay: 100ms;
+	-ms-webkit-animation-delay: 100ms;
+	-o-webkit-animation-delay: 100ms;
+	-webkit-animation-delay: 100ms;
 }
 
 .item {
 	text-align: center;
 	background-color: white;
 	border-radius: 3px;
-	box-shadow:0 1px 2px #aaa;
+	box-shadow:0 5px 5px rgba(60, 60, 60, 0.9);
 	/*padding: 15px;*/
 	cursor: pointer;
 	margin-top: 10px;
@@ -56,13 +68,16 @@ html {
 
 .item h1 {
 	font-size: 30pt;
+	margin-top: 0px;
+	padding-top: 10px;
+	border-top: 1px solid rgba(60, 60, 60, 0.9);
 }
 
 
 .content {
 	display: none;
 	text-align: left;
-	font-size: 16pt;
+	font-size: 13pt;
 	max-height: 250px;
 	overflow: auto;
 	margin: 0px 10px;
@@ -96,11 +111,26 @@ html {
 	top: 0px;
 	z-index: 0;
 	box-shadow: inset 0 -10px 20px -5px rgba(0,0,0,0.4);
+	-webkit-webkit-animation-duration: 1s;
+	-moz-webkit-animation-duration: 1s;
+	-ms-webkit-animation-duration: 1s;
+	-o-webkit-animation-duration: 1s;
+	-webkit-animation-duration: 1s;
 }
 
 #home #homeInfo {
 	z-index: 1;
 	position: relative;
+	-webkit-webkit-animation-duration: 1s;
+	-moz-webkit-animation-duration: 1s;
+	-ms-webkit-animation-duration: 1s;
+	-o-webkit-animation-duration: 1s;
+	webkit-animation-duration: 1s;
+	-webkit-webkit-animation-delay: 200ms;
+	-moz-webkit-animation-delay: 200ms;
+	-ms-webkit-animation-delay: 200ms;
+	-o-webkit-animation-delay: 200ms;
+	-webkit-animation-delay: 200ms;
 }
 
 #home img {
@@ -125,7 +155,7 @@ html {
 #about #aboutContent {
 	font-size: 20pt;
 	text-align: center;
-	max-height: 400px;
+	/*max-height: 400px;*/
 }
 
 #about div p {
