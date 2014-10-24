@@ -18,7 +18,7 @@
 			verticalCentered: true,
 			sectionsColor: ['white', '#437882', '#50A062', '#437882', '#50A062'], //#DEDEDE
 			scrollingSpeed: 300,
-			autoScrolling: scroll,
+			//autoScrolling: scroll,
 			css3: true,
 			navigation: scroll,
 			navigationPosition: 'right',
