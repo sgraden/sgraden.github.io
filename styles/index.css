@@ -50,15 +50,22 @@ html {
 }
 
 .item {
+	position: relative;
+	top: 0px;
 	text-align: center;
 	background-color: white;
 	border-radius: 3px;
 	box-shadow:0 5px 5px rgba(60, 60, 60, 0.9);
-	/*padding: 15px;*/
 	cursor: pointer;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
+	transition: top .3s, box-shadow .3s;
+}
+
+.item:hover {
+	top: -3px;
+	box-shadow:0 8px 10px rgba(60, 60, 60, 0.9);
 }
 
 .item img {
@@ -70,9 +77,8 @@ html {
 	font-size: 30pt;
 	margin-top: 0px;
 	padding-top: 10px;
-	border-top: 1px solid rgba(60, 60, 60, 0.9);
+	border-top: 1px solid rgba(60, 60, 60, 0.3);
 }
-
 
 .content {
 	display: none;
@@ -190,14 +196,16 @@ html {
 
  /* MODAL */
 
+
 #modalContent #modalHead {
-	border-bottom: 1px solid rgba(60, 60, 60, 0.9);
+	border-bottom: 1px solid rgba(60, 60, 60, 0.3);
+	position: relative;
 }
 
 #modalContent #modalImg {
 	border-radius: 3px 3px 0 0;
 	width: 100%;
-	height: 150px;
+	height: 100px;
 	overflow: hidden;
 }
 
@@ -205,14 +213,48 @@ html {
 	width: 100%;
 }
 
-#modalContent #modalTitle {
-	text-align: center;
-	margin: 0px;
+#modalContent #modalHead button {
+	position: absolute;
+	font-size: 30pt;
+	right: 10px;
+	top: 5px;
+	outline: 0;
 }
 
-#modalContent #modalInfo {
+#modalContent #modalTitle {
+	text-align: center;
+	margin: 10px 0px;
+	font-size: 30pt;
+}
+
+#modalContent #modalBody {
 	padding: 15px;
 	font-size: 13pt;
+	overflow: auto;
+}
+
+#modalContent #modalRelatedList, #modalContent #modalToolsList {
+	padding: 0px;
+}
+
+#modalContent #modalRelatedList li, #modalContent #modalToolsList li {
+	list-style-type: none;
+	padding: 5px 5px 5px 15px;
+	border-radius: 3px;
+	/*border-bottom: 1px solid rgba(60, 60, 60, 0.3);*/
+	transition: background-color .2s;
+}
+
+#modalContent #modalRelatedList li:hover, #modalContent #modalToolsList li:hover {
+	background-color: rgba(103, 162, 156, .3);
+}
+
+#modalContent #modalToolsList li:hover {
+	cursor: default;
+}
+
+#modalContent a {
+	text-decoration: none;
 }
 
  /* MODAL END*/

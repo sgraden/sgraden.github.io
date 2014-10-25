@@ -19,7 +19,7 @@
 		$('#fullpage').fullpage({
 			//anchors: ['homeSection', 'aboutSection', 'projectsSection', 'experienceSection', 'contactSection'],
 			verticalCentered: true,
-			sectionsColor: ['white', '#437882', '#50A062', '#437882', '#50A062'], //#DEDEDE
+			sectionsColor: ['white', '#67A29C', '#50A062', '#67A29C', '#50A062'], //#DEDEDE
 			scrollingSpeed: 300,
 			autoScrolling: scroll,
 			css3: true,
@@ -31,9 +31,9 @@
 					wowAnimateIn(nextIndex, direction)
 				}
 			},
-			scrollOverflow: true
+			scrollOverflow: true,
 			//responsive: 500,
-			//normalScrollElements: ".item .content"
+			normalScrollElements: "#modalContent"
 			//fixedElements: '#element1, .element2'
 			//menu: true,
 		});
@@ -106,25 +106,42 @@
 		} else {
 			currObject = contentExperience[val];
 		}
-		$('#modalContent #modalImg img').attr("src", currObject.img);
-		$('#modalContent #modalTitle').text(currObject.title);
-		$('#modalContent #modalInfo').text(currObject.description);
-		if (currObject.links.length > 0) {
-			$('#modalContent #modelRelatedList').empty();
+		$('#modalContent #modalImg img').attr("src", currObject.img); //img
+		$('#modalContent #modalTitle').text(currObject.title); //title
+		$('#modalContent #modalInfo').text(currObject.description); //description
+		
+		if (currObject.languages.length > 0) { //insert languages
+			$('#modalContent #modalToolsList').empty();
+			//$.each(currObject.links, function(key, val) {
+			for (var i = 0; i < currObject.languages.length; i++) {
+				var list = currObject.languages;
+				$('#modalContent #modalToolsList').append(
+					$('<li class="col-md-2">' + list[i] + '</li>')
+				);
+			}
+			$('#modalToolsTitle').show();
+			$('#modalContent #modalToolsList').show();
+		} else {
+			$('#modalToolsTitle').hide();
+			$('#modalContent #modalToolsList').hide();
+		}
+
+		if (currObject.links.length > 0) { //insert links
+			$('#modalContent #modalRelatedList').empty();
 			//$.each(currObject.links, function(key, val) {
 			for (var i = 0; i < currObject.links.length; i = i + 2) {
 				var list = currObject.links;
-				$('#modalContent #modelRelatedList').append(
-					$('<li></li>').append(
-						$("<a href='" + list[i + 1] + "' target='_blank'>" + list[i] + "</a>" )
+				$('#modalContent #modalRelatedList').append(
+					$("<a href='" + list[i + 1] + "' target='_blank'></a>" ).append(
+						$('<li class="col-md-2">' + list[i] + '</li>')
 					)
 				);
 			}
 			$('#modalRelatedTitle').show();
-			$('#modalContent #modelRelatedList').show();
+			$('#modalContent #modalRelatedList').show();
 		} else { //no links
 			$('#modalRelatedTitle').hide();
-			$('#modalContent #modelRelatedList').hide();
+			$('#modalContent #modalRelatedList').hide();
 		}
 		$('#modalContent').modal('show');
 	}

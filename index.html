@@ -73,37 +73,18 @@
 					<div class="item" data-val="0">
 						<div><img src="images/gidget.jpg" alt="Gidget Logo"></div>
 						<h1>Gidget</h1>
-						<div class="content">
-							Gidget is an educational programming and debugging game developed at the University of Washington. During the Summer of 2014 I worked with undergraduates and the lead Ph.D. student to finalize and release Gidget. I redesigned many elements of the game, including the start page, added new features, and optimized old ones.
-							<div>
-								<a href="http://www.helpgidget.org/" target="_blank">helpgidget.org</a>
-							</div>
-						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item" data-val="1">
 						<div><img src="images/WTE.jpg" alt="What To Eat"></div>
 						<h1>What To Eat (WTE)</h1>
-						<div class="content">
-							'Runner up' at 24hr Facebook Hackathon. Collaborated with a colleague to create a web application using jQuery, Bootstrap, and Node.js. Designed and implemented the user interface with an emphasis on mobile devices. This is being continued as an Android application.
-							<div>
-								To site: <a href="http://wte.herokuapp.com/" target="_blank">WTE</a><br/>
-								To Github: <a href="https://github.com/saryana/WTE_V0.0.0" target="_blank">Github</a>
-							</div>
-						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item" data-val="2">
 						<div><img src="images/dbMigration.png" alt="PC Parts Database"></div>
 						<h1>Database Migration</h1>
-						<div class="content">
-							Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. Using SQL Server’s SSIS and CDC functions our group completed the project.
-							<div>
-								SQL code: <a href="Steven Raden DataMigrationCDC.pdf" target="_blank">Data Migration CDC</a>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -115,13 +96,6 @@
 					<div class="item" data-val="3">
 						<div><img src="images/pcParts.jpg" alt="Gidget Logo"></div>
 						<h1>PC Parts Database</h1>
-						<div class="content">
-							Planned, designed, and built a database including stored procedures, views, and constraints on Microsoft SQL Server.
-							<ul>
-								<li><a href="projects/pcPartsDatabase.txt" target="_blank">PC Parts Create</a></li>
-								<li><a href="https://www.dropbox.com/sh/m1xdhc4th9l6u0l/AAC1tAFz0eq-Fozvf5stpJlda?dl=0" target="_blank">PC Parts DB Files</a></li>
-							</ul>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -135,26 +109,12 @@
 					<div class="item" data-val="0">
 						<div><img src="images/ischoollogo.png" alt="Reaserch Assistant"></div>
 						<h1>Research Assistant</h1>
-						<div class="content">
-							Redesigned the UI and implemented new features for a PHD research project called Gidget. Gidget is an educational game to introduce programming and debugging to users.
-							<a href="helpgidget.org" target="_blank">helpgidget.org</a><br/>
-							Worked with:
-							<ul>
-								<li><a href="http://www.linkedin.com/in/andyjko" target="_blank">Andy Ko</a></li>
-								<li><a href="http://www.linkedin.com/in/michaeljonglee" target="_blank">Michael Lee</a></li>
-								<li><a href="http://www.linkedin.com/pub/staffan-hellman/48/222/351" target="_blank">Staffan Helman</a></li>
-								<li><a href="http://www.linkedin.com/pub/christina-xiao/54/110/ba8" target="_blank">Christina Xiao</a></li>
-							</ul>
-						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
 					<div class="item" data-val="1">
 						<div><img src="images/dbMigration.png" alt="Data Migration"></div>
 						<h1>Data Migration Engineer</h1>
-						<div class="content">
-							Designed, created data models and data flows for the data migration of corporate Customer Relationship Management system. Worked with executive management and IT to understand specifications, logical processes and architecture. Presented an executive overview during bi-weekly status meetings during the development phase.
-						</div>
 					</div>
 				</div>
 			</div>
@@ -175,11 +135,16 @@
 	    <div class="modal-content">
 	    	<div id="modalHead">
 		    	<div id='modalImg'><img src="" /></div>
+		    	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 		    	<h1 id="modalTitle"></h1>
 		    </div>
-	    	<p id="modalInfo"></p>
-	    	<div id="modalRelatedTitle">Related Links:</div>
-	    	<ul id="modelRelatedList"></ul>
+		    <div id="modalBody">
+		    	<p id="modalInfo"></p>
+		    	<div id="modalToolsTitle" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Tools:</div>
+		    	<ul id="modalToolsList"></ul>
+		    	<div id="modalRelatedTitle" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Related Links:</div>
+		    	<ul id="modalRelatedList"></ul>
+		    </div>
 	    </div>
 	  </div>
 	</div>
