@@ -31,11 +31,11 @@ html {
 /*GENERAL ITEMS*/
 
 /*Makes projects and experience at the top*/
- #projects .fp-tableCell, #experience .fp-tableCell {
+/* #projects .fp-tableCell, #experience .fp-tableCell {
 	vertical-align: initial;
 	display: block;
 
-} 
+} */
 
 .sectionTitle {
 	width: 200px;
@@ -187,3 +187,32 @@ html {
 
 
  /*PROJECTS END*/
+
+ /* MODAL */
+
+#modalContent #modalHead {
+	border-bottom: 1px solid rgba(60, 60, 60, 0.9);
+}
+
+#modalContent #modalImg {
+	border-radius: 3px 3px 0 0;
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+}
+
+#modalContent #modalImg img {
+	width: 100%;
+}
+
+#modalContent #modalTitle {
+	text-align: center;
+	margin: 0px;
+}
+
+#modalContent #modalInfo {
+	padding: 15px;
+	font-size: 13pt;
+}
+
+ /* MODAL END*/

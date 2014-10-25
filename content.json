@@ -1,0 +1,50 @@
+{
+	"gidget": {
+		"val": "0",
+		"category": "project",
+		"title": "Gidget",
+		"img": "images/gidget.jpg",
+		"description": "Gidget is an educational programming and debugging game developed at the University of Washington. During the Summer of 2014 I worked with undergraduates and the lead Ph.D. student to finalize and release Gidget. I redesigned many elements of the game, including the start page, added new features, and optimized old ones.",
+		"links": ["Gidget", "http://helpgidget.org/"]
+	},
+	"wte": {
+		"val": "1",
+		"category": "project",
+		"title": "What To Eat (WTE)",
+		"img": "images/WTE.jpg",
+		"description": "'Runner up' at 24hr Facebook Hackathon. Collaborated with a colleague to create a web application using jQuery, Bootstrap, and Node.js. Designed and implemented the user interface with an emphasis on mobile devices. This is being continued as an Android application.",
+		"links": ["WTE Site", "http://wte.herokuapp.com/", "GitHub", "https://github.com/saryana/WTE_V0.0.0"]
+	},
+	"databaseMigration": {
+		"val": "2",
+		"category": "project",
+		"title": "Database Migration",
+		"img": "images/dbMigration.png",
+		"description": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. Using SQL Server’s SSIS and CDC functions our group completed the project.",
+		"links": ["SQL Code", "Steven Raden DataMigrationCDC.pdf"]
+	},
+	"pcParts": {
+		"val": "3",
+		"category": "project",
+		"title": "PC Parts Database",
+		"img": "images/pcParts.jpg",
+		"description": "Planned, designed, and built a database including stored procedures, views, and constraints on Microsoft SQL Server.",
+		"links": ["SQL Database Create", "projects/pcPartsDatabase.txt", "Project Files", "https://www.dropbox.com/sh/m1xdhc4th9l6u0l/AAC1tAFz0eq-Fozvf5stpJlda?dl=0"]
+	},
+	"researchAssistant": {
+		"val": "0",
+		"category": "experience",
+		"title": "Research Assistant",
+		"img": "images/ischoollogo.png",
+		"description": "Redesigned the UI and implemented new features for a PHD research project called Gidget. Gidget is an educational game to introduce programming and debugging to users.",
+		"links": ["Andy Ko", "http://www.linkedin.com/in/andyjko", "Michael Lee", "http://www.linkedin.com/in/michaeljonglee", "Staffan Helman", "http://www.linkedin.com/pub/staffan-hellman/48/222/351", "Christina Xiao", "http://www.linkedin.com/pub/christina-xiao/54/110/ba8"]
+	},
+	"dataMigrationEngineer": {
+		"val": "1",
+		"category": "experience",
+		"title": "Data Migration Engineer",
+		"img": "images/dbMigration.png",
+		"description": "Designed, created data models and data flows for the data migration of corporate Customer Relationship Management system. Worked with executive management and IT to understand specifications, logical processes and architecture. Presented an executive overview during bi-weekly status meetings during the development phase.",
+		"links": []
+	}
+}
