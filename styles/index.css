@@ -208,7 +208,6 @@ html {
 	height: 100px;
 	overflow: hidden;
 }
-
 #modalContent #modalImg img {
 	width: 100%;
 }
@@ -228,29 +227,45 @@ html {
 }
 
 #modalContent #modalBody {
-	padding: 15px;
+	padding: 10px 50px;
 	font-size: 13pt;
 	overflow: auto;
 }
 
-#modalContent #modalRelatedList, #modalContent #modalToolsList {
-	padding: 0px;
+#modalContent #modalInfo {
+	margin: 20px 0px;
+	line-height: 1.5em;
 }
 
-#modalContent #modalRelatedList li, #modalContent #modalToolsList li {
-	list-style-type: none;
-	padding: 5px 5px 5px 15px;
+#modalContent .modalListsTitle {
+	border-bottom: 1px solid rgba(60, 60, 60, 0.3);
+}
+
+#modalContent .modalLists div {
+	text-align: center;
+	margin: 10px 0px;
+	padding: 5px inherit;
 	border-radius: 3px;
 	/*border-bottom: 1px solid rgba(60, 60, 60, 0.3);*/
 	transition: background-color .2s;
 }
 
-#modalContent #modalRelatedList li:hover, #modalContent #modalToolsList li:hover {
+#modalContent .modalLists div:hover {
 	background-color: rgba(103, 162, 156, .3);
 }
 
-#modalContent #modalToolsList li:hover {
+#modalContent #modalToolsList div:hover {
 	cursor: default;
+}
+
+#modalContent #modalToolsGraph {
+	
+}
+
+#modalContent #modalToolsGraph div div { /*Bar graphs in tools*/
+	background-color: red;
+	position: relative;
+	bottom: 0px;
 }
 
 #modalContent a {

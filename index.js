@@ -112,11 +112,17 @@
 		
 		if (currObject.languages.length > 0) { //insert languages
 			$('#modalContent #modalToolsList').empty();
+			$('#modalContent #modalToolsGraph').empty();
 			//$.each(currObject.links, function(key, val) {
 			for (var i = 0; i < currObject.languages.length; i++) {
 				var list = currObject.languages;
+				if (currObject.graph.length > 0) {
+					$('#modalContent #modalToolsGraph').append(
+						$('<div class="col-xs-2"></div>').append($('<div></div>').height(currObject.graph[i] * 10 + 'px'))
+					);
+				}
 				$('#modalContent #modalToolsList').append(
-					$('<li class="col-md-2">' + list[i] + '</li>')
+					$('<div class="col-xs-2">' + list[i] + '</div>')
 				);
 			}
 			$('#modalToolsTitle').show();
@@ -124,6 +130,11 @@
 		} else {
 			$('#modalToolsTitle').hide();
 			$('#modalContent #modalToolsList').hide();
+		}
+		if (currObject.graph.length > 0) { //Not always a graph
+			$('#modalToolsGraph').show();
+		} else {
+			$('#modalToolsGraph').hide();
 		}
 
 		if (currObject.links.length > 0) { //insert links
@@ -133,7 +144,7 @@
 				var list = currObject.links;
 				$('#modalContent #modalRelatedList').append(
 					$("<a href='" + list[i + 1] + "' target='_blank'></a>" ).append(
-						$('<li class="col-md-2">' + list[i] + '</li>')
+						$('<div class="col-xs-2">' + list[i] + '</div>')
 					)
 				);
 			}

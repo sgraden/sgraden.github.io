@@ -4,8 +4,9 @@
 		"category": "project",
 		"title": "Gidget",
 		"img": "images/gidget.jpg",
-		"description": "Gidget is an educational programming and debugging game developed at the University of Washington. During the Summer of 2014 I worked with undergraduates and the lead Ph.D. student to finalize and release Gidget. I redesigned many elements of the game, including the start page, added new features, and optimized old ones.",
+		"description": "Gidget is an educational programming and debugging game developed at the University of Washington. During the Summer of 2014 I worked with undergraduates and the lead Ph.D. student to finalize and release Gidget. I focused on many elements of the UI. This included a complete overhaul of the 'Start' page, which changed it from grey login boxes to what you see today. I also worked on the server side with PHP and SQL to retrieve and organize information like the users levels.",
 		"languages": ["jQuery", "HTML", "CSS", "PHP", "SQL"],
+		"graph": [5, 4, 5, 2, 1],
 		"links": ["Gidget", "http://helpgidget.org/"]
 	},
 	"wte": {
@@ -13,8 +14,9 @@
 		"category": "project",
 		"title": "What To Eat (WTE)",
 		"img": "images/WTE.jpg",
-		"description": "'Runner up' at 24hr Facebook Hackathon. Collaborated with a colleague to create a web application using jQuery, Bootstrap, and Node.js. Designed and implemented the user interface with an emphasis on mobile devices. This is being continued as an Android application.",
+		"description": "Received 'Runner up' at 24hr Facebook Hackathon. I collaborated with a friend to develop an application which filtered the menu of a given restaurant based on information the user provided. I worked on the simple front-end and its communication with the back-end while my friend worked on using the Nutrionix API.",
 		"languages": ["Bootstrap", "CSS", "jQuery", "Node.js"],
+		"graph": [4, 4, 3, 1],
 		"links": ["WTE Site", "http://wte.herokuapp.com/", "GitHub", "https://github.com/saryana/WTE_V0.0.0"]
 	},
 	"databaseMigration": {
@@ -22,8 +24,9 @@
 		"category": "project",
 		"title": "Database Migration",
 		"img": "images/dbMigration.png",
-		"description": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. Using SQL Server’s SSIS and CDC functions our group completed the project.",
+		"description": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. We all had experience coding and using SQL, but not much in the way of synchronizing between databases. Over the course, all the teams were slowly informed of different tools we could use. Our team was one of the few which created a set of synchronized databases and were offered an internship. We used SQL servers CDC functionality to do this.",
 		"languages": ["SQL", "SQL Server", "Visual Studio"],
+		"graph": [],
 		"links": ["SQL Code", "Steven Raden DataMigrationCDC.pdf"]
 	},
 	"pcParts": {
@@ -31,8 +34,9 @@
 		"category": "project",
 		"title": "PC Parts Database",
 		"img": "images/pcParts.jpg",
-		"description": "Planned, designed, and built a database including stored procedures, views, and constraints on Microsoft SQL Server.",
-		"languages": ["SQL"],
+		"description": "Course assignment that required teams of students to choose a topic and then build a database. Our group chose to build a database for a business centered around PC part information as well as the building and selling of custom PC's. We built the whole database, along with stored procedures, views, and constraints, using SQL and Microsoft SQL Server.",
+		"languages": ["SQL", "SQL Server"],
+		"graph": [],
 		"links": ["SQL Database Create", "projects/pcPartsDatabase.txt", "Project Files", "https://www.dropbox.com/sh/m1xdhc4th9l6u0l/AAC1tAFz0eq-Fozvf5stpJlda?dl=0"]
 	},
 	"researchAssistant": {
@@ -40,8 +44,9 @@
 		"category": "experience",
 		"title": "Research Assistant",
 		"img": "images/ischoollogo.png",
-		"description": "Redesigned the UI and implemented new features for a PHD research project called Gidget. Gidget is an educational game to introduce programming and debugging to users.",
+		"description": "Worked as a Research Assistant for a Ph.D. student in the Information School at the University of Washington. We worked on Gidget, an educational programming and debugging game. I primarily worked on the front-end, redesigning and creating new interfaces and interactions within the system. My co-worker Staffan mostly worked back-end and Christina occasionally worked on front-end with me. With our efforts we were able to push the project to the public at the end of the Summer of 2014.",
 		"languages": ["jQuery", "HTML", "CSS", "PHP", "SQL"],
+		"graph": [5, 4, 5, 2, 1],
 		"links": ["Andy Ko", "http://www.linkedin.com/in/andyjko", "Michael Lee", "http://www.linkedin.com/in/michaeljonglee", "Staffan Helman", "http://www.linkedin.com/pub/staffan-hellman/48/222/351", "Christina Xiao", "http://www.linkedin.com/pub/christina-xiao/54/110/ba8"]
 	},
 	"dataMigrationEngineer": {
@@ -51,6 +56,7 @@
 		"img": "images/dbMigration.png",
 		"description": "Designed, created data models and data flows for the data migration of corporate Customer Relationship Management system. Worked with executive management and IT to understand specifications, logical processes and architecture. Presented an executive overview during bi-weekly status meetings during the development phase.",
 		"languages": ["SQL", "Visual Studio"],
+		"graph": [],
 		"links": []
 	}
 }
