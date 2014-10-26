@@ -111,6 +111,8 @@ html {
 
 #home #homeColor {
 	background-color: #2B803E;
+	/*background-image: url('../images/mainWallpaper2.jpg');*/
+	background-position: 0px -75px;
 	height: 50%;
 	width: 100%;
 	position: absolute;
@@ -197,7 +199,25 @@ html {
 /*CONTACT */
 #contact input, #contact textarea {
 	margin-top: 10px;
+}
+
+#contact #contactButtons div {
 	float: right;
+}
+
+#contact .contactMessage {
+	display: none;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 20pt;
+}
+
+#contact .contactSuccess {
+	color: #2D4E5C;
+}
+
+#contact .contactError {
+	color: #A93430;
 }
 
 /*CONTACT END*/
