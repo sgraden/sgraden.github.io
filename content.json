@@ -14,10 +14,10 @@
 		"category": "project",
 		"title": "What To Eat (WTE)",
 		"img": "images/WTE.jpg",
-		"description": "Received 'Runner up' at 24hr Facebook Hackathon. I collaborated with a friend to develop an application which filtered the menu of a given restaurant based on information the user provided. I worked on the simple front-end and its communication with the back-end while my friend worked on using the Nutrionix API.",
+		"description": "Received 'Runner up' at 24hr Facebook Hackathon. I collaborated with a friend to develop an application which filtered the menu of a given restaurant based on information the user provided. I worked on the simple front-end and its communication with the back-end while my friend worked on using the Nutrionix API and Node.js.",
 		"languages": ["Bootstrap", "CSS", "jQuery", "Node.js"],
 		"graph": [4, 4, 3, 1],
-		"links": ["WTE Site", "http://wte.herokuapp.com/", "GitHub", "https://github.com/saryana/WTE_V0.0.0"]
+		"links": ["Sean Aryana", "http://www.linkedin.com/in/saryana", "WTE Site", "http://wte.herokuapp.com/", "GitHub", "https://github.com/saryana/WTE_V0.0.0"]
 	},
 	"databaseMigration": {
 		"val": "2",
@@ -26,7 +26,7 @@
 		"img": "images/dbMigration.png",
 		"description": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. We all had experience coding and using SQL, but not much in the way of synchronizing between databases. Over the course, all the teams were slowly informed of different tools we could use. Our team was one of the few which created a set of synchronized databases and were offered an internship. We used SQL servers CDC functionality to do this.",
 		"languages": ["SQL", "SQL Server", "Visual Studio"],
-		"graph": [],
+		"graph": [5, 4, 2],
 		"links": ["SQL Code", "Steven Raden DataMigrationCDC.pdf"]
 	},
 	"pcParts": {
@@ -36,7 +36,7 @@
 		"img": "images/pcParts.jpg",
 		"description": "Course assignment that required teams of students to choose a topic and then build a database. Our group chose to build a database for a business centered around PC part information as well as the building and selling of custom PC's. We built the whole database, along with stored procedures, views, and constraints, using SQL and Microsoft SQL Server.",
 		"languages": ["SQL", "SQL Server"],
-		"graph": [],
+		"graph": [5, 5],
 		"links": ["SQL Database Create", "projects/pcPartsDatabase.txt", "Project Files", "https://www.dropbox.com/sh/m1xdhc4th9l6u0l/AAC1tAFz0eq-Fozvf5stpJlda?dl=0"]
 	},
 	"researchAssistant": {
@@ -56,7 +56,7 @@
 		"img": "images/dbMigration.png",
 		"description": "Designed, created data models and data flows for the data migration of corporate Customer Relationship Management system. Worked with executive management and IT to understand specifications, logical processes and architecture. Presented an executive overview during bi-weekly status meetings during the development phase.",
 		"languages": ["SQL", "Visual Studio"],
-		"graph": [],
+		"graph": [5, 5],
 		"links": []
 	}
 }

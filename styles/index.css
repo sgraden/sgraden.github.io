@@ -194,6 +194,15 @@ html {
 
  /*PROJECTS END*/
 
+/*CONTACT */
+#contact input, #contact textarea {
+	margin-top: 10px;
+	float: right;
+}
+
+/*CONTACT END*/
+
+
  /* MODAL */
 
 
@@ -259,13 +268,20 @@ html {
 }
 
 #modalContent #modalToolsGraph {
-	
+	position: relative;
+	margin-top: 10px;
+}
+
+#modalContent #modalToolsGraph div {
+	position: relative;
+	bottom: 0px;
 }
 
 #modalContent #modalToolsGraph div div { /*Bar graphs in tools*/
-	background-color: red;
-	position: relative;
-	bottom: 0px;
+	background-color: rgb(80, 160, 98);
+	border-radius: 3px 3px 0 0;
+	width: 75%;
+	margin: 0 auto;
 }
 
 #modalContent a {

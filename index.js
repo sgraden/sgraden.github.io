@@ -117,8 +117,11 @@
 			for (var i = 0; i < currObject.languages.length; i++) {
 				var list = currObject.languages;
 				if (currObject.graph.length > 0) {
+					var graphHeight = currObject.graph[i] * 10;
 					$('#modalContent #modalToolsGraph').append(
-						$('<div class="col-xs-2"></div>').append($('<div></div>').height(currObject.graph[i] * 10 + 'px'))
+						$('<div class="col-xs-2"></div>').append(
+							$('<div></div>').height(graphHeight + 'px').css('top', 50 - graphHeight)
+						)
 					);
 				}
 				$('#modalContent #modalToolsList').append(
