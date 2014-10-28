@@ -111,8 +111,9 @@ html {
 
 #home #homeColor {
 	background-color: #2B803E;
-	/*background-image: url('../images/mainWallpaper2.jpg');*/
-	background-position: 0px -75px;
+	background-image: url('../images/mainWallpaper.png');
+	background-position: 0px;
+	background-size: 100%;
 	height: 50%;
 	width: 100%;
 	position: absolute;
