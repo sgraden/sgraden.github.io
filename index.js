@@ -27,7 +27,7 @@ $(document).ready( function() {
 		navigationTooltips: ['Home', 'About', 'Projects', 'Experience', 'Contact'],
 		onLeave: function(index, nextIndex, direction) {
 			if (scroll) {
-				wowAnimateIn(nextIndex, direction)
+				//wowAnimateIn(nextIndex, direction)
 			}
 		},
 		scrollOverflow: true,
