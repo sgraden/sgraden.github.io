@@ -15,7 +15,7 @@ $(document).ready( function() {
 		$('.wow').removeClass('wow animated');
 	})
 
-	$('#fullpage').fullpage({
+	/*$('#fullpage').fullpage({
 		//anchors: ['homeSection', 'aboutSection', 'projectsSection', 'experienceSection', 'contactSection'],
 		verticalCentered: true,
 		sectionsColor: ['white', '#67A29C', '#50A062', '#67A29C', '#50A062'], //#DEDEDE
@@ -35,12 +35,11 @@ $(document).ready( function() {
 		normalScrollElements: "#modalContent"
 		//fixedElements: '#element1, .element2'
 		//menu: true,
-	});
+	});*/
 
 	$.getJSON("content.json", function(data) {
 		getJson(data);
 	});
-
 
 	$('#projects .item').click(function() {
 		openModal($(this).attr("data-val"), "project");

@@ -31,11 +31,12 @@ html {
 /*GENERAL ITEMS*/
 
 /*Makes projects and experience at the top*/
-/* #projects .fp-tableCell, #experience .fp-tableCell {
-	vertical-align: initial;
-	display: block;
-
-} */
+.section {
+	padding: 0px;
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+}
 
 .sectionTitle {
 	width: 200px;
@@ -100,6 +101,18 @@ html {
     background: rgba(0,0,0,0.3);
 }
 
+#home {
+	background-color: white;
+}
+
+#projects, #contact {
+	background-color: #67A29C;
+}
+
+#about, #experience {
+	background-color: #50A062;
+}
+
 /*GENERAL ITEMS END*/
 
 /*HOME*/
@@ -157,6 +170,17 @@ html {
 	font-size: 30pt;
 	margin: 0px;
 }
+
+#home i {
+	font-size: 30pt;
+	margin: 0px 10px;
+	color: #333;
+	transition: color .2s;
+}
+
+#about a:hover, #home i:hover {
+	color: rgba(51,51,51,.5);
+}
 /*HOME END*/
 
 /*ABOUT*/
@@ -177,16 +201,10 @@ html {
 	transition: color .2s;
 }
 
-#about #aboutContent i {
-	font-size: 40pt;
-	margin: 0px 10px;
-	color: #333;
-	transition: color .2s;
+#homeLinks {
+	margin-top: 10px;
 }
 
-#about #aboutContent i:hover, #about a:hover {
-	color: rgba(51,51,51,.5);
-}
  /*ABOUT END*/
 
  /*PROJECTS*/
