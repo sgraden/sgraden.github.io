@@ -1,26 +1,32 @@
 html {
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizelegibility;
-	overflow: auto;
-	overflow-x: hidden;
+    overflow: auto;
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
 }
 
 /*PLUGIN MODIFICATIONS*/
 .container-fluid {
-	padding-right: 0; /*15px in bootstrap.css*/
-    padding-left: 0;  /*idem*/
     margin-right: auto;
     margin-left: auto;
+    padding-right: 0; /*15px in bootstrap.css*/
+    padding-left: 0;  /*idem*/
 }
 
-#fp-nav ul li div.fp-tooltip { /*applies style to nav bar right*/
-	color: black;
-	background-color: white;
-	border-radius: 5px;
-	padding: 5px;
-	top: -10px;
-	width: 85px;
-	text-align: center;
+#fp-nav ul li div.fp-tooltip {
+    top: -10px;
+
+    width: 85px;
+
+    padding: 5px;
+
+    text-align: center;
+    /*applies style to nav bar right*/
+
+    color: black;
+    border-radius: 5px;
+    background-color: white;
 }
 
 
@@ -39,8 +45,9 @@ html {
 }
 
 .section > .row {
-	display: table-cell;
-	vertical-align: middle;
+    display: table-cell;
+
+    vertical-align: middle;
 }
 
 
@@ -56,58 +63,73 @@ html {
 }
 
 .sectionTitle:after {
-	content: "";
-	padding-top: 5px;
-	display: block;
-	width: 20%;
-	margin: 0 auto;
-	border-bottom: 1px solid #333;
+    display: block;
+
+    width: 20%;
+
+    margin: 0 auto;
+    padding-top: 5px;
+
+    content: '';
+
+    border-bottom: 1px solid #333333;
 }
 
-#contact .sectionTitle:after, #projects .sectionTitle:after {
-	border-bottom: 1px solid white;
+#contact .sectionTitle:after,
+#projects .sectionTitle:after {
+    border-bottom: 1px solid white;
 }
 
 .item {
-	color: #333;
-	/*position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    /*box-shadow:0 5px 5px #333;*/
+
+    cursor: pointer;
+    /*position: relative;
 	top: 0px;*/
-	text-align: center;
-	background-color: white;
-	border-radius: 3px;
-	/*box-shadow:0 5px 5px #333;*/
-	cursor: pointer;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	border: 1px solid #333;
-	transition: top .3s, box-shadow .3s;
+    text-align: center;
+
+    color: #333333;
+    border: 1px solid #333333;
+    border-radius: 3px;
+    background-color: white;
+
+    transition: top .3s, box-shadow .3s;
 }
 
 .item:hover {
-	/*top: -3px;*/
-	/*box-shadow:0 8px 10px #124545;*/
+    /*top: -3px;*/
+    /*box-shadow:0 8px 10px #124545;*/
 }
 
 .item img {
-	width: 100%;
-	border-radius: 3px 3px 0px 0px;
+    width: 100%;
+
+    border-radius: 3px 3px 0 0;
 }
 
 .item h1 {
-	font-size: 30pt;
-	margin-top: 0px;
-	padding-top: 10px;
-	border-top: 1px solid rgba(60, 60, 60, 0.3);
+    font-size: 30pt;
+
+    margin-top: 0;
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(60, 60, 60, .3);
 }
 
 .content {
-	display: none;
-	text-align: left;
-	font-size: 13pt;
-	max-height: 250px;
-	overflow: auto;
-	margin: 0px 10px;
+    font-size: 13pt;
+
+    display: none;
+    overflow: auto;
+
+    max-height: 250px;
+
+    margin: 0 10px;
+
+    text-align: left;
 }
 
 /* ::-webkit-scrollbar {
@@ -122,14 +144,16 @@ html {
 } */
 
 
-#projects, #contact {
-	background-color: #124545;
-	color: white;
+#projects,
+#contact {
+    color: white;
+    background-color: #124545;
 }
 
-#about, #experience {
-	background-color: #B2CD93; /*#C6EAE5*/
-	box-shadow: 0px 0px 50px 1px #113018 inset;
+#about,
+#experience {
+    background-color: #b2cd93; /*#C6EAE5*/
+    box-shadow: 0 0 50px 1px #113018 inset;
 }
 
 /*GENERAL ITEMS END*/
@@ -137,21 +161,23 @@ html {
 /*HOME*/
 
 #home {
-	text-align: center;
-	background-color: #113018; /*#2B803E;*/
-	background-image: url('../images/mainWallpaper.png');
-	background-position: 0px;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	height: 95vh;
-	color:white;
-	/*height: 50%;
+    height: 95vh;
+
+    text-align: center;
+
+    color: white;
+    background-color: #113018; /*#2B803E;*/
+    background-image: url('../images/mainWallpaper.png');
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 100% 100%;
+    /*height: 50%;
 	width: 100%;*/
-	/*position: absolute;*/
-	/*top: 0px;
+    /*position: absolute;*/
+    /*top: 0px;
 	z-index: 0;*/
-	/*box-shadow: inset 0 -10px 20px -5px rgba(0,0,0,0.4);*/
-/*	-webkit-webkit-animation-duration: 1s;
+    /*box-shadow: inset 0 -10px 20px -5px rgba(0,0,0,0.4);*/
+    /*	-webkit-webkit-animation-duration: 1s;
 	-moz-webkit-animation-duration: 1s;
 	-ms-webkit-animation-duration: 1s;
 	-o-webkit-animation-duration: 1s;
@@ -159,9 +185,9 @@ html {
 }
 
 #home #homeInfo {
-	z-index: 1;
-	position: relative;
-/*	-webkit-webkit-animation-duration: 1s;
+    position: relative;
+    z-index: 1;
+    /*	-webkit-webkit-animation-duration: 1s;
 	-moz-webkit-animation-duration: 1s;
 	-ms-webkit-animation-duration: 1s;
 	-o-webkit-animation-duration: 1s;
@@ -174,7 +200,7 @@ html {
 }
 
 #home #homeInfo > div {
-	/* background-color: #2B803E;
+    /* background-color: #2B803E;
 	padding: 5px 0px;
 	box-shadow: 0px 0px 10px black;
 	border-radius: 3px; */
@@ -189,20 +215,25 @@ html {
 }
 
 #home h1 {
-	font-size: 50pt;
-	margin: 0px;
+    font-size: 50pt;
+
+    margin: 0;
 }
 
-#home h2{
-	font-size: 30pt;
-	margin: 0px;
+#home h2 {
+    font-size: 30pt;
+
+    margin: 0;
 }
 
 #home i {
-	color: white;
-	font-size: 30pt;
-	margin: 0px 10px;
-	transition: color .2s;
+    font-size: 30pt;
+
+    margin: 0 10px;
+
+    color: white;
+
+    transition: color .2s;
 }
 
 #home i:hover {
@@ -213,19 +244,22 @@ html {
 /*ABOUT*/
 
 #about #aboutContent {
-	font-size: 20pt;
-	text-align: center;
-	/*max-height: 400px;*/
+    font-size: 20pt;
+
+    text-align: center;
+    /*max-height: 400px;*/
 }
 
 #about div p {
-	margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 #about a {
-	color: #333;
-	text-decoration: underline;
-	transition: color .2s;
+    text-decoration: underline;
+
+    color: #333333;
+
+    transition: color .2s;
 }
 
 #about a:hover {
@@ -233,76 +267,87 @@ html {
 }
 
 #homeLinks {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
- /*ABOUT END*/
+/*ABOUT END*/
 
- /*PROJECTS*/
+/*PROJECTS*/
 #projects > .row {
-	max-height: 500px;
+    max-height: 500px;
 }
 
 
- /*PROJECTS END*/
+/*PROJECTS END*/
 
 /*CONTACT */
-#contact input, #contact textarea {
-	margin-top: 10px;
+#contact input,
+#contact textarea {
+    margin-top: 10px;
 }
 
 #contact #contactButtons div {
-	float: right;
+    float: right;
 }
 
 #contact .contactMessage {
-	display: none;
-	text-align: center;
-	margin-bottom: 10px;
-	font-size: 20pt;
+    font-size: 20pt;
+
+    display: none;
+
+    margin-bottom: 10px;
+
+    text-align: center;
 }
 
 #contact .contactSuccess {
-	color: #2D4E5C;
+    color: #2d4e5c;
 }
 
 #contact .contactError {
-	color: #A93430;
+    color: #a93430;
 }
 
 /*CONTACT END*/
 
 
- /* MODAL */
+/* MODAL */
 
 
 #modalContent #modalHead {
-	border-bottom: 1px solid rgba(60, 60, 60, 0.3);
-	position: relative;
+    position: relative;
+
+    border-bottom: 1px solid rgba(60, 60, 60, .3);
 }
 
 #modalContent #modalImg {
-	border-radius: 3px 3px 0 0;
-	width: 100%;
-	height: 100px;
-	overflow: hidden;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100px;
+
+    border-radius: 3px 3px 0 0;
 }
 #modalContent #modalImg img {
-	width: 100%;
+    width: 100%;
 }
 
 #modalContent #modalHead button {
-	position: absolute;
-	font-size: 30pt;
-	right: 10px;
-	top: 5px;
-	outline: 0;
+    font-size: 30pt;
+
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    outline: 0;
 }
 
 #modalContent #modalTitle {
-	text-align: center;
-	margin: 10px 0px;
-	font-size: 30pt;
+    font-size: 30pt;
+
+    margin: 10px 0;
+
+    text-align: center;
 }
 
 #modalContent #modalBody {
@@ -313,50 +358,58 @@ html {
 }
 
 #modalContent #modalInfo {
-	margin: 20px 0px;
-	line-height: 1.5em;
+    line-height: 1.5em;
+
+    margin: 20px 0;
 }
 
 #modalContent .modalListsTitle {
-	border-bottom: 1px solid rgba(60, 60, 60, 0.3);
+    border-bottom: 1px solid rgba(60, 60, 60, .3);
 }
 
 #modalContent .modalLists div {
-	text-align: center;
-	margin: 10px 0px;
-	padding: 5px inherit;
-	border-radius: 3px;
-	/*border-bottom: 1px solid rgba(60, 60, 60, 0.3);*/
-	transition: background-color .2s;
+    margin: 10px 0;
+    padding: 5px inherit;
+
+    text-align: center;
+
+    border-radius: 3px;
+    /*border-bottom: 1px solid rgba(60, 60, 60, 0.3);*/
+
+    transition: background-color .2s;
 }
 
 #modalContent .modalLists div:hover {
-	background-color: rgba(103, 162, 156, .3);
+    background-color: rgba(103, 162, 156, .3);
 }
 
 #modalContent #modalToolsList div:hover {
-	cursor: default;
+    cursor: default;
 }
 
 #modalContent #modalToolsGraph {
-	position: relative;
-	margin-top: 10px;
+    position: relative;
+
+    margin-top: 10px;
 }
 
 #modalContent #modalToolsGraph div {
-	position: relative;
-	bottom: 0px;
+    position: relative;
+    bottom: 0;
 }
 
-#modalContent #modalToolsGraph div div { /*Bar graphs in tools*/
-	background-color: rgb(80, 160, 98);
-	border-radius: 3px 3px 0 0;
-	width: 75%;
-	margin: 0 auto;
+#modalContent #modalToolsGraph div div {
+    width: 75%;
+
+    margin: 0 auto;
+
+    border-radius: 3px 3px 0 0;
+    /*Bar graphs in tools*/
+    background-color: rgb(80, 160, 98);
 }
 
 #modalContent a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
- /* MODAL END*/
+/* MODAL END*/
