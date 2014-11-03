@@ -163,6 +163,7 @@ html {
 
 #home > img {
 	position: absolute;
+	max-width: 100%;
 }
 
 #home #fireImg {
