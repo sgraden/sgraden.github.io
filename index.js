@@ -111,7 +111,7 @@ function openModal(val, category) {
 	} else {
 		currObject = contentExperience[val];
 	}
-	$('#modalContent #modalImg img').attr("src", currObject.img); //img
+	// $('#modalContent #modalImg img').attr("src", currObject.img); //img
 	$('#modalContent #modalTitle').text(currObject.title); //title
 	$('#modalContent #modalInfo').text(currObject.description); //description
 	
