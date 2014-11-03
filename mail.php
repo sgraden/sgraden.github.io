@@ -27,7 +27,7 @@ if (!preg_match("/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/", $email)) {
 	exit("ERROR: There was an error receiving data");
 }
 
-$message = "Name: " . $name . "\nEmail: " . $email . "\Comment:\n" . $comment;
+$message = "Name: " . $name . "\nEmail: " . $email . "\nComment:\n" . $comment;
 
 if (!mail("stevengraden@gmail.com", "Portfolio" , $message)) {
 	header('HTTP/1.1 500 Internal Server Error');
