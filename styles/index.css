@@ -165,7 +165,39 @@ html {
 /*GENERAL ITEMS END*/
 
 /*Navigation Bar*/
+#navBar {
+    color: white;
+    position: fixed;
+    /* height: 50px; */
+    /* top: 0px; */
+    width: 100%;
+    z-index: 5;
+    background-color: blue;
+    /* padding: 5px 0px; */
+}
 
+#navBar > ul {
+    vertical-align: middle;
+    /* display: table; */
+    margin: 0px;
+    padding: 0px;
+}
+
+#navBar > ul > li {
+    display: table-cell;
+    list-style-type: none;
+    width: 100px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.navBarDesk {
+
+}
+
+.navBarMobile {
+
+}
 /* Navigation BAR END */
 
 /*HOME*/

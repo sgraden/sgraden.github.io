@@ -15,28 +15,6 @@ $(document).ready( function() {
 		$('.wow').removeClass('wow animated');
 	})
 
-	/*$('#fullpage').fullpage({
-		//anchors: ['homeSection', 'aboutSection', 'projectsSection', 'experienceSection', 'contactSection'],
-		verticalCentered: true,
-		sectionsColor: ['white', '#67A29C', '#50A062', '#67A29C', '#50A062'], //#DEDEDE
-		scrollingSpeed: 300,
-		autoScrolling: scroll,
-		css3: true,
-		navigation: scroll,
-		navigationPosition: 'right',
-		navigationTooltips: ['Home', 'About', 'Projects', 'Experience', 'Contact'],
-		onLeave: function(index, nextIndex, direction) {
-			if (scroll) {
-				//wowAnimateIn(nextIndex, direction)
-			}
-		},
-		scrollOverflow: true,
-		//responsive: 500,
-		normalScrollElements: "#modalContent"
-		//fixedElements: '#element1, .element2'
-		//menu: true,
-	});*/
-
 	$.getJSON("content.json", function(data) {
 		getJson(data);
 	});
@@ -68,31 +46,6 @@ $(document).ready( function() {
 	});
 
 });
-
-
-
-
-function wowAnimateIn(nextIndex, direction) {
-	if (nextIndex == 1) { //home
-
-	} else if (nextIndex == 2 && direction == 'down') { //about
-		if(!$('#about .row div').hasClass('wow')) {
-			$('#about .sectionTitle, #about .row div').addClass('wow animated fadeInLeftBig');
-		}
-	} else if (nextIndex == 3 && direction == 'down') { //projects
-		if(!$('#projects .item').hasClass('wow')) {
-			$('#projects .sectionTitle, #projects .item').addClass('wow animated fadeInLeftBig');
-		}
-	} else if (nextIndex == 4 && direction == 'down') { //experience
-		if(!$('#experience .item').hasClass('wow')) {
-			$('#experience .sectionTitle, #experience .item').addClass('wow animated fadeInLeftBig');
-		}
-	} else if (nextIndex == 5 && direction == 'down') { //contact
-		if(!$('#contact .row > div').hasClass('wow')) {
-			$('#contact .row > .sectionTitle, #contact .row > div').addClass('wow animated fadeInLeftBig');
-		}
-	}	
-}
 
 function getJson(data) {
 	$.each(data, function(key, val) {
@@ -166,7 +119,6 @@ function openModal(val, category) {
 }
 
 function sendEmail() {
-	
 	var form = $('#contactForm').serializeArray();
 	$.ajax({
 		type: 'POST',
