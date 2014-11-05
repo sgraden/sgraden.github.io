@@ -183,7 +183,7 @@ html {
     /* height: 40px; */
     text-align: center;
     padding: 8px 10px;
-    margin: 5px 0px 0px 10px;
+    margin: 10px;
     box-shadow: 0px 0px 5px black;
 }
 
@@ -196,21 +196,36 @@ html {
     /*vertical-align: middle;*/
     /*opacity: 0;*/
     /*left: 100%;*/
-    margin: 10px;
+    margin: 10px 12px;
     padding: 0px;
     font-family: "century gothic", arial;
     font-size: 16pt;
     transition: left .2s, opacity, .2s;
 }
 
-.navBarDesk > ul > li {
-   /* display: table-cell;*/
-    list-style-type: none;
-    /*text-align: center;*/
-    padding: 10px 20px;
-    border-radius: 3px;
-    background-color: blue;
-    margin: 10px 0px;
+.navBarDesk > ul i {
+   /* display: table-cell; */
+   list-style-type: none;
+   /* text-align: center; */
+   /* padding: 10px 20px; */
+   border-radius: 50%;
+   background-color: blue;
+   margin: 5px 0px;
+   width: 40px;
+   height: 40px;
+   text-align: center;
+   padding: 10px;
+}
+
+.navBarDesk > ul span {
+    opacity: 0;
+    right: 0%;
+    transition: left .2s, opacity .2s;
+}
+
+.navBarDesk > ul i:hover + span {
+    opacity: 1;
+    left: 0%;
 }
 
 .navBarMobile {
