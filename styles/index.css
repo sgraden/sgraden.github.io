@@ -57,6 +57,24 @@ html {
     border-bottom: 1px solid #333333;
 }
 
+.linkIcons {
+    margin-top: 10px;
+}
+
+.linkIcons i {
+    font-size: 30pt;
+
+    margin: 0 10px;
+
+    color: white;
+
+    transition: color .2s;
+}
+
+.linkIcons i:hover {
+	color: rgba(255, 255, 255, .8);
+}
+
 #home .sectionTitle:after {
 	width: 100%;
 }
@@ -197,32 +215,16 @@ html {
 	}
 }
 
-
-
 #home h2 {
     font-size: 25pt;
 	margin-top: 10px;
-}
-
-#home i {
-    font-size: 30pt;
-
-    margin: 0 10px;
-
-    color: white;
-
-    transition: color .2s;
-}
-
-#home i:hover {
-	color: rgba(255, 255, 255, .8);
 }
 /*HOME END*/
 
 /*ABOUT*/
 
 #about #aboutContent {
-    font-size: 20pt;
+    font-size: 18pt;
 
     text-align: center;
     /*max-height: 400px;*/
@@ -230,6 +232,7 @@ html {
 
 #about div p {
     margin-bottom: 20px;
+
 }
 
 #about a {
@@ -242,10 +245,6 @@ html {
 
 #about a:hover {
 	color: rgba(51, 51, 51, .8);
-}
-
-#homeLinks {
-    margin-top: 10px;
 }
 
 /*ABOUT END*/
@@ -264,7 +263,7 @@ html {
     margin-top: 10px;
 }
 
-#contact #contactButtons div {
+#contactButtons div {
     float: right;
 }
 
@@ -284,6 +283,17 @@ html {
 
 #contact .contactError {
     color: #a93430;
+}
+
+#contactButtons .linkIcons {
+	font-size: 30pt;
+    text-align: center;
+    float: left;
+    margin-top: 0px;
+}
+
+#contactButtons .linkIcons a i:first-child {
+	margin-left: 0px;
 }
 
 /*CONTACT END*/
