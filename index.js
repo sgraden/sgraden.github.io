@@ -19,6 +19,16 @@ $(document).ready( function() {
 		getJson(data);
 	});
 
+	$('#navToggleButton').click(function() { //click menu button
+		var $navList = $('#navBar > div');
+
+		if ($navList.hasClass('navClosed')) { //open
+			$navList.addClass('navOpen').removeClass('navClosed');
+		} else { //Close
+			$navList.addClass('navClosed').removeClass('navOpen');
+		}
+	});
+
 	$('#projects .item').click(function() {
 		openModal($(this).attr("data-val"), "project");
 	});

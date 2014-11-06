@@ -58,7 +58,7 @@ html {
 }
 
 .linkIcons {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .linkIcons i {
@@ -176,7 +176,9 @@ html {
     font-size: 20pt;
 }
 
-#navBar > i {
+#navBar > i { /*Main Menu Button*/
+    position: relative;
+    z-index: 4;
     background-color: blue;
     border-radius: 50%;
     /* width: 40px; */
@@ -184,30 +186,23 @@ html {
     text-align: center;
     padding: 8px 10px;
     margin: 10px;
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
-/*#navBar:hover > ul {
-    opacity: 1;
-    left: 0;
-}*/
 
-.navBarDesk > ul {
-    /*vertical-align: middle;*/
-    /*opacity: 0;*/
-    /*left: 100%;*/
-    margin: 10px 12px;
+#navBar > div > div.navButton { /*Navigation Buttons*/
+    display: none;
+    opacity: 0;
+    position: relative;
+    top: -5px;
+    z-index: 3;
+    margin: 5px 12px;
     padding: 0px;
     font-family: "century gothic", arial;
     font-size: 16pt;
-    transition: left .2s, opacity, .2s;
 }
 
-.navBarDesk > ul i {
-   /* display: table-cell; */
-   list-style-type: none;
-   /* text-align: center; */
-   /* padding: 10px 20px; */
+#navBar > div > div.navButton > i { /*Navigatino Buttons FA*/
    border-radius: 50%;
    background-color: blue;
    margin: 5px 0px;
@@ -215,21 +210,75 @@ html {
    height: 40px;
    text-align: center;
    padding: 10px;
+   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
-.navBarDesk > ul span {
+#navBar > div.navOpen > div.navButton { /*Open Navigation Buttons*/
+    display: block;
+    -webkit-animation: navReveal .2s;
+    -moz-webkit-animation: navReveal .2s;
+    -ms-webkit-animation: navReveal .2s;
+    -o-webkit-animation: navReveal .2s;
+    animation: navReveal: .2s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-webkit-animation-fill-mode: forwards;
+    -ms-webkit-animation-fill-mode: forwards;
+    -o-webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+#navBar > div.navOpen > div.navButton:nth-child(2) {
+    -webkit-animation-delay: .1s;
+    -moz-webkit-animation-delay: .1s;
+    -ms-webkit-animation-delay: .1s;
+    -o-webkit-animation-delay: .1s;
+    animation-delay: .1s;
+}
+#navBar > div.navOpen > div.navButton:nth-child(3) {
+    -webkit-animation-delay: .2s;
+    -moz-webkit-animation-delay: .2s;
+    -ms-webkit-animation-delay: .2s;
+    -o-webkit-animation-delay: .2s;
+    animation-delay: .2s;
+}
+#navBar > div.navOpen > div.navButton:nth-child(4) {
+    -webkit-animation-delay: .3s;
+    -moz-webkit-animation-delay: .3s;
+    -ms-webkit-animation-delay: .3s;
+    -o-webkit-animation-delay: .3s;
+    animation-delay: .3s;
+}
+#navBar > div.navOpen > div.navButton:nth-child(5) {
+    -webkit-animation-delay: .4s;
+    -moz-webkit-animation-delay: .4s;
+    -ms-webkit-animation-delay: .4s;
+    -o-webkit-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+
+@-webkit-keyframes navReveal { /*transformation scale google?*/
+    40% { top: 8px; }
+    100% { 
+        top: 0px;
+        opacity:1;
+    }
+}
+@-moz-keyframes navReveal { /*transformation scale google?*/
+    40% { top: 8px; }
+    100% { 
+        top: 0px;
+        opacity:1;
+    }
+}
+
+#navBar > div > div span { /*Button Name*/
+    position: relative;
     opacity: 0;
-    right: 0%;
-    transition: left .2s, opacity .2s;
 }
 
-.navBarDesk > ul i:hover + span {
+#navBar > div > div > i:hover + span { /*Button Name*/
     opacity: 1;
-    left: 0%;
-}
-
-.navBarMobile {
-
 }
 /* Navigation BAR END */
 
@@ -354,7 +403,6 @@ html {
 	font-size: 30pt;
     text-align: center;
     float: left;
-    margin-top: 0px;
 }
 
 #contactButtons .linkIcons a i:first-child {
