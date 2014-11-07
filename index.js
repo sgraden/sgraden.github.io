@@ -15,19 +15,21 @@ $(document).ready( function() {
 		$('.wow').removeClass('wow animated');
 	})
 
+	$(".navButton").click(function(event) {
+		toggleNav();
+		var elementID = event.currentTarget.id;
+		elementID = elementID.substring(3).toLowerCase();
+
+	    $('html, body').animate({
+	        scrollTop: $("#" + elementID).offset().top
+	    }, 2000);
+	});
+
 	$.getJSON("content.json", function(data) {
 		getJson(data);
 	});
 
-	$('#navToggleButton').click(function() { //click menu button
-		var $navList = $('#navBar > div');
-
-		if ($navList.hasClass('navClosed')) { //open
-			$navList.addClass('navOpen').removeClass('navClosed');
-		} else { //Close
-			$navList.addClass('navClosed').removeClass('navOpen');
-		}
-	});
+	$('#navToggleButton').click(toggleNav);
 
 	$('#projects .item').click(function() {
 		openModal($(this).attr("data-val"), "project");
@@ -56,6 +58,17 @@ $(document).ready( function() {
 	});
 
 });
+
+function toggleNav() {
+	//click menu button
+	var $navList = $('#navBar > div');
+
+	if ($navList.hasClass('navClosed')) { //open
+		$navList.addClass('navOpen').removeClass('navClosed');
+	} else { //Close
+		$navList.addClass('navClosed').removeClass('navOpen');
+	}
+}
 
 function getJson(data) {
 	$.each(data, function(key, val) {
