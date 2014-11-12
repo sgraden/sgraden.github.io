@@ -6,10 +6,10 @@ var contentExperience = [];
 
 //$(draw);
 $(document).ready( function() {
-	var scroll = true;
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		scroll = false;
-	}
+	// var scroll = true;
+	// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	// 	scroll = false;
+	// }
 
 	$(window).resize(function() {
 		$('.wow').removeClass('wow animated');
@@ -22,7 +22,7 @@ $(document).ready( function() {
 
 	    $('html, body').animate({
 	        scrollTop: $("#" + elementID).offset().top
-	    }, 2000);
+	    }, 1000);
 	});
 
 	$.getJSON("content.json", function(data) {
