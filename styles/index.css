@@ -478,15 +478,15 @@ html {
 }
 
 #about a {
-    text-decoration: underline;
 
-    color: #333333;
+    color: #2C666F;
 
     transition: color .2s;
 }
 
 #about a:hover {
-    color: rgba(51, 51, 51, .8);
+	text-decoration: none;
+    color: #0093A9;
 }
 
 /*ABOUT END*/
