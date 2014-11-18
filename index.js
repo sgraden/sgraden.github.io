@@ -11,9 +11,9 @@ $(document).ready( function() {
 	// 	scroll = false;
 	// }
 
-	$(window).resize(function() {
-		$('.wow').removeClass('wow animated');
-	})
+	// $(window).resize(function() {
+	// 	$('.wow').removeClass('wow animated');
+	// })
 
 	$(".navButton").click(function(event) {
 		toggleNav();
@@ -138,7 +138,7 @@ function openModal(val, category) {
 		$('#modalRelatedTitle').hide();
 		$('#modalContent #modalRelatedList').hide();
 	}
-	$('#modalContent').modal('show');
+	$('#modalContent').slideDown();
 }
 
 function sendEmail() {
