@@ -17,11 +17,14 @@ html {
 /*PLUGIN MODIFICATIONS END*/
 
 /*GENERAL ITEMS*/
+h2, .section h1 {
+	font-family: "open sans";
+}
 
 .sectionTitle,
 #modalTitle,
-.item > h1 {
-    font-family: 'century gothic', arial;
+p {
+    font-family: roboto, sans-serif;
 }
 
 .section {
@@ -30,7 +33,7 @@ html {
     display: table;
 
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
     margin: 0;
     padding: 1vh 0;
@@ -65,11 +68,11 @@ html {
 }
 
 .linkIcons {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .linkIcons i {
-    font-size: 30pt;
+    font-size: 25pt;
 
     margin: 0 10px;
 
@@ -123,7 +126,7 @@ html {
     padding: 15% 5px 5px 5px;
 
     color: white;
-    background-color: rgba(51, 51, 51, .8);
+    background-color: rgba(51, 51, 51, .9);
 
     transition: bottom .4s;
 }
@@ -185,10 +188,10 @@ html {
     position: fixed;
     z-index: 5;
 
-    overflow: hidden;
+    /*overflow: hidden;*/
 
     color: white;
-    border-radius: 0 3px 3px 0;
+    /*border-radius: 0 3px 3px 0;*/
 }
 
 /*Main Menu Button*/
@@ -204,8 +207,8 @@ html {
 #navBar i {
     border-radius: 50%;
     text-align: center;
-    color: #1E88E5;
-    background-color: white;
+    color: white;
+    background-color: #638287;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
@@ -230,7 +233,7 @@ html {
     opacity: 0;
 }
 
-/*Navigatino Buttons FA*/
+/*Navigation Buttons FA*/
 #navBar > div > div.navButton > i {
     width: 40px;
     height: 40px;
@@ -249,8 +252,9 @@ html {
     padding: 5px;
 }
 
-/*Button Name*/
-#navBar > div > div > i:hover + span {
+/*Button Name visible on hover or if it is mobile*/
+#navBar > div > div > i:hover + span,
+#navBar > div > div span.showMenuNames {
     display: inline;
 }
 
@@ -409,7 +413,7 @@ html {
 /*HOME*/
 
 #home {
-    height: 95vh;
+    min-height: 95vh;
 
     text-align: center;
 
@@ -446,6 +450,7 @@ html {
     font-size: 50pt;
 
     margin: 0;
+    font-family: roboto;
 }
 
 @media (max-width: 1480px) {
@@ -467,7 +472,7 @@ html {
 /*ABOUT*/
 
 #about #aboutContent {
-    font-size: 18pt;
+    font-size: 20pt;
 
     text-align: center;
     /*max-height: 400px;*/
@@ -539,10 +544,29 @@ html {
     margin-left: 0;
 }
 
+#contact .linkIcons {
+	margin-top: 10px;
+}
+
+#contact .linkIcons i {
+	font-size: 30pt;
+}
+
 /*CONTACT END*/
 
 
 /* MODAL */
+
+#modalCover {
+	top: 0px;
+	left: 0px;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .3);
+	position: fixed;
+	display: none;
+}
 
 .modal {
     z-index: 100;
@@ -569,18 +593,6 @@ html {
     border-bottom: 1px solid rgba(60, 60, 60, .3);
 }
 
-#modalContent #modalImg {
-    overflow: hidden;
-
-    width: 100%;
-    height: 100px;
-
-    border-radius: 3px 3px 0 0;
-}
-#modalContent #modalImg img {
-    width: 100%;
-}
-
 #modalContent #modalHead button {
     font-size: 30pt;
 
@@ -594,13 +606,13 @@ html {
 #modalContent #modalTitle {
     font-size: 30pt;
 
-    margin: 15px 0;
+    margin: 20px 0;
 
     text-align: center;
 }
 
 #modalContent #modalBody {
-    font-size: 13pt;
+    font-size: 15pt;
 
     overflow: auto;
 
@@ -611,12 +623,13 @@ html {
 
 #modalContent #modalInfo {
     line-height: 1.5em;
-
-    margin: 20px 0;
+	font-size: 18pt;
+    margin: 20px 50px;
 }
 
 #modalContent .modalListsTitle {
     border-bottom: 1px solid rgba(60, 60, 60, .3);
+    margin-top: 30px;
 }
 
 #modalContent .modalLists div {
@@ -642,7 +655,7 @@ html {
 #modalContent #modalToolsGraph {
     position: relative;
 
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 #modalContent #modalToolsGraph div {

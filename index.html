@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="images/favicon.ico" />
-	<!--<link href="http://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">-->
-	<!--<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">-->
+	<link href="http://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
 	<link href="Plugins/normalize.css" type="text/css" rel="stylesheet" />
 	<!-- <link href="Plugins/jquery-ui.min.css" type="text/css" rel="stylesheet" /> -->
 	<link type='text/css' rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -185,15 +185,17 @@
 		</div>
 	</div>
 
-	<div id="modalContent" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div id="modalCover"></div>
+	<div id="modalContent" class="modal">
 	  <!-- <div class="modal-dialog"> -->
 	    <!-- <div class="modal-content"> -->
 	    	<div id="modalHead">
 		    	<!-- <div id='modalImg'><img src="" /></div> -->
-		    	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		    	<button type="button" class="close"><span id="closeModal">&times;</span></button>
 		    	<h1 id="modalTitle"></h1>
 		    </div>
 		    <div id="modalBody" class="row">
+		    	<div id="modalInfoTitle" class="modalListsTitle">Description:</div>
 		    	<p id="modalInfo"></p>
 		    	<div id="modalToolsTitle" class="modalListsTitle">Tools:</div>
 		    	<div id="modalToolsGraph" class="row col-xs-offset-1"></div>

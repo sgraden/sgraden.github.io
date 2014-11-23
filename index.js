@@ -3,17 +3,24 @@
 
 var contentProjects = [];
 var contentExperience = [];
+var modalIsOpen = true;
 
 //$(draw);
 $(document).ready( function() {
-	// var scroll = true;
-	// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	// 	scroll = false;
-	// }
-
-	// $(window).resize(function() {
-	// 	$('.wow').removeClass('wow animated');
-	// })
+	/*if mobile then show the menu names without hover*/
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$('#navBar > div > div span').addClass('showMenuNames');
+	}
+	
+	$(window).scroll(function(e) {
+		// console.log('hello');
+		if (modalIsOpen) {
+			e.preventDefault();
+			return false;
+		} else {
+			return true;
+		}
+	});
 
 	$(".navButton").click(function(event) {
 		toggleNav();
@@ -25,12 +32,15 @@ $(document).ready( function() {
 	    }, 1000);
 	});
 
+	/*Grabs Json file at load*/
 	$.getJSON("content.json", function(data) {
 		getJson(data);
 	});
 
+	/*applies click listener to nav*/
 	$('#navToggleButton').click(toggleNav);
 
+	/*attaches click listener to experience and projects*/
 	$('#projects .item').click(function() {
 		openModal($(this).attr("data-val"), "project");
 	});
@@ -38,6 +48,13 @@ $(document).ready( function() {
 		openModal($(this).attr("data-val"), "experience");
 	});
 
+	/*close modal*/
+	$('#modalContent #modalHead button').click(function() {
+		$('#modalContent').slideUp();
+		$('#modalCover').hide();
+	});
+
+	/*applies listener to handle sending and removes message*/
 	$('#contactSend').click(function(e) {
 		e.preventDefault();
 		if ($('#contact .contactMessage').length) {
@@ -51,6 +68,7 @@ $(document).ready( function() {
 		return false;
 	});
 
+	/*Handles reset contact form*/
 	$('#contactReset').click(function() {
 		$('#contact .contactMessage').slideUp(function() {
 			$('#contact .contactMessage').remove();
@@ -80,6 +98,7 @@ function getJson(data) {
 	});
 }
 
+/*Opens, empties, and fills the modal with the content relevant to button pressed*/
 function openModal(val, category) {
 	var currObject = {};
 	if (category == "project") {
@@ -139,6 +158,7 @@ function openModal(val, category) {
 		$('#modalContent #modalRelatedList').hide();
 	}
 	$('#modalContent').slideDown();
+	$('#modalCover').show();
 }
 
 function sendEmail() {
