@@ -514,6 +514,12 @@ p {
     float: right;
 }
 
+/*#contactButtons input.btn-primary[disabled="disabled"] {
+	background-color: #3572A6;
+	border-color: #3572A6;
+	color: grey;
+}*/
+
 #contact .contactMessage {
     font-size: 20pt;
 

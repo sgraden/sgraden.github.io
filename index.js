@@ -168,6 +168,7 @@ function sendEmail() {
 		url: 'mail.php',
 		data: form,
 		success: function(res) {
+			$('#contactSend').attr('disabled', 'disabled');
 			$('#contact h1.sectionTitle').after("<h2 class='contactMessage contactSuccess'>Email has been sent. Thank you. I will be in contact shortly.</h2>");
 			$('#contact .contactMessage').slideDown();
 		},
