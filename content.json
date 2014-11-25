@@ -24,7 +24,7 @@
 		"category": "project",
 		"title": "Database Migration",
 		"img": "images/dbMigration.png",
-		"description": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. We all had experience coding and using SQL, but not much in the way of synchronizing between databases. Over the course, all the teams were slowly informed of different tools we could use. Our team was one of the few which created a set of synchronized databases and were offered an internship. We used SQL servers CDC functionality to do this.",
+		"description": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced. We all had work coding and using SQL, but not much in the way of synchronizing between databases. Over the course, all the teams were slowly informed of different tools we could use. Our team was one of the few which created a set of synchronized databases and were offered an internship. We used SQL servers CDC functionality to do this.",
 		"languages": ["SQL", "SQL Server", "Visual Studio"],
 		"graph": [5, 4, 2],
 		"links": ["SQL Code", "Steven Raden DataMigrationCDC.pdf"]
@@ -41,7 +41,7 @@
 	},
 	"researchAssistant": {
 		"val": "0",
-		"category": "experience",
+		"category": "work",
 		"title": "Research Assistant",
 		"img": "images/ischoollogo.png",
 		"description": "Worked as a Research Assistant for a Ph.D. student in the Information School at the University of Washington. We worked on Gidget, an educational programming and debugging game. I primarily worked on the front-end, redesigning and creating new interfaces and interactions within the system. My co-worker Staffan mostly worked back-end and Christina occasionally worked on front-end with me. With our efforts we were able to push the project to the public at the end of the Summer of 2014.",
@@ -51,7 +51,7 @@
 	},
 	"dataMigrationEngineer": {
 		"val": "1",
-		"category": "experience",
+		"category": "work",
 		"title": "Data Migration Engineer",
 		"img": "images/dbMigration.png",
 		"description": "Designed, created data models and data flows for the data migration of corporate Customer Relationship Management system. Worked with executive management and IT to understand specifications, logical processes and architecture. Presented an executive overview during bi-weekly status meetings during the development phase.",

@@ -40,12 +40,12 @@ $(document).ready( function() {
 	/*applies click listener to nav*/
 	$('#navToggleButton').click(toggleNav);
 
-	/*attaches click listener to experience and projects*/
+	/*attaches click listener to work and projects*/
 	$('#projects .item').click(function() {
 		openModal($(this).attr("data-val"), "project");
 	});
-	$('#experience .item').click(function() {
-		openModal($(this).attr("data-val"), "experience");
+	$('#work .item').click(function() {
+		openModal($(this).attr("data-val"), "work");
 	});
 
 	/*close modal*/
@@ -92,7 +92,7 @@ function getJson(data) {
 	$.each(data, function(key, val) {
 		if (val.category == "project") {
 			contentProjects.push(val);
-		} else if (val.category == "experience") {
+		} else if (val.category == "work") {
 			contentExperience.push(val);
 		}
 	});
