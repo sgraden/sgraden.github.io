@@ -137,6 +137,7 @@ p {
 
 .item img {
     /*width: 100%;*/
+    max-width: 100%;
 
     border-radius: 3px 3px 0 0;
 
@@ -208,7 +209,7 @@ p {
     border-radius: 50%;
     text-align: center;
     color: white;
-    background-color: rgba(99, 130, 135, 0);
+    background-color: rgba(99, 130, 135, 0.7);
     box-shadow: 0 0 5px 1px rgba(0,0,0,.3),0 5px 12px 2px rgba(0,0,0,.28);
     /*background-color: #638287;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);*/
@@ -456,15 +457,6 @@ p {
     font-family: roboto;
 }
 
-@media (max-width: 1480px) {
-    #home h1 {
-        font-size: 30pt;
-    }
-    #home h2 {
-        font-size: 25pt;
-    }
-}
-
 #home h2 {
     font-size: 20pt;
 
@@ -625,7 +617,10 @@ p {
 
     overflow: auto;
 
-    max-height: 100vh;
+    max-height: 80vh;
+
+    margin-left: 0px;
+    margin-right: 0px;
 
     padding: 10px 50px;
 }
@@ -687,3 +682,48 @@ p {
 }
 
 /* MODAL END*/
+
+@media (max-width: 360px) {
+
+    #homeInfo img {
+        width: 150px;
+    }
+
+    .sectionTitle {
+        font-size: 35pt;
+    }
+
+    .item:hover .sneakPeak {
+        bottom: -100%;
+    }
+
+    #about #aboutContent {
+        font-size: 16pt;
+    }
+
+    #modalContent {
+        width: 90%;
+    }
+
+    #modalContent #modalInfo {
+        font-size: 12pt;
+        margin: auto 0px;
+    }
+
+    #modalContent #modalBody {
+        padding: 10px 20px; !important
+    }
+
+    .item h1 {
+        font-size: 20pt;
+    }
+}
+
+@media (max-width: 1480px) {
+    #home h1 {
+        font-size: 30pt;
+    }
+    #home h2 {
+        font-size: 16pt;
+    }
+}

@@ -49,7 +49,7 @@ $(document).ready( function() {
 	});
 
 	/*close modal*/
-	$('#modalContent #modalHead button').click(function() {
+	$('#modalContent #modalHead button, #modalCover').click(function() {
 		$('#modalContent').slideUp();
 		$('#modalCover').hide();
 	});
@@ -106,7 +106,10 @@ function openModal(val, category) {
 	} else {
 		currObject = contentExperience[val];
 	}
+
+
 	// $('#modalContent #modalImg img').attr("src", currObject.img); //img
+	$('#modalContent #modalBody').scrollTop(0);
 	$('#modalContent #modalTitle').text(currObject.title); //title
 	$('#modalContent #modalInfo').text(currObject.description); //description
 	
