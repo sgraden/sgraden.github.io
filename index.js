@@ -13,7 +13,6 @@ $(document).ready( function() {
 	}
 	
 	$(window).scroll(function(e) {
-		// console.log('hello');
 		if (modalIsOpen) {
 			e.preventDefault();
 			return false;
@@ -92,7 +91,7 @@ function getJson(data) {
 	$.each(data, function(key, val) {
 		if (val.category == "project") {
 			contentProjects.push(val);
-		} else if (val.category == "work") {
+		} else if (val.category == "experience") {
 			contentExperience.push(val);
 		}
 	});
@@ -106,7 +105,6 @@ function openModal(val, category) {
 	} else {
 		currObject = contentExperience[val];
 	}
-
 
 	// $('#modalContent #modalImg img').attr("src", currObject.img); //img
 	$('#modalContent #modalBody').scrollTop(0);
