@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": ";;AAUA,YAAa;EACT,MAAM,EAAE,IAAI;EAEZ,4BAAgB;IACZ,MAAM,EAAE,IAAI;IACZ,KAAK,EAZQ,OAAO;;AAgB5B,UAAW;EAEP,UAAU,EAAE,OAA2B;;EACvC,KAAK,EAFW,IAAI;EAGpB,MAAM,EAHU,IAAI;EAIpB,YAAE;IACE,SAAS,EAAE,GAAG;IACd,WAAW,EANC,IAAI;;AAepB,WAAG;EACC,KAAK,EAhCQ,OAAO",
+"sources": ["../scss/mysass.scss"],
 "names": [],
 "file": "mysass.css"
 }
