@@ -1,6 +1,7 @@
 var gulp  = require('gulp');
 var sass  = require('gulp-sass');
 var react = require('gulp-react');
+var browserify = require('gulp-browserify');
 
 
 gulp.task('styles', function() {
@@ -9,14 +10,19 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./css/'));
 });
 
-gulp.task('react', function() {
-    gulp.src('./build/**/*.js')
+gulp.task('scripts', function() {
+    // Single entry point to browserify
+    gulp.src('./src/app.js')
         .pipe(react())
-        .pipe(gulp.dest('./js/'));
+        .pipe(browserify({
+          insertGlobals : true,
+          debug : !gulp.env.production
+        }))
+        .pipe(gulp.dest('./dist/'))
 });
 
 //Watch task
 gulp.task('default',function() {
-    gulp.watch('scss/**/*.scss',['styles']);
-    gulp.watch('build/myreact.js', ['react']);
+    gulp.watch('./scss/**/*.scss',['styles']);
+    gulp.watch('./src/*.js', ['scripts']);
 });

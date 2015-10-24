@@ -13,6 +13,7 @@
     "watchify": "^3.4.0"
   },
   "devDependencies": {
+    "gulp-browserify": "^0.5.1",
     "watchify": "^3.4.0"
   },
   "scripts": {
