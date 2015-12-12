@@ -17,7 +17,7 @@
     "watchify": "^3.4.0"
   },
   "scripts": {
-    "watch": "watchify -t babelify ./src/app.js -o ./dist/bundle.js -v"
+    "watch": "watchify -t babelify ./src/app.js -o ./dist/app.js -v"
   },
   "author": "",
   "license": "ISC"
