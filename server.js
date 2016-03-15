@@ -1,48 +1,39 @@
-/**
- * This file provided by Facebook is for non-commercial testing and evaluation
- * purposes only. Facebook reserves all rights not expressly granted.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-
-var fs = require('fs');
-var path = require('path');
-var express = require('express');
-var bodyParser = require('body-parser');
+/* global __dirname */
+var express = require("express");
 var app = express();
+var path = require("path");
+var bodyParser = require("body-parser");
+var hbs = require("hbs"); //Render handlebars
 
-var COMMENTS_FILE = path.join(__dirname, 'comments.json');
 
-app.set('port', (process.env.PORT || 3000));
+////////////////////
+///// App setup
+////////////////////
+//Keep information private by storing in a config file. Make sure to add config file to .gitignore
+// if (process.env.NODE_ENV == "development") { //Set process env vars in gulp/node export NODE_ENV=dev server.js
+// 	var conf = require("./config");
+// 	console.log('\n***In Development Environment***');
+// }
 
-app.use('/', express.static(path.join(__dirname, './')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.get('/api/comments', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-    res.setHeader('Cache-Control', 'no-cache');
-    res.json(JSON.parse(data));
-  });
+//Configure the root of the folder
+//to reference static files, include 'public/' as root
+app.use('/public', express.static(__dirname + '/public'));
+
+app.set("view engine", "html"); //render .html as handlebars
+app.engine("html", hbs.__express); //set view engine to handlebars
+
+
+////////////////////
+///// Routes
+////////////////////
+app.get("/", function (req, res) {
+	res.render(path.join(__dirname, "public", "views", "index.html")); //Handlebars stuff
 });
 
-app.post('/api/comments', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-    var comments = JSON.parse(data);
-    comments.push(req.body);
-    fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
-      res.setHeader('Cache-Control', 'no-cache');
-      res.json(comments);
-    });
-  });
-});
-
-
-app.listen(app.get('port'), function() {
-  console.log('Server started: http://localhost:' + app.get('port') + '/');
+app.listen(8080, function () {
+	//console.info('Server listening on port: ' + this.address().port);
+	console.info('Server Listening');
 });
