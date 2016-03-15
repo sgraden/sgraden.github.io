@@ -12,20 +12,22 @@ var dirs = {
     'public': {
         'css': 'public/css',
         'html': 'public/views',
-        'js': 'public/js'
+        'js': 'public/js',
+        'react': 'public/react'
     },
     'sass': 'src/sass/**/*.scss',
     'images': 'src/images/**/*.*',
     'html': 'src/views/**/*.html',
-    'js': 'src/js/**/*.js'
+    'js': 'src/js/**/*.js',
+    'react': 'src/react/app.js'
 };
 
 ////////////////////
 ///// RUN
 ////////////////////
-gulp.task('build', ['html', 'js', 'sass']);
+gulp.task('build', ['html', 'js', 'sass', 'react']);
 
-gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch']);
+gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch', 'react:watch']);
 
 gulp.task('default', ['build', 'watch', 'browser-sync', 'nodemon']);
 
@@ -54,6 +56,14 @@ gulp.task('js', function() {
         .on('change', browserSync.reload);
 });
 
+gulp.task('react', function() {
+    gulp.src(dirs.react)
+        .pipe(browserify( {
+            insertGlobals : true,
+            debug : !gulp.env.production
+        }))
+        .pipe(gulp.dest(dirs.public.react));
+});
 ////////////////////
 ///// WATCH
 ////////////////////
@@ -67,6 +77,10 @@ gulp.task('js:watch', function() {
 
 gulp.task('sass:watch', function() {
     gulp.watch(dirs.sass, ['sass']);
+});
+
+gulp.task('react:watch', function() {
+    gulp.watch(dirs.react, ['react']);
 });
 
 ////////////////////
