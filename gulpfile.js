@@ -17,10 +17,12 @@ var dirs = {
         'react': 'public/react'
     },
     'sass': 'src/sass/**/*.scss',
-    'images': 'src/images/**/*.*',
     'html': 'src/views/**/*.html',
     'js': 'src/js/**/*.js',
-    'react': 'src/react/reactmain.js'
+    'react': {
+        'entry': 'src/react/reactmain.js',
+        'files': 'src/react/**/*.js'
+    }
 };
 
 ////////////////////
@@ -42,7 +44,6 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.write('./maps')) //Write srcMaps to relative dir
         .pipe(gulp.dest(dirs.public.css))
         .pipe(browserSync.stream());
-    //.pipe(browserSync.stream({match: '**/*.css'}));?
 });
 
 gulp.task('html', function() {
@@ -58,14 +59,17 @@ gulp.task('js', function() {
 });
 
 gulp.task('react', function() {
-    gulp.src(dirs.react)
+    gulp.src(dirs.react.entry)
+        // .pipe(sourcemaps.init())
         .pipe(react())
+        // .pipe(sourcemaps.write(dirs.public.react))
         .pipe(browserify( {
             insertGlobals : true,
             debug : !gulp.env.production
         }))
         .pipe(gulp.dest(dirs.public.react));
 });
+
 ////////////////////
 ///// WATCH
 ////////////////////
@@ -82,7 +86,7 @@ gulp.task('sass:watch', function() {
 });
 
 gulp.task('react:watch', function() {
-    gulp.watch(dirs.react, ['react']);
+    gulp.watch(dirs.react.files, ['react']);
 });
 
 ////////////////////
@@ -95,7 +99,6 @@ gulp.task('browser-sync', function() {
         browser: "google chrome",
         port: 8000
     });
-    // gulp.watch(dirs.server).on('change', browserSync.reload);
 });
 
 gulp.task('nodemon', function(cb) {

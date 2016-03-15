@@ -7,7 +7,12 @@ $primary-text       : #212121;
 $secondary-text     : #727272;
 $dividers           : #B6B6B6;
 
-// hey there jognnysdfas
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
 
 #main-header {
     height: 90vh;
@@ -15,6 +20,10 @@ $dividers           : #B6B6B6;
     .valign-wrapper {
         height: 100%;
         color: $text-icons;
+    }
+
+    & * {
+        // height: 100%;
     }
 }
 
@@ -27,10 +36,6 @@ $dividers           : #B6B6B6;
         font-size: 3em;
         line-height: $btn-start-dim;
     }
-}
-
-.section-first {
-    // padding-top: 10vh;
 }
 
 .section {
