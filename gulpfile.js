@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var react = require('gulp-react');
 var browserify = require('gulp-browserify');
+var babelify = require('babelify');
 var browserSync = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
 var sourcemaps = require('gulp-sourcemaps');
@@ -19,7 +20,7 @@ var dirs = {
     'images': 'src/images/**/*.*',
     'html': 'src/views/**/*.html',
     'js': 'src/js/**/*.js',
-    'react': 'src/react/app.js'
+    'react': 'src/react/reactmain.js'
 };
 
 ////////////////////
@@ -58,6 +59,7 @@ gulp.task('js', function() {
 
 gulp.task('react', function() {
     gulp.src(dirs.react)
+        .pipe(react())
         .pipe(browserify( {
             insertGlobals : true,
             debug : !gulp.env.production
