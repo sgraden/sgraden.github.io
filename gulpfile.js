@@ -62,6 +62,11 @@ gulp.task('react', function() {
     gulp.src(dirs.react.entry)
         // .pipe(sourcemaps.init())
         .pipe(react())
+        .on('error', function(err) {
+            console.error('JSX ERROR in ' + err.fileName);
+            console.error(err.message);
+            this.end();
+        })
         // .pipe(sourcemaps.write(dirs.public.react))
         .pipe(browserify( {
             insertGlobals : true,
