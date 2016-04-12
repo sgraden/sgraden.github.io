@@ -1,9 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-// var react = require('gulp-react');
 var babel = require('gulp-babel');
 var browserify = require('gulp-browserify');
-// var babelify = require('babelify');
 var browserSync = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
 var sourcemaps = require('gulp-sourcemaps');
@@ -33,7 +31,7 @@ gulp.task('build', ['html', 'js', 'sass', 'react']);
 
 gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch', 'react:watch']);
 
-gulp.task('default', ['build', 'watch', 'browser-sync', 'nodemon']);
+gulp.task('default', ['build', 'watch', 'nodemon', 'browser-sync']);
 
 ////////////////////
 ///// BUILD
@@ -76,22 +74,6 @@ gulp.task('react', function() {
         })
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(dirs.public.react));
-
-
-    // gulp.src(dirs.react.entry)
-    //     .pipe(react())
-    //     .on('error', function(err) {
-    //         console.error('JSX ERROR in ' + err.fileName);
-    //         console.error(err.message);
-    //         this.end();
-    //     })
-    //     .pipe(
-    //         browserify({
-    //             insertGlobals : true,
-    //             debug : !gulp.env.production
-    //         })
-    //     )
-    //     .pipe(gulp.dest(dirs.public.react));
 });
 
 ////////////////////
