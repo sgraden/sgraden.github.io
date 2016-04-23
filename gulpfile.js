@@ -1,7 +1,5 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var babel = require('gulp-babel');
-var browserify = require('gulp-browserify');
 var browserSync = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
 var sourcemaps = require('gulp-sourcemaps');
@@ -12,24 +10,19 @@ var dirs = {
     'public': {
         'css': 'public/css',
         'html': 'public/views',
-        'js': 'public/js',
-        'react': 'public/react'
+        'js': 'public/js'
     },
     'sass': 'src/sass/**/*.scss',
     'html': 'src/views/**/*.html',
-    'js': 'src/js/**/*.js',
-    'react': {
-        'entry': 'src/react/reactmain.jsx',
-        'files': 'src/react/**/*.jsx'
-    }
+    'js': 'src/js/**/*.js'
 };
 
 ////////////////////
 ///// RUN
 ////////////////////
-gulp.task('build', ['html', 'js', 'sass', 'react']);
+gulp.task('build', ['html', 'js', 'sass']);
 
-gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch', 'react:watch']);
+gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch']);
 
 gulp.task('default', ['build', 'watch', 'nodemon', 'browser-sync']);
 
@@ -57,25 +50,6 @@ gulp.task('js', function() {
         .on('change', browserSync.reload);
 });
 
-gulp.task('react', function() {
-    return gulp.src(dirs.react.entry)
-        .pipe(sourcemaps.init())
-        .pipe(babel({
-            "presets": ['es2015', 'react']
-        }))
-        .pipe(browserify({
-            insertGlobals: true,
-            debug: !gulp.env.production
-        }))
-        .on('error', function(err) {
-            console.error('JSX ERROR in ' + err);
-            console.error(err.message);
-            this.end();
-        })
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(dirs.public.react));
-});
-
 ////////////////////
 ///// WATCH
 ////////////////////
@@ -89,10 +63,6 @@ gulp.task('js:watch', function() {
 
 gulp.task('sass:watch', function() {
     gulp.watch(dirs.sass, ['sass']);
-});
-
-gulp.task('react:watch', function() {
-    gulp.watch(dirs.react.files, ['react']);
 });
 
 ////////////////////

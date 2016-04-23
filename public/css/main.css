@@ -8,9 +8,6 @@ html, body {
 
 #main-header {
   height: 90vh; }
-  #main-header .valign-wrapper {
-    height: 100%;
-    color: #FFFFFF; }
 
 .btn-start {
   margin-top: -37.5px;
