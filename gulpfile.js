@@ -81,7 +81,7 @@ gulp.task('nodemon', function(cb) {
     var started = false;
     return nodemon({
         'script': dirs.server,
-        'watch': dirs.server,
+        'watch': [dirs.server, dirs.html],
         'env': {
             'NODE_ENV': 'development' //Should be able to put this in bash profile!
         }

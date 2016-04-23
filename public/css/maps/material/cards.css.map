@@ -1,1 +1,1 @@
-{"version":3,"names":[],"mappings":"","sources":["material/cards.scss"],"sourcesContent":[""],"file":"material/cards.css","sourceRoot":"/source/"}
+{"version":3,"file":"material/cards.css","sources":["material/cards.scss"],"sourcesContent":[".card {\n    \n}\n"],"mappings":"","names":[],"sourceRoot":"/source/"}

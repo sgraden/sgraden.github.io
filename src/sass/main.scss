@@ -7,7 +7,7 @@ $primary-text       : #212121;
 $secondary-text     : #727272;
 $dividers           : #B6B6B6;
 
-@import "material/raterial";
+@import 'materialize/materialize.scss';
 
 html, body {
     margin: 0;
@@ -18,6 +18,10 @@ html, body {
 
 #main-header {
     height: 90vh;
+    color: white;
+    .valign-wrapper {
+        height: 100%;
+    }
 }
 
 .btn-start {
@@ -34,5 +38,12 @@ html, body {
 .section {
     h3 {
         color: $accent-color;
+    }
+}
+
+.card {
+    height: 300px;
+    .card-content {
+        overflow-y: scroll;
     }
 }

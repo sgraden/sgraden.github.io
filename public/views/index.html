@@ -4,6 +4,9 @@
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="public/js/materialize.min.js"></script>
+
     <script type="text/javascript" src="public/js/main.js"></script>
     <link rel="stylesheet" href="public/css/main.css">
 
@@ -46,27 +49,24 @@
         <div class="section">
             <h3 class="">Portfolio</h3>
             <div id="portfolio" class="row">
-                <!-- <div class="col s12 m6 l4">
-                    <ul class="collapsible" data-collapsible="accordion">
-
-                    </ul>
-                    <div class="card small hoverable">
-
-                        <div class="card-content black-text">
-                            <span class="card-title black-text">Card Title</span>
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                {{#each project}}
+                    <div class="col s12 m6 l4">
+                        <a href="/projects?name={{@key}}">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <span class="card-title">{{title}}</span>
+                                <p>
+                                    {{description}}
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div> -->
-                <!-- </div> -->
+                        </a>
+                    </div>
+                {{/each}}
+
             </div>
         </div>
     </div>
-
-    <script src="public/react/reactmain.js"></script>
-
 </body>
 
 </html>

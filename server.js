@@ -5,6 +5,8 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var hbs = require("hbs"); //Render handlebars
 
+var projects = require("./content.json");
+
 
 ////////////////////
 ///// App setup
@@ -30,7 +32,11 @@ app.engine("html", hbs.__express); //set view engine to handlebars
 ///// Routes
 ////////////////////
 app.get("/", function (req, res) {
-	res.render(path.join(__dirname, "public", "views", "index.html"), {aligned: "hello"}); //Handlebars stuff
+	res.render(path.join(__dirname, "public", "views", "index.html"), {project: projects}); //Handlebars stuff
+});
+
+app.get("/projects", function (req, res) {
+	res.render(path.join(__dirname, "public", "views", "project.html"), {project: projects[req.query.name]}); //Handlebars stuff
 });
 
 app.listen(8080, function () {
