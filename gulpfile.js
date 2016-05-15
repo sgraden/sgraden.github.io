@@ -10,17 +10,23 @@ var dirs = {
     'public': {
         'css': 'public/css',
         'html': 'public/views',
-        'js': 'public/js'
+        'js': 'public/js',
+        'assets': 'public/assets',
+        'fonts': 'public/fonts'
     },
-    'sass': 'src/sass/**/*.scss',
-    'html': 'src/views/**/*.html',
-    'js': 'src/js/**/*.js'
+    'src': {
+        'sass': 'src/sass/**/*.scss',
+        'html': 'src/views/**/*.html',
+        'js': 'src/js/**/*.js',
+        'assets': 'src/assets/**/*',
+        'fonts':'src/fonts/**/*'
+    }
 };
 
 ////////////////////
 ///// RUN
 ////////////////////
-gulp.task('build', ['html', 'js', 'sass']);
+gulp.task('build', ['html', 'js', 'sass', 'fonts', 'assets']);
 
 gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch']);
 
@@ -30,7 +36,7 @@ gulp.task('default', ['build', 'watch', 'nodemon', 'browser-sync']);
 ///// BUILD
 ////////////////////
 gulp.task('sass', function() {
-    return gulp.src(dirs.sass)
+    return gulp.src(dirs.src.sass)
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('./maps')) //Write srcMaps to relative dir
@@ -39,14 +45,26 @@ gulp.task('sass', function() {
 });
 
 gulp.task('html', function() {
-    gulp.src(dirs.html)
+    gulp.src(dirs.src.html)
         .pipe(gulp.dest(dirs.public.html))
         .pipe(browserSync.stream());
 });
 
 gulp.task('js', function() {
-    gulp.src(dirs.js)
+    gulp.src(dirs.src.js)
         .pipe(gulp.dest(dirs.public.js))
+        .on('change', browserSync.reload);
+});
+
+gulp.task('fonts', function () {
+    gulp.src(dirs.src.fonts)
+        .pipe(gulp.dest(dirs.public.fonts))
+        .on('change', browserSync.reload);
+});
+
+gulp.task('assets', function () {
+    gulp.src(dirs.src.assets)
+        .pipe(gulp.dest(dirs.public.assets))
         .on('change', browserSync.reload);
 });
 
@@ -54,15 +72,15 @@ gulp.task('js', function() {
 ///// WATCH
 ////////////////////
 gulp.task('html:watch', function() {
-    gulp.watch(dirs.html, ['html']);
+    gulp.watch(dirs.src.html, ['html']);
 });
 
 gulp.task('js:watch', function() {
-    gulp.watch(dirs.js, ['js']);
+    gulp.watch(dirs.src.js, ['js']);
 });
 
 gulp.task('sass:watch', function() {
-    gulp.watch(dirs.sass, ['sass']);
+    gulp.watch(dirs.src.sass, ['sass']);
 });
 
 ////////////////////
@@ -81,7 +99,7 @@ gulp.task('nodemon', function(cb) {
     var started = false;
     return nodemon({
         'script': dirs.server,
-        'watch': [dirs.server, dirs.html],
+        'watch': [dirs.server, dirs.src.html],
         'env': {
             'NODE_ENV': 'development' //Should be able to put this in bash profile!
         }

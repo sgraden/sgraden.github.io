@@ -1,7 +1,7 @@
 {
 	"gidget": {
 		"title": "Gidget",
-		"img": "images/gidget.jpg",
+		"img": ["public/assets/projects/gidget/gidget-game.png"],
 		"description": "Gidget is an educational programming and debugging game developed at the University of Washington iSchool.",
 		"languages": ["jQuery", "HTML", "CSS", "PHP", "SQL"],
 		"links": ["Gidget", "http://helpgidget.org/"]

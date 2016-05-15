@@ -36,7 +36,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/projects", function (req, res) {
-	res.render(path.join(__dirname, "public", "views", "project.html"), {project: projects[req.query.name]}); //Handlebars stuff
+	res.render(path.join(__dirname, "public", "views", "project.html"), {project: projects[req.query.name], projects: projects}); //Handlebars stuff
 });
 
 app.listen(8080, function () {
