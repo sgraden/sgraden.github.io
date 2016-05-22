@@ -28,20 +28,40 @@
     </nav>
     <ul id='projects-dropdown' class='dropdown-content'>
         {{#each projects}}
-            <li><a><href="/projects?name={{@key}}">{{title}}</a></li>
+            <li><a href="/projects?name={{@key}}">{{title}}</a></li>
         {{/each}}
     </ul>
 
     <div class="container">
-        {{#if project.img}}
-        <div class="section">
-            <h3>Images</h3>
-            <div class="row">
-                <div class="col s12 m4">
-                    <img class="responsive-img" src="{{project.img}}" alt="">
+        {{#if project.quick}}
+            <div class="section first">
+                <div class="center">
+                    <h2>Quick Glance</h2>
+                </div>
+                <div class="row section-content">
+                    <div class="col s12">
+                        <p class="flow-text">
+                            {{project.quick}}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        {{/if}}
+
+        {{#if project.img}}
+            <div class="section">
+                <div class="center">
+                    <h2>Images</h2>
+                </div>
+                <div class="row section-content">
+                    {{#each project.img as |img|}}
+                        <div class="col s12 m4 img-container">
+                            <img class="responsive-img" src="{{../project.assets-path}}{{img}}" alt="">
+                        </div>
+                    {{/each}}
+
+                </div>
+            </div>
         {{/if}}
     </div>
 </body>

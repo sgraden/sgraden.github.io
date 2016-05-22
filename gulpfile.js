@@ -20,7 +20,8 @@ var dirs = {
         'js': 'src/js/**/*.js',
         'assets': 'src/assets/**/*',
         'fonts':'src/fonts/**/*'
-    }
+    },
+    'projects': 'content.json'
 };
 
 ////////////////////
@@ -71,17 +72,18 @@ gulp.task('assets', function () {
 ////////////////////
 ///// WATCH
 ////////////////////
-gulp.task('html:watch', function() {
+gulp.task ('html:watch', function() {
     gulp.watch(dirs.src.html, ['html']);
 });
 
-gulp.task('js:watch', function() {
+gulp.task ('js:watch', function() {
     gulp.watch(dirs.src.js, ['js']);
 });
 
-gulp.task('sass:watch', function() {
+gulp.task ('sass:watch', function() {
     gulp.watch(dirs.src.sass, ['sass']);
 });
+
 
 ////////////////////
 ///// SERVER
@@ -99,7 +101,7 @@ gulp.task('nodemon', function(cb) {
     var started = false;
     return nodemon({
         'script': dirs.server,
-        'watch': [dirs.server, dirs.src.html],
+        'watch': [dirs.server, dirs.src.html, dirs.projects],
         'env': {
             'NODE_ENV': 'development' //Should be able to put this in bash profile!
         }

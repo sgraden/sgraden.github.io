@@ -1,29 +1,30 @@
 {
 	"gidget": {
 		"title": "Gidget",
-		"img": ["public/assets/projects/gidget/gidget-game.png"],
-		"description": "Gidget is an educational programming and debugging game developed at the University of Washington iSchool.",
+		"assets-path": "public/assets/projects/gidget",
+		"img": ["/gidget-start.png", "/gidget-level.png"],
+		"quick": "Gidget is an educational programming and debugging game developed at the University of Washington iSchool.",
 		"languages": ["jQuery", "HTML", "CSS", "PHP", "SQL"],
 		"links": ["Gidget", "http://helpgidget.org/"]
 	},
 	"wte": {
 		"title": "What To Eat (WTE)",
 		"img": "images/WTE.jpg",
-		"description": "Received 'Runner up' at 24hr Facebook Hackathon. I collaborated with a friend to develop an application which filtered a restaurants menu based on nutritional needs.",
+		"quick": "Received 'Runner up' at 24hr Facebook Hackathon. I collaborated with a friend to develop an application which filtered a restaurants menu based on nutritional needs.",
 		"languages": ["Bootstrap", "CSS", "jQuery", "Node.js"],
 		"links": ["Sean Aryana", "http://www.linkedin.com/in/saryana", "WTE Site", "http://wte.herokuapp.com/", "GitHub", "https://github.com/saryana/WTE_V0.0.0"]
 	},
 	"databaseMigration": {
 		"title": "Database Migration",
 		"img": "images/dbMigration.png",
-		"description": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced.",
+		"quick": "Worked with a team of peers on a competitive project to migrate data from one database system to another and to keep the data synced.",
 		"languages": ["SQL", "SQL Server", "Visual Studio"],
 		"links": ["SQL Code", "Steven Raden DataMigrationCDC.pdf"]
 	},
 	"pcParts": {
 		"title": "PC Parts Database",
 		"img": "images/pcParts.jpg",
-		"description": "Course assignment that required teams of students to choose a topic and then build a database. Our group chose to build a database for a business centered around PC parts.",
+		"quick": "Course assignment that required teams of students to choose a topic and then build a database. Our group chose to build a database for a business centered around PC parts.",
 		"languages": ["SQL", "SQL Server"],
 		"links": ["SQL Database Create", "projects/pcPartsDatabase.txt", "Project Files", "https://www.dropbox.com/sh/m1xdhc4th9l6u0l/AAC1tAFz0eq-Fozvf5stpJlda?dl=0"]
 	}

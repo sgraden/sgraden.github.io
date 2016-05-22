@@ -16,6 +16,11 @@ html, body {
     width: 100%;
 }
 
+p, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
 #main-header {
     height: 90vh;
     color: white;
@@ -36,9 +41,29 @@ html, body {
 }
 
 .section {
-    h3 {
-        color: $accent-color;
+    margin: 2rem 0;
+
+    // &.first {
+    //     margin-top: 5rem;
+    // }
+
+    .section-content {
+        padding: 0 30px;
     }
+
+    h2 {
+        color: $accent-color;
+        font-size: 2.5rem;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $dividers;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    .img-container {
+        margin-bottom: 20px;
+    }
+
 }
 
 nav  {
