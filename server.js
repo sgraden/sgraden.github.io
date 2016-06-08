@@ -27,6 +27,8 @@ app.use('/public', express.static(__dirname + '/public'));
 app.set("view engine", "html"); //render .html as handlebars
 app.engine("html", hbs.__express); //set view engine to handlebars
 
+hbs.registerHelper('foo', function() { return 'foo'; });
+
 
 ////////////////////
 ///// Routes
