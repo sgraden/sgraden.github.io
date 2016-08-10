@@ -18,7 +18,9 @@ var projects = require("./content.json");
 // }
 
 app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+    extended: true
+})); // for parsing application/x-www-form-urlencoded
 
 //Configure the root of the folder
 //to reference static files, include 'public/' as root
@@ -27,21 +29,28 @@ app.use('/public', express.static(__dirname + '/public'));
 app.set("view engine", "html"); //render .html as handlebars
 app.engine("html", hbs.__express); //set view engine to handlebars
 
-hbs.registerHelper('foo', function() { return 'foo'; });
+hbs.registerHelper('foo', function() {
+    return 'foo';
+});
 
 
 ////////////////////
 ///// Routes
 ////////////////////
-app.get("/", function (req, res) {
-	res.render(path.join(__dirname, "public", "views", "index.html"), {project: projects}); //Handlebars stuff
+app.get("/", function(req, res) {
+    res.render(path.join(__dirname, "public", "views", "index.html"), {
+        project: projects
+    }); //Handlebars stuff
 });
 
-app.get("/projects", function (req, res) {
-	res.render(path.join(__dirname, "public", "views", "project.html"), {project: projects[req.query.name], projects: projects}); //Handlebars stuff
+app.get("/projects", function(req, res) {
+    res.render(path.join(__dirname, "public", "views", "project.html"), {
+        project: projects[req.query.name],
+        projects: projects
+    }); //Handlebars stuff
 });
 
-app.listen(8080, function () {
-	//console.info('Server listening on port: ' + this.address().port);
-	console.info('Server Listening on 8080');
+app.listen(8080, function() {
+    //console.info('Server listening on port: ' + this.address().port);
+    console.info('Server Listening on 8080');
 });
