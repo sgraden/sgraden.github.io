@@ -43,5 +43,5 @@ app.get("/projects", function (req, res) {
 
 app.listen(8080, function () {
 	//console.info('Server listening on port: ' + this.address().port);
-	console.info('Server Listening');
+	console.info('Server Listening on 8080');
 });
