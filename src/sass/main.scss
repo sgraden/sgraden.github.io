@@ -20,12 +20,12 @@ h1, h2 {
     margin: 0;
 }
 
-#title-section {
+.title {
     height: 100vh;
     width: 100vw;
     position: relative;
 
-    .title-container {
+    &--container {
         width: 100vw;
         height: 150px;
         position: absolute;
@@ -34,41 +34,76 @@ h1, h2 {
         background: #2642A4;
         text-align: center;
 
-        .title-text {
-            color: white;
-            width: 100%;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            h1 {
-                font-weight: 200;
-                font-size: 2.75rem;
-                letter-spacing: 2px;
-            }
+    }
+    &--text {
+        color: white;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        h1 {
+            font-weight: 200;
+            font-size: 2.75rem;
+            letter-spacing: 2px;
+        }
 
-            h2 {
-                font-weight: 200;
-                font-size: 1.25rem;
-            }
+        h2 {
+            font-weight: 200;
+            font-size: 1.25rem;
         }
     }
 }
 
 .content {
+    max-width: 1064px;
+    margin-left: auto;
+    margin-right: auto;
 
-    blockquote {
+    pre {
+        margin-top: 100px;
         text-align: center;
+        font-style: italic;
+        font-size: 1.15rem;
     }
 
     .section {
         margin-bottom: 100px;
 
-        &-title {
+        &--title {
+            text-align: center;
+            font-weight: 200;
+            font-size: 2.25rem;
+            margin-bottom: 32px;
             &:after {
                 content: '';
+                display: block;
                 border-bottom: 1px solid black;
-                width: 100%;
+                width: 200px;
+                margin: 0 auto;
             }
+        }
+
+        &--content {
+            font-size: 1.45rem;
+            line-height: 1.5;
+            font-weight: 200;
+
+            .project {
+                &--card {
+                    display: inline-block;
+                    width: 24%;
+                    box-shadow: 0 0 2px 2px grey;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &--flex {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
     }
 }
