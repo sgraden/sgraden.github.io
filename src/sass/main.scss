@@ -7,84 +7,68 @@ $primary-text       : #212121;
 $secondary-text     : #727272;
 $dividers           : #B6B6B6;
 
-@import 'materialize/materialize.scss';
-
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+
+    font-family: roboto;
 }
 
-p, h1, h2, h3 {
+h1, h2 {
     margin: 0;
-    padding: 0;
 }
 
-#main-header {
-    height: 90vh;
-    color: white;
-    .valign-wrapper {
-        height: 100%;
-    }
-}
+#title-section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 
-.btn-start {
-    $btn-start-dim: 75px;
-    margin-top: (($btn-start-dim / 2) * -1); /*Negative half the height*/
-    width: $btn-start-dim;
-    height: $btn-start-dim;
-    i {
-        font-size: 3em;
-        line-height: $btn-start-dim;
-    }
-}
+    .title-container {
+        width: 100vw;
+        height: 150px;
+        position: absolute;
+        bottom: 0px;
 
-.section {
-    margin: 2rem 0;
+        background: #2642A4;
+        text-align: center;
 
-    // &.first {
-    //     margin-top: 5rem;
-    // }
+        .title-text {
+            color: white;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            h1 {
+                font-weight: 200;
+                font-size: 2.75rem;
+                letter-spacing: 2px;
+            }
 
-    .section-content {
-        padding: 0 30px;
-    }
-
-    h2 {
-        color: $accent-color;
-        font-size: 2.5rem;
-        padding-bottom: 10px;
-        border-bottom: 1px solid $dividers;
-        margin-bottom: 15px;
-        display: inline-block;
-    }
-
-    .img-container {
-        margin-bottom: 20px;
-    }
-
-}
-
-nav  {
-    .brand-logo {
-        padding-left: 15px; //for some reason it doesn't have padding?
-
-    }
-
-    ul {
-        margin-right: 50px;
-    }
-
-    .dropdown-content a {
-        color: $accent-color;
+            h2 {
+                font-weight: 200;
+                font-size: 1.25rem;
+            }
+        }
     }
 }
 
-.card {
-    .card-content {
-        max-height: 200px;
-        height: 200px;
-        overflow-y: scroll;
+.content {
+
+    blockquote {
+        text-align: center;
+    }
+
+    .section {
+        margin-bottom: 100px;
+
+        &-title {
+            &:after {
+                content: '';
+                border-bottom: 1px solid black;
+                width: 100%;
+            }
+        }
     }
 }

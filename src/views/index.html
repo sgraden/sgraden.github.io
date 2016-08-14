@@ -5,7 +5,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="public/js/materialize.min.js"></script>
 
     <script type="text/javascript" src="public/js/main.js"></script>
     <link rel="stylesheet" href="public/css/main.css">
@@ -17,57 +16,71 @@
 </head>
 
 <body>
-    <div id="main-header" class="blue darken-2 z-depth-1">
-        <div class="valign-wrapper">
-            <div class="valign center-block center">
-                <h1>Welcome!</h1>
+    <div id="title-section">
+        <canvas id="title-animation" width="100" height="100"></canvas>
+        <div class="title-container">
+            <div class="title-text">
+                <h1>Steven Raden</h1>
+                <h2 class="sub-title">UX Design and Front-End Dev</h2>
             </div>
+            <div class="blur"></div>
         </div>
-    </div>
-    <div class="center">
-        <a href="#about-me" class="btn-start btn-floating waves-effect waves-light blue">
-            <i class="material-icons">arrow_downward</i>
-        </a>
     </div>
 
-    <div class="container">
-        <div id="about-me" class="section first">
-            <div class="center">
-                <h2>Hello!</h2>
+    <div class="content">
+        <blockquote class="quote section">
+            This hour is not my all of time,
+            this place my all of earth...
+            And who slays me much overcome a world
+            - Wm. Ellery Leonard
+        </blockquote>
+        <div class="section">
+            <div class="section-title">
+                About me
             </div>
-            <div class="row section-content">
-                <div class="col s12">
-                    <p class="flow-text">
-                        Organa windu padmé aayla organa organa chewbacca ewok. Organa vader antilles darth darth. Kessel calamari dagobah padmé qui-gonn padmé windu lando yavin. Tusken raider antilles ponda naboo. Jade k-3po darth fett wookiee tatooine c-3po. Jade mon ventress
-                        secura vader naboo moff grievous. Skywalker ackbar ewok jango. Skywalker owen ackbar jabba solo grievous. Mustafar lando mon darth. Moff hutt darth lando darth. Chewbacca solo sith kenobi jabba wedge. Hutt organa amidala darth
-                        antilles hutt hutt mandalore.
-                    </p>
-                </div>
+            <div class="section-content">
+                Dreams are important. Not the dreams you have when sleeping. I’m talking about the dreams you have for your future — the dreams that keep you going — the dreams that make each day worth living.
             </div>
         </div>
-        <div id="portfolio" class="section">
-            <div class="center">
-                <h2>Portfolio</h2>
+        <div class="section">
+            <div class="section-title">
+                Portfolio
             </div>
-            <div class="row section-content">
-                {{#each project}}
-                <div class="col s12 m6 l4">
-                    <div class="card hoverable">
-                        <div class="card-content">
-                            <span class="card-title">{{title}}</span>
-                            <p>
-                                {{quick}}
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="/projects?name={{@key}}">Would you like to know more?</a>
-                        </div>
-                    </div>
+            <div class="section-content">
+                <div class="project-card">
+                    <img src="public/assets/test-images/bridge.jpeg" alt="">
+                    <div class="project-title">HelpGidget</div>
+                    <div class="blur"></div>
                 </div>
-                {{/each}}
+                <div class="project-card">
+                    <img src="public/assets/test-images/dock.jpeg" alt="">
+                    <div class="project-title">Project2</div>
+                    <div class="blur"></div>
+                </div>
+                <div class="project-card">
+                    <img src="public/assets/test-images/lake.jpeg" alt="">
+                    <div class="project-title">SQL Stuff</div>
+                    <div class="blur"></div>
+                </div>
+                <div class="project-card">
+                    <img src="public/assets/test-images/orchard.jpeg" alt="">
+                    <div class="project-title">Other things</div>
+                    <div class="blur"></div>
+                </div>
+                <div class="project-card">
+                    <img src="public/assets/test-images/tree.jpeg" alt="">
+                    <div class="project-title">MagicMAn</div>
+                    <div class="blur"></div>
+                </div>
             </div>
         </div>
     </div>
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <filter id="blur">
+            <feGaussianBlur stdDeviation="10" />
+        </filter>
+    </svg>
 </body>
 
 </html>
