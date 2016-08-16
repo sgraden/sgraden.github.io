@@ -90,12 +90,49 @@ h1, h2 {
 
             .project {
                 &--card {
+                    //Width Percentage
+                    //gutter between cols
+                    //gutter on each end which is removed
+                    //and shared across width
+                    $gutter: 8px;
+                    $numCol: 4;
+                    width: calc(#{100 / $numCol}% - (#{$gutter * 2}
+                        - (#{$gutter * 2 / $numCol})));
+
                     display: inline-block;
-                    width: 24%;
-                    box-shadow: 0 0 2px 2px grey;
+                    position: relative;
+                    margin: 24px $gutter;
+                    transition: box-shadow .3s ease-in-out;
+
+                    &:nth-of-type(#{$numCol}n + 1){
+                        margin-left: 0;
+                    }
+                    &:nth-of-type(#{$numCol}n){
+                        margin-right: 0;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 2px 20px 2px rgba(100, 100, 100, .5);
+                    }
+
                     img {
                         width: 100%;
                     }
+                }
+
+                &--title {
+                    position: absolute;
+                    bottom: 0px;
+                    background-color: white;
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px 0;
+
+                    $borderStyle: 1px solid rgba(100, 100, 100, .3);
+                    border-bottom: $borderStyle;
+                    border-right: $borderStyle;
+                    border-left: $borderStyle;
+                    box-sizing: border-box;
                 }
             }
         }
