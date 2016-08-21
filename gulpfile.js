@@ -12,14 +12,16 @@ var dirs = {
         'html': 'public/views',
         'js': 'public/js',
         'assets': 'public/assets',
-        'fonts': 'public/fonts'
+        'fonts': 'public/fonts',
+        'icons': 'public/icons'
     },
     'src': {
         'sass': 'src/sass/**/*.scss',
         'html': 'src/views/**/*.html',
         'js': 'src/js/**/*.js',
         'assets': 'src/assets/**/*',
-        'fonts':'src/fonts/**/*'
+        'fonts':'src/fonts/**/*',
+        'icons':'src/icons/**/*'
     },
     'projects': 'content.json'
 };
@@ -27,7 +29,7 @@ var dirs = {
 ////////////////////
 ///// RUN
 ////////////////////
-gulp.task('build', ['html', 'js', 'sass', 'fonts', 'assets']);
+gulp.task('build', ['html', 'js', 'sass', 'fonts', 'icons', 'assets']);
 
 gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch']);
 
@@ -60,6 +62,12 @@ gulp.task('js', function() {
 gulp.task('fonts', function () {
     gulp.src(dirs.src.fonts)
         .pipe(gulp.dest(dirs.public.fonts))
+        .on('change', browserSync.reload);
+});
+
+gulp.task('icons', function () {
+    gulp.src(dirs.src.icons)
+        .pipe(gulp.dest(dirs.public.icons))
         .on('change', browserSync.reload);
 });
 

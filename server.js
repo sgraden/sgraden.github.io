@@ -38,16 +38,14 @@ hbs.registerHelper('foo', function() {
 ///// Routes
 ////////////////////
 app.get("/", function(req, res) {
-    res.render(path.join(__dirname, "public", "views", "index.html"), {
-        project: projects
-    }); //Handlebars stuff
+    // res.render(path.join(__dirname, "public", "views", "index.html"), {
+    //     project: projects
+    // }); //template stuff
+    res.render(path.join(__dirname, "public", "views", "index.html"));
 });
 
 app.get("/projects", function(req, res) {
-    res.render(path.join(__dirname, "public", "views", "project.html"), {
-        project: projects[req.query.name],
-        projects: projects
-    }); //Handlebars stuff
+    res.render(path.join(__dirname, "public", "views", "projects", req.query.p + ".html"));
 });
 
 app.listen(8080, function() {

@@ -15,11 +15,11 @@
 
 </head>
 
-<body>
-    <div class="title section">
-        <canvas id="title-animation" width="100" height="100"></canvas>
-        <div class="title--container">
-            <div class="title--text">
+<body class="home">
+    <div class="cover">
+        <canvas id="cover--animation" width="100" height="100"></canvas>
+        <div class="cover--container">
+            <div class="cover--text">
                 <h1>Steven Raden</h1>
                 <h2>UX Design and Front-End Dev</h2>
             </div>
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="content">
+    <div class="main--content">
         <pre class="quote section">
 This hour is not my all of time,
 this place my all of earth...
@@ -43,44 +43,19 @@ And who slays me must overcome a world
             </div>
         </div>
         <div class="section">
-            <h2 class="section--title">
+            <h2 id="portfolio" class="section--title">
                 Portfolio
             </h2>
             <div class="section--content section--flex">
                 <div class="project--card">
-                    <img src="public/assets/test-images/bridge.jpeg" alt="">
-                    <div class="project--title">HelpGidget</div>
-                    <!-- <div class="blur"></div> -->
-                </div>
-                <div class="project--card">
-                    <img src="public/assets/test-images/dock.jpeg" alt="">
-                    <div class="project--title">Project2</div>
-                    <!-- <div class="blur"></div> -->
-                </div>
-                <div class="project--card">
-                    <img src="public/assets/test-images/lake.jpeg" alt="">
-                    <div class="project--title">SQL Stuff</div>
-                    <!-- <div class="blur"></div> -->
-                </div>
-                <div class="project--card">
-                    <img src="public/assets/test-images/orchard.jpeg" alt="">
-                    <div class="project--title">Other things</div>
-                    <!-- <div class="blur"></div> -->
-                </div>
-                <div class="project--card">
-                    <img src="public/assets/test-images/tree.jpeg" alt="">
-                    <div class="project--title">MagicMAn</div>
-                    <!-- <div class="blur"></div> -->
+                    <a href="/projects?p=helpgidget">
+                        <img src="public/assets/test-images/bridge.jpeg" alt="">
+                        <div class="project--title">HelpGidget</div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <filter id="blur">
-            <feGaussianBlur stdDeviation="10" />
-        </filter>
-    </svg>
 </body>
 
 </html>
