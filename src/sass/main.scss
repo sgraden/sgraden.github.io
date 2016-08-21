@@ -25,10 +25,11 @@ h2 {
     font-size: 1.25rem;
 }
 
-@import 'home';
-@import 'project';
-@import 'nav-bar';
-@import 'icons';
+.main--content { //main content of the page
+    max-width: 1064px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .section { //a section of content
     margin-bottom: 100px;
@@ -55,3 +56,8 @@ h2 {
 
     }
 }
+
+@import 'home';
+@import 'project';
+@import 'nav-bar';
+@import 'icons';
