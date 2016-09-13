@@ -1,0 +1,15 @@
+@mixin list-grid($gutter, $numCol) {
+    width: calc(#{100 / $numCol}% - (#{$gutter * 2}
+    - (#{$gutter * 2 / $numCol})));
+    margin: 24px $gutter;
+
+    position: relative;
+    transition: $transition-bezier;
+
+    &:nth-of-type(#{$numCol}n + 1) { //left side
+        margin-left: 0;
+    }
+    &:nth-of-type(#{$numCol}n) { //right side
+        margin-right: 0;
+    }
+}

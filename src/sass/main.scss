@@ -5,6 +5,7 @@ $header-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
                     0 1px 5px 0 rgba(0,0,0,.12);
 
 @import 'font-size'; //function for calculating REM based on font
+@import 'list-grid';
 
 html, body {
     margin: 0;
@@ -48,7 +49,7 @@ h2 {
             content: '';
             display: block;
             border-bottom: 1px solid black;
-            width: 200px;
+            width: 40%;
             margin: 0 auto;
         }
     }
@@ -65,8 +66,7 @@ h2 {
         }
 
         b {
-            font-weight: 400;
-            text-decoration: underline;
+            font-weight: 500;
             font-size: toRem(18);
         }
 
