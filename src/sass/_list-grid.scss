@@ -1,6 +1,5 @@
 @mixin list-grid($gutter, $numCol) {
-    width: calc(#{100 / $numCol}% - (#{$gutter * 2}
-    - (#{$gutter * 2 / $numCol})));
+    width: calc(#{100 / $numCol}% - (#{$gutter * 2} - (#{$gutter * 2 / $numCol})));
     margin: 24px $gutter;
 
     position: relative;

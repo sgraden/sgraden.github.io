@@ -30,7 +30,7 @@
         font-size: toRem(20);
     }
 
-    .project {
+    .portfolio {
         display: inline-flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -52,11 +52,12 @@
         &--title {
             position: absolute;
             bottom: 0px;
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.3);
             color: white;
             width: 100%;
             text-align: center;
             padding: 5px 0;
+            font-size: toRem(30);
         }
     }
 
