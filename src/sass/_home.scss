@@ -31,34 +31,59 @@
     }
 
     .portfolio {
-        display: inline-flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        a { //remove link style from cards
+            text-decoration: none;
+            color: black;
+        }
 
         &--card {
-            @include list-grid(8px, 3);
+            display: inline-flex;
+            padding: 12px;
+            margin-bottom: 24px;
+            transition: $transition-bezier;
+            transition-duration: .8s;
 
             &:hover {
-                box-shadow: 0 14px 28px rgba(0,0,0,0.25),
-                0 10px 10px rgba(0,0,0,0.22);
+                box-shadow: 0 5px 14px 2px rgba(0, 0, 0, .4);
+            }
+
+            .details {
+                flex-grow: 2;
+                padding: 0px 16px;
+                position: relative;
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 12px;
+                    font-size: toRem(34);
+                    font-weight: 200;
+                }
+
+                .description {
+                    &--role {
+                        position: absolute;
+                        bottom: 0px;
+                    }
+                }
             }
 
             img {
-                width: 100%;
-                display: block;
+                max-height: 200px;
+                max-width: 200px;
+                flex-grow: 1;
             }
         }
 
-        &--title {
-            position: absolute;
-            bottom: 0px;
-            background-color: rgba(255, 255, 255, 0.3);
-            color: white;
-            width: 100%;
-            text-align: center;
-            padding: 5px 0;
-            font-size: toRem(30);
-        }
+        // &--title {
+        //     position: absolute;
+        //     bottom: 0px;
+        //     background-color: rgba(255, 255, 255, 0.3);
+        //     color: white;
+        //     width: 100%;
+        //     text-align: center;
+        //     padding: 5px 0;
+        //     font-size: toRem(30);
+        // }
     }
 
 }
