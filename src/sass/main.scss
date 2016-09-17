@@ -69,7 +69,20 @@ h2 {
             font-size: toRem(18);
         }
 
+        &.details {
+            display: inline-flex;
+
+            .col {
+                @include list-grid(32px, 2);
+
+                div {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
     }
+
 }
 
 @import 'home';
