@@ -31,6 +31,10 @@ h2 {
     font-size: toRem(24);
 }
 
+.start-hidden {
+    display: none;
+}
+
 .main--content { //main content of the page
     max-width: 800px;
     margin-left: auto;
