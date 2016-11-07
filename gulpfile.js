@@ -1,9 +1,8 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var scss = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
 var sourcemaps = require('gulp-sourcemaps');
-
 
 var dirs = {
     'server': 'server.js',
@@ -16,7 +15,7 @@ var dirs = {
         'icons': 'public/icons'
     },
     'src': {
-        'sass': 'src/sass/**/*.scss',
+        'scss': 'src/scss/**/*.scss',
         'html': 'src/views/**/*.html',
         'js': 'src/js/**/*.js',
         'assets': 'src/assets/**/*',
@@ -29,34 +28,35 @@ var dirs = {
 ////////////////////
 ///// RUN
 ////////////////////
-gulp.task('build', ['html', 'js', 'sass', 'fonts', 'icons', 'assets']);
+gulp.task('build', ['html', 'js', 'scss', 'fonts', 'icons', 'assets']);
 
-gulp.task('watch', ['html:watch', 'js:watch', 'sass:watch']);
+gulp.task('watch', ['html:watch', 'js:watch', 'scss:watch']);
 
 gulp.task('default', ['build', 'watch', 'nodemon', 'browser-sync']);
 
 ////////////////////
 ///// BUILD
 ////////////////////
-gulp.task('sass', function() {
-    return gulp.src(dirs.src.sass)
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write('./maps')) //Write srcMaps to relative dir
-        .pipe(gulp.dest(dirs.public.css))
-        .pipe(browserSync.stream());
-});
-
 gulp.task('html', function() {
     gulp.src(dirs.src.html)
         .pipe(gulp.dest(dirs.public.html))
         .pipe(browserSync.stream());
 });
 
+
 gulp.task('js', function() {
     gulp.src(dirs.src.js)
         .pipe(gulp.dest(dirs.public.js))
         .on('change', browserSync.reload);
+});
+
+gulp.task('scss', function() {
+    return gulp.src(dirs.src.scss)
+        .pipe(sourcemaps.init())
+        .pipe(scss().on('error', scss.logError))
+        .pipe(sourcemaps.write('./maps')) //Write srcMaps to relative dir
+        .pipe(gulp.dest(dirs.public.css))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', function () {
@@ -88,8 +88,8 @@ gulp.task ('js:watch', function() {
     gulp.watch(dirs.src.js, ['js']);
 });
 
-gulp.task ('sass:watch', function() {
-    gulp.watch(dirs.src.sass, ['sass']);
+gulp.task ('scss:watch', function() {
+    gulp.watch(dirs.src.scss, ['scss']);
 });
 
 
