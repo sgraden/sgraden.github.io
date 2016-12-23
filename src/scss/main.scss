@@ -13,7 +13,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-size: 100%;
-    font-family: roboto;
+    font-family: roboto, sans-serif;
 }
 
 h1, h2 {
@@ -93,3 +93,4 @@ h2 {
 @import 'project';
 @import 'nav-bar';
 @import 'icons';
+@import 'tabs';
