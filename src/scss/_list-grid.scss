@@ -3,7 +3,6 @@
     margin: 24px $gutter;
 
     position: relative;
-    transition: $transition-bezier;
 
     &:nth-of-type(#{$numCol}n + 1) { //left side
         margin-left: 0;
