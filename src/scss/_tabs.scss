@@ -15,12 +15,11 @@
         padding: 16px 16px;
         font-size: toRem(24);
         border-bottom: $border-size solid rgba(0, 0, 0, 0);
-        // border-bottom: none;
         transition: $transition-bezier;
+        cursor: pointer;
 
         &:hover {
             border-bottom: $border-size solid grey;
-            // border-bottom: none;
         }
     }
 }
