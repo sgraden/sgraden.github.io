@@ -21,7 +21,7 @@
         flex-wrap: wrap;
 
         &--item {
-            @include list-grid(8px, 2);
+            @include list-grid(2);
             img {
                 width: 100%;
                 display: block;

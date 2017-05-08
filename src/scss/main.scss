@@ -1,4 +1,5 @@
 $color-primary: #2642A4;
+$color-black: rgb(51, 51, 51);
 $transition-bezier: all 0.3s cubic-bezier(.25,.8,.25,1);
 $header-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
                     0 3px 1px -2px rgba(0,0,0,.2),
@@ -36,9 +37,10 @@ h2 {
 }
 
 .main--content { //main content of the page
-    max-width: 800px;
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+    padding: 128px;
 }
 
 .section { //a section of content
@@ -77,7 +79,7 @@ h2 {
             display: inline-flex;
 
             .col {
-                @include list-grid(32px, 2);
+                // @include list-grid(2, 32px);
 
                 div {
                     margin-bottom: 8px;
