@@ -31,18 +31,30 @@
     }
 
     .portfolio {
-        display: inline-flex;
+        display: flex;
         flex-wrap: wrap;
 
         a { //remove link style from cards
             @include list-grid(2);
             text-decoration: none;
             color: $color-black;
+            min-width: 500px;
+
+
+            //alternates image side on portfoliow cards
+            &:nth-child(even) {
+                .portfolio--card {
+                    img {
+                        order: 2;
+                    }
+                }
+            }
         }
+
+
 
         &--card {
             display: inline-flex;
-            padding: 8px 16px;
             margin-bottom: 24px;
             transition: $transition-bezier;
             transition-duration: 300ms;
@@ -53,18 +65,25 @@
 
             .details {
                 flex-grow: 2;
-                margin-right: 16px;
+                margin-left: 16px;
                 position: relative;
+                padding: 8px 8px;
+                order: 1;
 
                 h3 {
-                    margin-top: 0;
-                    margin-bottom: 12px;
-                    font-size: toRem(34);
+                    margin: 0;
+                    font-size: toRem(30);
                     font-weight: 200;
                 }
 
                 .description {
                     font-size: toRem(18);
+                    min-width: 100%;
+
+                    &--role {
+                        position: absolute;
+                        bottom: 16px;
+                    }
                 }
             }
 
