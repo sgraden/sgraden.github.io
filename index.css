@@ -1,0 +1,122 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  min-height: 100vh;
+  background-color: royalblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+p {
+  color: white;
+  font-size: 1.5rem;
+  font-family: roboto;
+  text-align: center;
+  font-weight: 200;
+}
+
+strong {
+  font-weight: 400;
+}
+
+/*animation*/
+$spinner-color-1: #fed;
+$spinner-color-2: #ff8e3e;
+$box-size: 60px;
+$border-size: $box-size / 7;
+$spinner-size: $box-size - (2 * $border-size);
+$size-modifier: 20px;
+
+.circle {
+  margin: 10px 0px;
+  height: $box-size;
+  width: $box-size;
+  position: relative;
+
+  &::after, &::before {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    height: $spinner-size;
+    width: $spinner-size;
+    border: $border-size solid transparent;
+
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  &::after {
+    border-top-color: $spinner-color-1;
+    border-bottom-color: $spinner-color-1;
+    animation-name: inner-ring;
+    animation-direction: alternate;
+  }
+
+  &::before {
+    border-left-color: $spinner-color-2;
+    border-right-color: $spinner-color-2;
+    animation-name: outer-ring;
+    animation-direction: alternate-reverse;
+  }
+}
+
+$rotation: 720deg;
+
+@mixin locked() {
+  width: $spinner-size;
+  height: $spinner-size;
+  top: 0;
+  left: 0;
+}
+
+@mixin unlocked($modifier) {
+  $modified-size: $spinner-size + $modifier;
+  width: $modified-size;
+  height: $modified-size;
+  top: -($modifier/2);
+  left: -($modifier/2);
+}
+
+
+@keyframes inner-ring {
+  10% {
+    @include locked();
+    transform: rotate(0deg);
+  }
+  15%, 90% {
+    @include unlocked(30px);
+  }
+  90% {
+    transform: rotate($rotation);
+  }
+  95%, 100% {
+    @include locked();
+    transform: rotate($rotation);
+  }
+}
+
+@keyframes outer-ring {
+  10% {
+    @include locked();
+    transform: rotate(0deg);
+  }
+  15%, 90% {
+    @include unlocked(60px);
+  }
+  90% {
+    transform: rotate($rotation);
+  }
+  95%, 100% {
+    @include locked();
+    transform: rotate($rotation);
+  }
+
+}
