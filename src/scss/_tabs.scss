@@ -1,0 +1,25 @@
+.tab-container {
+    width: 100%;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px 0px 48px 0px;
+    border-bottom: 2px solid $color-primary;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    div.tab {
+        $border-size: 2px;
+
+        padding: 16px 16px;
+        font-size: toRem(24);
+        border-bottom: $border-size solid rgba(0, 0, 0, 0);
+        transition: $transition-bezier;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: $border-size solid grey;
+        }
+    }
+}

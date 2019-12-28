@@ -1,0 +1,110 @@
+.home {
+    .cover {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+
+        &--container { //
+            width: 100vw;
+            height: 150px;
+            position: absolute;
+            bottom: 0px;
+
+            background: $color-primary;
+            text-align: center;
+
+        }
+        &--text {
+            color: white;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    pre { //my quote :D
+        margin-top: 100px;
+        text-align: center;
+        font-style: italic;
+        font-size: toRem(20);
+    }
+
+    .portfolio {
+        display: flex;
+        flex-wrap: wrap;
+
+        a { //remove link style from cards
+            @include list-grid(2);
+            text-decoration: none;
+            color: $color-black;
+            min-width: 500px;
+
+
+            //alternates image side on portfoliow cards
+            &:nth-child(even) {
+                .portfolio--card {
+                    img {
+                        order: 2;
+                    }
+                }
+            }
+        }
+
+
+
+        &--card {
+            display: inline-flex;
+            margin-bottom: 24px;
+            transition: $transition-bezier;
+            transition-duration: 300ms;
+
+            &:hover {
+                box-shadow: 0 5px 14px 2px rgba(0, 0, 0, .4);
+            }
+
+            .details {
+                flex-grow: 2;
+                margin-left: 16px;
+                position: relative;
+                padding: 8px 8px;
+                order: 1;
+
+                h3 {
+                    margin: 0;
+                    font-size: toRem(30);
+                    font-weight: 200;
+                }
+
+                .description {
+                    font-size: toRem(18);
+                    min-width: 100%;
+
+                    &--role {
+                        position: absolute;
+                        bottom: 16px;
+                    }
+                }
+            }
+
+            img {
+                height: 200px;
+                min-width: 200px;
+                width: 200px;
+                flex-grow: 1;
+            }
+        }
+
+        // &--title {
+        //     position: absolute;
+        //     bottom: 0px;
+        //     background-color: rgba(255, 255, 255, 0.3);
+        //     color: white;
+        //     width: 100%;
+        //     text-align: center;
+        //     padding: 5px 0;
+        //     font-size: toRem(30);
+        // }
+    }
+
+}

@@ -1,0 +1,23 @@
+{
+  "name": "sraden.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "reposity": "https://github.com/sgraden/sraden.com",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "hbs": "^4.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC"
+}
