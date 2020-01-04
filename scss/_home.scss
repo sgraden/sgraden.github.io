@@ -4,7 +4,7 @@
         width: 100vw;
         position: relative;
 
-        &--container { //
+        &--container {
             width: 100vw;
             height: 150px;
             position: absolute;
@@ -30,50 +30,50 @@
         font-size: toRem(20);
     }
 
-    .portfolio {
+    .work {
         display: flex;
         flex-wrap: wrap;
 
         a { //remove link style from cards
-            @include list-grid(2);
             text-decoration: none;
             color: $color-black;
             min-width: 500px;
-
-
-            //alternates image side on portfoliow cards
-            &:nth-child(even) {
-                .portfolio--card {
-                    img {
-                        order: 2;
-                    }
-                }
-            }
         }
 
 
 
         &--card {
-            display: inline-flex;
             margin-bottom: 24px;
             transition: $transition-bezier;
             transition-duration: 300ms;
+            transition-property: all;
+            border: solid thin rgba(0, 0, 0, .1);
+            border-radius: 16px;
 
             &:hover {
-                box-shadow: 0 5px 14px 2px rgba(0, 0, 0, .4);
+                box-shadow: 0 5px 14px 2px rgba(0, 0, 0, .2);
+                border: solid thin rgba(0, 0, 0, 0);
+            }
+           
+            img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 100%;
+                min-height: 200px;
+                border-radius: 16px 16px 0 0;
             }
 
             .details {
-                flex-grow: 2;
                 margin-left: 16px;
                 position: relative;
-                padding: 8px 8px;
+                padding: 24px 24px;
                 order: 1;
 
                 h3 {
                     margin: 0;
-                    font-size: toRem(30);
-                    font-weight: 200;
+                    font-size: toRem(24);
+                    font-weight: 400;
                 }
 
                 .description {
@@ -81,30 +81,11 @@
                     min-width: 100%;
 
                     &--role {
-                        position: absolute;
-                        bottom: 16px;
+                        margin-top: 16px;
                     }
                 }
             }
-
-            img {
-                height: 200px;
-                min-width: 200px;
-                width: 200px;
-                flex-grow: 1;
-            }
         }
-
-        // &--title {
-        //     position: absolute;
-        //     bottom: 0px;
-        //     background-color: rgba(255, 255, 255, 0.3);
-        //     color: white;
-        //     width: 100%;
-        //     text-align: center;
-        //     padding: 5px 0;
-        //     font-size: toRem(30);
-        // }
     }
 
 }
