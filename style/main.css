@@ -18,6 +18,54 @@ h2 {
   font-weight: 200;
   font-size: 1.5rem; }
 
+header {
+  position: fixed;
+  width: 100vw;
+  background-color: #fff;
+  z-index: 1;
+  transition-property: box-shadow;
+  transition-duration: .5s; }
+
+.header--content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1rem 0; }
+  .header--content h1 {
+    font-weight: 400;
+    font-size: 1.5rem; }
+  .header--content nav ul {
+    list-style-type: none;
+    display: inline-flex;
+    margin: 0;
+    margin-top: 4px;
+    padding-left: 0;
+    height: 100%; }
+    .header--content nav ul li {
+      padding: 0 1rem 0 1rem;
+      transition-property: color;
+      cursor: pointer; }
+      .header--content nav ul li:after {
+        content: "";
+        display: block;
+        width: 0%;
+        padding-top: 4px;
+        border-bottom: 4px solid #2642A4;
+        box-sizing: border-box;
+        transition: .5s; }
+      .header--content nav ul li a {
+        color: #1d1f2e;
+        text-decoration: none;
+        transition-property: color;
+        transition-duration: .5s; }
+      .header--content nav ul li:hover:after {
+        width: 50%; }
+      .header--content nav ul li:hovera {
+        color: white; }
+
 .start-hidden {
   display: none; }
 
@@ -39,73 +87,43 @@ h2 {
     font-size: 1.25rem;
     width: 100%; }
     .section--content b {
-      font-weight: 500;
+      font-weight: 400;
       font-size: 1.125rem; }
-    .section--content.details {
-      display: inline-flex; }
-      .section--content.details .col div {
-        margin-bottom: 8px; }
 
-.home .cover {
-  height: 100vh;
-  width: 100vw;
-  position: relative; }
-  .home .cover--container {
-    width: 100vw;
-    height: 150px;
-    position: absolute;
-    bottom: 0px;
-    background: #2642A4;
-    text-align: center; }
-  .home .cover--text {
-    color: white;
+.home .work a {
+  text-decoration: none;
+  color: #1d1f2e;
+  min-width: 500px; }
+.home .work--card {
+  margin-bottom: 4rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 300ms;
+  transition-property: all;
+  border: solid thin rgba(0, 0, 0, 0.1);
+  border-radius: 16px; }
+  .home .work--card:hover {
+    box-shadow: 0 5px 14px 2px rgba(0, 0, 0, 0.2);
+    border: solid thin rgba(0, 0, 0, 0); }
+  .home .work--card img {
+    object-fit: cover;
+    object-position: center;
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); }
-.home pre {
-  margin-top: 100px;
-  text-align: center;
-  font-style: italic;
-  font-size: 1.25rem; }
-.home .work {
-  display: flex;
-  flex-wrap: wrap; }
-  .home .work a {
-    text-decoration: none;
-    color: #1d1f2e;
-    min-width: 500px; }
-  .home .work--card {
-    margin-bottom: 24px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 300ms;
-    transition-property: all;
-    border: solid thin rgba(0, 0, 0, 0.1);
-    border-radius: 16px; }
-    .home .work--card:hover {
-      box-shadow: 0 5px 14px 2px rgba(0, 0, 0, 0.2);
-      border: solid thin rgba(0, 0, 0, 0); }
-    .home .work--card img {
-      object-fit: cover;
-      object-position: center;
-      width: 100%;
-      height: 100%;
-      min-height: 200px;
-      border-radius: 16px 16px 0 0; }
-    .home .work--card .details {
-      margin-left: 16px;
-      position: relative;
-      padding: 24px 24px;
-      order: 1; }
-      .home .work--card .details h3 {
-        margin: 0;
-        font-size: 1.5rem;
-        font-weight: 400; }
-      .home .work--card .details .description {
-        font-size: 1.125rem;
-        min-width: 100%; }
-        .home .work--card .details .description--role {
-          margin-top: 16px; }
+    height: 100%;
+    min-height: 150px;
+    border-radius: 16px 16px 0 0; }
+  .home .work--card .details {
+    margin-left: 16px;
+    position: relative;
+    padding: 24px 24px; }
+    .home .work--card .details h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 400; }
+    .home .work--card .details .description {
+      font-size: 1.125rem;
+      min-width: 100%; }
+      .home .work--card .details .description--role {
+        margin-top: 16px; }
 
 .project {
   margin-top: 80px; }
