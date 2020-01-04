@@ -125,31 +125,6 @@ header {
       .home .work--card .details .description--role {
         margin-top: 16px; }
 
-.project {
-  margin-top: 80px; }
-  .project .img--banner {
-    width: 100%;
-    margin-bottom: 40px; }
-  .project .img--section {
-    width: 80%;
-    text-align: center; }
-  .project .section--image {
-    text-align: center; }
-  .project .img--gallery {
-    display: inline-flex;
-    flex-wrap: wrap; }
-    .project .img--gallery--item {
-      width: calc(50% - (32px - (16px)));
-      margin: 24px 16px;
-      position: relative; }
-      .project .img--gallery--item:nth-child(2n + 1) {
-        margin-left: 0; }
-      .project .img--gallery--item:nth-child(2n) {
-        margin-right: 0; }
-      .project .img--gallery--item img {
-        width: 100%;
-        display: block; }
-
 .nav-bar {
   background-color: #2642A4;
   overflow: hidden;
