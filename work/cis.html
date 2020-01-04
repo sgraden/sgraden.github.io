@@ -33,19 +33,151 @@
             </h2>
             <div class="section--content">
                 <p>
-                    **Description of Project**
+                    Work with the renown internet security company, Cloudflare, to provide IBM Cloud customers with improved security, technology, and power.
+                </p>
+                <!--Change this from description if you want to mess with style-->
+                <div class="description--role"> 
+                    Role: <b>UX Design Lead</b> <br>
+                    Timeline: <b>September 2017 - June 2018</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Intro</h3>
+            <div class="section--content">
+                <p>
+                    The Cloud Internet Services offering is a joint partnership between IBM and the internet security and performance company, Cloudflare. In this partnership, IBM gained the suite of world class services that Cloudflare offered while Cloudflare would be able to break through into the enterprise tier clients that IBM has.
                 </p>
             </div>
         </div>
 
         <div class="section">
-            <h3 id="setup" class="section--title">
-                Setup
-            </h3>
-            <div class="section--content work">
-                
+            <h3 id="setup" class="section--title">Project Kickoff</h3>
+            <div class="section--content">
+                <p>
+                    The partnership and project was initiated by our Network Offering Lead, Haechul. He was negotiating the deal with Cloudflare representatives and decided to bring our design team in to demonstrate how we would handle the project.
+                </p>
+    
+                <p>
+                    Our initial meeting was in the form of a two day Design Thinking workshop between Cloudflare project leadership and design team, including their Head and Director of Product. We ran through a series of team building and project scoping activities such as Hopes and Fears, Empathy maps, and As-Is journey maps. This left us with a good understanding of the goals of the Cloudflare teams, how they work, and what resources they had.
+                </p>
+
+                <p>
+                    A few months later, when this project really got the go-ahead, I organized a number of meetings directly with the Cloudflare design teams so that I could get access to research and tips related to the services I was starting with. I intended to leverage as much of their experience and knowledge that I could.
+                </p>
+
+                </p>
             </div>
         </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Understanding</h3>
+            <div class="section--content">
+                <p>
+                    Initial target services:
+                    Caching, WAF, GLB, DDoS Protection, Encryption, DNS Records, Monitoring/Metrics
+                </p>
+
+                <p>
+                    At this point I had been working with networking technology for over a year, giving me a relatively deep understanding of the inner workings of the Cloudflare service. For initial release, we were only targeting the above services, a small subset of Cloudflare’s total.
+                </p>
+
+                <p>
+                    This range of services would enable a customer to significantly improve their applications performance and security with minimal effort. In terms of the experience, we were aiming for a few things:
+                </p>
+                
+                <ul>
+                    <li>Enable the self serve simplicity that Cloudflare provides</li>
+                    <li>More control and information for our enterprise users</li>
+                    <li>Simplify and integrate the complex services into our platform</li>
+                </ul>
+
+                <p>
+                    As I worked through designing each service, I started by introducing myself to the services as it was offered on Cloudflare’s platform. I configured a website and server to properly work with the targeted services, working with the dev teams to get more complex networks configured for testing where needed. Throughout this process I documented the user flows I went through to understand what steps were required and when. As I identified usability issues on the Cloudflare platform, I noted them and brought them to the Cloudflare team to dig deeper.
+                </p>
+
+                <p>
+                    As is common, I was told that many issues were do to legacy systems or design system limitations such as their Load Balancer service which was managed through a series of complex, confusing modals. These were the areas where I noted the greatest potential for advancements in the experience.
+                </p>
+
+                <p>
+                    With a more in-depth understanding of the product and how it works, I felt comfortable moving forward to plan testing and create some wireframes.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Research</h3>
+            <div class="section--content">
+                <p>
+                    I created a set of wireframes that I knew worked with our existing design system and maintained consistency with our platform. I used these wireframes to help direct the conversations with our teams. I have found that having a set of visuals, even in the most limited form, aligns the terminology a team uses and quickly identifies what questions still need to be asked.
+                </p>
+
+                <p>
+                    I took the time to look at the rest of the market to get an understanding of other CDN and security providers such as Fastly, Akamai, and our own Security Group and Firewall offerings on IBM Cloud. I followed similar steps as my on-boarding to Cloudflare. Looking at competitors offerings and reading their documentation helped me to understand the variety of use cases our users may have.
+                </p>
+
+                <p>
+                    I began launching usability tests with UserTesting and Invision prototypes. The tests were conducted remotely with the user having simple steps and goals while their screen was recorded. I configured the test for basic “First Use” situations as well as more complicated Web Application Firewall (WAF) configurations to validate that components and visuals were working as expected. The overall purpose of these was quickly catch major user flow issues and understand if the taxonomy, hierarchy, and organization of the platform made sense.
+                </p>
+
+                <p>
+                    Our offering manager provided us with a number of internal stakeholder teams to get feedback from. While internal is not ideal, these were teams that we expected to adopt the service. These sessions were monitored and fairly open ended discussions about our potential UI and service. We focused on questions around “when” and “how” users might take certain actions that we offer. Some of these users were engineers from our Kubernetes team as well as solution architects focused on documenting how services can be used together to form a solution.
+                </p>
+
+                <p>
+                    We paired this feedback with research from the Cloudflare team and, with some updates, were confident that the designs and functionality we were offering were simple to use, aligned with the platform, and matched the mental models users would expect. Some of the Cloudflare team actually mentioned we were a pretty strong improvement in organization and interaction relative to their UI.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Challenges</h3>
+            <div class="section--content">
+                <p>
+                    One of the designs that took the longest to complete was our on-boarding process. Once a user places the order, their browser is navigated to the “overview” page of the service where they can see service functions and the primary navigation on the left. Our initial intent was to lock the user into a particular space with the required steps and guidance to finish setting up. Unfortunately, some technical complexities made that not very achievable. So the team and I persevered and look into other implementations.
+                </p>
+                <p>
+                    A huge piece of on-boarding for Cloud Internet Services (and Cloudflare) is the user needs to change their domain’s name servers to direct to this service. Until they accomplish that, none of the changes they make on our service will affect them. However, domain name server changes can also make a website unavailable if the configurations are setup before the change. So there was a balance of, let people configure and twist the knobs of our service, but keep guiding them back to that on-boarding, required step of changing the name server.
+                </p>
+                <p>
+                    When they are ready, changing name servers requires the user enters certain information from us on their domain managers site. Trying to guide a user through steps outside of our platform was new to me, so I looked to others with more experience. Using sites like like <a target="_blank" href="https://www.useronboard.com">UserOnboard.com</a> I was able to get some strategies such as breaking down steps that go outside of the main experience by creating small, individual tasks that are easy to complete. Hopefully, the user will return for guidance and be kept invested in the flow, regardless of where it takes them.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Results</h3>
+            <div class="section--content">
+                <p>
+                    Our initial offering launched with a bang! John Considine, our GM, announced the partnership and release with the CEO of Cloudflare at IBM’s Think conference. It was one of the larger releases I had worked on since starting at IBM. The feedback we began receiving via face-to-face and NPS surveys was positive, and we continued to edit, improve, and grow the service. As an initial suite, it was relatively simple and straightforward as we hoped. Unfortunately, I was only able to continue working on the team for a few more months before transitioning to another project.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Related Tasks</h3>
+            <div class="section--content">
+                <p>
+                    I produced a set of demo videos showcasing the developed UI and providing instructional voice-overs for some of the functionality. These videos were used at IBM’s Think conference in Las Vegas at the CIS Demo Booth. <a target="_blank" href="https://drive.google.com/drive/folders/1mzjxrc6w2R_BrwOd16owIxvh4fD8IAC-">Demo videos</a>
+                </p>
+            </div>
+        </div> 
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Related Links</h3>
+            <div class="section--content">
+                <ul>
+                    <li><a target="_blank" href="https://blog.cloudflare.com/ibm-cloud-and-cloudflare/">Cloudflare Announcement Blog</a></li>
+                    <li><a target="_blank" href="https://fortune.com/2018/03/14/ibm-amazon-cloudflare-partner/">Fortune: IBM and Cloudflare Join Forces to Take on Amazon</a></li>
+                    <li><a target="_blank" href="https://drive.google.com/open?id=1SGf4PXtUKRCwqDQAG0pMXTT7PaO_0QZL">Screenshots Google Drive Folder</a></li>
+                </ul>
+            </div>
+        </div> 
+
     </div>
 </body>
 </html>
