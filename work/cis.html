@@ -19,6 +19,7 @@
             <nav>
                 <ul> <!--Iissue with clicking. Has to be directly on the link vs in the LI-->
                     <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../assets/Steven Raden Resume - 2019.pdf">Resume</a></li>
                     <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -40,6 +41,11 @@
                     Role: <b>UX Design Lead</b> <br>
                     Timeline: <b>September 2017 - June 2018</b>
                 </div>
+                    <div class="img--gallery">
+                        <img class="img--gallery--item" src="../assets/images/cis-project/cf-overview.png" alt="">
+                        <img class="img--gallery--item" src="../assets/images/cis-project/cis-overview.png" alt="Screenshot of CIS overview page">
+                        
+                    </div>
             </div>
         </div>
 
@@ -49,6 +55,7 @@
                 <p>
                     The Cloud Internet Services offering is a joint partnership between IBM and the internet security and performance company, Cloudflare. In this partnership, IBM gained the suite of world class services that Cloudflare offered while Cloudflare would be able to break through into the enterprise tier clients that IBM has.
                 </p>
+                <img class="no-shadow" src="../assets/images/cis-project/cloudflare-ibm-logo.png" alt="">
             </div>
         </div>
 
@@ -140,12 +147,28 @@
                 <p>
                     One of the designs that took the longest to complete was our on-boarding process. Once a user places the order, their browser is navigated to the “overview” page of the service where they can see service functions and the primary navigation on the left. Our initial intent was to lock the user into a particular space with the required steps and guidance to finish setting up. Unfortunately, some technical complexities made that not very achievable. So the team and I persevered and look into other implementations.
                 </p>
+
+                
+
                 <p>
                     A huge piece of on-boarding for Cloud Internet Services (and Cloudflare) is the user needs to change their domain’s name servers to direct to this service. Until they accomplish that, none of the changes they make on our service will affect them. However, domain name server changes can also make a website unavailable if the configurations are setup before the change. So there was a balance of, let people configure and twist the knobs of our service, but keep guiding them back to that on-boarding, required step of changing the name server.
                 </p>
+                
+                <figure>
+                    <img src="../assets/images/cis-project/digitalocean-dns.png" alt="Screenshot of CIS overview page in on-boarding state">
+                    <figcaption>Example of Name Server management on digitalocean.com</figcaption>
+                </figure>
+
                 <p>
-                    When they are ready, changing name servers requires the user enters certain information from us on their domain managers site. Trying to guide a user through steps outside of our platform was new to me, so I looked to others with more experience. Using sites like like <a target="_blank" href="https://www.useronboard.com">UserOnboard.com</a> I was able to get some strategies such as breaking down steps that go outside of the main experience by creating small, individual tasks that are easy to complete. Hopefully, the user will return for guidance and be kept invested in the flow, regardless of where it takes them.
+                    When they are ready, changing name servers requires the user enters certain information from us on their domain managers site. Trying to guide a user through steps outside of our platform was new to me, so I looked to others with more experience. Using sites like <a target="_blank" href="https://www.useronboard.com">UserOnboard.com</a> I was able to get some strategies such as breaking down steps that go outside of the main experience by creating small, individual tasks that are easy to complete. Hopefully, the user will return for guidance and be kept invested in the flow, regardless of where it takes them.
                 </p>
+                <div class="img--gallery">
+                    <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-1.png" alt="Screenshot of CIS overview page in on-boarding state">
+                    <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-3.png" alt="Screenshot of CIS overview page in on-boarding state">
+                    <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-uploaded records.png" alt="Screenshot of CIS overview page in on-boarding state">
+                    <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-4.png" alt="Screenshot of CIS overview page in on-boarding state">
+                    <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-5.png" alt="Screenshot of CIS overview page in on-boarding state">
+                </div>
             </div>
         </div>
 
@@ -153,8 +176,12 @@
             <h3 id="setup" class="section--title">Results</h3>
             <div class="section--content">
                 <p>
-                    Our initial offering launched with a bang! John Considine, our GM, announced the partnership and release with the CEO of Cloudflare at IBM’s Think conference. It was one of the larger releases I had worked on since starting at IBM. The feedback we began receiving via face-to-face and NPS surveys was positive, and we continued to edit, improve, and grow the service. As an initial suite, it was relatively simple and straightforward as we hoped. Unfortunately, I was only able to continue working on the team for a few more months before transitioning to another project.
+                    Our initial offering launched with a bang! John Considine, our GM, announced the partnership and release with the CEO of Cloudflare, Matthew Prince, at IBM’s Think conference. It was one of the larger releases I had worked on since starting at IBM. The feedback we began receiving via face-to-face and NPS surveys was positive, and we continued to edit, improve, and grow the service. As an initial suite, it was relatively simple and straightforward as we hoped. Unfortunately, I was only able to continue working on the team for a few more months before transitioning to another project.
                 </p>
+                <figure>
+                    <img src="../assets/images/cis-project/cis-think-announcement.jpg" alt="Image of John Considine (GM IBM Cloud) announcing release of CIS at Think 2018">
+                    <figcaption>John Considine (GM IBM Cloud) announcing release of CIS at Think 2018</figcaption>
+                </figure>
             </div>
         </div>
 
@@ -173,7 +200,8 @@
                 <ul>
                     <li><a target="_blank" href="https://blog.cloudflare.com/ibm-cloud-and-cloudflare/">Cloudflare Announcement Blog</a></li>
                     <li><a target="_blank" href="https://fortune.com/2018/03/14/ibm-amazon-cloudflare-partner/">Fortune: IBM and Cloudflare Join Forces to Take on Amazon</a></li>
-                    <li><a target="_blank" href="https://drive.google.com/open?id=1SGf4PXtUKRCwqDQAG0pMXTT7PaO_0QZL">Screenshots Google Drive Folder</a></li>
+                    <li><a href="https://blog.cloudflare.com/announcing-the-new-cloudflare-partner-platform/#the-igm-partnership">Cloudflare Partnership Program: Working with IBM Cloud Teams</a></li>
+                    <!-- <li><a target="_blank" href="https://drive.google.com/open?id=1SGf4PXtUKRCwqDQAG0pMXTT7PaO_0QZL">Screenshots Google Drive Folder</a></li> -->
                 </ul>
             </div>
         </div> 

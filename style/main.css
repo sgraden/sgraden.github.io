@@ -125,6 +125,38 @@ header {
       .home .work--card .details .description--role {
         margin-top: 16px; }
 
+.project figure {
+  margin: 0; }
+  .project figure figcaption {
+    font-size: 1rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem; }
+.project img {
+  max-width: 100%;
+  margin: 2rem 0 2rem 0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .project img.no-shadow {
+    box-shadow: none; }
+.project .img--gallery {
+  display: inline-flex;
+  flex-wrap: wrap; }
+  .project .img--gallery--item {
+    width: calc(50% - (32px - (16px)));
+    margin: 24px 16px;
+    position: relative; }
+    .project .img--gallery--item:nth-child(2n + 1) {
+      margin-left: 0; }
+    .project .img--gallery--item:nth-child(2n) {
+      margin-right: 0; }
+    .project .img--gallery--item img {
+      width: 100%;
+      display: block; }
+
 .nav-bar {
   background-color: #2642A4;
   overflow: hidden;

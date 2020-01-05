@@ -1,17 +1,41 @@
 .project {
 
+    figure {
+        margin: 0;
+
+        figcaption {
+            font-size: toRem(16);
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        margin: 2rem 0 2rem 0;
+        -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        &.no-shadow {
+            box-shadow: none;
+        }
+    }
 
 
-    // .img--gallery {
-    //     display: inline-flex;
-    //     flex-wrap: wrap;
+    .img--gallery {
+        display: inline-flex;
+        flex-wrap: wrap;
 
-    //     &--item {
-    //         @include list-grid(2);
-    //         img {
-    //             width: 100%;
-    //             display: block;
-    //         }
-    //     }
-    // }
+        &--item {
+            @include list-grid(2);
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
 }
