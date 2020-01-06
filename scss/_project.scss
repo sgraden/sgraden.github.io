@@ -1,5 +1,11 @@
 .project {
 
+    &--title {
+        color: $color-primary;
+        padding-bottom: 16px;
+        border-bottom: 4px solid $color-primary;
+    }
+
     figure {
         margin: 0;
 

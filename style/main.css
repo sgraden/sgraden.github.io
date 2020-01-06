@@ -125,6 +125,10 @@ header {
       .home .work--card .details .description--role {
         margin-top: 16px; }
 
+.project--title {
+  color: #2642A4;
+  padding-bottom: 16px;
+  border-bottom: 4px solid #2642A4; }
 .project figure {
   margin: 0; }
   .project figure figcaption {
