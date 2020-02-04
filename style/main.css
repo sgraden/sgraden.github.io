@@ -4,7 +4,8 @@ html, body {
   height: 100%;
   width: 100%;
   font-size: 100%;
-  font-family: roboto, sans-serif, goober; }
+  font-family: roboto, sans-serif, goober;
+  background-color: #fafafb; }
 
 h1, h2 {
   margin: 0; }
@@ -97,13 +98,14 @@ header {
 .home .work--card {
   margin-bottom: 4rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 300ms;
+  transition-duration: 800ms;
   transition-property: all;
-  border: solid thin rgba(0, 0, 0, 0.1);
-  border-radius: 16px; }
+  border-radius: 30px;
+  background: #fbfbff;
+  box-shadow: 10px 10px 40px #dddde0, -10px -10px 40px #ffffff;
+  border: 1px solid #f3f3f7e6; }
   .home .work--card:hover {
-    box-shadow: 0 5px 14px 2px rgba(0, 0, 0, 0.2);
-    border: solid thin rgba(0, 0, 0, 0); }
+    box-shadow: 4px 4px 20px #dddde0, -4px -4px 20px #ffffff; }
   .home .work--card img {
     object-fit: cover;
     object-position: center;
@@ -111,7 +113,7 @@ header {
     height: 100%;
     min-height: 150px;
     max-height: 250px;
-    border-radius: 16px 16px 0 0; }
+    border-radius: 30px 30px 0 0; }
   .home .work--card .details {
     margin-left: 16px;
     position: relative;
