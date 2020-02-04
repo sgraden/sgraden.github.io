@@ -62,6 +62,31 @@
         <div class="section">
             <h3 id="setup" class="section--title">Brief Summary</h3>
             <div class="section--content">
+                <p>
+                    The VPC project, codenamed Genesis, was one of the longest projects I have been on. While this project was one of innovation, exploration, and evolution of our offerings it was also filled with the complexities of communication, priorities, hopes and fears.
+                </p>
+
+                <p>
+                    Genesis was born from the need to evolve the flexibility and simplicity of our powerful physical technology to keep up with the expectations of the cloud market. At the same time, our Innovation Lab was leading this charge with an advanced new piece of network hardware to leap-frog our competition. At this point the design was being solely driven by my future design lead Megan Baxter.
+                </p>
+
+                <p>
+                    While Megan had been working on VPC for around 6 months, I was working on our Networking Design Team. My primary focus was our new offerings CDN and Cloud Internet Services (See project). Our network team began getting notice of a new project codenamed “Wrigley” (after Wrigley Field, see IBM can be fun!).
+                </p>
+
+                <p>
+                    Wrigley was a new networking tech that was created for evolving the flexibility and simplicity of our powerful, physical technology...wait this sounds familiar.
+                </p>
+
+                <p>
+                    As we were being on-boarded to this project, our design team immediately began noticing that this was doing exactly what the Genesis project was, albeit with a shorter time frame and with the goal of catching up to competition Vs. leap-frogging. Along with our design work, we began prioritizing improving communication between teams to help determine the future of the projects and our go-to-market strategies.
+                </p>
+
+                <p>
+                    Our team saw both the double work being executed, as well as how we would end up being represented to and how we were going to confuse our customers and we were concerned. However, we also understood how similar the two technologies were and I recognized that any work done on one, could be replicated for the other depending on how things shook out.
+                </p>
+
+                ...More to come
 
             </div>
         </div>
@@ -94,7 +119,25 @@
         <div class="section">
             <h3 id="setup" class="section--title">IP Range Visualization</h3>
             <div class="section--content">
+                <p>
+                    At the core of an applications infrastructure is its network which is broken into a series of groups of IP addresses called “Subnets”. Subnets are generally notated in an “IP Range” or “CIDR” format such as 192.168.0.0/24. That converts to the range 192.168.0.1-192.168.0.254 for a total of 256 IP addresses that can be connected to 256 network devices such as a computer. The other trick to this is that IP ranges generally aren’t allowed to overlap with each other. While simple arrangements of networks are relatively easy to navigate, more complex situations become exhausting and unpleasant to work with. This led a number of our users to create various other documents just to track their environment.
+                </p>
 
+                <p>
+                    Through a brainstorming session with our development team, designers, and offering managers, we noticed that while many network architects have grown to accept this process, we could feasibly make it simpler for those that prefer.
+                </p>
+
+                <p>
+                    This initiative was largely guided by our VPC design lead, Megan Baxter. She arranged a series of session where our team of 4 designers diverged and converged, identified focuses, iterated, got feedback from development teams, and ultimately built an IP Range visualization and selector.
+                </p>
+
+                <p>
+                    While I was a participant in the designs, I tried to also be the touchpoint for the math and technology behind these ranges. Most of my knowledge came from reviewing videos, reading articles, and studying portions of “AWS Certified Solutions Architect” course on Udemy.com. I then organized the important information into a quick crash course for our team. This helped our team to have a more targeted and realistic approach to the problem and to help with motivation and moral around the problem (Working on something you understand is a fast way to get someone to stop working on it).
+                </p>
+
+                <p>
+                    Where competitors simply offer a textbox to enter in an IP range that does not conflict with other subnets, we went a step further. First off, when the user begins creating a network, we prefill a non-conflicting default IP range that fills the next logical “block” of the network. Without thinking, the user can continue on. However, for those who need to customize it, they can begin manipulating the network size and range with a few buttons and see, with a visualization, how it fits amongst other subnetworks they have. Of course, for those who prefer manually entering a value, they can still do that, but with that added bonus of the visualization rather than an error that simply says “conflicts with other networks”.
+                </p>
 
             </div>
         </div>
