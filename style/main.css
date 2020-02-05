@@ -105,7 +105,7 @@ header {
   box-shadow: 10px 10px 40px #dddde0, -10px -10px 40px #ffffff;
   border: 1px solid #f3f3f7e6; }
   .home .work--card:hover {
-    box-shadow: 4px 4px 20px #dddde0, -4px -4px 20px #ffffff; }
+    box-shadow: 4px 4px 20px #b1bfdd, -4px -4px 20px #fff; }
   .home .work--card img {
     object-fit: cover;
     object-position: center;

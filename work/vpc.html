@@ -36,7 +36,7 @@
                 <p>
                     The Virtual Private Cloud (VPC) project is the next evolution for the infrastructure
                     offerings of IBM Cloud. These upgrades made it easier for our clients to grow and evolve
-                    their applications while maintaining a more isolated environment.
+                    their applications.
                 </p>
                 <!--Change this from description if you want to mess with style-->
                 <div class="description--role"> 
@@ -49,11 +49,19 @@
         </div>
 
         <div class="section">
+            <div class="section--content">
+                
+            </div>
+           
             <h3 id="setup" class="section--title">Intro</h3>
             <div class="section--content">
                 <p>
-                    The Virtual Private Cloud (VPC) project is the next evolution for the infrastructure offerings of IBM Cloud. Prior to the release of VPC, IBM Cloud Infrastructure was offering the same services as their acquisition, Softlayer, had been providing for years. The Softlayer suite of offerings were very similar management experiences to having a physical datacenter. Relative to competition, it just wasn’t as flexible, simple, or private. 
-
+                    The VPC project story is long, complex, and a good learning opportunity for me. Out of necessity, I am going to avoid telling it chronologically and highlight events, opportunities, and challenges from the journey.
+                </p>
+                <p>
+                    Prior to the release of VPC, IBM Cloud Infrastructure was offering the same services as their acquisition, Softlayer, had been providing for years. The Softlayer suite of offerings were very similar management experiences to having a physical datacenter. Relative to competition, it just wasn’t as flexible, simple, or private. 
+                </p>
+                <p>
 	                VPC offerings were upgrades on the hardware and software of the Softlayer infrastructure. These upgrades made it easier for our clients to grow and evolve their applications while maintaining a more isolated environment.
                 </p>
             </div>
@@ -79,20 +87,17 @@
                 </p>
 
                 <p>
-                    As we were being on-boarded to this project, our design team immediately began noticing that this was doing exactly what the Genesis project was, albeit with a shorter time frame and with the goal of catching up to competition Vs. leap-frogging. Along with our design work, we began prioritizing improving communication between teams to help determine the future of the projects and our go-to-market strategies.
+                    As we were being on-boarded to this project, our design team immediately began noticing that this was doing exactly what the Genesis project was, albeit with a shorter time frame and with the goal of catching up to competition Vs. leap-frogging. Along with our design work, we began prioritizing improving communication between teams to help determine the future of the projects and our go-to-market strategies. 
                 </p>
 
                 <p>
-                    Our team saw both the double work being executed, as well as how we would end up being represented to and how we were going to confuse our customers and we were concerned. However, we also understood how similar the two technologies were and I recognized that any work done on one, could be replicated for the other depending on how things shook out.
+                    Work on both projects moved in parallel while additional discussions were being had. As designers working in close proximity, Megan, her team (which was now getting involved), and I made sure to operate with the same design paradigms in preparation of the eventual merging of the products. Or at least that is what we hoped in order to have a user experience that we would consider positive.
                 </p>
-
-                ...More to come
-
             </div>
         </div>
 
         <div class="section">
-            <h3 id="setup" class="section--title">Services I worked on</h3>
+            <h3 id="setup" class="section--title">My product areas</h3>
             <div class="section--content">
                 <p>
                     <b>Virtual Private Cloud</b> - The core networking component required for creating any application. A VPC is an isolated virtual network that creates a buffer to keep all of your other services away from public networks and other clients on the IBM network. However, it still maintains the flexibility to customize the network exactly how your application needs.
@@ -117,11 +122,42 @@
         </div>
 
         <div class="section">
-            <h3 id="setup" class="section--title">IP Range Visualization</h3>
+            <h3 id="setup" class="section--title">Services I worked on</h3>
             <div class="section--content">
                 <p>
-                    At the core of an applications infrastructure is its network which is broken into a series of groups of IP addresses called “Subnets”. Subnets are generally notated in an “IP Range” or “CIDR” format such as 192.168.0.0/24. That converts to the range 192.168.0.1-192.168.0.254 for a total of 256 IP addresses that can be connected to 256 network devices such as a computer. The other trick to this is that IP ranges generally aren’t allowed to overlap with each other. While simple arrangements of networks are relatively easy to navigate, more complex situations become exhausting and unpleasant to work with. This led a number of our users to create various other documents just to track their environment.
+                    During the 1.5-2 year VPC project, we had 3 consistent sources of user feedback. The first, and most available, were our internal beta testers. We would then turn to usertesting.com for external validation and catching simple oversights. Finally, our more critical, but slightly harder to access, source was our whitelisted, early access external clients.
                 </p>
+                
+                <p>
+                    When it comes to research, something fun about having legitimate reasons to talk to internal users, is that they will not hold back. When we had questions, assumptions, or designs, we would take them to an internal Slack channel specific to this user group. Because it was internal (and free), we often took less refined, more explorative design ideas there to have quick iterations and gut checks.
+                </p>
+                
+                <p>
+                    Our internal teams tended to represent the more extreme side of an enterprise development team. They enjoyed GUI, but truly focused on having a powerful CLI and API. One of our most impactful discoveries from this group was the importance of offering the CLI/API command for an action, directly in the GUI. These technical users were going through a process of learning when they were in the GUI and seeing how clickable inputs affected a CLI/API command allowed them to learn how to use it, as well as immediately take their work from the GUI and make it scale productively.
+                </p>
+                <div class="img--gallery">
+                    <img class="img--gallery--item" src="../assets/images/vpc-project/floatingip-api-modal.png" alt="">
+                    <img class="img--gallery--item" src="../assets/images/vpc-project/floatingip-api-modal-2.png" alt="">
+                    <figure>
+                        <figcaption>Floating IP Create and API</figcaption>
+                    </figure>
+                </div>
+
+                ...more to come
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Moments of delight: IP Range Visualization</h3>
+            <div class="section--content">
+                <p>
+                    At the core of an applications infrastructure is its network which is broken into a series of groups of IP addresses called “Subnets”. Subnets are generally notated in an “IP Range” or “CIDR” format such as 192.168.0.0/24. That converts to the range 192.168.0.1 to 192.168.0.254 for a total of 256 IP addresses that can be connected to 256 network devices such as a computer. The other trick to this is that IP ranges generally aren’t allowed to overlap with each other. While simple arrangements of networks are relatively easy to navigate, more complex situations become exhausting and unpleasant to work with. This led a number of our users to create various other documents just to track their environment.
+                </p>
+
+                <figure>
+                    <img src="../assets/images/vpc-project/cidry-xyz-example.png" alt="Example from cidr.xyz helping to visualize IP Ranges">
+                    <figcaption>Example from cidr.xyz helping to visualize IP Ranges</figcaption>
+                </figure>
 
                 <p>
                     Through a brainstorming session with our development team, designers, and offering managers, we noticed that while many network architects have grown to accept this process, we could feasibly make it simpler for those that prefer.
@@ -132,8 +168,13 @@
                 </p>
 
                 <p>
-                    While I was a participant in the designs, I tried to also be the touchpoint for the math and technology behind these ranges. Most of my knowledge came from reviewing videos, reading articles, and studying portions of “AWS Certified Solutions Architect” course on Udemy.com. I then organized the important information into a quick crash course for our team. This helped our team to have a more targeted and realistic approach to the problem and to help with motivation and moral around the problem (Working on something you understand is a fast way to get someone to stop working on it).
+                    While I was a participant in the designs, I tried to also be the touchpoint for the math and technology behind these ranges. Most of my knowledge came from reviewing videos, reading articles, and studying portions of “AWS Certified Solutions Architect” course on Udemy.com. I then organized the important information into a quick crash course for our team. This helped our team to have a more targeted and realistic approach to the problem and to help with motivation and moral around the problem (Working on something you don't understand is a fast way to get someone to stop working on it).
                 </p>
+
+                <figure>
+                    <img src="../assets/images/vpc-project/ip-visualization.png" alt="IBM Cloud IP Range visualization">
+                    <figcaption>IBM Cloud IP Range visualization that our team created.</figcaption>
+                </figure>
 
                 <p>
                     Where competitors simply offer a textbox to enter in an IP range that does not conflict with other subnets, we went a step further. First off, when the user begins creating a network, we prefill a non-conflicting default IP range that fills the next logical “block” of the network. Without thinking, the user can continue on. However, for those who need to customize it, they can begin manipulating the network size and range with a few buttons and see, with a visualization, how it fits amongst other subnetworks they have. Of course, for those who prefer manually entering a value, they can still do that, but with that added bonus of the visualization rather than an error that simply says “conflicts with other networks”.
