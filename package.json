@@ -4,19 +4,14 @@
   "description": "",
   "main": "server.js",
   "reposity": "https://github.com/sgraden/sraden.com",
-  "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.3",
-    "gulp": "^3.9.1",
-    "hbs": "^4.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "gulp-nodemon": "^2.0.4",
-    "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0"
+    "prettier": "^2.0.5"
   },
-  "scripts": {},
+  "scripts": {
+    "watch": "sass --watch scss/main.scss style/main.css"
+  },
   "author": "",
   "license": "ISC"
 }
