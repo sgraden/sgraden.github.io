@@ -119,7 +119,7 @@ header {
   margin-bottom: 4rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 800ms;
-  transition-property: all;
+  transition-property: box-shadow;
   border-radius: 30px;
   background: #fbfbff;
   box-shadow: 10px 10px 40px #dddde0, -10px -10px 40px #ffffff;
