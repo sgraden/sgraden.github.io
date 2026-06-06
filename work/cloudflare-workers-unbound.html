@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style/main.css">
+
+    <title>Steven Raden - Workers Unbound</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body class="project">
+    <header>
+        <div class="header--content">
+            <h1>Steven Raden</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../assets/Steven Raden Resume - 2026.pdf">Resume</a></li>
+                    <li><a target="_blank" href="https://photo.sraden.com/">Photography</a></li>
+                    <!-- <li><a href="../index.html#contact">Contact</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+
+    <div class="main--content">
+        <div class="project--banner-alert">
+            <i class="material-icons">construction</i>
+            <span>This page is currently under construction.</span>
+        </div>
+        <div class="section">
+            <h2 class="section--title project--title">
+                Workers Unbound
+            </h2>
+            <div class="section--content">
+                <p>
+                    Workers Unbound is the next phase of Cloudflare's serverless platform, designed to execute complex, CPU-intensive workloads on the Edge without restrictive execution limits.
+                </p>
+                <!--Change this from description if you want to mess with style-->
+                <div class="description--role"> 
+                    Role: <b>Product Designer</b> <br>
+                    Timeline: <b>April 2020 - Current</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 id="setup" class="section--title">Summary</h3>
+            <div class="section--content">
+                <p>
+                    <b>Cloudflare Workers Unbound</b> bridges the gap between lightweight edge scripts and heavy centralized cloud functions. 
+                    Traditionally, developers had to choose between fast edge execution for simple routing and slow, containerized regions for heavy compute. 
+                    Workers Unbound delivers <b>infinite execution flexibility</b> without CPU limits.
+                </p>
+
+                <!-- User Flow Section with visual cards and arrows -->
+                <div class="flow-container">
+                    <!-- Step 1 -->
+                    <div class="flow-step">
+                        <div class="step-badge">1</div>
+                        <div class="step-content">
+                            <h4>Remove CPU Execution Caps</h4>
+                            <p>Developers run CPU-heavy code (e.g. image processing, machine learning algorithms, database syncing) directly on the Edge.</p>
+                        </div>
+                    </div>
+
+                    <!-- Arrow 1 -->
+                    <div class="flow-connector">
+                        <i class="material-icons">arrow_downward</i>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flow-step">
+                        <div class="step-badge">2</div>
+                        <div class="step-content">
+                            <h4>Leverage Chrome V8 Isolates</h4>
+                            <p>Rather than booting up heavy virtual machine containers with long cold starts, code runs in lightweight <b>V8 Isolates</b> that switch context in microseconds.</p>
+                        </div>
+                    </div>
+
+                    <!-- Arrow 2 -->
+                    <div class="flow-connector">
+                        <i class="material-icons">arrow_downward</i>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flow-step">
+                        <div class="step-badge">3</div>
+                        <div class="step-content">
+                            <h4>Global Distribution Pipeline</h4>
+                            <p>Worker scripts are distributed to <b>every single datacenter worldwide</b>, allowing any Edge server to serve requests instantly.</p>
+                        </div>
+                    </div>
+
+                    <!-- Arrow 3 -->
+                    <div class="flow-connector">
+                        <i class="material-icons">arrow_downward</i>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flow-step">
+                        <div class="step-badge">4</div>
+                        <div class="step-content">
+                            <h4>Drastic Infrastructure Savings</h4>
+                            <p>By eliminating container overhead, API gateway surcharges, and DNS request fees, Workers Unbound reduces serverless bills by <b>up to 75%</b> compared to AWS Lambda.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    From a design and usability perspective, this removes complex cloud orchestration and region choices, giving developers a <b>unified serverless solution</b>. 
+                    It matches simple, local-first developer experiences with global scalability, security, and industry-leading performance.
+                </p>
+                
+                <p style="margin-top: 32px;">
+                    Read the full announcement on the Cloudflare Blog: <a target="_blank" href="https://blog.cloudflare.com/introducing-workers-unbound/">Introducing Workers Unbound</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

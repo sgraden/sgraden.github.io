@@ -54,9 +54,7 @@ header {
   height: 100%;
 }
 .header--content nav ul li {
-  padding: 0 1rem 0 1rem;
   transition-property: color;
-  cursor: pointer;
 }
 .header--content nav ul li:after {
   content: "";
@@ -68,6 +66,8 @@ header {
   transition: 0.5s;
 }
 .header--content nav ul li a {
+  display: block;
+  padding: 0 1rem 0 1rem;
   color: #1d1f2e;
   text-decoration: none;
   transition-property: color;
@@ -76,8 +76,8 @@ header {
 .header--content nav ul li:hover:after {
   width: 50%;
 }
-.header--content nav ul li:hovera {
-  color: white;
+.header--content nav ul li:hover a {
+  color: #2642A4;
 }
 
 .start-hidden {
@@ -198,6 +198,80 @@ header {
 .project .img--gallery--item img {
   width: 100%;
   display: block;
+}
+.project--banner-alert {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(38, 66, 164, 0.06);
+  border: 1px solid rgba(38, 66, 164, 0.15);
+  color: #2642a4;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.project--banner-alert i {
+  font-size: 1.125rem;
+  margin-right: 8px;
+}
+.project .flow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+.project .flow-step {
+  background: #fbfbff;
+  border: 1px solid #f3f3f7;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 4px 4px 20px #dddde0, -4px -4px 20px #ffffff;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+.project .flow-step:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 25px #b1bfdd, -4px -4px 20px #fff;
+}
+.project .flow-step .step-badge {
+  background: #2642A4;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.project .flow-step .step-content h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1d1f2e;
+}
+.project .flow-step .step-content p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #7c8894;
+}
+.project .flow-step .step-content p b {
+  color: #1d1f2e;
+}
+.project .flow-connector {
+  display: flex;
+  justify-content: center;
+  color: #2642A4;
+  margin: 4px 0;
+}
+.project .flow-connector i {
+  font-size: 32px;
 }
 
 .nav-bar {

@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "reposity": "https://github.com/sgraden/sraden.com",
-  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "prettier": "^2.0.5"
   },
   "scripts": {
+    "start": "browser-sync start --server --files \"*.html, style/*.css, work/*.html\"",
     "watch": "sass --watch scss/main.scss style/main.css"
   },
   "author": "",

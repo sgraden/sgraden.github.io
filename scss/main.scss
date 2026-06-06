@@ -75,9 +75,7 @@ header {
             height: 100%;
 
             li {
-                padding: 0 1rem 0 1rem;
                 transition-property: color;
-                cursor: pointer;
                 
                 &:after {
                     content: "";
@@ -90,6 +88,8 @@ header {
                 }
                 
                 a {
+                    display: block;
+                    padding: 0 1rem 0 1rem;
                     color: $color-black;
                     text-decoration: none;
                     transition-property: color;
@@ -100,8 +100,8 @@ header {
                     &:after {
                         width: 50%;  
                     }
-                    &a {
-                        color: white;
+                    a {
+                        color: $color-primary;
                     }
                 }
             }
