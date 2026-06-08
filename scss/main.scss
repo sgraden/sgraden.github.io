@@ -6,6 +6,10 @@ $header-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
                     0 3px 1px -2px rgba(0,0,0,.2),
                     0 1px 5px 0 rgba(0,0,0,.12);
 
+// Breakpoints
+$bp-tablet: 860px;
+$bp-mobile: 560px;
+
 @import 'font-size'; //function for calculating REM based on font
 @import 'list-grid';
 
@@ -58,7 +62,14 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+
+    @media (max-width: $bp-mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
 
     h1 {
         font-weight: 400;
@@ -118,7 +129,15 @@ header {
     max-width: $max-width;
     margin-left: auto;
     margin-right: auto;
-    padding: 128px;
+    padding: 128px 48px 48px 48px;
+
+    @media (max-width: $bp-tablet) {
+        padding: 100px 32px 32px 32px;
+    }
+
+    @media (max-width: $bp-mobile) {
+        padding: 80px 20px 20px 20px;
+    }
 }
 
 .section { //a section of content

@@ -5,7 +5,7 @@
   "main": "server.js",
   "reposity": "https://github.com/sgraden/sraden.com",
   "devDependencies": {
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^3.0.4",
     "prettier": "^2.0.5"
   },
   "scripts": {

@@ -39,7 +39,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+}
+@media (max-width: 560px) {
+  .header--content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
 }
 .header--content h1 {
   font-weight: 400;
@@ -88,7 +96,17 @@ header {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding: 128px;
+  padding: 128px 48px 48px 48px;
+}
+@media (max-width: 860px) {
+  .main--content {
+    padding: 100px 32px 32px 32px;
+  }
+}
+@media (max-width: 560px) {
+  .main--content {
+    padding: 80px 20px 20px 20px;
+  }
 }
 
 .section {
@@ -113,7 +131,8 @@ header {
 .home .work a {
   text-decoration: none;
   color: #1d1f2e;
-  min-width: 500px;
+  display: block;
+  width: 100%;
 }
 .home .work--card {
   margin-bottom: 4rem;

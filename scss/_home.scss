@@ -5,7 +5,8 @@
         a { //remove link style from cards
             text-decoration: none;
             color: $color-black;
-            min-width: 500px;
+            display: block;
+            width: 100%;
         }
 
 
