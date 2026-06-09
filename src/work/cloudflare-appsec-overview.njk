@@ -1,0 +1,112 @@
+{% extends "components/_base.njk" %}
+{% from "components/_section.njk"      import section %}
+{% from "components/_figure.njk"       import figure %}
+{% from "components/_project-meta.njk" import projectMeta %}
+
+{% set title = "AppSec Overview" %}
+
+{% block content %}
+
+{% call section("AppSec Overview", isTitle=true) %}
+    <p>
+        Cloudflare has a suite of application security products including WAF, Bot Management, API Shield, DDoS Protection, and more. Each lived in its own corner of the dashboard. Customers had no shared starting point. Nowhere to land, see their security posture, and understand what actually needed their attention.
+    </p>
+    <p>
+        This project started as a landing page for API Shield. Even before it was officially kicked off, there were discussions about how to land customers and guide them toward problems and solutions. When the Unification initiative launched, it became clear the page had to be more universal, covering all AppSec products and serving as the entry point for the restructured navigation.
+    </p>
+    {{ projectMeta(
+        "Product Designer",
+        "Launched: <b>March 17, 2025</b> &mdash; Cloudflare Security Week",
+        blogUrl="https://blog.cloudflare.com/cloudflare-security-posture-management/",
+        blogLabel="Security Posture Management"
+    ) }}
+{% endcall %}
+
+{% call section("What &ldquo;Overview&rdquo; Even Means") %}
+    <p>
+        The first question wasn&rsquo;t how to design the page, it was what the page should actually be. There were a lot of opinions. Was it for traffic metrics? We had analytics pages for that. Was it for alerts? We had Security Insights. Was it for onboarding documentation? All reasonable answers. All different pages.
+    </p>
+    <p>
+        To get aligned, we ran a workshop with stakeholders from every AppSec product area using a car dashboard as the framing. A dashboard is a tool people use to understand their vehicle&rsquo;s current status and make adjustments under pressure. The analogy helped us separate what you need at a glance from what belongs one level deeper.
+    </p>
+    <p>
+        Out of that workshop we identified four common categories: Status, Alerts, Insights, and Recommendations. That framework became the structure of the design and the shared language we used in stakeholder discussions going forward.
+    </p>
+{% endcall %}
+
+{% call section("Research &amp; Validation") %}
+    <p>
+        With a framework in hand, we turned to validation before committing to a direction.
+    </p>
+    <p>
+        For competitive analysis, we used competing security dashboards directly where we could and worked through YouTube walkthroughs and documentation for platforms we couldn&rsquo;t access. The pattern was consistent: data-heavy overviews were hard to act on; action-oriented ones got used.
+    </p>
+    <p>
+        To get closer to real customer needs, we talked to our CSE team. Asking questions and showing small prototypes, we found that detailed metrics were less important than action-oriented guidance. CSEs had common remediation patterns they walked customers through repeatedly that could be reduced if the overview surfaced the right information upfront. They also gave useful feedback on terminology &mdash; always include a way to get more detail, because customers understand something like &ldquo;mitigated attacks&rdquo; differently.
+    </p>
+    <p>
+        We also ran a small unmoderated research study with Cloudflare customers. Most sessions were about 10 minutes. Users responded more to the tangible elements on the page like rule activity and the traffic bar. It was harder for them to connect with the action items, which we expected since those are most relevant when based on real traffic and configuration. The feedback pointed toward grounding suggestions in actual product data rather than abstract health scores.
+    </p>
+{% endcall %}
+
+{% call section("The Direction") %}
+    <p>
+        All of that research pointed toward the same thing: the page should not be a data dump. The goal was that within 30 seconds of landing, a customer should be able to tell if something needs attention and know what to do about it.
+    </p>
+    <p>
+        That meant focusing on clear problems and clear actions. We prioritized a traffic summary showing mitigated, served by Cloudflare, and served by origin traffic at a high level. A Security Posture section with contextual suggestions backed by real product data. Detection Settings showing what was on and what was off. And Rules Activity surfacing the most active and recently modified rules as a signal for what was working.
+    </p>
+    <p>
+        Unification also added scope. The Overview would serve as the landing page for a restructured navigation covering all AppSec products under a single Security section. New users would opt in through a modal, a more gradual rollout given how much was changing at once.
+    </p>
+    {{ figure(
+        "../assets/images/appsec-overview-project/security-overview-early.png",
+        "An earlier design exploration for the Security Overview before the direction shifted toward action-oriented suggestions",
+        "An earlier design direction, before the research pushed toward a more action-oriented approach."
+    ) }}
+{% endcall %}
+
+{% call section("The Experience") %}
+    <p>
+        The shipped page leads with the traffic summary, moves into Security Posture with contextual suggestions, then shows Detection Settings and Rules Activity below. Each suggestion includes customer-specific data so it&rsquo;s clear why it&rsquo;s being surfaced.
+    </p>
+    {{ figure(
+        "../assets/images/appsec-overview-project/security-overview-launched.png",
+        "The shipped Cloudflare Security Overview page showing traffic summary, security posture suggestions, and detection settings",
+        "The shipped Security Overview, launched March 17, 2025 during Cloudflare Security Week."
+    ) }}
+    <p>
+        Clicking a suggestion opens a detail panel with the relevant data, context, and a direct path to act on it.
+    </p>
+    {{ figure(
+        "../assets/images/appsec-overview-project/security-overview-action-panel.png",
+        "The suggestion detail panel showing a DMARC Record Error with context and a direct call to action",
+        "The suggestion detail panel &mdash; the problem, the data behind it, and the action, all in one place."
+    ) }}
+{% endcall %}
+
+{% call section("Results") %}
+    <p>
+        We measured through Amplitude at two weeks post-launch. Suggestions converted at a higher rate than expected:
+    </p>
+    <ul>
+        <li><b>47% average suggestion conversion rate</b> across all active suggestions</li>
+        <li><b>Block AI bots</b> was clicked by 12,391 unique users and 48% followed through</li>
+        <li><b>Update bots model</b> had the highest conversion at 75.7%</li>
+        <li><b>Managed Rules log mode</b> converted at 60%</li>
+    </ul>
+    <p>
+        Suggestions based on real configurations drove action. The page worked best when the data behind a recommendation was specific and visible.
+    </p>
+{% endcall %}
+
+{% call section("Related Links") %}
+    <p>
+        <a target="_blank" href="https://blog.cloudflare.com/cloudflare-security-posture-management/">Security posture management for Cloudflare&rsquo;s application security suite</a> &mdash; Cloudflare Blog post covering the Security Overview and posture management capabilities.
+    </p>
+    <p>
+        <a target="_blank" href="https://blog.cloudflare.com/new-application-security-experience/">A new application security experience</a> &mdash; Cloudflare Blog post covering the Unification navigation restructure.
+    </p>
+{% endcall %}
+
+{% endblock %}
