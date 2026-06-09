@@ -14,9 +14,9 @@
   },
   "scripts": {
     "start": "npm run build && browser-sync start --server --files \"*.html, work/*.html, style/*.css\"",
-    "build": "nunjucks '**/*.njk' --path src -o . --extension html",
+    "build": "nunjucks '**/*.njk' --path src -o . --extension html --options nunjucks.config.json",
     "watch": "npm-run-all --parallel watch:njk watch:sass watch:serve",
-    "watch:njk": "nunjucks '**/*.njk' --path src -o . --extension html --watch",
+    "watch:njk": "nunjucks '**/*.njk' --path src -o . --extension html --options nunjucks.config.json --watch",
     "watch:sass": "sass --watch scss/main.scss style/main.css",
     "watch:serve": "browser-sync start --server --files \"*.html, work/*.html, style/*.css\""
   },
