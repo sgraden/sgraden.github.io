@@ -5,3 +5,4 @@ tasks.json
 public
 package-lock.json
 .njk-cache
+temp-project-assets
