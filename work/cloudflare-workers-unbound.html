@@ -35,7 +35,7 @@
             </h2>
             <div class="section--content">
                 <p>
-                    Workers Unbound is the next phase of Cloudflare's serverless platform, designed to let developers run CPU-intensive workloads on the Edge without the restrictive execution limits of the original Workers product.
+                    Workers Unbound extended Cloudflare's serverless platform to support CPU-intensive workloads, removing the execution limits that had previously made the original Workers product off-limits for heavier compute jobs.
                 </p>
                 <div class="description--role">
                     Role: <b>Product Designer</b> <br>
@@ -48,8 +48,8 @@
             <h3 id="setup" class="section--title">The Problem</h3>
             <div class="section--content">
                 <p>
-                    Removing the CPU cap solved an engineering problem, but it opened a design one: usage-based pricing meant a Worker that used to be predictable could now generate a surprise bill.
-                    Two questions framed the work:
+                    Removing the CPU cap solved an engineering problem but opened a design one: usage-based pricing meant a Worker that used to be predictable could now generate a surprise bill.
+                    Two questions drove the work:
                 </p>
                 <ul>
                     <li>How might we help users understand <i>when</i> they need to take action, so Workers don't have to stay top of mind?</li>
@@ -63,7 +63,7 @@
             <div class="section--content">
                 <p>
                     We talked to a mix of <b>new</b>, <b>existing</b>, <b>internal</b>, and <b>beta</b> Workers users to understand how they thought about cost, metrics, and alerting on the platform.
-                    Sessions were affinity-mapped across recurring themes &mdash; Onboarding, Pricing, Metrics, Alerting, Usage Setting &amp; Controls, and Productive Use Pricing &mdash; to find where the platform was creating anxiety versus confidence.
+                    Sessions were affinity-mapped across recurring themes (Onboarding, Pricing, Metrics, Alerting, Usage Setting &amp; Controls, and Productive Use Pricing) to find where the platform was creating anxiety versus confidence.
                 </p>
                 <div class="img--gallery">
                     <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-participants-session.png" alt="Outline of participant segments and session structure used in the research">
@@ -74,12 +74,12 @@
                 </div>
 
                 <p>
-                    To prioritize, we scored each theme on requirement and ease &mdash; pairing the numbers with the verbatims behind them. Notifications and analytics both came back as clear needs, but the qualitative detail is what shaped direction:
+                    To prioritize, we scored each theme on requirement and ease, pairing the numbers with the quotes behind them. Notifications and analytics both came back as clear needs, but the qualitative detail drove where we went:
                 </p>
                 <ul>
                     <li>"Diff between eng and billing. Want to know &lsquo;Oh I am spending lots of money&rsquo;"</li>
-                    <li>"Breakdown of Workers is useful, but not enough &mdash; mono Workers it wouldn't tell you anything"</li>
-                    <li>"If we aren't billed on CPU and still have a 50ms cap" &mdash; a reminder that for some users the mental model of the old limits hadn't gone away yet</li>
+                    <li>"Breakdown of Workers is useful, but not enough — mono Workers it wouldn't tell you anything"</li>
+                    <li>"If we aren't billed on CPU and still have a 50ms cap" — some users were still thinking in terms of the old limits even after they were gone</li>
                 </ul>
                 <figure>
                     <img src="../assets/images/workers-unbound-project/research-scoring-rubric.png" alt="Scoring rubric scoring notification and analytics requirements and ease, with supporting quotes">
@@ -87,13 +87,13 @@
                 </figure>
 
                 <p>
-                    From there we synthesized raw notes into highlights and, ultimately, a direction. Two themes rose to the top:
+                    From there we synthesized raw notes into highlights and a direction. Two themes kept coming up:
                 </p>
                 <div class="img--gallery">
                     <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-affinity-map-2.png" alt="Further organization of research themes into journey-specific and non-journey-specific groupings">
                     <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-theme-clusters.png" alt="Clustered research themes spanning onboarding, pricing, metrics, alerting, and account management">
                     <figure>
-                        <figcaption>Organizing themes by where they sat in the user's journey helped separate &ldquo;billing&rdquo; problems from &ldquo;engineering&rdquo; ones &mdash; a distinction that came up again and again in sessions.</figcaption>
+                        <figcaption>Organizing themes by where they sat in the user's journey helped separate &ldquo;billing&rdquo; problems from &ldquo;engineering&rdquo; ones, a distinction that kept coming up in sessions.</figcaption>
                     </figure>
                 </div>
                 <figure>
@@ -107,11 +107,11 @@
             <h3 id="setup" class="section--title">From Feedback to Direction</h3>
             <div class="section--content">
                 <p>
-                    Earlier rounds of design &mdash; a Workers list view, per-Worker metrics, account-level analytics, notification management, and usage-alert emails &mdash; had already surfaced a recurring theme:
-                    <b>CPU time on its own didn't mean much to people.</b> It only became useful once it was tied to billing, and even then, reactions split sharply by audience &mdash; hobbyists wanted fixed, predictable pricing ("With AWS I set up an instance and ended up with a $10,000 bill"), while teams cared more about engineering efficiency than the bill itself.
+                    Earlier rounds of design covered a Workers list view, per-Worker metrics, account-level analytics, notification management, and usage-alert emails. Each one turned up the same thing:
+                    <b>CPU time on its own didn't mean much to people.</b> It only became useful once it was tied to billing, and even then reactions split by audience. Hobbyists wanted fixed, predictable pricing ("With AWS I set up an instance and ended up with a $10,000 bill"), while teams cared more about engineering efficiency than the bill itself.
                 </p>
                 <p>
-                    That reframed the work: instead of designing one generic metrics experience, we needed to <b>separate billing concerns from engineering concerns</b>, and give people a way to gut-check whether they were using Workers efficiently &mdash; not just how much they were spending.
+                    That reframed the work. Instead of a single generic metrics experience, we needed to <b>separate billing concerns from engineering concerns</b> and give people a way to tell whether they were using Workers efficiently, not just how much they were spending.
                 </p>
 
                 <!-- Research-to-direction pipeline -->
@@ -132,7 +132,7 @@
                         <div class="step-badge">2</div>
                         <div class="step-content">
                             <h4>Synthesize &amp; Score</h4>
-                            <p>Affinity-mapping sessions against themes like Pricing, Metrics, and Alerting &mdash; then scoring each against requirement and ease &mdash; surfaced where confusion (and anxiety) was concentrated.</p>
+                            <p>Affinity-mapping sessions against themes like Pricing, Metrics, and Alerting, then scoring each against requirement and ease, showed us where the confusion and anxiety were piling up.</p>
                         </div>
                     </div>
 
@@ -143,8 +143,8 @@
                     <div class="flow-step">
                         <div class="step-badge">3</div>
                         <div class="step-content">
-                            <h4>Land on a Direction</h4>
-                            <p>Two directions rose above the rest: make <b>cost</b> legible at a glance, and make <b>metrics actionable</b> &mdash; i.e., tell people not just what happened, but what to do about it.</p>
+                            <h4>Pick a Direction</h4>
+                            <p>Two things stood out: make <b>cost</b> easy to read, and make <b>metrics actionable</b> — tell people not just what happened, but what to do about it.</p>
                         </div>
                     </div>
 
@@ -156,13 +156,13 @@
                         <div class="step-badge">4</div>
                         <div class="step-content">
                             <h4>New Explorations</h4>
-                            <p>From there, designs shifted to keep the focus on engineering problems first, layering in an account usage summary to keep cost visible without making it the whole story.</p>
+                            <p>From there, designs shifted to lead with engineering problems, adding an account usage summary to keep cost visible without making it the whole story.</p>
                         </div>
                     </div>
                 </div>
 
                 <p>
-                    Plan changes also needed their own moment of clarity. The flow below maps how an account would move from a <b>Bundled</b> plan into <b>Unbound</b> &mdash; including the default-plan switch and the one-time confirmation step that only appears the first time a user completes the upgrade.
+                    Plan changes needed to be just as clear. The flow below maps how an account moves from a <b>Bundled</b> plan into <b>Unbound</b>, including the default-plan switch and the confirmation step that only shows up the first time someone completes the upgrade.
                 </p>
                 <figure>
                     <img src="../assets/images/workers-unbound-project/bundled-to-unbound-flow.png" alt="Flow diagram showing how an account moves from a Bundled plan to Workers Unbound, including default plan switching and confirmation states">
@@ -170,7 +170,7 @@
                 </figure>
                 <figure>
                     <img src="../assets/images/workers-unbound-project/ia-map-overview.png" alt="Information architecture map of the broader Workers Unbound project">
-                    <figcaption>Zooming out: the broader information-architecture map used to keep the upgrade flow consistent with the rest of the Workers dashboard.</figcaption>
+                    <figcaption>The broader information-architecture map, used to keep the upgrade flow consistent with the rest of the Workers dashboard.</figcaption>
                 </figure>
             </div>
         </div>
@@ -179,26 +179,26 @@
             <h3 id="setup" class="section--title">The Experience</h3>
             <div class="section--content">
                 <p>
-                    The shipped experience puts a Worker's health front and center &mdash; requests, duration, egress, and CPU time, broken down by percentile and plotted over time &mdash; so a developer can tell at a glance whether something needs attention.
+                    The shipped experience shows a Worker's health up top: requests, duration, egress, and CPU time, broken down by percentile and plotted over time, so a developer can quickly tell if something needs attention.
                 </p>
                 <figure>
                     <img class="no-shadow" src="../assets/images/workers-unbound-project/worker-card-summary.png" alt="Worker summary card showing requests, errors, and median CPU time at a glance">
-                    <figcaption>An at-a-glance summary card &mdash; the first signal a developer sees before deciding whether to dig deeper.</figcaption>
+                    <figcaption>The summary card — the first signal a developer sees before deciding whether to look further.</figcaption>
                 </figure>
                 <figure>
                     <img src="../assets/images/workers-unbound-project/worker-metrics-overview.png" alt="Metrics overview panel showing requests, invocation statuses, and CPU time charted over time">
-                    <figcaption>The full metrics overview &mdash; surfacing the &ldquo;is something wrong?&rdquo; signal before asking anyone to dig into raw numbers.</figcaption>
+                    <figcaption>The full metrics overview — answering &ldquo;is something wrong?&rdquo; before someone has to go looking for it.</figcaption>
                 </figure>
                 <figure>
                     <img src="../assets/images/workers-unbound-project/worker-details-metrics.png" alt="Detailed Worker metrics dashboard showing requests, duration, CPU time, and data egress over a selected time period">
                     <figcaption>The full Worker detail view: requests, duration, CPU time, and data egress, each broken into median / 90th / 99th percentile so users can spot outliers, not just averages.</figcaption>
                 </figure>
                 <p>
-                    For people who didn't want to check a dashboard at all, we designed a <b>weekly usage report</b> email &mdash; a digest of total usage and the top Workers by CPU time, so the information could come to you instead.
+                    For people who didn't want to check a dashboard at all, we designed a <b>weekly usage report</b> email: a digest of total usage and the top Workers by CPU time, so the information comes to you instead.
                 </p>
                 <figure>
                     <img src="../assets/images/workers-unbound-project/weekly-usage-report-email.png" alt="Weekly usage report email summarizing requests, egress data transfer, and top Workers by CPU time">
-                    <figcaption>A weekly digest email: total usage up top, then the Workers most worth a closer look &mdash; designed to make the &ldquo;actionable metrics&rdquo; direction work passively, not just on-demand.</figcaption>
+                    <figcaption>Total usage up top, then the Workers most worth a closer look — the same goal as the dashboard, but for people who'd rather not go looking.</figcaption>
                 </figure>
             </div>
         </div>
@@ -215,7 +215,7 @@
                 </figure>
                 <figure>
                     <img src="../assets/images/workers-unbound-project/unbound-enable-flow.gif" alt="Animated walkthrough of the Workers Unbound enablement flow">
-                    <figcaption>A short walkthrough of the enablement flow &mdash; designed so a developer could go from &ldquo;I heard about Unbound&rdquo; to &ldquo;I'm running on it&rdquo; with no extra help.</figcaption>
+                    <figcaption>A short walkthrough of the enablement flow, so a developer could go from &ldquo;I heard about Unbound&rdquo; to &ldquo;I'm running on it&rdquo; without needing any help.</figcaption>
                 </figure>
                 <div class="img--gallery">
                     <img class="img--gallery--item" src="../assets/images/workers-unbound-project/launch-release-call.png" alt="Team video call on launch morning, titled Unbound Release Do-si-do">
