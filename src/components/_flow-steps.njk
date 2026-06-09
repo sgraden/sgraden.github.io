@@ -1,0 +1,40 @@
+{#
+  _flow-steps.njk
+  ---------------
+  A numbered vertical step list with arrow connectors between each step.
+  Use this to show a process, user journey, or design direction pipeline.
+
+  Usage:
+    {% from "components/_flow-steps.njk" import flowSteps %}
+    {{ flowSteps([
+        { title: "Step One",   body: "Description of this step." },
+        { title: "Step Two",   body: "Description with <b>bold text</b> supported." },
+        { title: "Step Three", body: "Final step." }
+    ]) }}
+
+  Parameters:
+    steps  — array of { title, body } objects (required).
+             body can contain inline HTML (e.g. <b>bold</b>, <a href="...">) —
+             it is rendered with the | safe filter so the HTML is not escaped.
+             Step numbers are assigned automatically via loop.index.
+             Arrow connectors between steps are inserted automatically —
+             no connector appears after the last step.
+#}
+{% macro flowSteps(steps) %}
+<div class="flow-container">
+    {% for step in steps %}
+    <div class="flow-step">
+        <div class="step-badge">{{ loop.index }}</div>
+        <div class="step-content">
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.body | safe }}</p>
+        </div>
+    </div>
+    {% if not loop.last %}
+    <div class="flow-connector">
+        <i class="material-icons">arrow_downward</i>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endmacro %}

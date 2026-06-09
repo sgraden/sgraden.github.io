@@ -1,0 +1,167 @@
+{% extends "components/_base.njk" %}
+{% from "components/_section.njk"      import section %}
+{% from "components/_figure.njk"       import figure %}
+{% from "components/_gallery.njk"      import gallery %}
+{% from "components/_flow-steps.njk"   import flowSteps %}
+{% from "components/_project-meta.njk" import projectMeta %}
+
+{% set title = "Workers Unbound" %}
+
+{% block content %}
+
+{% call section("Workers Unbound", isTitle=true) %}
+    <p>
+        Workers Unbound extended Cloudflare's serverless platform to support CPU-intensive workloads, removing the execution limits that had previously made the original Workers product off-limits for heavier compute jobs.
+    </p>
+    {{ projectMeta("Product Designer", "Launched: <b>April 14, 2021</b>") }}
+{% endcall %}
+
+{% call section("The Problem") %}
+    <p>
+        Removing the CPU cap solved an engineering problem but opened a design one: usage-based pricing meant a Worker that used to be predictable could now generate a surprise bill.
+        Two questions drove the work:
+    </p>
+    <ul>
+        <li>How might we help users understand <i>when</i> they need to take action, so Workers don't have to stay top of mind?</li>
+        <li>How might we help engineers feel confident they're using Workers efficiently &mdash; getting the most out of what they're paying for?</li>
+    </ul>
+{% endcall %}
+
+{% call section("Research &amp; Discovery") %}
+    <p>
+        We talked to a mix of <b>new</b>, <b>existing</b>, <b>internal</b>, and <b>beta</b> Workers users to understand how they thought about cost, metrics, and alerting on the platform.
+        Sessions were affinity-mapped across recurring themes (Onboarding, Pricing, Metrics, Alerting, Usage Setting &amp; Controls, and Productive Use Pricing) to find where the platform was creating anxiety versus confidence.
+    </p>
+    {{ gallery([
+        { src: "../assets/images/workers-unbound-project/research-participants-session.png", alt: "Outline of participant segments and session structure used in the research" },
+        { src: "../assets/images/workers-unbound-project/research-affinity-map-1.png",       alt: "Affinity map clustering research notes by theme" }
+    ], "Participant segmentation and affinity-mapped session notes, clustered by theme (Onboarding, Pricing, Metrics, Alerting, and more).") }}
+
+    <p>
+        To prioritize, we scored each theme on requirement and ease, pairing the numbers with the quotes behind them. Notifications and analytics both came back as clear needs, but the qualitative detail drove where we went:
+    </p>
+    <ul>
+        <li>"Diff between eng and billing. Want to know &lsquo;Oh I am spending lots of money&rsquo;"</li>
+        <li>"Breakdown of Workers is useful, but not enough — mono Workers it wouldn't tell you anything"</li>
+        <li>"If we aren't billed on CPU and still have a 50ms cap" — some users were still thinking in terms of the old limits even after they were gone</li>
+    </ul>
+    {{ figure(
+        "../assets/images/workers-unbound-project/research-scoring-rubric.png",
+        "Scoring rubric scoring notification and analytics requirements and ease, with supporting quotes",
+        "Scoring notification and analytics needs against ease-of-use, anchored to participant quotes rather than the numbers alone."
+    ) }}
+
+    <p>
+        From there we synthesized raw notes into highlights and a direction. Two themes kept coming up:
+    </p>
+    {{ gallery([
+        { src: "../assets/images/workers-unbound-project/research-affinity-map-2.png",    alt: "Further organization of research themes into journey-specific and non-journey-specific groupings" },
+        { src: "../assets/images/workers-unbound-project/research-theme-clusters.png",    alt: "Clustered research themes spanning onboarding, pricing, metrics, alerting, and account management" }
+    ], "Organizing themes by where they sat in the user&rsquo;s journey helped separate &ldquo;billing&rdquo; problems from &ldquo;engineering&rdquo; ones, a distinction that kept coming up in sessions.") }}
+    {{ figure(
+        "../assets/images/workers-unbound-project/research-synthesis-direction.png",
+        "Synthesis wall moving from raw notes to highlights to direction, calling out cost and actionable metrics",
+        "Raw notes &rarr; highlights &rarr; direction. <b>Cost</b> and <b>actionable metrics</b> emerged as the two areas worth designing for first."
+    ) }}
+{% endcall %}
+
+{% call section("From Feedback to Direction") %}
+    <p>
+        Earlier rounds of design covered a Workers list view, per-Worker metrics, account-level analytics, notification management, and usage-alert emails. Each one turned up the same thing:
+        <b>CPU time on its own didn't mean much to people.</b> It only became useful once it was tied to billing, and even then reactions split by audience. Hobbyists wanted fixed, predictable pricing ("With AWS I set up an instance and ended up with a $10,000 bill"), while teams cared more about engineering efficiency than the bill itself.
+    </p>
+    <p>
+        That reframed the work. Instead of a single generic metrics experience, we needed to <b>separate billing concerns from engineering concerns</b> and give people a way to tell whether they were using Workers efficiently, not just how much they were spending.
+    </p>
+
+    {{ flowSteps([
+        {
+            title: "Recap Prior Feedback",
+            body: "Across the List View, Worker Metrics, Account Analytics, and notification/email explorations, the same note kept surfacing: <b>CPU time isn't useful without billing context</b>, and generic analytics fall flat for accounts running only one or two Workers."
+        },
+        {
+            title: "Synthesize &amp; Score",
+            body: "Affinity-mapping sessions against themes like Pricing, Metrics, and Alerting, then scoring each against requirement and ease, showed us where the confusion and anxiety were piling up."
+        },
+        {
+            title: "Pick a Direction",
+            body: "Two things stood out: make <b>cost</b> easy to read, and make <b>metrics actionable</b> — tell people not just what happened, but what to do about it."
+        },
+        {
+            title: "New Explorations",
+            body: "From there, designs shifted to lead with engineering problems, adding an account usage summary to keep cost visible without making it the whole story."
+        }
+    ]) }}
+
+    <p>
+        Plan changes needed to be just as clear. The flow below maps how an account moves from a <b>Bundled</b> plan into <b>Unbound</b>, including the default-plan switch and the confirmation step that only shows up the first time someone completes the upgrade.
+    </p>
+    {{ figure(
+        "../assets/images/workers-unbound-project/bundled-to-unbound-flow.png",
+        "Flow diagram showing how an account moves from a Bundled plan to Workers Unbound, including default plan switching and confirmation states",
+        "Bundled &rarr; Enable Unbound: mapping every screen and decision point in the upgrade path, including the one-time confirmation flow."
+    ) }}
+    {{ figure(
+        "../assets/images/workers-unbound-project/ia-map-overview.png",
+        "Information architecture map of the broader Workers Unbound project",
+        "The broader information-architecture map, used to keep the upgrade flow consistent with the rest of the Workers dashboard."
+    ) }}
+{% endcall %}
+
+{% call section("The Experience") %}
+    <p>
+        The shipped experience shows a Worker's health up top: requests, duration, egress, and CPU time, broken down by percentile and plotted over time, so a developer can quickly tell if something needs attention.
+    </p>
+    {{ figure(
+        "../assets/images/workers-unbound-project/worker-card-summary.png",
+        "Worker summary card showing requests, errors, and median CPU time at a glance",
+        "The summary card — the first signal a developer sees before deciding whether to look further.",
+        noShadow=true
+    ) }}
+    {{ figure(
+        "../assets/images/workers-unbound-project/worker-metrics-overview.png",
+        "Metrics overview panel showing requests, invocation statuses, and CPU time charted over time",
+        "The full metrics overview — answering &ldquo;is something wrong?&rdquo; before someone has to go looking for it."
+    ) }}
+    {{ figure(
+        "../assets/images/workers-unbound-project/worker-details-metrics.png",
+        "Detailed Worker metrics dashboard showing requests, duration, CPU time, and data egress over a selected time period",
+        "The full Worker detail view: requests, duration, CPU time, and data egress, each broken into median / 90th / 99th percentile so users can spot outliers, not just averages."
+    ) }}
+    <p>
+        For people who didn't want to check a dashboard at all, we designed a <b>weekly usage report</b> email: a digest of total usage and the top Workers by CPU time, so the information comes to you instead.
+    </p>
+    {{ figure(
+        "../assets/images/workers-unbound-project/weekly-usage-report-email.png",
+        "Weekly usage report email summarizing requests, egress data transfer, and top Workers by CPU time",
+        "Total usage up top, then the Workers most worth a closer look — the same goal as the dashboard, but for people who'd rather not go looking."
+    ) }}
+{% endcall %}
+
+{% call section("Launch") %}
+    <p>
+        Workers Unbound shipped on April 14, 2021. The release graphic below was used across announcement channels, and an enablement walkthrough helped new users find the upgrade path on their own.
+    </p>
+    {{ figure(
+        "../assets/images/workers-unbound-project/unbound-enablement-graphic.svg",
+        "Workers Unbound enablement graphic illustrating the platform's edge network",
+        "The enablement graphic used to introduce Workers Unbound across announcement channels."
+    ) }}
+    {{ figure(
+        "../assets/images/workers-unbound-project/unbound-enable-flow.gif",
+        "Animated walkthrough of the Workers Unbound enablement flow",
+        "A short walkthrough of the enablement flow, so a developer could go from &ldquo;I heard about Unbound&rdquo; to &ldquo;I'm running on it&rdquo; without needing any help."
+    ) }}
+    {{ gallery([
+        { src: "../assets/images/workers-unbound-project/launch-release-call.png",  alt: "Team video call on launch morning, titled Unbound Release Do-si-do" },
+        { src: "../assets/images/workers-unbound-project/launch-discord-chat.png",  alt: "Cloudflare Workers Discord community discussing Workers Unbound after its announcement" }
+    ], "Launch morning: the team on our release call, and the Workers Discord community reacting to the announcement in real time.") }}
+{% endcall %}
+
+{% call section("Related Links") %}
+    <p>
+        Read the full announcement on the Cloudflare Blog: <a target="_blank" href="https://blog.cloudflare.com/introducing-workers-unbound/">Introducing Workers Unbound</a>.
+    </p>
+{% endcall %}
+
+{% endblock %}

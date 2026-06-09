@@ -1,0 +1,43 @@
+{#
+  _work-card.njk
+  --------------
+  A project card for the Work section of the homepage (index.njk).
+  Shows a thumbnail, project title, short description, and role.
+
+  Usage:
+    {% from "components/_work-card.njk" import workCard %}
+    {{ workCard(
+        href="./work/cloudflare-email-routing.html",
+        imgSrc="./assets/images/cloudflare-project/cloudflareemailrouting.png",
+        imgAlt="Cloudflare Email Routing thumbnail",
+        title="Email Routing",
+        description="Short description of the project.",
+        role="Product Design Lead"
+    ) }}
+
+  Parameters:
+    href         — link to the project case study page (required)
+    imgSrc       — thumbnail image path (required)
+    imgAlt       — alt text for the thumbnail (required)
+    title        — project name shown as an h3 heading (required)
+    description  — short project summary paragraph (required)
+    role         — role label, displayed in the description--role block (required)
+#}
+{% macro workCard(href, imgSrc, imgAlt, title, description, role) %}
+<div class="section--content work">
+    <a href="{{ href }}">
+        <div class="work--card">
+            <img src="{{ imgSrc }}" alt="{{ imgAlt }}">
+            <div class="details">
+                <h3>{{ title }}</h3>
+                <div class="description">
+                    {{ description }}
+                    <div class="description--role">
+                        Role: <b>{{ role }}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+{% endmacro %}

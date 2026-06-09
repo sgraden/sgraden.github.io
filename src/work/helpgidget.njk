@@ -1,31 +1,17 @@
+{% extends "components/_base.njk" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="../style/main.css">
-    <title>Steven Raden - Help Gidget</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body class="project">
-    <header>
-        <div class="header--content">
-            <h1>Steven Raden</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html#work">Work</a></li>
-                    <li><a href="../assets/Steven Raden Resume - 2026.pdf">Resume</a></li>
-                    <li><a target="_blank" href="https://photo.sraden.com/">Photography</a></li>
-                    <!-- <li><a href="../index.html#contact">Contact</a></li> -->
-                </ul>
-            </nav>
-            <a class="header--back" href="../index.html">
-                <i class="material-icons">arrow_back</i> Back
-            </a>
-        </div>
-    </header>
-    <div class="main--content">
+{#
+  Old Help Gidget portfolio page — migrated from a legacy nav-bar back-link pattern.
+  The back button is rendered by base.njk when backUrl is set.
+  Image paths in this file still reference the old public/assets/ structure
+  and should be updated if those assets are ever reorganized.
+  The gallery at the bottom uses the original img--gallery--item wrapper div
+  pattern rather than the gallery macro since it predates the current structure.
+#}
+{% set title = "Help Gidget" %}
+{% set backUrl = "../index.html" %}
+
+{% block content %}
 
 <img class="img--banner" src="public/assets/projects/gidget/gidget-banner.jpg" alt="help gidget banner image">
 
@@ -164,7 +150,7 @@
         The Screenshots
     </h2>
     <div class="section--content">
-        
+        {# Original gallery uses wrapper divs — preserved to match the legacy markup #}
         <div class="img--gallery">
             <div class="img--gallery--item">
                 <img src="public/assets/projects/gidget/gidget-start.png" alt="The help gidget start screen">
@@ -194,6 +180,4 @@
     </div>
 </div>
 
-    </div>
-</body>
-</html>
+{% endblock %}

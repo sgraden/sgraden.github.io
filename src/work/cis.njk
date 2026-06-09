@@ -1,66 +1,33 @@
+{% extends "components/_base.njk" %}
+{% from "components/_section.njk"      import section %}
+{% from "components/_figure.njk"       import figure %}
+{% from "components/_gallery.njk"      import gallery %}
+{% from "components/_project-meta.njk" import projectMeta %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="../style/main.css">
-    <title>Steven Raden - CIS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body class="project">
-    <header>
-        <div class="header--content">
-            <h1>Steven Raden</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html#work">Work</a></li>
-                    <li><a href="../assets/Steven Raden Resume - 2026.pdf">Resume</a></li>
-                    <li><a target="_blank" href="https://photo.sraden.com/">Photography</a></li>
-                    <!-- <li><a href="../index.html#contact">Contact</a></li> -->
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="main--content">
+{% set title = "CIS" %}
 
-<div class="section">
-    <h2 class="section--title project--title">IBM Cloud Internet Services</h2>
-    <div class="section--content">
-            <p>
+{% block content %}
+
+{% call section("IBM Cloud Internet Services", isTitle=true) %}
+    <p>
         Work with the renown internet security company, Cloudflare, to provide IBM Cloud customers with improved security, technology, and power.
     </p>
-    <div class="description--role">
-    Role: <b>UX Design Lead</b><br>
-Timeline: <b>September 2017 - June 2018</b></div>
+    {{ projectMeta("UX Design Lead", "Timeline: <b>September 2017 - June 2018</b>") }}
+    {{ gallery([
+        { src: "../assets/images/cis-project/cf-overview.png",  alt: "" },
+        { src: "../assets/images/cis-project/cis-overview.png", alt: "Screenshot of CIS overview page" }
+    ], "Overview page from Cloudflare and CIS.") }}
+{% endcall %}
 
-    <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/cis-project/cf-overview.png" alt="">
-    <img class="img--gallery--item" src="../assets/images/cis-project/cis-overview.png" alt="Screenshot of CIS overview page">
-    <figure>
-        <figcaption>Overview page from Cloudflare and CIS.</figcaption>
-    </figure>
-</div>
-
-
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Intro</h3>
-    <div class="section--content">
-            <p>
+{% call section("Intro") %}
+    <p>
         The Cloud Internet Services offering is a joint partnership between IBM and the internet security and performance company, Cloudflare. In this partnership, IBM gained the suite of world class services that Cloudflare offered while Cloudflare would be able to break through into the enterprise tier clients that IBM has.
     </p>
     <img class="" src="../assets/images/cis-project/cloudflare-ibm-logo.png" alt="">
+{% endcall %}
 
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Project Kickoff</h3>
-    <div class="section--content">
-            <p>
+{% call section("Project Kickoff") %}
+    <p>
         The partnership and project was initiated by our Network Offering Lead, Haechul. He was negotiating the deal with Cloudflare representatives and decided to bring our design team in to demonstrate how we would handle the project.
     </p>
     <p>
@@ -69,14 +36,10 @@ Timeline: <b>September 2017 - June 2018</b></div>
     <p>
         A few months later, when this project really got the go-ahead, I organized a number of meetings directly with the Cloudflare design teams so that I could get access to research and tips related to the services I was starting with. I intended to leverage as much of their experience and knowledge that I could.
     </p>
+{% endcall %}
 
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Understanding</h3>
-    <div class="section--content">
-            <p>
+{% call section("Understanding") %}
+    <p>
         At this point I had been working with networking technology for over a year, giving me a relatively deep understanding of the inner workings of the Cloudflare service. For initial release, we were only targeting <b>Caching</b>, <b>WAF</b>, <b>GLB</b>, <b>DDoS Protection</b>, <b>Encryption</b>, <b>DNS Records</b>, and <b>Monitoring/Metrics</b>. A small subset of Cloudflare's total services.
     </p>
     <p>
@@ -90,24 +53,21 @@ Timeline: <b>September 2017 - June 2018</b></div>
     <p>
         As I worked through designing each service, I started by introducing myself to the services as it was offered on Cloudflare's platform. I configured a website and server to properly work with the targeted services, working with the dev teams to get more complex networks configured for testing where needed. Throughout this process I documented the user flows I went through to understand what steps were required and when. As I identified usability issues on the Cloudflare platform, I noted them and brought them to the Cloudflare team to dig deeper.
     </p>
-    <figure>
-    <img src="../assets/images/cis-project/cf-sitemap.png" alt="A small sitemap of the target services.">
-<figcaption>A small sitemap of the target services. (Sorry for the tiny text)</figcaption></figure>
-
+    {{ figure(
+        "../assets/images/cis-project/cf-sitemap.png",
+        "A small sitemap of the target services.",
+        "A small sitemap of the target services. (Sorry for the tiny text)"
+    ) }}
     <p>
         I was told that many Cloudflare platform issues were do to legacy systems or design system limitations. These were the areas where I noted the greatest potential for advancements in the experience.
     </p>
     <p>
         With a more in-depth understanding of the product and how it works, I felt comfortable moving forward to plan testing and create some wireframes.
     </p>
+{% endcall %}
 
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Research</h3>
-    <div class="section--content">
-            <p>
+{% call section("Research") %}
+    <p>
         I created a set of wireframes that I knew worked with our existing design system and maintained consistency with our platform. I used these wireframes to help direct the conversations with our teams. I have found that having a set of visuals, even in the most limited form, aligns the terminology a team uses and quickly identifies what questions still need to be asked.
     </p>
     <p>
@@ -120,21 +80,18 @@ Timeline: <b>September 2017 - June 2018</b></div>
     <p>
         For face-to-face feedback, our offering manager provided us with internal stakeholder teams. While internal is not ideal, these were teams that we expected to adopt the service in the near future. These sessions were monitored and open ended discussions about our UI and offering. Some of these users were engineers from our Kubernetes team as well as solution architects focused on documenting how services can be used together to form a solution.
     </p>
-    <figure>
-    <img src="../assets/images/cis-project/internal-user-testers.png" alt="">
-<figcaption>A range of internal users of CIS that we spoke to.</figcaption></figure>
-
+    {{ figure(
+        "../assets/images/cis-project/internal-user-testers.png",
+        "",
+        "A range of internal users of CIS that we spoke to."
+    ) }}
     <p>
         We paired this feedback with research from the Cloudflare team and, with some updates, were confident that the designs and functionality we were offering were simple to use, aligned with the platform, and matched the mental models users would expect.
     </p>
+{% endcall %}
 
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Challenges</h3>
-    <div class="section--content">
-            <p>
+{% call section("Challenges") %}
+    <p>
         One of the designs that took the longest to complete was our on-boarding process. Once a user places the order, their browser is navigated to the "overview" page of the service where they can see service functions and the primary navigation on the left. Our initial intent was to lock the user into a particular space with the required steps and guidance to finish setting up. Unfortunately, some technical complexities made that not an option. So the team and I persevered and look into other implementations.
     </p>
     <p>
@@ -148,7 +105,7 @@ Timeline: <b>September 2017 - June 2018</b></div>
     <p>
         When they are ready, changing name servers requires the user enters certain information from us on their domain managers site. Trying to guide a user through steps outside of our platform was new to me, so I looked to others with more experience. Using sites like <a target="_blank" href="https://www.useronboard.com">UserOnboard.com</a> I was able to get some strategies such as breaking down steps that go outside of the main experience by creating small, individual tasks that are easy to complete. Hopefully, This will get the user to return for guidance and be kept invested in the flow, regardless of where it takes them.
     </p>
-    
+    {# 5-item gallery — no shared caption in the original #}
     <div class="img--gallery">
         <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-1.png" alt="Screenshot of CIS overview page in on-boarding state">
         <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-3.png" alt="Screenshot of CIS overview page in on-boarding state">
@@ -156,48 +113,33 @@ Timeline: <b>September 2017 - June 2018</b></div>
         <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-4.png" alt="Screenshot of CIS overview page in on-boarding state">
         <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-5.png" alt="Screenshot of CIS overview page in on-boarding state">
     </div>
+{% endcall %}
 
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Results</h3>
-    <div class="section--content">
-            <p>
+{% call section("Results") %}
+    <p>
         Our initial offering launched with a bang! John Considine, our GM, announced the partnership and release with the CEO of Cloudflare, Matthew Prince, at IBM's Think conference. It was one of the larger releases I had worked on since starting at IBM. The feedback we began receiving via face-to-face and NPS surveys was positive, and we continued to edit, improve, and grow the service. As an initial suite, it was relatively simple and straightforward as we hoped. The Cloudflare teams actually told us that we were a strong improvement in organization and interaction relative to their UI.
 
         Unfortunately, I was only able to continue working on the team for a few more months before transitioning to another project.
     </p>
-    <figure>
-    <img src="../assets/images/cis-project/cis-think-announcement.jpg" alt="Image of John Considine (GM IBM Cloud) announcing release of CIS at Think 2018">
-<figcaption>John Considine (GM IBM Cloud) announcing release of CIS at Think 2018</figcaption></figure>
+    {{ figure(
+        "../assets/images/cis-project/cis-think-announcement.jpg",
+        "Image of John Considine (GM IBM Cloud) announcing release of CIS at Think 2018",
+        "John Considine (GM IBM Cloud) announcing release of CIS at Think 2018"
+    ) }}
+{% endcall %}
 
-
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Related Tasks</h3>
-    <div class="section--content">
-            <p>
+{% call section("Related Tasks") %}
+    <p>
         I produced a set of demo videos showcasing the developed UI and providing instructional voice-overs for some of the functionality. These videos were used at IBM's Think conference in Las Vegas at the CIS Demo Booth. <a target="_blank" href="https://drive.google.com/drive/folders/1mzjxrc6w2R_BrwOd16owIxvh4fD8IAC-">Demo videos</a>
     </p>
+{% endcall %}
 
-    </div>
-</div>
-
-<div class="section">
-    <h3 class="section--title">Related Links</h3>
-    <div class="section--content">
-            <ul>
+{% call section("Related Links") %}
+    <ul>
         <li><a target="_blank" href="https://blog.cloudflare.com/ibm-cloud-and-cloudflare/">Cloudflare Announcement Blog</a></li>
         <li><a target="_blank" href="https://fortune.com/2018/03/14/ibm-amazon-cloudflare-partner/">Fortune: IBM and Cloudflare Join Forces to Take on Amazon</a></li>
         <li><a href="https://blog.cloudflare.com/announcing-the-new-cloudflare-partner-platform/#the-igm-partnership">Cloudflare Partnership Program: Working with IBM Cloud Teams</a></li>
     </ul>
+{% endcall %}
 
-    </div>
-</div>
-
-    </div>
-</body>
-</html>
+{% endblock %}

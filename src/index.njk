@@ -1,0 +1,111 @@
+{% extends "components/_base.njk" %}
+{% from "components/_work-card.njk" import workCard %}
+
+{# Root-level page: override paths so nav links don't use "../" prefix #}
+{% set rootPath = "./" %}
+{% set bodyClass = "home" %}
+
+{% block head %}
+<link rel="stylesheet" href="style/simple-grid.min.css">
+<script>
+    !function (a, b, c, d, e, f){
+      a.ddjskey = e;
+      a.ddoptions = f || null;
+      var m = b.createElement(c), n = b.getElementsByTagName(c)[0];
+      m.async = 1, m.src = d, n.parentNode.insertBefore(m, n);
+    }(window,
+      document,
+      "script",
+      "https://js.datadome.co/tags.js",
+      "E03BD71CA82F094DEE24D9F1AD3085",
+      { ajaxListenerPath: true }
+    );
+  </script>
+{% endblock %}
+
+{% block content %}
+<div class="section">
+    <h2 class="section--title">
+        Let me know how I can help
+    </h2>
+    <div class="section--content">
+        <p>
+            Hello! My name is Steven Raden. I have been in the UX design industry for the last 7 years. I started out at IBM Design focused on Cloud Infrastructure, a technical field which I enjoyed. So much so, that as I sought to grow in my career, I transitioned to where I am today. I am currently a Product Designer at <a href="https://www.cloudflare.com/learning/what-is-cloudflare/">Cloudflare</a> with experience acoss their tech stack. From serverless computing to internet security.
+        </p>
+    </div>
+</div>
+
+<div class="section">
+    <h2 id="work" class="section--title">
+        Work
+    </h2>
+
+    {{ workCard(
+        href="./work/cloudflare-email-routing.html",
+        imgSrc="./assets/images/cloudflare-project/cloudflareemailrouting.png",
+        imgAlt="Cloudflare email routing graphic",
+        title="Email Routing",
+        description="Worked with management and engineering to define and launch a new Cloudflare project that received greater than 90% positive feedback.",
+        role="Product Design Lead"
+    ) }}
+
+    {{ workCard(
+        href="./work/cloudflare-workers-unbound.html",
+        imgSrc="./assets/images/cloudflare-project/workersunbound.png",
+        imgAlt="Cloudflare Workers Unbound Graphic",
+        title="Workers Unbound",
+        description="Product design team member collaborating with engineering and project management to launch world class products. Supporting small to enterprise organizations in their efforts to improve performance and secure their applications.",
+        role="Product Designer"
+    ) }}
+
+    {{ workCard(
+        href="./work/cloudflare.html",
+        imgSrc="./assets/images/cloudflare-project/cf-logo.png",
+        imgAlt="Cloudflare logo",
+        title="Cloudflare Projects (Under construction)",
+        description="Product design team member collaborating with engineering and project management to launch world class products. Supporting small to enterprise organizations in their efforts to improve performance and secure their applications.",
+        role="Senior Product Designer"
+    ) }}
+
+    {{ workCard(
+        href="./work/cis.html",
+        imgSrc="./assets/images/cis-project/cloudflare-ibm-logo.png",
+        imgAlt="Cloud Internet Services Graphic",
+        title="IBM Cloud Internet Services",
+        description="Work with the renown internet security company, Cloudflare, to provide IBM Cloud customers with improved security, technology, and power.",
+        role="UX Design Lead"
+    ) }}
+
+    {{ workCard(
+        href="./work/vpc.html",
+        imgSrc="./assets/images/vpc-project/vpc-diagram.svg",
+        imgAlt="Virtual Private Cloud Graphic",
+        title="IBM Cloud Virtual Private Cloud",
+        description="The Virtual Private Cloud (VPC) project is the next evolution for the infrastructure offerings of IBM Cloud. These upgrades made it easier for our clients to grow and evolve their applications.",
+        role="UX Design"
+    ) }}
+
+    {{ workCard(
+        href="./work/tactile-toolkit.html",
+        imgSrc="./assets/images/tactile-toolkit-project/layout-v1.png",
+        imgAlt="Work in Progress placeholder",
+        title="Tactile Toolkit",
+        description="Working with 2 other designers and Development Manager who happens to have a visual impairement, we crafted a set of physical and tactile design components to enable communication of designs to those with a visual impairment.",
+        role="UX Design"
+    ) }}
+
+    <div class="section">
+        <h2 class="section--title">
+            Notable Achievements - Under Construction
+        </h2>
+        <div class="section--content">
+            <ul>
+                <li>Superhero award</li>
+                <li>Tactile Wireframing Kit</li>
+                <li>Patterns Bootcamp Design Lead x2</li>
+                <li>IBM Representative at PixelHusky Hackathon</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

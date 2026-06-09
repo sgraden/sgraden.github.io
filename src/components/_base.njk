@@ -1,0 +1,71 @@
+{#
+  _base.njk
+  ---------
+  The main layout shell. Every page file extends this.
+
+  Files that use this layout should start with:
+    {% extends "components/_base.njk" %}
+    {% set title = "Page Title" %}
+    {% block content %}
+      ... your page HTML here ...
+    {% endblock %}
+
+  The content block is plain HTML — no special syntax required inside it.
+  All macros and components are optional; import only what a page needs.
+
+  Variables (all optional — defaults shown below):
+    title      — appended to <title> as "Steven Raden - {title}".
+                 Leave unset for just "Steven Raden".
+    rootPath   — base path for nav links. Default: "../" (correct for work/ pages).
+                 index.njk should set this to "./"
+    bodyClass  — class on <body>. Default: "project"
+    backUrl    — if set, renders a back button in the header pointing to this URL.
+                 Leave unset (the default) and no button appears. Useful for old
+                 portfolio pages that previously used a custom back-link pattern.
+
+  Example with back button (useful for older pages):
+    {% set backUrl = "../index.html" %}
+
+  Example for root-level index page:
+    {% set rootPath = "./" %}
+    {% set bodyClass = "home" %}
+
+  Adding page-specific <head> content (extra scripts, stylesheets, etc.):
+    {% block head %}
+      <script src="..."></script>
+    {% endblock %}
+#}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ rootPath | default('../') }}style/main.css">
+    <title>Steven Raden{% if title %} - {{ title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %}{% endblock %}
+</head>
+<body class="{{ bodyClass | default('project') }}">
+    <header>
+        <div class="header--content">
+            <h1>Steven Raden</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ rootPath | default('../') }}index.html#work">Work</a></li>
+                    <li><a href="{{ rootPath | default('../') }}assets/Steven Raden Resume - 2026.pdf">Resume</a></li>
+                    <li><a target="_blank" href="https://photo.sraden.com/">Photography</a></li>
+                    <!-- <li><a href="{{ rootPath | default('../') }}index.html#contact">Contact</a></li> -->
+                </ul>
+            </nav>
+            {% if backUrl %}
+            <a class="header--back" href="{{ backUrl }}">
+                <i class="material-icons">arrow_back</i> Back
+            </a>
+            {% endif %}
+        </div>
+    </header>
+    <div class="main--content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

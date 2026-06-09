@@ -1,0 +1,49 @@
+{#
+  _section.njk
+  ------------
+  The standard section wrapper used on every page. Renders a .section div
+  with a title heading and a .section--content div around your content.
+
+  This macro uses Nunjucks' {% call %} pattern because the content inside
+  a section is arbitrary HTML, not a simple string parameter. Everything
+  between {% call section(...) %} and {% endcall %} becomes the section body.
+
+  Usage (standard section, h3):
+    {% from "components/_section.njk" import section %}
+
+    {% call section("Research & Discovery") %}
+      <p>We talked to a mix of new, existing, and beta users...</p>
+      <figure>
+        <img src="../assets/images/my-project/screen.png" alt="Screen">
+        <figcaption>Caption here.</figcaption>
+      </figure>
+    {% endcall %}
+
+  Usage (project title — first section on a page, h2 + extra class):
+    {% call section("Workers Unbound", isTitle=true) %}
+      <p>Project intro paragraph...</p>
+      {{ projectMeta("Product Designer", "Launched: <b>April 14, 2021</b>") }}
+    {% endcall %}
+
+  The content between {% call %} and {% endcall %} is passed to {{ caller() }}
+  inside the macro — think of it as an HTML slot, similar to <slot> in web
+  components. Any valid HTML or Nunjucks macro calls work inside it.
+
+  Parameters:
+    title    — heading text (required)
+    isTitle  — if true, renders h2 with the "project--title" class instead of
+               the standard h3. Use this for the first/hero section only.
+               Default: false
+#}
+{% macro section(title, isTitle=false) %}
+<div class="section">
+    {% if isTitle %}
+    <h2 class="section--title project--title">{{ title }}</h2>
+    {% else %}
+    <h3 class="section--title">{{ title }}</h3>
+    {% endif %}
+    <div class="section--content">
+        {{ caller() }}
+    </div>
+</div>
+{% endmacro %}

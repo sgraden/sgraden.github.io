@@ -1,0 +1,34 @@
+{#
+  _project-meta.njk
+  -----------------
+  The role / timeline block shown near the top of every project page,
+  just below the project description paragraph.
+
+  Usage (basic):
+    {% from "components/_project-meta.njk" import projectMeta %}
+    {{ projectMeta("Product Designer", "Launched: <b>April 14, 2021</b>") }}
+
+  Usage (with optional blog post link):
+    {{ projectMeta(
+        "Product Design Lead",
+        "Timeline: <b>April 2020 - Current</b>",
+        blogUrl="https://blog.cloudflare.com/introducing-email-routing/",
+        blogLabel="Email Routing"
+    ) }}
+
+  Parameters:
+    role       — job title string (required)
+    timeline   — date/launch string. Can contain inline HTML like <b>bold</b>
+                 (rendered with | safe). Pass none to omit. (required)
+    blogUrl    — if provided, renders a "Blog Post: <a href="...">label</a>" line (optional)
+    blogLabel  — link text for blogUrl. Defaults to the raw URL if omitted (optional)
+#}
+{% macro projectMeta(role, timeline, blogUrl=none, blogLabel=none) %}
+<div class="description--role">
+    Role: <b>{{ role }}</b><br>
+    {% if timeline %}{{ timeline | safe }}{% endif %}
+    {% if blogUrl %}
+    <br>Blog Post: <a target="_blank" href="{{ blogUrl }}">{{ blogLabel or blogUrl }}</a>
+    {% endif %}
+</div>
+{% endmacro %}

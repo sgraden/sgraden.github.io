@@ -1,0 +1,65 @@
+{% extends "components/_base.njk" %}
+{% from "components/_section.njk"      import section %}
+{% from "components/_flow-steps.njk"   import flowSteps %}
+{% from "components/_project-meta.njk" import projectMeta %}
+{% from "components/_banner-alert.njk" import bannerAlert %}
+
+{% set title = "Email Routing" %}
+
+{% block content %}
+
+{{ bannerAlert() }}
+
+{% call section("Cloudflare Email Routing", isTitle=true) %}
+    <p>
+        Enable customers to leverage their personal or professional domains to create personalized domains that forward emails to their preferred inbox.
+    </p>
+    {{ projectMeta(
+        "Product Design Lead",
+        "Timeline: <b>April 2020 - Current</b>",
+        blogUrl="https://blog.cloudflare.com/introducing-email-routing/",
+        blogLabel="Email Routing"
+    ) }}
+
+    {# Summary is a nested section inside the title section — preserving original structure #}
+    <div class="section">
+        <h3 class="section--title">Summary</h3>
+        <div class="section--content">
+            <p>
+                <b>Cloudflare Email Routing</b> addresses a critical customer pain point: the complexity and cost of managing multiple custom domain mailboxes.
+                Many users compromise security by using a single personal email for both sensitive logins (like banking) and spam-heavy web sign-ups.
+                This product offers a <b>simple, privacy-first alternative</b> that empowers individuals, families, and small businesses to manage their online presences efficiently.
+            </p>
+
+            {{ flowSteps([
+                {
+                    title: "Configure Custom Domain Alias",
+                    body: "The user defines their desired custom address on their domain (e.g., <b>sales@mydomain.com</b>) directly in the Cloudflare dashboard."
+                },
+                {
+                    title: "Set Up Forwarding Target",
+                    body: "The user inputs their preferred destination inbox (such as a personal <b>Gmail</b> or <b>Outlook</b> account) where messages should land."
+                },
+                {
+                    title: "Verify &amp; Auto-Configure",
+                    body: "Cloudflare <b>automatically provisions</b> the required DNS records (MX/TXT) and validates destination ownership in real time with a quick confirmation link."
+                },
+                {
+                    title: "Real-Time Intelligent Routing",
+                    body: "Email arrives and is routed instantly. Cloudflare operates at the transport layer, modifying the SMTP envelope but <b>preserving all security headers (SPF, DKIM)</b> and keeping the email body completely intact."
+                }
+            ]) }}
+
+            <p>
+                From a design perspective, this setup achieves <b>extreme simplicity</b> for non-technical users while upholding a <b>privacy-first approach</b>.
+                Because Cloudflare processes emails in real time without caching or storing them, users get the convenience of customized email addresses without sacrificing confidentiality or security.
+            </p>
+
+            <p style="margin-top: 32px;">
+                Read the full announcement on the Cloudflare Blog: <a target="_blank" href="https://blog.cloudflare.com/introducing-email-routing/">Introducing Email Routing</a>.
+            </p>
+        </div>
+    </div>
+{% endcall %}
+
+{% endblock %}

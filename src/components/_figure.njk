@@ -1,0 +1,29 @@
+{#
+  _figure.njk
+  -----------
+  A single image with an optional caption below it.
+
+  Usage (with caption):
+    {% from "components/_figure.njk" import figure %}
+    {{ figure("../assets/images/my-project/photo.png", "Alt text", "Caption text.") }}
+
+  Usage (no caption — omit the third argument or pass none):
+    {{ figure("../assets/images/my-project/photo.png", "Alt text") }}
+
+  Usage (no drop shadow):
+    {{ figure("../assets/images/my-project/photo.png", "Alt text", "Caption.", noShadow=true) }}
+
+  Parameters:
+    src       — image path (required)
+    alt       — alt text for the image (required)
+    caption   — text shown below the image in a <figcaption> (optional).
+                Supports inline HTML via the | safe filter, so you can pass
+                things like "Before &rarr; After" or "<b>bold</b> text".
+    noShadow  — pass true to suppress the drop shadow (class="no-shadow"). Default: false
+#}
+{% macro figure(src, alt, caption=none, noShadow=false) %}
+<figure>
+    <img src="{{ src }}" alt="{{ alt }}"{% if noShadow %} class="no-shadow"{% endif %}>
+    {% if caption %}<figcaption>{{ caption | safe }}</figcaption>{% endif %}
+</figure>
+{% endmacro %}

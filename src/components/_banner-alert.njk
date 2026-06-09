@@ -1,0 +1,25 @@
+{#
+  _banner-alert.njk
+  -----------------
+  A full-width alert banner, typically placed at the top of page content
+  to flag that a project page is still under construction.
+
+  Usage (default — standard construction message):
+    {% from "components/_banner-alert.njk" import bannerAlert %}
+    {{ bannerAlert() }}
+
+  Usage (custom message and icon):
+    {{ bannerAlert("Coming soon.", "schedule") }}
+
+  Parameters:
+    message  — banner text (optional).
+               Default: "This page is currently under construction."
+    icon     — Material Icons name (optional). Default: "construction"
+               Browse available icons at fonts.google.com/icons
+#}
+{% macro bannerAlert(message="This page is currently under construction.", icon="construction") %}
+<div class="project--banner-alert">
+    <i class="material-icons">{{ icon }}</i>
+    <span>{{ message }}</span>
+</div>
+{% endmacro %}

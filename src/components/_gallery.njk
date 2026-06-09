@@ -1,0 +1,38 @@
+{#
+  _gallery.njk
+  ------------
+  A side-by-side image grid with an optional shared caption underneath.
+  Designed for two images shown together, but accepts any number.
+  For a single image, use _figure.njk instead.
+
+  Usage (two images with a shared caption):
+    {% from "components/_gallery.njk" import gallery %}
+    {{ gallery([
+        { src: "../assets/images/my-project/screen-1.png", alt: "First screen" },
+        { src: "../assets/images/my-project/screen-2.png", alt: "Second screen" }
+    ], "Caption describing both images.") }}
+
+  Usage (images only, no caption):
+    {{ gallery([
+        { src: "../assets/images/my-project/screen-1.png", alt: "First screen" },
+        { src: "../assets/images/my-project/screen-2.png", alt: "Second screen" }
+    ]) }}
+
+  Parameters:
+    images   — array of { src, alt } objects (required). Designed for 2 images;
+               more will wrap based on the grid CSS.
+    caption  — shared caption shown below the row (optional).
+               Supports inline HTML via the | safe filter.
+#}
+{% macro gallery(images, caption=none) %}
+<div class="img--gallery">
+    {% for img in images %}
+    <img class="img--gallery--item" src="{{ img.src }}" alt="{{ img.alt }}">
+    {% endfor %}
+    {% if caption %}
+    <figure>
+        <figcaption>{{ caption | safe }}</figcaption>
+    </figure>
+    {% endif %}
+</div>
+{% endmacro %}

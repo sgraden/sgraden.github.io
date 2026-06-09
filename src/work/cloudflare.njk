@@ -1,0 +1,26 @@
+{% extends "components/_base.njk" %}
+{% from "components/_section.njk"      import section %}
+{% from "components/_banner-alert.njk" import bannerAlert %}
+
+{% set title = "Cloudflare" %}
+
+{% block content %}
+
+{{ bannerAlert() }}
+
+{% call section("Projects to add") %}
+    <ul>
+        <li><a target="_blank" href="https://blog.cloudflare.com/introducing-cron-triggers-for-cloudflare-workers/">Cron Triggers for Workers</a></li>
+        <li><a target="_blank" href="https://blog.cloudflare.com/ladies-and-gentlemen-cloudflare-tv/">Cloudflare.tv</a></li>
+        <li>Cloudflare blog graphics and diagrams</li>
+        <li>Load Balancer Load Shedding</li>
+    </ul>
+{% endcall %}
+
+{% call section("Worker and Github pipeline") %}
+    <div class="work--card">
+        <iframe style="border: none;" src="https://cards.producthunt.com/cards/posts/238568?v=1" width="100%" height="600" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </div>
+{% endcall %}
+
+{% endblock %}
