@@ -168,10 +168,20 @@ header {
 .section {
   margin-bottom: 100px;
 }
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 52px;
+  }
+}
 .section--title {
   font-weight: 400;
   font-size: 2rem;
   margin-bottom: 32px;
+}
+@media (max-width: 768px) {
+  .section--title {
+    margin-bottom: 20px;
+  }
 }
 .section--content {
   line-height: 1.5;
@@ -518,6 +528,11 @@ header {
 .home-recognition {
   margin-top: 36px;
 }
+@media (max-width: 768px) {
+  .home-recognition {
+    margin-top: 28px;
+  }
+}
 .home-recognition__list {
   list-style: none;
   margin: 0;
@@ -694,6 +709,12 @@ header {
   gap: 16px;
   transition: all 0.3s ease;
 }
+@media (max-width: 768px) {
+  .project .flow-step {
+    padding: 16px;
+    gap: 12px;
+  }
+}
 @media (prefers-color-scheme: light) {
   .project .flow-step {
     background: #fbfbff;
@@ -846,6 +867,11 @@ header {
   font-weight: 500;
   letter-spacing: -0.01em;
 }
+@media (max-width: 768px) {
+  .project-body .section--title {
+    font-size: 1.25rem;
+  }
+}
 .project-body .section--content {
   color: var(--text-secondary);
   font-size: 1.125rem;
@@ -880,6 +906,14 @@ header {
   font-family: monospace;
   color: var(--text-muted);
   letter-spacing: 0.04em;
+}
+@media (max-width: 768px) {
+  .project-body .description--role {
+    font-size: 14px;
+    column-gap: 12px;
+    row-gap: 8px;
+    margin-bottom: 32px;
+  }
 }
 .project-body .description--role .meta-label {
   white-space: nowrap;
@@ -917,6 +951,13 @@ header {
   align-items: center;
   margin-bottom: 52px;
   padding-top: 8px;
+}
+@media (max-width: 768px) {
+  .project-nav {
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 8px 0;
+  }
 }
 .project-nav__back {
   font-size: 13px;
@@ -959,6 +1000,12 @@ header {
   margin-top: 96px;
   padding-top: 36px;
   border-top: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+  .project-cta {
+    margin-top: 56px;
+    padding-top: 24px;
+  }
 }
 .project-cta__label {
   font-size: 11px;

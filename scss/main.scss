@@ -144,10 +144,18 @@ header {
 .section { //a section of content
     margin-bottom: 100px;
 
+    @media (max-width: 768px) {
+        margin-bottom: 52px;
+    }
+
     &--title { //section title
         font-weight: 400;
         font-size: toRem(32);
         margin-bottom: 32px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
     }
 
     &--content {

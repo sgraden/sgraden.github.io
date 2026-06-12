@@ -370,6 +370,10 @@ $bp-home-mobile: 768px;
 .home-recognition {
     margin-top: 36px;
 
+    @media (max-width: $bp-home-mobile) {
+        margin-top: 28px;
+    }
+
     &__list {
         list-style: none;
         margin: 0;
