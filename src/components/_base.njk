@@ -46,26 +46,56 @@
     {% block head %}{% endblock %}
 </head>
 <body class="{{ bodyClass | default('project') }}">
-    <header>
-        <div class="header--content">
-            <h1>Steven Raden</h1>
-            <nav>
-                <ul>
-                    <li><a href="{{ rootPath | default('../') }}index.html#work">Work</a></li>
-                    <li><a href="{{ rootPath | default('../') }}assets/Steven Raden Resume - 2026.pdf">Resume</a></li>
-                    <li><a target="_blank" href="https://photo.sraden.com/">Photography</a></li>
-                    <!-- <li><a href="{{ rootPath | default('../') }}index.html#contact">Contact</a></li> -->
-                </ul>
+    {#
+      block body — override this entire block on pages with a custom full-bleed layout
+      (e.g. the homepage). Project pages leave this block as-is and use {% block content %}.
+    #}
+    {% block body %}
+    {#
+      Default body — project page two-column layout.
+      Set {% set projectSymbol = "✦" %} in the child template to use a
+      custom symbol on the panel. Defaults to ◆.
+      Homepage overrides this entire block with its own layout.
+    #}
+    <div class="project-layout">
+
+        <aside class="project-panel" aria-hidden="true">
+            <div class="project-panel__markers">
+                <span class="project-panel__triangle">▽</span>
+                <span class="project-panel__rule"></span>
+                <div class="project-panel__dots">
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                </div>
+            </div>
+            <div class="project-panel__symbol">{{ projectSymbol | default("◆") }}</div>
+            <span class="project-panel__slash">//////</span>
+        </aside>
+
+        <div class="project-body">
+            <nav class="project-nav">
+                <a href="{{ backUrl if backUrl else (rootPath | default('../') + 'index.html') }}" class="project-nav__back">← Work</a>
+                <div class="project-nav__links">
+                    <a href="https://photo.sraden.com/" target="_blank" rel="noopener">Photography</a>
+                    <a href="{{ rootPath | default('../') }}assets/Steven Raden Resume - 2026.pdf" target="_blank">Résumé</a>
+                </div>
             </nav>
-            {% if backUrl %}
-            <a class="header--back" href="{{ backUrl }}">
-                <i class="material-icons">arrow_back</i> Back
-            </a>
-            {% endif %}
+            {% block content %}{% endblock %}
+
+            <div class="project-cta">
+                <p class="project-cta__label">// More Work</p>
+                <a class="project-cta__link" href="{{ rootPath | default('../') }}index.html#work">View all projects</a>
+            </div>
         </div>
-    </header>
-    <div class="main--content">
-        {% block content %}{% endblock %}
+
     </div>
+    {% endblock %}
 </body>
 </html>

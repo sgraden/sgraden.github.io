@@ -4,6 +4,8 @@
 {% from "components/_gallery.njk"      import gallery %}
 {% from "components/_project-meta.njk" import projectMeta %}
 
+{% set projectSymbol = "△" %}
+
 {% set title = "VPC" %}
 
 {% block content %}
@@ -15,7 +17,7 @@
     <p>
         The VPC project story is long, complex, and a good learning opportunity for me. Out of necessity, I am going to avoid telling it chronologically and highlight events, opportunities, and challenges from the journey.
     </p>
-    {{ projectMeta("UX Design / Lead", "Timeline: <b>August 2017 - June 2019</b>") }}
+    {{ projectMeta("UX Design / Lead", "<b>August 2017 - June 2019</b>") }}
 {% endcall %}
 
 {% call section("Overview") %}

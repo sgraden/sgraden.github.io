@@ -1,0 +1,91 @@
+// Design tokens — sraden.com redesign
+// CSS custom properties with automatic dark/light switching
+// via prefers-color-scheme. These replace all hardcoded colors
+// in the new layout. Existing project page partials keep their
+// own values until they are migrated.
+
+:root {
+    // Accent
+    --accent:           #1fc3ff;
+    --accent-text:      #0099cc; // darker tint — used for small labels on light bg
+
+    // Panel (left cyan column)
+    --panel-bg:              #1fc3ff;
+    --panel-text:            #050810;
+    --panel-text-secondary:  rgba(5, 8, 16, 0.45);
+    --panel-symbol:          rgba(5, 8, 16, 0.10); // large SR monogram
+    --panel-marker:          rgba(5, 8, 16, 0.25); // dots, triangle
+    --panel-rule:            rgba(5, 8, 16, 0.18); // thin rules
+
+    // Page backgrounds — dark blue-navy, softer contrast against the cyan panel
+    --bg:              #0f1218;
+    --bg-secondary:    #171d2e;
+    --strip-bg:        #121620;
+
+    // Text — high opacity so nothing requires effort to read
+    --text-primary:    #ffffff;
+    --text-secondary:  rgba(255, 255, 255, 0.78);
+    --text-muted:      rgba(255, 255, 255, 0.56);
+
+    // Borders
+    --border:          rgba(255, 255, 255, 0.10);
+    --strip-border:    rgba(255, 255, 255, 0.08);
+
+    // Work list — featured (top, full brightness)
+    --work-dot-featured:    #1fc3ff;
+    --work-title-featured:  rgba(255, 255, 255, 0.95);
+    --work-company-featured:rgba(255, 255, 255, 0.50);
+    --work-year-featured:   rgba(255, 255, 255, 0.60);
+
+    // Work list — secondary (dimmed but still readable without effort)
+    --work-dot-secondary:    rgba(31, 195, 255, 0.45);
+    --work-title-secondary:  rgba(255, 255, 255, 0.62);
+    --work-company-secondary:rgba(255, 255, 255, 0.38);
+    --work-year-secondary:   rgba(255, 255, 255, 0.48);
+
+    // Work row
+    --work-row-border: rgba(255, 255, 255, 0.08);
+
+    // Strip markers
+    --strip-dot:   rgba(255, 255, 255, 0.22);
+    --strip-cross: rgba(255, 255, 255, 0.20);
+    --strip-rule:  rgba(255, 255, 255, 0.14);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        // Page backgrounds
+        --bg:              #ffffff;
+        --bg-secondary:    #f5f5f7;
+        --strip-bg:        #f0f0f3;
+
+        // Text
+        --text-primary:    #07090f;
+        --text-secondary:  #555555;
+        --text-muted:      #888888;
+
+        // Borders
+        --border:          rgba(0, 0, 0, 0.08);
+        --strip-border:    rgba(0, 0, 0, 0.07);
+
+        // Work list — featured
+        --work-dot-featured:    #1fc3ff;
+        --work-title-featured:  #07090f;
+        --work-company-featured:#888888;
+        --work-year-featured:   #888888;
+
+        // Work list — secondary
+        --work-dot-secondary:    rgba(31, 195, 255, 0.5);
+        --work-title-secondary:  #aaaaaa;
+        --work-company-secondary:#cccccc;
+        --work-year-secondary:   #cccccc;
+
+        // Work row
+        --work-row-border: rgba(0, 0, 0, 0.07);
+
+        // Strip markers
+        --strip-dot:   rgba(0, 0, 0, 0.20);
+        --strip-cross: rgba(0, 0, 0, 0.18);
+        --strip-rule:  rgba(0, 0, 0, 0.12);
+    }
+}

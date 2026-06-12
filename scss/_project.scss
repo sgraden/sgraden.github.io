@@ -1,9 +1,14 @@
+// ─── Project page: legacy element styles (colors updated for dark bg) ────────
+
+$bp-project-mobile: 768px;
+
 .project {
 
     &--title {
-        color: $color-primary;
+        color: var(--text-primary);
         padding-bottom: 16px;
-        border-bottom: 4px solid $color-primary;
+        border-bottom: 1px solid var(--accent);
+        margin-bottom: 8px;
     }
 
     figure {
@@ -11,6 +16,7 @@
 
         figcaption {
             font-size: toRem(16);
+            color: var(--text-muted);
             margin-top: -1rem;
             margin-bottom: 2rem;
         }
@@ -18,19 +24,19 @@
 
     img {
         max-width: 100%;
-        margin: 2rem 0 2rem 0;
-        box-shadow:  4px 4px 20px #dddde0, 
-                        -4px -4px 20px #ffffff;
+        margin: 2rem auto;
         display: block;
-        border-radius: 16px;
-        margin-left: auto;
-        margin-right: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+
+        @media (prefers-color-scheme: light) {
+            box-shadow: 4px 4px 20px #dddde0, -4px -4px 20px #ffffff;
+        }
 
         &.no-shadow {
             box-shadow: none;
         }
     }
-
 
     .img--gallery {
         display: inline-flex;
@@ -42,21 +48,31 @@
                 width: 100%;
                 display: block;
             }
+
+            @media (max-width: $bp-project-mobile) {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
     }
 
     &--banner-alert {
         display: inline-flex;
         align-items: center;
-        background-color: rgba(38, 66, 164, 0.06);
-        border: 1px solid rgba(38, 66, 164, 0.15);
-        color: #2642a4;
+        background-color: rgba(31, 195, 255, 0.08);
+        border: 1px solid rgba(31, 195, 255, 0.20);
+        color: var(--accent);
         padding: 10px 16px;
         border-radius: 10px;
         font-size: toRem(14);
         margin-bottom: 24px;
         font-weight: 500;
-        
+
+        @media (prefers-color-scheme: light) {
+            color: var(--accent-text);
+        }
+
         i {
             font-size: toRem(18);
             margin-right: 8px;
@@ -71,24 +87,28 @@
     }
 
     .flow-step {
-        background: #fbfbff;
-        border: 1px solid #f3f3f7;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
         border-radius: 16px;
         padding: 24px;
-        box-shadow: 4px 4px 20px #dddde0, -4px -4px 20px #ffffff;
         display: flex;
         align-items: flex-start;
         gap: 16px;
         transition: all 0.3s ease;
 
+        @media (prefers-color-scheme: light) {
+            background: #fbfbff;
+            box-shadow: 4px 4px 20px #dddde0, -4px -4px 20px #ffffff;
+        }
+
         &:hover {
             transform: translateY(-2px);
-            box-shadow: 4px 4px 25px #b1bfdd, -4px -4px 20px #fff;
+            background: rgba(31, 195, 255, 0.04);
         }
 
         .step-badge {
-            background: #2642A4;
-            color: white;
+            background: var(--accent);
+            color: #050810;
             border-radius: 50%;
             width: 32px;
             height: 32px;
@@ -105,16 +125,16 @@
                 margin: 0 0 8px 0;
                 font-size: toRem(20);
                 font-weight: 500;
-                color: #1d1f2e;
+                color: var(--text-primary);
             }
             p {
                 margin: 0;
                 font-size: toRem(16);
                 line-height: 1.5;
-                color: #7c8894;
-                
+                color: var(--text-secondary);
+
                 b {
-                    color: #1d1f2e;
+                    color: var(--text-primary);
                 }
             }
         }
@@ -123,11 +143,307 @@
     .flow-connector {
         display: flex;
         justify-content: center;
-        color: #2642A4;
+        color: var(--accent);
         margin: 4px 0;
-        
+
         i {
             font-size: 32px;
+        }
+    }
+}
+
+// ─── Project page: new layout ─────────────────────────────────────────────────
+
+.project-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+// ─── Left cyan panel ──────────────────────────────────────────────────────────
+
+.project-panel {
+    width: 200px;
+    background: var(--panel-bg);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 18px;
+
+    @media (max-width: $bp-project-mobile) {
+        display: none;
+    }
+
+    // Large symbol — bleeds off bottom-left corner
+    &__symbol {
+        position: absolute;
+        bottom: -20px;
+        left: -10px;
+        font-size: 140px;
+        font-weight: 900;
+        color: var(--panel-symbol);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    // Marker cluster — top-right of panel (▽ + rule + 3×3 dots)
+    &__markers {
+        position: absolute;
+        top: 38px;
+        right: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 7px;
+    }
+
+    &__triangle {
+        font-size: 13px;
+        color: var(--panel-marker);
+        line-height: 1;
+    }
+
+    &__rule {
+        width: 18px;
+        height: 0.5px;
+        background: var(--panel-rule);
+        display: block;
+    }
+
+    &__dots {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 4px;
+    }
+
+    &__dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--panel-marker);
+        display: block;
+    }
+
+    // Diagonal slash — bottom of panel
+    &__slash {
+        font-size: 9px;
+        color: var(--panel-rule);
+        letter-spacing: -1px;
+        font-family: monospace;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// ─── Right content column ─────────────────────────────────────────────────────
+
+.project-body {
+    flex: 1;
+    min-width: 0;
+    padding: 28px 52px 72px;
+    background: var(--bg);
+    box-sizing: border-box;
+    color: var(--text-secondary);
+
+    @media (max-width: $bp-project-mobile) {
+        padding: 0 20px 48px;
+        // Thin cyan accent banner at top on mobile (replaces the panel)
+        &::before {
+            content: '';
+            display: block;
+            height: 3px;
+            background: var(--accent);
+            margin: 0 -20px 24px;
+        }
+    }
+
+    // Override all heading colors for dark bg
+    h1, h2, h3, h4 {
+        color: var(--text-primary);
+    }
+
+    // Section-level overrides
+    .section--title {
+        color: var(--text-primary);
+        font-size: toRem(24);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+    }
+
+    .section--content {
+        color: var(--text-secondary);
+        font-size: toRem(18);
+
+        b, strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+
+            &:hover { text-decoration: underline; }
+
+            @media (prefers-color-scheme: light) {
+                color: var(--accent-text);
+            }
+        }
+    }
+
+    // Meta strip — two-column grid: labels left, values wrap on the right
+    .description--role {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: baseline;
+        column-gap: 20px;
+        row-gap: 10px;
+        padding: 16px 0;
+        border-top: 0.5px solid var(--border);
+        border-bottom: 0.5px solid var(--border);
+        margin: 20px 0 48px;
+        font-size: 16px;   // base
+        font-family: monospace;
+        color: var(--text-muted);
+        letter-spacing: 0.04em;
+
+        .meta-label {
+            white-space: nowrap;
+            color: var(--text-muted);
+
+            &::after { content: ":"; }
+        }
+
+        .meta-value {
+            color: var(--text-secondary);
+        }
+
+        b {
+            color: var(--text-primary);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+
+            @media (prefers-color-scheme: light) {
+                color: var(--accent-text);
+            }
+
+            &:hover { text-decoration: underline; }
+        }
+    }
+}
+
+// ─── Project nav ──────────────────────────────────────────────────────────────
+
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 52px;
+    padding-top: 8px;
+
+    &__back {
+        font-size: 13px;   // sm
+        color: var(--text-muted);
+        text-decoration: none;
+        font-family: monospace;
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--accent);
+
+            @media (prefers-color-scheme: light) {
+                color: var(--accent-text);
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 20px;
+
+        a {
+            font-size: 13px;   // sm
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: monospace;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+
+            &:hover {
+                color: var(--accent);
+
+                @media (prefers-color-scheme: light) {
+                    color: var(--accent-text);
+                }
+            }
+        }
+    }
+}
+
+// ─── Project CTA ──────────────────────────────────────────────────────────────
+
+.project-cta {
+    margin-top: 96px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+
+    &__label {
+        font-size: 11px;   // xs
+        font-family: monospace;
+        color: var(--text-muted);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin: 0 0 16px;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        transition: color 0.2s;
+
+        &::after {
+            content: ' →';
+            display: inline-block;
+            color: var(--accent);
+            transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        &:hover {
+            color: var(--accent);
+
+            @media (prefers-color-scheme: light) {
+                color: var(--accent-text);
+            }
+
+            &::after {
+                transform: translateX(10px);
+
+                @media (prefers-color-scheme: light) {
+                    color: var(--accent-text);
+                }
+            }
+        }
+
+        @media (max-width: $bp-project-mobile) {
+            font-size: 26px;
         }
     }
 }

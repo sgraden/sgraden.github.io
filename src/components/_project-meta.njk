@@ -23,12 +23,17 @@
     blogUrl    — if provided, renders a "Blog Post: <a href="...">label</a>" line (optional)
     blogLabel  — link text for blogUrl. Defaults to the raw URL if omitted (optional)
 #}
-{% macro projectMeta(role, timeline, blogUrl=none, blogLabel=none) %}
+{% macro projectMeta(role, timeline, blogUrl=none, blogLabel=none, timelineLabel="Timeline") %}
 <div class="description--role">
-    Role: <b>{{ role }}</b><br>
-    {% if timeline %}{{ timeline | safe }}{% endif %}
+    <span class="meta-label">Role</span>
+    <span class="meta-value"><b>{{ role }}</b></span>
+    {% if timeline %}
+    <span class="meta-label">{{ timelineLabel }}</span>
+    <span class="meta-value">{{ timeline | safe }}</span>
+    {% endif %}
     {% if blogUrl %}
-    <br>Blog Post: <a target="_blank" href="{{ blogUrl }}">{{ blogLabel or blogUrl }}</a>
+    <span class="meta-label">Blog Post</span>
+    <span class="meta-value"><a target="_blank" href="{{ blogUrl }}">{{ blogLabel or blogUrl }}</a></span>
     {% endif %}
 </div>
 {% endmacro %}
