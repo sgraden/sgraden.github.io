@@ -172,6 +172,71 @@
             </ul>
         </div>
 
+        
+        <div class="home-testimonials">
+            <p class="home-work__heading">// Kind Words</p>
+
+            <div class="testimonials-carousel" id="testimonialsCarousel">
+                <div class="testimonials-track" id="testimonialsTrack">
+
+                    <div class="testimonial-slide">
+                        <blockquote class="testimonial-quote">"He recently led a workshop with 20 participants, among which were his peers and his management. I think he did an outstanding job of making it interactive, worthwhile, and fun! Kudos to Steven for great execution here, as I know it will help us with the future functionality."</blockquote>
+                        <div class="testimonial-meta">
+                            <a href="https://www.linkedin.com/in/johnelliotcosgrove/" target="_blank" rel="noopener" class="testimonial-name">John Cosgrove</a>
+                            <span class="testimonial-role">Product Manager, API Shield · Cloudflare · 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <blockquote class="testimonial-quote">"I think about how frictionless API Shield feels, and I want more of it on the dashboard."</blockquote>
+                        <div class="testimonial-meta">
+                            <a href="https://www.linkedin.com/in/peter-yoakum/" target="_blank" rel="noopener" class="testimonial-name">Peter Yoakum</a>
+                            <span class="testimonial-role">Engineer · Cloudflare · 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <blockquote class="testimonial-quote">"Wonderful efforts in coordinating the Austin Office Olympics event… It's things like this that highlight the dedication of Cloudflarians and our team spirit to cross organizational boundaries!"</blockquote>
+                        <div class="testimonial-meta">
+                            <a href="https://www.linkedin.com/in/oliyu/" target="_blank" rel="noopener" class="testimonial-name">Oliver Yu</a>
+                            <span class="testimonial-role">Director of Engineering, Emerging Technologies and Incubation · Cloudflare · 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <blockquote class="testimonial-quote">"Huge shoutout to Steven Raden who waded into a chaotic situation to make sure we had design support for the barrage of blogs this week!"</blockquote>
+                        <div class="testimonial-meta">
+                            <a href="https://www.linkedin.com/in/kari-linder-957b7b74/" target="_blank" rel="noopener" class="testimonial-name">Kari Linder</a>
+                            <span class="testimonial-role">Cloudflare · Company-wide meeting shoutout · 2021</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <blockquote class="testimonial-quote">"Shoutout to Steven Raden for knocking the design out of the park, as always! He took the trouble to thoroughly understand the use case, and pushed to implement more than 'just a button' to maximize the benefit to our customer."</blockquote>
+                        <div class="testimonial-meta">
+                            <a href="https://www.linkedin.com/in/adam-martinetti-aa4260122/" target="_blank" rel="noopener" class="testimonial-name">Adam Martinetti</a>
+                            <span class="testimonial-role">Project Manager · Cloudflare · 2022</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <blockquote class="testimonial-quote">"You always made space for me, listened to all my questions and requests, and were a friendly and welcoming figure to talk to! I really do appreciate all the kindness you've shown me."</blockquote>
+                        <div class="testimonial-meta">
+                            <a href="https://www.linkedin.com/in/jin-hee-lee-b600141b2/" target="_blank" rel="noopener" class="testimonial-name">Jin-hee Lee</a>
+                            <span class="testimonial-role">Cloudflare · 2022</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="testimonials-nav">
+                    <button class="testimonials-prev" id="testimonialsPrev" aria-label="Previous">&#8249;</button>
+                    <div class="testimonials-dots" id="testimonialsDots"></div>
+                    <button class="testimonials-next" id="testimonialsNext" aria-label="Next">&#8250;</button>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     
@@ -186,5 +251,90 @@
     </aside>
 
 </div>
+
+<script>
+(function () {
+  var track = document.getElementById('testimonialsTrack');
+  var dotsContainer = document.getElementById('testimonialsDots');
+  var prevBtn = document.getElementById('testimonialsPrev');
+  var nextBtn = document.getElementById('testimonialsNext');
+  var carousel = document.getElementById('testimonialsCarousel');
+  var slides = track.querySelectorAll('.testimonial-slide');
+  var current = 0;
+  var timer = null;
+  var resumeTimeout = null;
+  var INTERVAL = 5000;      // ms between auto-advances
+  var RESUME_DELAY = 1500;  // ms after hover-out before resuming
+
+  // Lock carousel height to tallest slide so page doesn't jump on advance
+  function lockHeight() {
+    var max = 0;
+    slides.forEach(function (s) {
+      var h = s.offsetHeight;
+      if (h > max) max = h;
+    });
+    if (max > 0) carousel.style.minHeight = max + 'px';
+  }
+
+  // Build dot indicators
+  slides.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.className = 'testimonials-dot';
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.addEventListener('click', function () { goTo(i); scheduleResume(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateDots() {
+    dotsContainer.querySelectorAll('.testimonials-dot').forEach(function (d, i) {
+      d.classList.toggle('is-active', i === current);
+    });
+  }
+
+  function goTo(n) {
+    current = ((n % slides.length) + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    updateDots();
+  }
+
+  // Fully stop both the interval and any pending resume
+  function stopAll() {
+    clearInterval(timer);
+    clearTimeout(resumeTimeout);
+    timer = null;
+    resumeTimeout = null;
+  }
+
+  // Start a fresh consistent interval
+  function startTimer() {
+    stopAll();
+    timer = setInterval(function () { goTo(current + 1); }, INTERVAL);
+  }
+
+  // After a manual action (click/nav), wait a full INTERVAL before resuming
+  function scheduleResume() {
+    stopAll();
+    resumeTimeout = setTimeout(startTimer, INTERVAL);
+  }
+
+  // After hover-out, wait RESUME_DELAY before resuming (grace period)
+  function scheduleResumeAfterHover() {
+    clearTimeout(resumeTimeout);
+    resumeTimeout = setTimeout(startTimer, RESUME_DELAY);
+  }
+
+  prevBtn.addEventListener('click', function () { goTo(current - 1); scheduleResume(); });
+  nextBtn.addEventListener('click', function () { goTo(current + 1); scheduleResume(); });
+
+  // Pause while hovering; resume after grace period on leave
+  carousel.addEventListener('mouseenter', stopAll);
+  carousel.addEventListener('mouseleave', scheduleResumeAfterHover);
+
+  lockHeight();
+  window.addEventListener('resize', lockHeight);
+  updateDots();
+  startTimer();
+}());
+</script>
 </body>
 </html>
