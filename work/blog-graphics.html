@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="../style/main.css">
+    <title>Steven Raden - Blog Banners & Diagrams</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="project">
+    
+    
+    <div class="project-layout">
+
+        <aside class="project-panel" aria-hidden="true">
+            <div class="project-panel__markers">
+                <span class="project-panel__triangle">▽</span>
+                <span class="project-panel__rule"></span>
+                <div class="project-panel__dots">
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                </div>
+            </div>
+            <div class="project-panel__symbol">✎</div>
+            <span class="project-panel__slash">//////</span>
+        </aside>
+
+        <div class="project-body">
+            <nav class="project-nav">
+                <a href="../index.html" class="project-nav__back">← Work</a>
+                <div class="project-nav__links">
+                    <a href="https://photo.sraden.com/" target="_blank" rel="noopener">Photography</a>
+                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank">Résumé</a>
+                </div>
+            </nav>
+
+<div class="section">
+    <h2 class="section--title project--title">Blog Banners &amp; Diagrams</h2>
+    <div class="section--content">
+            <p>
+        Alongside my product work, I regularly supported Cloudflare's Blog graphics team and the project stakeholders behind each launch. Using the team's shared design toolkit, I designed <b>unique announcement banners</b> for blog posts and translated dense technical concepts into <b>custom diagrams</b> &mdash; the kind of visuals that help a reader grasp how a protocol or product actually works.
+    </p>
+    <p>
+        This is a curated set of that work, organized by year. The banners set the tone for a launch; the diagrams do the harder job of making something technical feel obvious.
+    </p>
+    <div class="description--role">
+    <span class="meta-label">Role</span>
+    <span class="meta-value"><b>Product Designer</b></span>
+    <span class="meta-label">Timeline</span>
+    <span class="meta-value"><b>2021 &ndash; 2023</b></span>
+</div>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">2023</h3>
+    <div class="section--content">
+            <p>
+        A pair of diagrams created for the Cloudflare Blog explaining how API caching decides what to store and when to clear it &mdash; concepts that are easy to get wrong in prose but click immediately when you can see the request flow.
+    </p>
+    <figure>
+    <img src="../assets/images/blog-graphics-project/diagram-api-cache-key.png" alt="Diagram comparing how the cache key is built for authenticated versus anonymous API requests" class="no-shadow">
+<figcaption>How the cache key differs between an <b>authenticated</b> request (keyed on the API session) and an <b>anonymous</b> one (keyed on a hash of the request body), so identical-looking calls don't collide in cache.</figcaption></figure>
+
+    <figure>
+    <img src="../assets/images/blog-graphics-project/diagram-cache-invalidate-post.png" alt="Sequence diagram showing a cached GET request followed by a POST that invalidates the cache" class="no-shadow">
+<figcaption>Cache-on-GET, invalidate-on-POST: the first request is stored, and a later write empties the cache so the next reader doesn't get stale data.</figcaption></figure>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">2021</h3>
+    <div class="section--content">
+            <p>
+        A year of launch banners and explainer diagrams &mdash; from Speed Week and Impact Week to security research and developer-platform posts.
+    </p>
+
+    <p><b>Banners</b> &mdash; announcement art built from the Blog illustration toolkit to give each post its own identity.</p>
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-arm-cpus.png" alt="Illustrated blog banner featuring an Arm processor mounted in a server">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-web-crawling.png" alt="Illustrated blog banner of a search bar over a globe surrounded by foliage">
+    <figure>
+        <figcaption>Launch banners for an Arm CPU post and a search / web-crawling post.</figcaption>
+    </figure>
+</div>
+
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-green-compute.png" alt="Illustrated banner pairing a code window and a clock with a green globe">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-analytics.png" alt="Illustrated banner of a magnifying glass inspecting a dashboard with a performance gauge">
+    <figure>
+        <figcaption>Sustainable-compute and analytics / observability banners.</figcaption>
+    </figure>
+</div>
+
+    <figure>
+    <img src="../assets/images/blog-graphics-project/banner-black-latinx-security.png" alt="Banner celebrating Black and Latinx voices in security, with cultural patterns and iconography">
+<figcaption>A banner for a post spotlighting Black &amp; Latinx voices in security &mdash; leaning on the toolkit's flexibility to carry a more cultural, editorial tone.</figcaption></figure>
+
+
+    <p><b>Diagrams</b> &mdash; custom technical illustrations that walk a reader through how each system works.</p>
+    <figure>
+    <img src="../assets/images/blog-graphics-project/diagram-odoh-protocol.png" alt="Diagram of the Oblivious DoH protocol showing client, proxy, target, and resolver with encryption steps" class="no-shadow">
+<figcaption>End-to-end flow of the <b>Oblivious DoH</b> protocol: the client encrypts queries to the target, the proxy relays without seeing contents, and a legend maps each encryption / decryption step.</figcaption></figure>
+
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-magic-transit-1.png" alt="Magic Transit diagram routing public users through Cloudflare's global edge to a customer origin over Anycast GRE">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-magic-transit-2.png" alt="Magic WAN diagram showing a primary data center hub and branch-office spokes connected by Cloudflare Anycast tunnels">
+    <figure>
+        <figcaption>Speed Week &mdash; <b>Magic Transit &amp; Magic WAN</b>: public traffic ingresses across the global Anycast network to the origin (left), and offices connect as hub-and-spoke over Anycast tunnels (right).</figcaption>
+    </figure>
+</div>
+
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-signed-exchange-simple.png" alt="Signed Exchange explained as a kingdom analogy with the King's Stamp standing in for a cryptographic signature">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-signed-exchange-technical.png" alt="Technical Signed Exchange diagram showing the SXG flow between crawler, Google cache, browser, and Cloudflare edge">
+    <figure>
+        <figcaption>Speed Week &mdash; <b>Signed Exchanges (SXG)</b>: a plain-language kingdom analogy (the &ldquo;King's Stamp&rdquo; as the cryptographic signature) paired with the real crawler &rarr; cache &rarr; edge prefetch flow for readers who wanted the technical version.</figcaption>
+    </figure>
+</div>
+
+    <figure>
+    <img src="../assets/images/blog-graphics-project/diagram-ipfs-1.png" alt="IPFS node network diagram highlighting your node among peer nodes" class="no-shadow">
+<figcaption><b>IPFS</b> gateway post: where &ldquo;your node&rdquo; sits within the peer-to-peer network.</figcaption></figure>
+
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-ipfs-2.png" alt="IPFS diagram showing a node requesting content from a peer via a libp2p WANT message">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-ipfs-3.png" alt="IPFS diagram showing content blocks being served back across peers in response to a libp2p WANT">
+    <figure>
+        <figcaption>How a node fetches content across the network: a <code>libp2p</code> &ldquo;WANT&rdquo; request (left), then the matching blocks served back from whichever peers hold them (right).</figcaption>
+    </figure>
+</div>
+
+    <figure>
+    <img src="../assets/images/blog-graphics-project/diagram-web-analytics-cycle.png" alt="Circular diagram of the Measure, Grade, Improve cycle for web analytics" class="no-shadow">
+<figcaption>Speed Week &mdash; <b>Web Analytics</b>: the Measure &rarr; Grade &rarr; Improve loop, framing analytics as an ongoing cycle rather than a one-time report.</figcaption></figure>
+
+
+    </div>
+</div>
+
+
+            <div class="project-cta">
+                <p class="project-cta__label">// More Work</p>
+                <a class="project-cta__link" href="../index.html#work">View all projects</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
