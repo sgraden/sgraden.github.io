@@ -4,6 +4,8 @@
 {% from "components/_gallery.njk"      import gallery %}
 {% from "components/_project-meta.njk" import projectMeta %}
 
+{% set projectSymbol = "◆" %}
+
 {% set title = "CIS" %}
 
 {% block content %}
@@ -12,7 +14,7 @@
     <p>
         Work with the renown internet security company, Cloudflare, to provide IBM Cloud customers with improved security, technology, and power.
     </p>
-    {{ projectMeta("UX Design Lead", "Timeline: <b>September 2017 - June 2018</b>") }}
+    {{ projectMeta("UX Design Lead", "<b>September 2017 - June 2018</b>") }}
     {{ gallery([
         { src: "../assets/images/cis-project/cf-overview.png",  alt: "" },
         { src: "../assets/images/cis-project/cis-overview.png", alt: "Screenshot of CIS overview page" }

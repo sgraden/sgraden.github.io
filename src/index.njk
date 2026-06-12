@@ -1,126 +1,183 @@
 {% extends "components/_base.njk" %}
-{% from "components/_work-card.njk" import workCard %}
 
-{# Root-level page: override paths so nav links don't use "../" prefix #}
 {% set rootPath = "./" %}
 {% set bodyClass = "home" %}
 
-{% block head %}
-<link rel="stylesheet" href="style/simple-grid.min.css">
-<script>
-    !function (a, b, c, d, e, f){
-      a.ddjskey = e;
-      a.ddoptions = f || null;
-      var m = b.createElement(c), n = b.getElementsByTagName(c)[0];
-      m.async = 1, m.src = d, n.parentNode.insertBefore(m, n);
-    }(window,
-      document,
-      "script",
-      "https://js.datadome.co/tags.js",
-      "E03BD71CA82F094DEE24D9F1AD3085",
-      { ajaxListenerPath: true }
-    );
-  </script>
-{% endblock %}
+{% block body %}
+<div class="home-layout">
 
-{% block content %}
-<div class="section">
-    <h2 class="section--title">
-        Let me know how I can help
-    </h2>
-    <div class="section--content">
-        <p>
-            Hello! My name is Steven Raden. I have been in the UX design industry for the last 7 years. I started out at IBM Design focused on Cloud Infrastructure, a technical field which I enjoyed. So much so, that as I sought to grow in my career, I transitioned to where I am today. I am currently a Product Designer at <a href="https://www.cloudflare.com/learning/what-is-cloudflare/">Cloudflare</a> with experience acoss their tech stack. From serverless computing to internet security.
-        </p>
-    </div>
-</div>
+    {# ── Left cyan panel ─────────────────────────────────────────────────── #}
+    <aside class="home-panel" aria-hidden="true">
+        <span class="home-panel__year">2015 — Today</span>
 
-<div class="section">
-    <h2 id="work" class="section--title">
-        Work
-    </h2>
+        <div class="home-panel__markers">
+            <span class="home-panel__triangle">▽</span>
+            <span class="home-panel__rule"></span>
+            <div class="home-panel__dots">
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+                <span class="home-panel__dot"></span>
+            </div>
+        </div>
 
-    {{ workCard(
-        href="./work/cloudflare-appsec-overview.html",
-        imgSrc="./assets/images/appsec-overview-project/security-overview-launched.png",
-        imgAlt="Cloudflare Security Overview dashboard",
-        title="AppSec Overview",
-        description="Designed Cloudflare's unified application security overview, a new dashboard landing page that surfaces contextual recommendations so customers can assess their security posture and act on it quickly.",
-        role="Senior Product Designer"
-    ) }}
+        <div class="home-panel__monogram">SR</div>
+        <span class="home-panel__slash">//////</span>
+    </aside>
 
-    {{ workCard(
-        href="./work/cloudflare-email-routing.html",
-        imgSrc="./assets/images/cloudflare-project/cloudflareemailrouting.png",
-        imgAlt="Cloudflare email routing graphic",
-        title="Email Routing",
-        description="Worked with management and engineering to define and launch a new Cloudflare project that received greater than 90% positive feedback.",
-        role="Product Design Lead"
-    ) }}
+    {# ── Main content ────────────────────────────────────────────────────── #}
+    <main class="home-content">
 
-    {{ workCard(
-        href="./work/cloudflare-workers-unbound.html",
-        imgSrc="./assets/images/cloudflare-project/workersunbound.png",
-        imgAlt="Cloudflare Workers Unbound Graphic",
-        title="Workers Unbound",
-        description="Product design team member collaborating with engineering and project management to launch world class products. Supporting small to enterprise organizations in their efforts to improve performance and secure their applications.",
-        role="Product Designer"
-    ) }}
+        <nav class="home-nav">
+            <a href="#work">Work</a>
+            <a href="https://photo.sraden.com/" target="_blank" rel="noopener">Photography</a>
+            <a href="./assets/Steven Raden Resume - 2026.pdf" target="_blank">Résumé</a>
+        </nav>
 
-    {{ workCard(
-        href="./work/cis.html",
-        imgSrc="./assets/images/cis-project/cloudflare-ibm-logo.png",
-        imgAlt="Cloud Internet Services Graphic",
-        title="IBM Cloud Internet Services",
-        description="Work with the renown internet security company, Cloudflare, to provide IBM Cloud customers with improved security, technology, and power.",
-        role="UX Design Lead"
-    ) }}
+        <div class="home-hero">
+            <p class="home-label">// Product Designer</p>
+            <h1>Steven<br>Raden</h1>
+            <p class="home-bio">Senior product designer at Cloudflare. Security platforms, developer tools, design systems.</p>
+        </div>
 
-    {{ workCard(
-        href="./work/vpc.html",
-        imgSrc="./assets/images/vpc-project/vpc-diagram.svg",
-        imgAlt="Virtual Private Cloud Graphic",
-        title="IBM Cloud Virtual Private Cloud",
-        description="The Virtual Private Cloud (VPC) project is the next evolution for the infrastructure offerings of IBM Cloud. These upgrades made it easier for our clients to grow and evolve their applications.",
-        role="UX Design"
-    ) }}
+        {# ── Case Studies — priority pieces with substantial written work ── #}
+        <div class="home-work" id="work">
+            <p class="home-work__heading">Case Studies</p>
+            <ul class="home-work__list">
 
-    {{ workCard(
-        href="./work/tactile-toolkit.html",
-        imgSrc="./assets/images/tactile-toolkit-project/layout-v1.png",
-        imgAlt="Work in Progress placeholder",
-        title="Tactile Toolkit",
-        description="Working with 2 other designers and Development Manager who happens to have a visual impairement, we crafted a set of physical and tactile design components to enable communication of designs to those with a visual impairment.",
-        role="UX Design"
-    ) }}
+                <li class="work-item work-item--featured">
+                    <a href="./work/cloudflare-appsec-overview.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">AppSec Overview</span>
+                        <span class="work-item__company">Cloudflare</span>
+                        <span class="work-item__year">2024</span>
+                    </a>
+                </li>
 
-    <div class="section">
-        <h2 class="section--title">
-            Notable Achievements - Under Construction
-        </h2>
-        <div class="section--content">
-            <ul>
-                <li>Superhero award</li>
-                <li>Tactile Wireframing Kit</li>
-                <li>Patterns Bootcamp Design Lead x2</li>
-                <li>IBM Representative at PixelHusky Hackathon</li>
+                <li class="work-item work-item--featured">
+                    <a href="./work/vpc.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">IBM Cloud VPC</span>
+                        <span class="work-item__company">IBM</span>
+                        <span class="work-item__year">2020</span>
+                    </a>
+                </li>
+
+                <li class="work-item work-item--featured">
+                    <a href="./work/tactile-toolkit.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">Tactile Toolkit</span>
+                        <span class="work-item__company">IBM</span>
+                        <span class="work-item__year">2019</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
-    </div>
 
-    <div class="section">
-        <h2 class="section--title">
-            Other Cloudflare Projects
-        </h2>
-        <div class="section--content">
-            <ul>
-                <li><a target="_blank" href="https://blog.cloudflare.com/introducing-cron-triggers-for-cloudflare-workers/">Cron Triggers for Workers</a></li>
-                <li><a target="_blank" href="https://blog.cloudflare.com/ladies-and-gentlemen-cloudflare-tv/">Cloudflare.tv</a></li>
-                <li>Cloudflare blog graphics and diagrams</li>
-                <li>Load Balancer Load Shedding</li>
+        {# ── Selected Work — full project list ─────────────────────────── #}
+        <div class="home-work home-work--secondary-list">
+            <p class="home-work__heading">Selected Work</p>
+            <ul class="home-work__list">
+
+                {# Featured — strongest / most recent #}
+                <li class="work-item work-item--featured">
+                    <a href="./work/cloudflare-appsec-overview.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">AppSec Overview</span>
+                        <span class="work-item__company">Cloudflare</span>
+                        <span class="work-item__year">2024</span>
+                    </a>
+                </li>
+
+                <li class="work-item work-item--featured">
+                    <a href="./work/cloudflare-email-routing.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">Email Routing</span>
+                        <span class="work-item__company">Cloudflare</span>
+                        <span class="work-item__year">2023</span>
+                    </a>
+                </li>
+
+                {# Secondary — solid work but lower priority in the list #}
+                <li class="work-item work-item--secondary">
+                    <a href="./work/cloudflare-workers-unbound.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">Workers Unbound</span>
+                        <span class="work-item__company">Cloudflare</span>
+                        <span class="work-item__year">2022</span>
+                    </a>
+                </li>
+
+                <li class="work-item work-item--secondary">
+                    <a href="./work/cis.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">IBM Cloud Internet Services</span>
+                        <span class="work-item__company">IBM</span>
+                        <span class="work-item__year">2021</span>
+                    </a>
+                </li>
+
+                <li class="work-item work-item--secondary">
+                    <a href="./work/vpc.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">IBM Cloud VPC</span>
+                        <span class="work-item__company">IBM</span>
+                        <span class="work-item__year">2020</span>
+                    </a>
+                </li>
+
+                <li class="work-item work-item--secondary">
+                    <a href="./work/tactile-toolkit.html">
+                        <span class="work-item__dot"></span>
+                        <span class="work-item__title">Tactile Toolkit</span>
+                        <span class="work-item__company">IBM</span>
+                        <span class="work-item__year">2019</span>
+                    </a>
+                </li>
+
             </ul>
-            <iframe style="border: none;" src="https://cards.producthunt.com/cards/posts/238568?v=1" width="500" height="405" frameborder="0" scrolling="no" allowfullscreen></iframe>
         </div>
-    </div>
+
+        {# ── Recognition ───────────────────────────────────────────────── #}
+        <div class="home-recognition">
+            <p class="home-work__heading">Recognition</p>
+            <ul class="home-recognition__list">
+
+                <li class="home-recognition__item">
+                    <span class="home-recognition__title">Superhero Award</span>
+                    <p class="home-recognition__desc">
+                        Company-wide recognition for going above and beyond at IBM. Nominated by manager <a href="https://www.linkedin.com/in/tytyner/" target="_blank" rel="noopener">Ty Tyner</a> for my work on the <a href="./work/vpc.html" target="_blank" rel="noopener">IBM Cloud VPC</a> project — a complex enterprise infrastructure product serving thousands of customers.
+                    </p>
+                </li>
+
+                <li class="home-recognition__item">
+                    <span class="home-recognition__title">Patterns Bootcamp Design Lead &amp; PixelHusky Hackathon</span>
+                    <p class="home-recognition__desc">
+                        Led and mentored emerging designers — from design students to early-career UX practitioners — through structured bootcamps and competitive hackathons. Guided participants through real UX design challenges with a focus on user-centered methods and delivering results under pressure.
+                    </p>
+                </li>
+
+            </ul>
+        </div>
+
+    </main>
+
+    {# ── Right decorative strip (hidden on mobile) ───────────────────────── #}
+    <aside class="home-strip" aria-hidden="true">
+        <span class="home-strip__dot">·</span>
+        <span class="home-strip__dot">·</span>
+        <span class="home-strip__dot">·</span>
+        <span class="home-strip__spacer"></span>
+        <span class="home-strip__cross">×</span>
+        <span class="home-strip__rule"></span>
+        <span class="home-strip__rule home-strip__rule--faint"></span>
+    </aside>
+
 </div>
 {% endblock %}

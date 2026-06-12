@@ -3,6 +3,8 @@
 {% from "components/_figure.njk"       import figure %}
 {% from "components/_project-meta.njk" import projectMeta %}
 
+{% set projectSymbol = "✦" %}
+
 {% set title = "AppSec Overview" %}
 
 {% block content %}
@@ -16,7 +18,8 @@
     </p>
     {{ projectMeta(
         "Senior Product Designer",
-        "Launched: <b>March 17, 2025</b> &mdash; Cloudflare Security Week",
+        "<b>March 17, 2025</b> &mdash; Cloudflare Security Week",
+        timelineLabel="Launched",
         blogUrl="https://blog.cloudflare.com/cloudflare-security-posture-management/",
         blogLabel="Security Posture Management"
     ) }}

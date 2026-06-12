@@ -10,6 +10,7 @@ $header-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
 $bp-tablet: 860px;
 $bp-mobile: 560px;
 
+@import 'tokens';   // CSS custom properties — dark/light mode colors
 @import 'font-size'; //function for calculating REM based on font
 @import 'list-grid';
 
@@ -20,7 +21,7 @@ html, body {
     width: 100%;
     font-size: 100%;
     font-family: roboto, sans-serif, goober;
-    background-color: #fafafb;
+    background-color: var(--bg, #fafafb); // homepage uses --bg; project pages inherit old value
 }
 
 h1, h2 {

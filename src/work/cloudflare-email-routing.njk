@@ -4,6 +4,8 @@
 {% from "components/_project-meta.njk" import projectMeta %}
 {% from "components/_banner-alert.njk" import bannerAlert %}
 
+{% set projectSymbol = "▲" %}
+
 {% set title = "Email Routing" %}
 
 {% block content %}
@@ -16,7 +18,7 @@
     </p>
     {{ projectMeta(
         "Product Design Lead",
-        "Timeline: <b>April 2020 - Current</b>",
+        "<b>April 2020 - Current</b>",
         blogUrl="https://blog.cloudflare.com/introducing-email-routing/",
         blogLabel="Email Routing"
     ) }}

@@ -5,6 +5,8 @@
 {% from "components/_flow-steps.njk"   import flowSteps %}
 {% from "components/_project-meta.njk" import projectMeta %}
 
+{% set projectSymbol = "◯" %}
+
 {% set title = "Workers Unbound" %}
 
 {% block content %}
@@ -13,7 +15,7 @@
     <p>
         Workers Unbound extended Cloudflare's serverless platform to support CPU-intensive workloads, removing the execution limits that had previously made the original Workers product off-limits for heavier compute jobs.
     </p>
-    {{ projectMeta("Product Designer", "Launched: <b>April 14, 2021</b>") }}
+    {{ projectMeta("Product Designer", "<b>April 14, 2021</b>", timelineLabel="Launched") }}
 {% endcall %}
 
 {% call section("The Problem") %}
