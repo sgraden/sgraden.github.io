@@ -250,6 +250,7 @@ $bp-project-mobile: 768px;
 .project-body {
     flex: 1;
     min-width: 0;
+    max-width: $content-max;   // cap on large monitors (no right strip → free space sits right)
     padding: 28px 52px 72px;
     background: var(--bg);
     box-sizing: border-box;
@@ -287,6 +288,14 @@ $bp-project-mobile: 768px;
     .section--content {
         color: var(--text-secondary);
         font-size: toRem(18);
+
+        // Cap prose line length on wide screens, but let figures/galleries
+        // fill the full column width (they live inside .section--content too).
+        > p,
+        > ul,
+        > ol {
+            max-width: $measure;
+        }
 
         b, strong {
             color: var(--text-primary);

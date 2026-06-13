@@ -1,0 +1,30 @@
+{#
+  _work-item.njk
+  --------------
+  A single row in the homepage work lists (Favorites / Selected Work).
+  Renders the <li> with the dot, title, company, and year, plus the
+  featured/secondary modifier that controls brightness.
+
+  Usage:
+    {% from "components/_work-item.njk" import workItem %}
+    {{ workItem("./work/cloudflare-appsec-overview.html", "AppSec Overview", "Cloudflare", "2024") }}
+    {{ workItem("./work/cis.html", "IBM Cloud Internet Services", "IBM", "2021", featured=false) }}
+
+  Parameters:
+    href      — link to the project case study page (required)
+    title     — project name (required). May contain inline HTML entities.
+    company   — company label shown after the title (required)
+    year      — year label, right-aligned (required)
+    featured  — true → full-brightness "--featured"; false → dimmed "--secondary".
+                Default: true
+#}
+{% macro workItem(href, title, company, year, featured=true) %}
+<li class="work-item work-item--{{ "featured" if featured else "secondary" }}">
+    <a href="{{ href }}">
+        <span class="work-item__dot"></span>
+        <span class="work-item__title">{{ title }}</span>
+        <span class="work-item__company">{{ company }}</span>
+        <span class="work-item__year">{{ year }}</span>
+    </a>
+</li>
+{% endmacro %}

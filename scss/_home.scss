@@ -152,8 +152,10 @@ $bp-home-mobile: 768px;
 // ─── Main content column ──────────────────────────────────────────────────────
 
 .home-content {
-    flex: 1;
+    flex: 1 1 $content-max;     // grow to the cap (basis = cap, not 0)
     min-width: 0;
+    max-width: $content-max;   // cap on large monitors so lines stay readable
+    margin-right: auto;        // absorb leftover space → strip stays pinned far-right
     padding: 24px 28px 40px;
     display: flex;
     flex-direction: column;
@@ -224,10 +226,22 @@ $bp-home-mobile: 768px;
 }
 
 .home-bio {
-    font-size: 16px;   // base — no max-width, fills the column naturally
+    font-size: 16px;   // base
+    max-width: $measure;   // comfortable line length on wide screens
     color: var(--text-secondary);
     line-height: 1.7;
     margin: 0;
+
+    a {
+        color: var(--accent);
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
+
+        @media (prefers-color-scheme: light) {
+            color: var(--accent-text);
+        }
+    }
 }
 
 // ─── Work list ────────────────────────────────────────────────────────────────
@@ -402,7 +416,8 @@ $bp-home-mobile: 768px;
     }
 
     &__desc {
-        font-size: 16px;   // base — no max-width, fills column naturally
+        font-size: 16px;   // base
+        max-width: $measure;   // comfortable line length on wide screens
         color: var(--text-muted);
         line-height: 1.7;
         margin: 0;
@@ -450,6 +465,7 @@ $bp-home-mobile: 768px;
 
 .testimonial-quote {
     font-size: 17px;
+    max-width: $measure;   // comfortable line length on wide screens
     font-style: italic;
     font-weight: 300;
     line-height: 1.8;
