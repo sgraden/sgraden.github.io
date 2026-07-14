@@ -32,40 +32,66 @@
     <p>
         To get aligned, we ran a workshop with stakeholders from every AppSec product area using a car dashboard as the framing. A dashboard is a tool people use to understand their vehicle&rsquo;s current status and make adjustments under pressure. The analogy helped us separate what you need at a glance from what belongs one level deeper.
     </p>
+    {{ figure(
+        "../assets/images/appsec-overview-project/workshop-car-dashboard.png",
+        "Car dashboard photo covered in color-coded sticky notes from a cross-functional stakeholder workshop, mapping proposed AppSec content to dashboard zones",
+        "The workshop artifact: each product team placed sticky notes on a real dashboard photo, assigning their proposed content to zones. Persistent warnings (Doors, Seatbelt), status gauges (RPM, Engine Temp, Speedometer), at-a-glance readings (Gas tank). Where a team placed their note revealed whether they were thinking about the page as monitoring, alerting, or diagnostics."
+    ) }}
     <p>
         Out of that workshop we identified four common categories: Status, Alerts, Insights, and Recommendations. That framework became the structure of the design and the shared language we used in stakeholder discussions going forward.
     </p>
+    {{ figure(
+        "../assets/images/appsec-overview-project/workshop-stakeholder-synthesis.png",
+        "Synthesis diagram from the workshop mapping stakeholder goals to three principles: opinionated, contextual, and flexible, with API Shield and Bots business goals organized by column",
+        "The synthesis: three principles emerged from the workshop. Opinionated &mdash; is something blocking me? Contextual &mdash; what level should a notification fire at? Flexible &mdash; are the same things &ldquo;red&rdquo; for everyone? These organized the competing goals from API Shield and Bots into a shared framework.",
+        noShadow=true
+    ) }}
 {% endcall %}
 
 {% call section("Research &amp; Validation") %}
     <p>
-        With a framework in hand, we turned to validation before committing to a direction.
+        From there, we turned to validation before locking in a direction.
     </p>
     <p>
-        For competitive analysis, we used competing security dashboards directly where we could and worked through YouTube walkthroughs and documentation for platforms we couldn&rsquo;t access. The pattern was consistent: data-heavy overviews were hard to act on; action-oriented ones got used.
+        For competitive analysis, we used competing security dashboards directly where we could and worked through YouTube walkthroughs and documentation for platforms we couldn&rsquo;t access. The pattern held: data-heavy overviews were hard to act on; the ones built around action got used.
+    </p>
+    {{ figure(
+        "../assets/images/appsec-overview-project/wireframe-account-overview.png",
+        "Early wireframe of a broad account-level overview showing Alerts, Threat Assessment across Access, Gateway, and Email Security, plus Actions, Recents, and Favorites — annotated with colored circles indicating urgency level",
+        "An early concept: a broader account-level overview spanning Access, Gateway, and Email Security alongside AppSec. Colored annotations mark content by urgency and type. Scope was narrowed to AppSec products before moving into design."
+    ) }}
+    <p>
+        We talked to our CSE team. Asking questions and showing small prototypes, we found that detailed metrics were less important than action-oriented guidance. CSEs had common remediation patterns they walked customers through repeatedly that could be reduced if the overview surfaced the right information upfront. They also gave useful feedback on terminology. Always include a way to get more detail, because customers understand something like &ldquo;mitigated attacks&rdquo; differently.
     </p>
     <p>
-        To get closer to real customer needs, we talked to our CSE team. Asking questions and showing small prototypes, we found that detailed metrics were less important than action-oriented guidance. CSEs had common remediation patterns they walked customers through repeatedly that could be reduced if the overview surfaced the right information upfront. They also gave useful feedback on terminology. Always include a way to get more detail, because customers understand something like &ldquo;mitigated attacks&rdquo; differently.
-    </p>
-    <p>
-        We also ran a small unmoderated research study with Cloudflare customers. Most sessions were about 10 minutes. Users responded more to the tangible elements on the page like rule activity and the traffic bar. It was harder for them to connect with the action items, which we expected since those are most relevant when based on real traffic and configuration. The feedback pointed toward grounding suggestions in actual product data rather than abstract health scores.
+        We also ran a small unmoderated research study with Cloudflare customers. Users responded more to the tangible elements on the page like rule activity and the traffic bar. The action items were harder to connect with, which we expected &mdash; they&rsquo;re most useful when they&rsquo;re based on real traffic and configuration. The feedback pointed toward tying suggestions to actual product data, not abstract health scores.
     </p>
 {% endcall %}
 
 {% call section("The Direction") %}
     <p>
-        All of that research pointed toward the same thing: the page should not be a data dump. The goal was that within 30 seconds of landing, a customer should be able to tell if something needs attention and know what to do about it.
+        Everything pointed the same direction: the page should not be a data dump. The goal was that within 30 seconds of landing, a customer should be able to tell if something needs attention and know what to do about it.
     </p>
     <p>
-        That meant focusing on clear problems and clear actions. We prioritized a traffic summary showing mitigated, served by Cloudflare, and served by origin traffic at a high level. A Security Posture section with contextual suggestions backed by real product data. Detection Settings showing what was on and what was off. And Rules Activity surfacing the most active and recently modified rules as a signal for what was working.
+        That meant focusing on clear problems and clear actions. We prioritized a traffic summary showing mitigated, served by Cloudflare, and served by origin traffic at a high level. A Security Posture section with contextual suggestions backed by real product data. Detection Settings showing what was on and what was off. And Rules Activity showing the most active and recently modified rules as a signal for what was working.
     </p>
     <p>
         Unification also added scope. The Overview would serve as the landing page for a restructured navigation covering all AppSec products under a single Security section. New users would opt in through a modal, a more gradual rollout given how much was changing at once.
     </p>
     {{ figure(
+        "../assets/images/appsec-overview-project/wireframe-onboarding.png",
+        "Two wireframes side by side: Onboarding setting expectations (a step-by-step walkthrough of how AppSec works) and Onboarding security posture (an initial overview state showing domain, risk profile, traffic, and detections enabled)",
+        "Onboarding explorations for new users: a walkthrough explaining how Cloudflare AppSec observes and acts on traffic (left), and an initial security posture view showing domain risk profile and active threat detections (right)."
+    ) }}
+    {{ figure(
+        "../assets/images/appsec-overview-project/wireframe-appsec-overview.png",
+        "Wireframe of Application Security Overview with traffic summary on the left and prioritized action items on the right, including urgent alerts highlighted in red at the top",
+        "A wireframe showing the layout direction: traffic summary on the left, action items ranked by urgency on the right. Urgent alerts at the top; lower-priority configuration suggestions below."
+    ) }}
+    {{ figure(
         "../assets/images/appsec-overview-project/security-overview-early.png",
         "An earlier design exploration for the Security Overview before the direction shifted toward action-oriented suggestions",
-        "An earlier design direction, before the research pushed toward a more action-oriented approach."
+        "An earlier design direction, before the research pushed us toward prioritizing action over metrics."
     ) }}
 {% endcall %}
 

@@ -1043,7 +1043,9 @@ header {
 }
 .project-body .section--content > p,
 .project-body .section--content > ul,
-.project-body .section--content > ol {
+.project-body .section--content > ol,
+.project-body .section--content > figure,
+.project-body .section--content > .img--gallery {
   max-width: 68ch;
 }
 .project-body .section--content b, .project-body .section--content strong {
@@ -1304,3 +1306,5 @@ i.icon.back-arrow {
 .tab-container div.tab:hover {
   border-bottom: 2px solid grey;
 }
+
+/*# sourceMappingURL=main.css.map */

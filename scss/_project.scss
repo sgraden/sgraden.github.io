@@ -289,11 +289,11 @@ $bp-project-mobile: 768px;
         color: var(--text-secondary);
         font-size: toRem(18);
 
-        // Cap prose line length on wide screens, but let figures/galleries
-        // fill the full column width (they live inside .section--content too).
         > p,
         > ul,
-        > ol {
+        > ol,
+        > figure,
+        > .img--gallery {
             max-width: $measure;
         }
 
