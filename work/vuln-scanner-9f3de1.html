@@ -259,5 +259,67 @@
         </div>
 
     </div>
+
+    
+    <script>
+    (function () {
+        var body = document.querySelector('.project-body');
+        if (!body) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var progress = document.createElement('div');
+        progress.className = 'scroll-progress';
+        body.appendChild(progress);
+
+        var cta = body.querySelector('.project-cta');
+        var titles = Array.prototype.slice.call(
+            body.querySelectorAll('.section > .section--title:not(.project--title)')
+        );
+
+        var titlePos = [], ticking = false;
+
+        function docTop(el) {
+            return el.getBoundingClientRect().top + window.pageYOffset;
+        }
+
+        // Cache title positions; recompute only on load / resize.
+        function measure() {
+            titlePos = titles.map(docTop);
+            update();
+        }
+
+        function update() {
+            var vh = window.innerHeight || document.documentElement.clientHeight || 700;
+            var scrollY = window.pageYOffset;
+            var pageBottom = document.documentElement.scrollHeight;
+            var readLine = scrollY + vh * 0.55;   // a title's underline draws once it passes this
+
+            // Mobile top bar: fills from empty as scroll depth increases.
+            var maxScroll = Math.max(1, pageBottom - vh);
+            progress.style.width = (Math.min(1, Math.max(0, scrollY / maxScroll)) * 100) + '%';
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].classList.toggle('is-drawn', titlePos[i] <= readLine);
+            }
+
+            // Fill the CTA rule once you're near the bottom of the page.
+            if (cta) cta.classList.toggle('is-lit', (scrollY + vh) >= (pageBottom - 24));
+
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', measure);
+        window.addEventListener('load', measure);
+        measure();
+    }());
+    </script>
 </body>
 </html>

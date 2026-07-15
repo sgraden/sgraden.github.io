@@ -483,3 +483,92 @@ $bp-project-mobile: 768px;
         }
     }
 }
+
+// ─── Scroll indicators ────────────────────────────────────────────────────
+// Runs on every project page (wired up once in _base.njk). As you scroll,
+// each section title draws a short underline when it passes the read line,
+// and the rule above the CTA fills cyan near the bottom. On mobile (no side
+// panel), a slim top bar fills with scroll depth; it replaces the static top
+// banner so it can start empty and grow.
+.project-body {
+    position: relative;
+}
+
+// Mobile: horizontal scroll-depth bar pinned to the top. It stands in for
+// the static top banner (hidden below) so it starts empty and fills.
+.scroll-progress {
+    display: none;
+
+    @media (max-width: $bp-project-mobile) {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0;              // JS sets the fill width
+        background: var(--accent);
+        z-index: 5;
+        pointer-events: none;
+    }
+}
+
+// Hide the static full-width top banner on mobile so the growing bar above
+// is the only top accent (otherwise the banner reads as a "full" bar).
+@media (max-width: $bp-project-mobile) {
+    .project-body::before { display: none; }
+}
+
+// Animated underline under each standard (h3) section title.
+.section > .section--title:not(.project--title) {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -9px;
+        width: 56px;
+        height: 1px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    &.is-drawn::after {
+        transform: scaleX(1);
+    }
+}
+
+// The rule above the CTA fills cyan once the page has been scrolled to the bottom.
+.project-cta {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.6s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    &.is-lit::before {
+        transform: scaleX(1);
+    }
+}
+
+// Respect reduced-motion: no moving indicator, accents shown static.
+@media (prefers-reduced-motion: reduce) {
+    .scroll-progress { display: none; }
+
+    .section > .section--title:not(.project--title)::after,
+    .project-cta::before {
+        transition: none;
+        transform: scaleX(1);
+    }
+}

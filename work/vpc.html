@@ -237,7 +237,7 @@
         Where competitors offer only a textbox to enter in a proper IP range without conflicts, we went a step further. When the user begins creating a network, we prefill a non-conflicting IP range that fills the next logical "block" of the network. Without thinking, the user can continue on. However, for those who need to customize it, they may manipulate the IP range with a few clicks and see how it fits into the network. For those who prefer manually entering a value, they can still do that, but with the added bonus of visual feedback rather than an error message.
     </p>
     <p>
-        Our solution is still in its infancy with room to grow, but it is already filed as a patent shared between our design and development team.
+        Our solution is still in its infancy with room to grow, but it is already granted as a patent shared between our design and development team: <a target="_blank" href="https://patents.google.com/patent/US11012406B2/en">US11012406B2</a>.
     </p>
 
     </div>
@@ -304,5 +304,67 @@
         </div>
 
     </div>
+
+    
+    <script>
+    (function () {
+        var body = document.querySelector('.project-body');
+        if (!body) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var progress = document.createElement('div');
+        progress.className = 'scroll-progress';
+        body.appendChild(progress);
+
+        var cta = body.querySelector('.project-cta');
+        var titles = Array.prototype.slice.call(
+            body.querySelectorAll('.section > .section--title:not(.project--title)')
+        );
+
+        var titlePos = [], ticking = false;
+
+        function docTop(el) {
+            return el.getBoundingClientRect().top + window.pageYOffset;
+        }
+
+        // Cache title positions; recompute only on load / resize.
+        function measure() {
+            titlePos = titles.map(docTop);
+            update();
+        }
+
+        function update() {
+            var vh = window.innerHeight || document.documentElement.clientHeight || 700;
+            var scrollY = window.pageYOffset;
+            var pageBottom = document.documentElement.scrollHeight;
+            var readLine = scrollY + vh * 0.55;   // a title's underline draws once it passes this
+
+            // Mobile top bar: fills from empty as scroll depth increases.
+            var maxScroll = Math.max(1, pageBottom - vh);
+            progress.style.width = (Math.min(1, Math.max(0, scrollY / maxScroll)) * 100) + '%';
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].classList.toggle('is-drawn', titlePos[i] <= readLine);
+            }
+
+            // Fill the CTA rule once you're near the bottom of the page.
+            if (cta) cta.classList.toggle('is-lit', (scrollY + vh) >= (pageBottom - 24));
+
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', measure);
+        window.addEventListener('load', measure);
+        measure();
+    }());
+    </script>
 </body>
 </html>
