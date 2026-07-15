@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="../style/main.css">
+    <title>Steven Raden - Vulnerability Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="project">
+    
+    
+    <div class="project-layout">
+
+        <aside class="project-panel" aria-hidden="true">
+            <div class="project-panel__markers">
+                <span class="project-panel__triangle">▽</span>
+                <span class="project-panel__rule"></span>
+                <div class="project-panel__dots">
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                    <span class="project-panel__dot"></span>
+                </div>
+            </div>
+            <div class="project-panel__symbol">◈</div>
+            <span class="project-panel__slash">//////</span>
+        </aside>
+
+        <div class="project-body">
+            <nav class="project-nav">
+                <a href="../index.html" class="project-nav__back">← Work</a>
+                <div class="project-nav__links">
+                    <a href="https://photo.sraden.com/" target="_blank" rel="noopener">Photography</a>
+                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank">Résumé</a>
+                </div>
+            </nav>
+
+<div class="section">
+    <h2 class="section--title project--title">Vulnerability Scanner</h2>
+    <div class="section--content">
+            <p>
+        Cloudflare&rsquo;s API Shield suite could detect malicious traffic and block patterns that looked like attacks. What it couldn&rsquo;t do was tell a customer whether their own API was exploitable before an attacker found out. Vulnerability Scanner addressed that gap with an automated exploit simulation: provide a schema, set up credentials, and Cloudflare runs active test sequences against your endpoints to identify which ones are vulnerable.
+    </p>
+    <p>
+        The first scan type was BOLA (Broken Object Level Authorization). A BOLA flaw lets an authenticated user access resources belonging to someone else by swapping an object ID in an API request. It&rsquo;s straightforward to execute and hard to catch in code review because the logic can look correct in isolation.
+    </p>
+    <div class="description--role">
+    <span class="meta-label">Role</span>
+    <span class="meta-value"><b>Senior Product Designer</b></span>
+    <span class="meta-label">On hold</span>
+    <span class="meta-value">2025</span>
+</div>
+
+    <p class="project-team">Team: Steven Raden (design), 1 Project Manager, 2 Engineers, 1 Front-end Engineer</p>
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">Who runs a vulnerability scan</h3>
+    <div class="section--content">
+            <p>
+        The two likely audiences had different relationships with security. <b>Developers</b> building on Cloudflare&rsquo;s API Shield suite could act on a failing test directly. <b>Security specialists</b> within an organization who may not be close to the code would need enough detail to hand findings to an engineering team with a clear explanation of what to fix.
+    </p>
+    <p>
+        That distinction shaped the results page most: not just &ldquo;this endpoint is vulnerable,&rdquo; but here is the exact request, the credential used, what was expected, and what the API actually returned.
+    </p>
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/miro-wip-15.jpg" alt="Journey Map As-is showing a Security Engineer persona navigating current pain points: missing documentation, needing to manually identify and prioritize vulnerabilities, high frustration at multiple stages">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/miro-wip-14.jpg" alt="Journey Map To-be showing the desired future state where the Security Engineer gets proactive vulnerability scanning, automated recommendations, and reduced friction throughout the security workflow">
+    <figure>
+        <figcaption>As-is (left) vs. to-be (right): the Security Engineer persona mapped through current pain points to the desired experience with proactive scanning and automated recommendations.</figcaption>
+    </figure>
+</div>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">The discovery gap</h3>
+    <div class="section--content">
+            <p>
+        The intended product flow was simple: Cloudflare&rsquo;s API Discovery tool observes public traffic to a zone, builds a schema of its endpoints automatically, and a customer takes that schema directly into Vulnerability Scanner. At launch, that integration wasn&rsquo;t possible. The schema generated by Discovery couldn&rsquo;t be consumed by Vulnerability Scanner, so customers had to provide their own OpenAPI schema manually.
+    </p>
+    <p>
+        That created a meaningful barrier to adoption. Not all customers had a schema readily available, and creating one from scratch added real friction before the tool could provide any value. The gap between Discovery and Scanner was a recurring frustration during the project and was documented as a roadmap dependency.
+    </p>
+    <figure>
+    <img src="../assets/images/vuln-scanner-project/miro-wip-09.jpg" alt="API AS-IS diagram showing that the current API outputs its own report with no integration into endpoints or security posture tools, followed by the engineer flow from creating a config to scan completion">
+<figcaption>The AS-IS state: the scanner operated independently with no connection to Discovery&rsquo;s schema output or security posture tools. The engineer flow below shows the manual steps required to get a scan running.</figcaption></figure>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">What already existed</h3>
+    <div class="section--content">
+            <p>
+        Before designing, we reviewed the competitive landscape and mapped against Cloudflare&rsquo;s existing tools for patterns worth following. A consistent observation across competitors: security specialists ran the tools, developers read the reports. Few designs served both audiences in the same interface.
+    </p>
+
+    <ul>
+        <li><b>Akamai / F5</b> &mdash; enterprise DAST scanning, heavy setup, security-team-operated</li>
+        <li><b>Intruder</b> &mdash; approachable, developer-aimed scanner with continuous monitoring</li>
+        <li><b>Wallarm</b> &mdash; deep API threat detection tightly coupled to their own WAF</li>
+        <li><b>Pentest Tools</b> &mdash; manual and report-oriented, closer to consultant tooling than self-service</li>
+    </ul>
+
+    <p>
+        For Cloudflare-internal alignment we reviewed <b>Investigate</b> (detailed findings with contextual links), <b>Log Explorer</b> (raw request-level data with filtering), and <b>Trace</b> (step-by-step request tracing that directly influenced the scan results&rsquo; per-step breakdown).
+    </p>
+    <figure>
+    <img src="../assets/images/vuln-scanner-project/miro-wip-19.jpg" alt="Competitive and internal research board showing Akamai, F5 Cloud Web App Scanning, Intruder API Scanner, Wallarm, and Pentest Tools alongside Cloudflare Investigate, Log Explorer, Reports, and Trace with annotated sticky notes">
+<figcaption>Market and internal research: competitors on the left annotated with observations on test execution, scheduling, and reporting patterns; Cloudflare-related tools on the right showing where interaction patterns already existed.</figcaption></figure>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">From credentials to fix</h3>
+    <div class="section--content">
+            <p>
+        A scan runs through five stages, from the credential setup that happens once to the terminal command a developer runs to verify a finding. The product had to be useful at each step.
+    </p>
+
+    <div class="flow-container">
+    <div class="flow-step">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+            <h4>Create credentials</h4>
+            <p>Set up two API credential sets: an <b>owner</b> with write access and a simulated <b>attacker</b> with read access. These are stored in the dashboard and reused across scans.</p>
+        </div>
+    </div>
+    <div class="flow-connector">
+        <i class="material-icons">arrow_downward</i>
+    </div>
+    <div class="flow-step">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+            <h4>Configure a scan</h4>
+            <p>Upload an OpenAPI schema (file, URL, or paste), confirm endpoints are detected, and select target zones. Zones must belong to the customer&rsquo;s Cloudflare account. Without that check, the tool could be used to probe APIs the customer doesn&rsquo;t own, so zone membership was a hard requirement.</p>
+        </div>
+    </div>
+    <div class="flow-connector">
+        <i class="material-icons">arrow_downward</i>
+    </div>
+    <div class="flow-step">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+            <h4>Scan runs</h4>
+            <p>A scan can complete in minutes or take up to 24 hours depending on API size and complexity. The dashboard shows live status per scan. Proactive delivery via email and connected chat services was on the roadmap but hadn&rsquo;t shipped.</p>
+        </div>
+    </div>
+    <div class="flow-connector">
+        <i class="material-icons">arrow_downward</i>
+    </div>
+    <div class="flow-step">
+        <div class="step-badge">4</div>
+        <div class="step-content">
+            <h4>Review results</h4>
+            <p>Results appear at two levels: high-level discoveries (patterns across endpoints) and per-step test detail (exact requests, credentials used, expected vs. received response codes). Completed scan findings are also routed to the <a href="./cloudflare-appsec-overview.html">AppSec Overview</a> as Security Posture action items, putting them at the customer&rsquo;s AppSec entry point rather than requiring navigation to a separate tool.</p>
+        </div>
+    </div>
+    <div class="flow-connector">
+        <i class="material-icons">arrow_downward</i>
+    </div>
+    <div class="flow-step">
+        <div class="step-badge">5</div>
+        <div class="step-content">
+            <h4>Verify and fix</h4>
+            <p>Each failing test step includes a copy-paste API call formatted for terminal or server use. Users can independently confirm the finding before spending time on a fix.</p>
+        </div>
+    </div>
+</div>
+
+
+    <figure>
+    <img src="../assets/images/vuln-scanner-project/miro-wip-05.jpg" alt="MVP Scan Steps matrix showing the main mission and side quest rows across four columns: Select a target, Choose and configure a scan type, Scan in progress, and Review report, with wireframe screens per phase">
+<figcaption>The scan journey mapped across phases, with main mission flows on top and secondary paths (credential creation, scheduling) below. The &ldquo;Review report&rdquo; column notes users want to test the requests from their own machine.</figcaption></figure>
+
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/start-scan-hifi.png" alt="High-fidelity scan configuration form showing scan type, OpenAPI schema upload, zone validation, and credential setup">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/scan-list-hifi.png" alt="High-fidelity scan list showing completed scans with outcome indicators and credential sets">
+    <figure>
+        <figcaption>Configuration form with zone validation (left) and the scan list landing page (right).</figcaption>
+    </figure>
+</div>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">Findings you can verify yourself</h3>
+    <div class="section--content">
+            <p>
+        For a BOLA scan, each test runs a four-step sequence against a specific endpoint. The scanner uses the owner credentials to create a resource via the customer&rsquo;s API. It then switches to the attacker credentials and attempts to retrieve, update, and delete that same resource. If the attacker receives a 200 OK on retrieval when a 400&ndash;499 was expected, the endpoint is vulnerable. Steps 3 and 4 show whether the scope extends to modification and deletion.
+    </p>
+    <p>
+        A recurring observation from stakeholder reviews and competitive analysis: users don&rsquo;t take a security tool&rsquo;s word for a finding at face value. The copy-paste terminal call alongside each failing step let both a developer and a security specialist independently confirm what the scanner found before bringing it to a fix conversation.
+    </p>
+    <figure>
+    <img src="../assets/images/vuln-scanner-project/scan-results-hifi.png" alt="Scan results page showing a four-step BOLA test with Step 2 returning 200 OK when 400-499 was expected, confirming the endpoint is vulnerable">
+<figcaption>Step 2 returning 200 OK when 400&ndash;499 was expected: the endpoint is vulnerable. Steps 3 and 4 show the attacker was blocked from updating or deleting the resource.</figcaption></figure>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">Designing in code with Claude</h3>
+    <div class="section--content">
+            <p>
+        During this project I leaned into AI-assisted prototyping to find where its limits were. Using Opencode and Claude, I built a functional prototype directly against the Cloudflare dashboard API, authenticated and running real requests against live scan data. Working in live code made it easier to spot edge cases and real API error states that would have been difficult to anticipate from static mockups, and stakeholders could interact with actual scan flows rather than simulated ones.
+    </p>
+    <p>
+        Where the approach hit its limit was visual iteration. Each layout adjustment meant describing the problem to Claude, waiting for it to process and generate a solution, then reviewing whether the change was correct and hadn&rsquo;t modified components outside the intended scope. Unintended edits required additional prompts to undo, compounding both time and token cost. What takes seconds in Figma took several exchanges in code. To bridge that, I used an AI tool to import the coded prototype into Figma and used it as the base for all screens and states for engineering handoff. The coded prototype became the fidelity source; Figma became the documentation layer.
+    </p>
+    <div class="img--gallery">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/vuln-scanner-wip.png" alt="Earlier high-fidelity design iteration of the Vulnerability Scanner dashboard">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/scan-results-hifi.png" alt="Near-final high-fidelity scan results screen">
+    <figure>
+        <figcaption>Design progression: an earlier iteration (left) and the near-final high-fidelity screen (right).</figcaption>
+    </figure>
+</div>
+
+
+    </div>
+</div>
+
+<div class="section">
+    <h3 class="section--title">Why it paused</h3>
+    <div class="section--content">
+            <p>
+        Anthropic released Claude Mythos in early 2026, a frontier AI model with demonstrated capability to autonomously find and reproduce security vulnerabilities across codebases at scale. The scope and power of that capability significantly reduced the expected value of a customer-operated, purpose-built API scanner, and the project was paused to reassess direction before final engineering handoff.
+    </p>
+    <p>
+        Design work reached near-complete, high-fidelity screens across all states.
+    </p>
+
+    </div>
+</div>
+
+
+            <div class="project-cta">
+                <p class="project-cta__label">// More Work</p>
+                <a class="project-cta__link" href="../index.html#work">View all projects</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
