@@ -23,11 +23,15 @@
                more will wrap based on the grid CSS.
     caption  — shared caption shown below the row (optional).
                Supports inline HTML via the | safe filter.
+    eager    — pass true when this gallery is the first thing on the page
+               (e.g. inside the title section) to skip lazy-loading, since
+               lazy-loading above-the-fold images delays first paint instead
+               of helping it. Default: false (lazy).
 #}
-{% macro gallery(images, caption=none) %}
+{% macro gallery(images, caption=none, eager=false) %}
 <div class="img--gallery">
     {% for img in images %}
-    <img class="img--gallery--item" src="{{ img.src }}" alt="{{ img.alt }}">
+    <img class="img--gallery--item" src="{{ img.src }}" alt="{{ img.alt }}"{% if not eager %} loading="lazy"{% endif %}>
     {% endfor %}
     {% if caption %}
     <figure>

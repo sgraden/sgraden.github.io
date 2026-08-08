@@ -23,7 +23,7 @@
 #}
 {% macro figure(src, alt, caption=none, noShadow=false) %}
 <figure>
-    <img src="{{ src }}" alt="{{ alt }}"{% if noShadow %} class="no-shadow"{% endif %}>
+    <img src="{{ src }}" alt="{{ alt }}" loading="lazy"{% if noShadow %} class="no-shadow"{% endif %}>
     {% if caption %}<figcaption>{{ caption | safe }}</figcaption>{% endif %}
 </figure>
 {% endmacro %}

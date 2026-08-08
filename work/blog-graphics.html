@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/main.css">
     <title>Steven Raden - Blog Banners & Diagrams</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -69,11 +70,11 @@
         A pair of diagrams created for the Cloudflare Blog explaining how API caching decides what to store and when to clear it. These are concepts that are easy to get wrong in prose but click immediately when you can see the request flow.
     </p>
     <figure>
-    <img src="../assets/images/blog-graphics-project/diagram-api-cache-key.png" alt="Diagram comparing how the cache key is built for authenticated versus anonymous API requests" class="no-shadow">
+    <img src="../assets/images/blog-graphics-project/diagram-api-cache-key.png" alt="Diagram comparing how the cache key is built for authenticated versus anonymous API requests" loading="lazy" class="no-shadow">
 <figcaption>How the cache key differs between an <b>authenticated</b> request (keyed on the API session) and an <b>anonymous</b> one (keyed on a hash of the request body), so identical-looking calls don't collide in cache.</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/blog-graphics-project/diagram-cache-invalidate-post.png" alt="Sequence diagram showing a cached GET request followed by a POST that invalidates the cache" class="no-shadow">
+    <img src="../assets/images/blog-graphics-project/diagram-cache-invalidate-post.png" alt="Sequence diagram showing a cached GET request followed by a POST that invalidates the cache" loading="lazy" class="no-shadow">
 <figcaption>Cache-on-GET, invalidate-on-POST: the first request is stored, and a later write empties the cache so the next reader doesn't get stale data.</figcaption></figure>
 
 
@@ -89,61 +90,61 @@
 
     <p><b>Banners</b>: announcement art built from the Blog illustration toolkit to give each post its own identity.</p>
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-arm-cpus.png" alt="Illustrated blog banner featuring an Arm processor mounted in a server">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-web-crawling.png" alt="Illustrated blog banner of a search bar over a globe surrounded by foliage">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-arm-cpus.png" alt="Illustrated blog banner featuring an Arm processor mounted in a server" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-web-crawling.png" alt="Illustrated blog banner of a search bar over a globe surrounded by foliage" loading="lazy">
     <figure>
         <figcaption>Launch banners for an Arm CPU post and a search / web-crawling post.</figcaption>
     </figure>
 </div>
 
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-green-compute.png" alt="Illustrated banner pairing a code window and a clock with a green globe">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-analytics.png" alt="Illustrated banner of a magnifying glass inspecting a dashboard with a performance gauge">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-green-compute.png" alt="Illustrated banner pairing a code window and a clock with a green globe" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/banner-analytics.png" alt="Illustrated banner of a magnifying glass inspecting a dashboard with a performance gauge" loading="lazy">
     <figure>
         <figcaption>Sustainable-compute and analytics / observability banners.</figcaption>
     </figure>
 </div>
 
     <figure>
-    <img src="../assets/images/blog-graphics-project/banner-black-latinx-security.png" alt="Banner celebrating Black and Latinx voices in security, with cultural patterns and iconography">
+    <img src="../assets/images/blog-graphics-project/banner-black-latinx-security.png" alt="Banner celebrating Black and Latinx voices in security, with cultural patterns and iconography" loading="lazy">
 <figcaption>A banner for a post spotlighting Black &amp; Latinx voices in security, leaning on the toolkit's flexibility to carry a more cultural, editorial tone.</figcaption></figure>
 
 
     <p><b>Diagrams</b>: custom technical illustrations that walk a reader through how each system works.</p>
     <figure>
-    <img src="../assets/images/blog-graphics-project/diagram-odoh-protocol.png" alt="Diagram of the Oblivious DoH protocol showing client, proxy, target, and resolver with encryption steps" class="no-shadow">
+    <img src="../assets/images/blog-graphics-project/diagram-odoh-protocol.png" alt="Diagram of the Oblivious DoH protocol showing client, proxy, target, and resolver with encryption steps" loading="lazy" class="no-shadow">
 <figcaption>End-to-end flow of the <b>Oblivious DoH</b> protocol: the client encrypts queries to the target, the proxy relays without seeing contents, and a legend maps each encryption / decryption step.</figcaption></figure>
 
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-magic-transit-1.png" alt="Magic Transit diagram routing public users through Cloudflare's global edge to a customer origin over Anycast GRE">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-magic-transit-2.png" alt="Magic WAN diagram showing a primary data center hub and branch-office spokes connected by Cloudflare Anycast tunnels">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-magic-transit-1.png" alt="Magic Transit diagram routing public users through Cloudflare's global edge to a customer origin over Anycast GRE" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-magic-transit-2.png" alt="Magic WAN diagram showing a primary data center hub and branch-office spokes connected by Cloudflare Anycast tunnels" loading="lazy">
     <figure>
         <figcaption>Speed Week, <b>Magic Transit &amp; Magic WAN</b>: public traffic ingresses across the global Anycast network to the origin (left), and offices connect as hub-and-spoke over Anycast tunnels (right).</figcaption>
     </figure>
 </div>
 
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-signed-exchange-simple.png" alt="Signed Exchange explained as a kingdom analogy with the King's Stamp standing in for a cryptographic signature">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-signed-exchange-technical.png" alt="Technical Signed Exchange diagram showing the SXG flow between crawler, Google cache, browser, and Cloudflare edge">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-signed-exchange-simple.png" alt="Signed Exchange explained as a kingdom analogy with the King's Stamp standing in for a cryptographic signature" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-signed-exchange-technical.png" alt="Technical Signed Exchange diagram showing the SXG flow between crawler, Google cache, browser, and Cloudflare edge" loading="lazy">
     <figure>
         <figcaption>Speed Week, <b>Signed Exchanges (SXG)</b>: a plain-language kingdom analogy (the &ldquo;King's Stamp&rdquo; as the cryptographic signature) paired with the real crawler &rarr; cache &rarr; edge prefetch flow for readers who wanted the technical version.</figcaption>
     </figure>
 </div>
 
     <figure>
-    <img src="../assets/images/blog-graphics-project/diagram-ipfs-1.png" alt="IPFS node network diagram highlighting your node among peer nodes" class="no-shadow">
+    <img src="../assets/images/blog-graphics-project/diagram-ipfs-1.png" alt="IPFS node network diagram highlighting your node among peer nodes" loading="lazy" class="no-shadow">
 <figcaption><b>IPFS</b> gateway post: where &ldquo;your node&rdquo; sits within the peer-to-peer network.</figcaption></figure>
 
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-ipfs-2.png" alt="IPFS diagram showing a node requesting content from a peer via a libp2p WANT message">
-    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-ipfs-3.png" alt="IPFS diagram showing content blocks being served back across peers in response to a libp2p WANT">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-ipfs-2.png" alt="IPFS diagram showing a node requesting content from a peer via a libp2p WANT message" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/blog-graphics-project/diagram-ipfs-3.png" alt="IPFS diagram showing content blocks being served back across peers in response to a libp2p WANT" loading="lazy">
     <figure>
         <figcaption>How a node fetches content across the network: a <code>libp2p</code> &ldquo;WANT&rdquo; request (left), then the matching blocks served back from whichever peers hold them (right).</figcaption>
     </figure>
 </div>
 
     <figure>
-    <img src="../assets/images/blog-graphics-project/diagram-web-analytics-cycle.png" alt="Circular diagram of the Measure, Grade, Improve cycle for web analytics" class="no-shadow">
+    <img src="../assets/images/blog-graphics-project/diagram-web-analytics-cycle.png" alt="Circular diagram of the Measure, Grade, Improve cycle for web analytics" loading="lazy" class="no-shadow">
 <figcaption>Speed Week, <b>Web Analytics</b>: the Measure &rarr; Grade &rarr; Improve loop, framing analytics as an ongoing cycle rather than a one-time report.</figcaption></figure>
 
 
