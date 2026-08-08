@@ -19,7 +19,7 @@
       </figure>
     {% endcall %}
 
-  Usage (project title — first section on a page, h2 + extra class):
+  Usage (project title — first section on a page, h1 + extra class):
     {% call section("Workers Unbound", isTitle=true) %}
       <p>Project intro paragraph...</p>
       {{ projectMeta("Product Designer", "Launched: <b>April 14, 2021</b>") }}
@@ -31,16 +31,17 @@
 
   Parameters:
     title    — heading text (required)
-    isTitle  — if true, renders h2 with the "project--title" class instead of
-               the standard h3. Use this for the first/hero section only.
+    isTitle  — if true, renders h1 with the "project--title" class instead of
+               the standard h2. Use this for the first/hero section only —
+               exactly one per page, so the page has a real top-level heading.
                Default: false
 #}
 {% macro section(title, isTitle=false) %}
 <div class="section">
     {% if isTitle %}
-    <h2 class="section--title project--title">{{ title }}</h2>
+    <h1 class="section--title project--title">{{ title }}</h1>
     {% else %}
-    <h3 class="section--title">{{ title }}</h3>
+    <h2 class="section--title">{{ title }}</h2>
     {% endif %}
     <div class="section--content">
         {{ caller() }}

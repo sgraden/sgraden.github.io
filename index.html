@@ -281,6 +281,7 @@
                     <button class="testimonials-prev" id="testimonialsPrev" aria-label="Previous">&#8249;</button>
                     <div class="testimonials-dots" id="testimonialsDots"></div>
                     <button class="testimonials-next" id="testimonialsNext" aria-label="Next">&#8250;</button>
+                    <button class="testimonials-pause" id="testimonialsPause" aria-label="Pause automatic slideshow" aria-pressed="false">&#10074;&#10074;</button>
                 </div>
             </div>
         </div>
@@ -306,11 +307,13 @@
   var dotsContainer = document.getElementById('testimonialsDots');
   var prevBtn = document.getElementById('testimonialsPrev');
   var nextBtn = document.getElementById('testimonialsNext');
+  var pauseBtn = document.getElementById('testimonialsPause');
   var carousel = document.getElementById('testimonialsCarousel');
   var slides = track.querySelectorAll('.testimonial-slide');
   var current = 0;
   var timer = null;
   var resumeTimeout = null;
+  var manuallyPaused = false; // true once the user hits the pause button — hover/focus no longer auto-resumes
   var INTERVAL = 5000;      // ms between auto-advances
   var RESUME_DELAY = 1500;  // ms after hover-out before resuming
 
@@ -362,21 +365,39 @@
   // After a manual action (click/nav), wait a full INTERVAL before resuming
   function scheduleResume() {
     stopAll();
-    resumeTimeout = setTimeout(startTimer, INTERVAL);
+    if (!manuallyPaused) resumeTimeout = setTimeout(startTimer, INTERVAL);
   }
 
-  // After hover-out, wait RESUME_DELAY before resuming (grace period)
+  // After hover/focus leaves, wait RESUME_DELAY before resuming (grace period)
   function scheduleResumeAfterHover() {
     clearTimeout(resumeTimeout);
-    resumeTimeout = setTimeout(startTimer, RESUME_DELAY);
+    if (!manuallyPaused) resumeTimeout = setTimeout(startTimer, RESUME_DELAY);
+  }
+
+  // Explicit pause/play control — required so keyboard and touch users (who can't
+  // hover) have a persistent way to stop the auto-advancing content (WCAG 2.2.2).
+  function setPaused(paused) {
+    manuallyPaused = paused;
+    if (paused) {
+      stopAll();
+    } else {
+      startTimer();
+    }
+    pauseBtn.setAttribute('aria-pressed', String(paused));
+    pauseBtn.setAttribute('aria-label', paused ? 'Play automatic slideshow' : 'Pause automatic slideshow');
+    pauseBtn.innerHTML = paused ? '&#9654;' : '&#10074;&#10074;';
   }
 
   prevBtn.addEventListener('click', function () { goTo(current - 1); scheduleResume(); });
   nextBtn.addEventListener('click', function () { goTo(current + 1); scheduleResume(); });
+  pauseBtn.addEventListener('click', function () { setPaused(!manuallyPaused); });
 
-  // Pause while hovering; resume after grace period on leave
+  // Pause while hovering or while any control inside has keyboard focus;
+  // resume after a grace period on leave, unless manually paused.
   carousel.addEventListener('mouseenter', stopAll);
   carousel.addEventListener('mouseleave', scheduleResumeAfterHover);
+  carousel.addEventListener('focusin', stopAll);
+  carousel.addEventListener('focusout', scheduleResumeAfterHover);
 
   lockHeight();
   window.addEventListener('resize', lockHeight);

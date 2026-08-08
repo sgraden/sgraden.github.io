@@ -45,7 +45,7 @@
             </nav>
 
 <div class="section">
-    <h2 class="section--title project--title">Workers Unbound</h2>
+    <h1 class="section--title project--title">Workers Unbound</h1>
     <div class="section--content">
             <p>
         Workers Unbound extended Cloudflare's serverless platform to support CPU-intensive workloads, removing the execution limits that had previously made the original Workers product off-limits for heavier compute jobs.
@@ -62,7 +62,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">The Problem</h3>
+    <h2 class="section--title">The Problem</h2>
     <div class="section--content">
             <p>
         Removing the CPU cap solved an engineering problem but opened a design one: usage-based pricing meant a Worker that used to be predictable could now generate a surprise bill.
@@ -77,7 +77,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Research &amp; Discovery</h3>
+    <h2 class="section--title">Research &amp; Discovery</h2>
     <div class="section--content">
             <p>
         We talked to a mix of <b>new</b>, <b>existing</b>, <b>internal</b>, and <b>beta</b> Workers users to understand how they thought about cost, metrics, and alerting on the platform.
@@ -125,7 +125,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">From Feedback to Direction</h3>
+    <h2 class="section--title">From Feedback to Direction</h2>
     <div class="section--content">
             <p>
         Earlier rounds of design covered a Workers list view, per-Worker metrics, account-level analytics, notification management, and usage-alert emails. Each one turned up the same thing:
@@ -139,7 +139,7 @@
     <div class="flow-step">
         <div class="step-badge">1</div>
         <div class="step-content">
-            <h4>Recap Prior Feedback</h4>
+            <h3>Recap Prior Feedback</h3>
             <p>Across the List View, Worker Metrics, Account Analytics, and notification/email explorations, the same note kept surfacing: <b>CPU time isn't useful without billing context</b>, and generic analytics fall flat for accounts running only one or two Workers.</p>
         </div>
     </div>
@@ -149,7 +149,7 @@
     <div class="flow-step">
         <div class="step-badge">2</div>
         <div class="step-content">
-            <h4>Synthesize &amp; Score</h4>
+            <h3>Synthesize &amp; Score</h3>
             <p>Affinity-mapping sessions against themes like Pricing, Metrics, and Alerting, then scoring each against requirement and ease, showed us where the confusion and anxiety were piling up.</p>
         </div>
     </div>
@@ -159,7 +159,7 @@
     <div class="flow-step">
         <div class="step-badge">3</div>
         <div class="step-content">
-            <h4>Pick a Direction</h4>
+            <h3>Pick a Direction</h3>
             <p>Two things stood out: make <b>cost</b> easy to read, and make <b>metrics actionable</b>, telling people not just what happened, but what to do about it.</p>
         </div>
     </div>
@@ -169,7 +169,7 @@
     <div class="flow-step">
         <div class="step-badge">4</div>
         <div class="step-content">
-            <h4>New Explorations</h4>
+            <h3>New Explorations</h3>
             <p>From there, designs shifted to lead with engineering problems, adding an account usage summary to keep cost visible without making it the whole story.</p>
         </div>
     </div>
@@ -192,7 +192,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">The Experience</h3>
+    <h2 class="section--title">The Experience</h2>
     <div class="section--content">
             <p>
         The shipped experience shows a Worker's health up top: requests, duration, egress, and CPU time, broken down by percentile and plotted over time, so a developer can quickly tell if something needs attention.
@@ -221,7 +221,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Launch</h3>
+    <h2 class="section--title">Launch</h2>
     <div class="section--content">
             <p>
         Workers Unbound shipped on April 14, 2021. The release graphic below was used across announcement channels, and an enablement walkthrough helped new users find the upgrade path on their own.
@@ -247,7 +247,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Related Links</h3>
+    <h2 class="section--title">Related Links</h2>
     <div class="section--content">
             <p>
         <a target="_blank" href="https://blog.cloudflare.com/introducing-workers-unbound/">Introducing Workers Unbound</a>. The launch announcement.

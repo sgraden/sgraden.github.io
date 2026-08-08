@@ -22,7 +22,7 @@
   --work-year-featured: rgba(255, 255, 255, 0.60);
   --work-dot-secondary: rgba(31, 195, 255, 0.45);
   --work-title-secondary: rgba(255, 255, 255, 0.62);
-  --work-company-secondary:rgba(255, 255, 255, 0.38);
+  --work-company-secondary:rgba(255, 255, 255, 0.45);
   --work-year-secondary: rgba(255, 255, 255, 0.48);
   --work-row-border: rgba(255, 255, 255, 0.08);
   --strip-dot: rgba(255, 255, 255, 0.22);
@@ -45,9 +45,9 @@
     --work-company-featured:#888888;
     --work-year-featured: #888888;
     --work-dot-secondary: rgba(31, 195, 255, 0.5);
-    --work-title-secondary: #aaaaaa;
-    --work-company-secondary:#cccccc;
-    --work-year-secondary: #cccccc;
+    --work-title-secondary: #767676;
+    --work-company-secondary:#888888;
+    --work-year-secondary: #888888;
     --work-row-border: rgba(0, 0, 0, 0.07);
     --strip-dot: rgba(0, 0, 0, 0.20);
     --strip-cross: rgba(0, 0, 0, 0.18);
@@ -743,6 +743,7 @@ header {
 }
 
 .testimonials-dot {
+  position: relative;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -753,6 +754,15 @@ header {
   opacity: 0.35;
   transition: background 0.2s, transform 0.2s, opacity 0.2s;
 }
+.testimonials-dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
 .testimonials-dot.is-active {
   background: var(--accent);
   opacity: 1;
@@ -760,25 +770,46 @@ header {
 }
 
 .testimonials-prev,
-.testimonials-next {
+.testimonials-next,
+.testimonials-pause {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: none;
   color: var(--text-muted);
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  padding: 2px 6px;
+  padding: 0;
   font-family: monospace;
   transition: color 0.2s;
   flex-shrink: 0;
 }
 .testimonials-prev:hover,
-.testimonials-next:hover {
+.testimonials-next:hover,
+.testimonials-pause:hover {
   color: var(--accent);
 }
 @media (prefers-color-scheme: light) {
   .testimonials-prev:hover,
-.testimonials-next:hover {
+.testimonials-next:hover,
+.testimonials-pause:hover {
+    color: var(--accent-text);
+  }
+}
+
+.testimonials-pause {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.testimonials-pause[aria-pressed=true] {
+  color: var(--accent);
+}
+@media (prefers-color-scheme: light) {
+  .testimonials-pause[aria-pressed=true] {
     color: var(--accent-text);
   }
 }
@@ -945,7 +976,7 @@ header {
   font-size: 1rem;
   flex-shrink: 0;
 }
-.project .flow-step .step-content h4 {
+.project .flow-step .step-content h3 {
   margin: 0 0 8px 0;
   font-size: 1.25rem;
   font-weight: 500;
@@ -1424,5 +1455,3 @@ i.icon.back-arrow {
 .tab-container div.tab:hover {
   border-bottom: 2px solid grey;
 }
-
-/*# sourceMappingURL=main.css.map */
