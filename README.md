@@ -1,6 +1,8 @@
 sraden.com
 ==========
 
+> This site was built with AI assistance. All projects and case studies are accurate to my real experience.
+
 Personal portfolio / resume site, hosted on GitHub Pages at [sraden.com](https://sraden.com).
 
 ## Requirements
@@ -231,19 +233,3 @@ Step numbers and arrow connectors are generated automatically. The `body` field 
 {{ bannerAlert("Coming soon.", "schedule") }}
 ```
 
----
-
-#### `workCard` — project card for the homepage
-
-```njk
-{% from "components/_work-card.njk" import workCard %}
-
-{{ workCard(
-    href="./work/my-project.html",
-    imgSrc="./assets/images/my-project/thumbnail.png",
-    imgAlt="Project thumbnail",
-    title="Project Name",
-    description="Short description of the project.",
-    role="Product Designer"
-) }}
-```
