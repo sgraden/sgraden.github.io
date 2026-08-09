@@ -122,7 +122,7 @@ $bp-home-mobile: 768px;
         font-size: 9px;
         color: var(--panel-text-secondary);
         letter-spacing: 0.1em;
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         position: relative;
         z-index: 1;
 
@@ -139,7 +139,7 @@ $bp-home-mobile: 768px;
         font-size: 9px;
         color: var(--panel-rule);
         letter-spacing: -1px;
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         position: relative;
         z-index: 1;
 
@@ -184,7 +184,7 @@ $bp-home-mobile: 768px;
         font-size: 13px;   // sm
         color: var(--text-muted);
         text-decoration: none;
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         letter-spacing: 0.02em;
         transition: color 0.2s;
 
@@ -208,7 +208,7 @@ $bp-home-mobile: 768px;
     font-size: 11px;   // xs
     color: var(--accent);
     letter-spacing: 0.22em;
-    font-family: monospace;
+    font-family: "IBM Plex Mono", monospace;
     margin: 0 0 14px;
 
     @media (prefers-color-scheme: light) {
@@ -218,10 +218,10 @@ $bp-home-mobile: 768px;
 
 .home-hero h1 {
     font-size: clamp(38px, 5vw, 58px);   // display
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-primary);
     line-height: 1.0;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.01em;
     margin: 0 0 18px;
 }
 
@@ -257,7 +257,7 @@ $bp-home-mobile: 768px;
         font-size: 11px;   // xs — section label
         color: var(--text-muted);
         letter-spacing: 0.14em;
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         text-transform: uppercase;
         padding-top: 12px;
         padding-bottom: 0;
@@ -281,21 +281,23 @@ $bp-home-mobile: 768px;
 .work-item {
     position: relative;
 
-    // The cyan fill line on hover
+    // The cyan fill line on hover — scaleX instead of width so it never triggers layout
     &::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
         height: 1px;
-        width: 0%;
+        width: 100%;
         background: var(--accent);
-        transition: width 0.5s cubic-bezier(0, 0, 0.2, 1);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
         pointer-events: none;
     }
 
     &:hover::after {
-        width: 100%;
+        transform: scaleX(1);
     }
 
     &:hover .work-item__title {
@@ -339,7 +341,8 @@ $bp-home-mobile: 768px;
 
     &__title {
         font-size: 20px;   // md
-        font-weight: 500;
+        font-weight: 400;
+        font-family: "Chakra Petch", sans-serif;
         transition: color 0.15s;
 
         @media (max-width: $bp-home-mobile) {
@@ -349,14 +352,14 @@ $bp-home-mobile: 768px;
 
     &__company {
         font-size: 13px;   // sm
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         margin-left: 2px;
         transition: color 0.15s;
     }
 
     &__year {
         font-size: 13px;   // sm
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         margin-left: auto;
         flex-shrink: 0;
         transition: color 0.15s;
@@ -397,7 +400,7 @@ $bp-home-mobile: 768px;
     }
 
     &__label {
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         font-size: 10px;
         letter-spacing: 0.16em;
         text-transform: uppercase;
@@ -569,7 +572,7 @@ $bp-home-mobile: 768px;
 
 .testimonial-role {
     font-size: 11px;
-    font-family: monospace;
+    font-family: "IBM Plex Mono", monospace;
     color: var(--text-muted);
     letter-spacing: 0.04em;
 }
@@ -637,7 +640,7 @@ $bp-home-mobile: 768px;
     line-height: 1;
     cursor: pointer;
     padding: 0;
-    font-family: monospace;
+    font-family: "IBM Plex Mono", monospace;
     transition: color 0.2s;
     flex-shrink: 0;
 
@@ -683,7 +686,7 @@ $bp-home-mobile: 768px;
     &__dot {
         font-size: 9px;   // decorative only
         color: var(--strip-dot);
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
         line-height: 1;
     }
 
@@ -694,7 +697,7 @@ $bp-home-mobile: 768px;
     &__cross {
         font-size: 9px;   // decorative only
         color: var(--strip-cross);
-        font-family: monospace;
+        font-family: "IBM Plex Mono", monospace;
     }
 
     &__rule {

@@ -60,7 +60,7 @@ html, body {
   height: 100%;
   width: 100%;
   font-size: 100%;
-  font-family: roboto, sans-serif, goober;
+  font-family: "IBM Plex Sans", sans-serif;
   background-color: var(--bg, #fafafb);
 }
 
@@ -68,10 +68,14 @@ h1, h2 {
   margin: 0;
 }
 
+h1, h2, h3 {
+  font-family: "Chakra Petch", sans-serif;
+  letter-spacing: 0.01em;
+}
+
 h1 {
   font-weight: 200;
   font-size: 2.75rem;
-  letter-spacing: 2px;
 }
 
 h2 {
@@ -297,7 +301,7 @@ header {
   font-size: 9px;
   color: var(--panel-text-secondary);
   letter-spacing: 0.1em;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   position: relative;
   z-index: 1;
 }
@@ -313,7 +317,7 @@ header {
   font-size: 9px;
   color: var(--panel-rule);
   letter-spacing: -1px;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   position: relative;
   z-index: 1;
 }
@@ -356,7 +360,7 @@ header {
   font-size: 13px;
   color: var(--text-muted);
   text-decoration: none;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   letter-spacing: 0.02em;
   transition: color 0.2s;
 }
@@ -373,7 +377,7 @@ header {
   font-size: 11px;
   color: var(--accent);
   letter-spacing: 0.22em;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   margin: 0 0 14px;
 }
 @media (prefers-color-scheme: light) {
@@ -384,10 +388,10 @@ header {
 
 .home-hero h1 {
   font-size: clamp(38px, 5vw, 58px);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-primary);
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   margin: 0 0 18px;
 }
 
@@ -423,7 +427,7 @@ header {
   font-size: 11px;
   color: var(--text-muted);
   letter-spacing: 0.14em;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   text-transform: uppercase;
   padding-top: 12px;
   padding-bottom: 0;
@@ -448,13 +452,15 @@ header {
   bottom: 0;
   left: 0;
   height: 1px;
-  width: 0%;
+  width: 100%;
   background: var(--accent);
-  transition: width 0.5s cubic-bezier(0, 0, 0.2, 1);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s cubic-bezier(0, 0, 0.2, 1);
   pointer-events: none;
 }
 .work-item:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 .work-item:hover .work-item__title {
   color: var(--text-primary) !important;
@@ -494,7 +500,8 @@ header {
 }
 .work-item__title {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
+  font-family: "Chakra Petch", sans-serif;
   transition: color 0.15s;
 }
 @media (max-width: 768px) {
@@ -504,13 +511,13 @@ header {
 }
 .work-item__company {
   font-size: 13px;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   margin-left: 2px;
   transition: color 0.15s;
 }
 .work-item__year {
   font-size: 13px;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   margin-left: auto;
   flex-shrink: 0;
   transition: color 0.15s;
@@ -554,7 +561,7 @@ header {
   margin-bottom: 20px;
 }
 .home-other-work__label {
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -720,7 +727,7 @@ header {
 
 .testimonial-role {
   font-size: 11px;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   color: var(--text-muted);
   letter-spacing: 0.04em;
 }
@@ -784,7 +791,7 @@ header {
   line-height: 1;
   cursor: pointer;
   padding: 0;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   transition: color 0.2s;
   flex-shrink: 0;
 }
@@ -833,7 +840,7 @@ header {
 .home-strip__dot {
   font-size: 9px;
   color: var(--strip-dot);
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   line-height: 1;
 }
 .home-strip__spacer {
@@ -842,7 +849,7 @@ header {
 .home-strip__cross {
   font-size: 9px;
   color: var(--strip-cross);
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
 }
 .home-strip__rule {
   width: 10px;
@@ -1071,7 +1078,7 @@ header {
   font-size: 9px;
   color: var(--panel-rule);
   letter-spacing: -1px;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   position: relative;
   z-index: 1;
 }
@@ -1103,8 +1110,7 @@ header {
 .project-body .section--title {
   color: var(--text-primary);
   font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 400;
 }
 @media (max-width: 768px) {
   .project-body .section--title {
@@ -1149,7 +1155,7 @@ header {
   border-bottom: 0.5px solid var(--border);
   margin: 20px 0 48px;
   font-size: 16px;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   color: var(--text-muted);
   letter-spacing: 0.04em;
 }
@@ -1209,7 +1215,7 @@ header {
   font-size: 13px;
   color: var(--text-muted);
   text-decoration: none;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   letter-spacing: 0.04em;
   transition: color 0.2s;
 }
@@ -1229,7 +1235,7 @@ header {
   font-size: 13px;
   color: var(--text-muted);
   text-decoration: none;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   letter-spacing: 0.02em;
   transition: color 0.2s;
 }
@@ -1255,7 +1261,7 @@ header {
 }
 .project-cta__label {
   font-size: 11px;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   color: var(--text-muted);
   letter-spacing: 0.18em;
   text-transform: uppercase;

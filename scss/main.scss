@@ -22,7 +22,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-size: 100%;
-    font-family: roboto, sans-serif, goober;
+    font-family: "IBM Plex Sans", sans-serif;
     background-color: var(--bg, #fafafb); // homepage uses --bg; project pages inherit old value
 }
 
@@ -30,10 +30,22 @@ h1, h2 {
     margin: 0;
 }
 
+// Display voice — every heading site-wide carries the same typographic identity
+// unless a more specific rule overrides weight/size (it never overrides family).
+// Chakra Petch's letterforms run blockier than Roboto at the same numeric weight,
+// so it gets its own (looser) tracking baseline instead of inheriting Roboto's.
+h1, h2, h3 {
+    font-family: "Chakra Petch", sans-serif;
+    letter-spacing: 0.01em;
+}
+
 h1 {
     font-weight: 200;
     font-size: toRem(44);
-    letter-spacing: 2px;
+    // letter-spacing intentionally not set here — inherits the 0.01em display
+    // tracking above. A stale 2px value used to win this property (equal
+    // specificity, declared later) and only showed up wherever nothing more
+    // specific set letter-spacing, e.g. project-page h1 titles.
 }
 
 h2 {
