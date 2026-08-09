@@ -35,7 +35,8 @@
     {{ figure(
         "../assets/images/appsec-overview-project/workshop-car-dashboard.png",
         "Car dashboard photo covered in color-coded sticky notes from a cross-functional stakeholder workshop, mapping proposed AppSec content to dashboard zones",
-        "The workshop artifact: each product team placed sticky notes on a real dashboard photo, assigning their proposed content to zones. Persistent warnings (Doors, Seatbelt), status gauges (RPM, Engine Temp, Speedometer), at-a-glance readings (Gas tank). Where a team placed their note revealed whether they were thinking about the page as monitoring, alerting, or diagnostics."
+        "The workshop artifact: each product team placed sticky notes on a real dashboard photo, assigning their proposed content to zones. Persistent warnings (Doors, Seatbelt), status gauges (RPM, Engine Temp, Speedometer), at-a-glance readings (Gas tank). Where a team placed their note revealed whether they were thinking about the page as monitoring, alerting, or diagnostics.",
+        width=2412, height=1408
     ) }}
     <p>
         Out of that workshop we identified four common categories: Status, Alerts, Insights, and Recommendations. That framework became the structure of the design and the shared language we used in stakeholder discussions going forward.
@@ -44,7 +45,8 @@
         "../assets/images/appsec-overview-project/workshop-stakeholder-synthesis.png",
         "Synthesis diagram from the workshop mapping stakeholder goals to three principles: opinionated, contextual, and flexible, with API Shield and Bots business goals organized by column",
         "The synthesis: three principles emerged from the workshop. Opinionated &mdash; is something blocking me? Contextual &mdash; what level should a notification fire at? Flexible &mdash; are the same things &ldquo;red&rdquo; for everyone? These organized the competing goals from API Shield and Bots into a shared framework.",
-        noShadow=true
+        noShadow=true,
+        width=2108, height=1182
     ) }}
 {% endcall %}
 
@@ -58,7 +60,8 @@
     {{ figure(
         "../assets/images/appsec-overview-project/wireframe-account-overview.png",
         "Early wireframe of a broad account-level overview showing Alerts, Threat Assessment across Access, Gateway, and Email Security, plus Actions, Recents, and Favorites — annotated with colored circles indicating urgency level",
-        "An early concept: a broader account-level overview spanning Access, Gateway, and Email Security alongside AppSec. Colored annotations mark content by urgency and type. Scope was narrowed to AppSec products before moving into design."
+        "An early concept: a broader account-level overview spanning Access, Gateway, and Email Security alongside AppSec. Colored annotations mark content by urgency and type. Scope was narrowed to AppSec products before moving into design.",
+        width=2118, height=1138
     ) }}
     <p>
         We talked to our CSE team. Asking questions and showing small prototypes, we found that detailed metrics were less important than action-oriented guidance. CSEs had common remediation patterns they walked customers through repeatedly that could be reduced if the overview surfaced the right information upfront. They also gave useful feedback on terminology. Always include a way to get more detail, because customers understand something like &ldquo;mitigated attacks&rdquo; differently.
@@ -81,17 +84,20 @@
     {{ figure(
         "../assets/images/appsec-overview-project/wireframe-onboarding.png",
         "Two wireframes side by side: Onboarding setting expectations (a step-by-step walkthrough of how AppSec works) and Onboarding security posture (an initial overview state showing domain, risk profile, traffic, and detections enabled)",
-        "Onboarding explorations for new users: a walkthrough explaining how Cloudflare AppSec observes and acts on traffic (left), and an initial security posture view showing domain risk profile and active threat detections (right)."
+        "Onboarding explorations for new users: a walkthrough explaining how Cloudflare AppSec observes and acts on traffic (left), and an initial security posture view showing domain risk profile and active threat detections (right).",
+        width=2074, height=1184
     ) }}
     {{ figure(
         "../assets/images/appsec-overview-project/wireframe-appsec-overview.png",
         "Wireframe of Application Security Overview with traffic summary on the left and prioritized action items on the right, including urgent alerts highlighted in red at the top",
-        "A wireframe showing the layout direction: traffic summary on the left, action items ranked by urgency on the right. Urgent alerts at the top; lower-priority configuration suggestions below."
+        "A wireframe showing the layout direction: traffic summary on the left, action items ranked by urgency on the right. Urgent alerts at the top; lower-priority configuration suggestions below.",
+        width=1674, height=1112
     ) }}
     {{ figure(
         "../assets/images/appsec-overview-project/security-overview-early.png",
         "An earlier design exploration for the Security Overview before the direction shifted toward action-oriented suggestions",
-        "An earlier design direction, before the research pushed us toward prioritizing action over metrics."
+        "An earlier design direction, before the research pushed us toward prioritizing action over metrics.",
+        width=1463, height=1158
     ) }}
 {% endcall %}
 
@@ -102,7 +108,8 @@
     {{ figure(
         "../assets/images/appsec-overview-project/security-overview-launched.png",
         "The shipped Cloudflare Security Overview page showing traffic summary, security posture suggestions, and detection settings",
-        "The shipped Security Overview, launched March 17, 2025 during Cloudflare Security Week."
+        "The shipped Security Overview, launched March 17, 2025 during Cloudflare Security Week.",
+        width=2990, height=2032
     ) }}
     <p>
         Clicking a suggestion opens a detail panel with the relevant data, context, and a direct path to act on it.
@@ -110,7 +117,8 @@
     {{ figure(
         "../assets/images/appsec-overview-project/security-overview-action-panel.png",
         "The suggestion detail panel showing a DMARC Record Error with context and a direct call to action",
-        "The suggestion detail panel: the problem, the data behind it, and the action, all in one place."
+        "The suggestion detail panel: the problem, the data behind it, and the action, all in one place.",
+        width=3018, height=2030
     ) }}
 {% endcall %}
 

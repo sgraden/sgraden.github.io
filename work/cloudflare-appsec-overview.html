@@ -75,14 +75,14 @@
         To get aligned, we ran a workshop with stakeholders from every AppSec product area using a car dashboard as the framing. A dashboard is a tool people use to understand their vehicle&rsquo;s current status and make adjustments under pressure. The analogy helped us separate what you need at a glance from what belongs one level deeper.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/workshop-car-dashboard.png" alt="Car dashboard photo covered in color-coded sticky notes from a cross-functional stakeholder workshop, mapping proposed AppSec content to dashboard zones" loading="lazy">
+    <img src="../assets/images/appsec-overview-project/workshop-car-dashboard.png" alt="Car dashboard photo covered in color-coded sticky notes from a cross-functional stakeholder workshop, mapping proposed AppSec content to dashboard zones" loading="lazy" width="2412" height="1408">
 <figcaption>The workshop artifact: each product team placed sticky notes on a real dashboard photo, assigning their proposed content to zones. Persistent warnings (Doors, Seatbelt), status gauges (RPM, Engine Temp, Speedometer), at-a-glance readings (Gas tank). Where a team placed their note revealed whether they were thinking about the page as monitoring, alerting, or diagnostics.</figcaption></figure>
 
     <p>
         Out of that workshop we identified four common categories: Status, Alerts, Insights, and Recommendations. That framework became the structure of the design and the shared language we used in stakeholder discussions going forward.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/workshop-stakeholder-synthesis.png" alt="Synthesis diagram from the workshop mapping stakeholder goals to three principles: opinionated, contextual, and flexible, with API Shield and Bots business goals organized by column" loading="lazy" class="no-shadow">
+    <img src="../assets/images/appsec-overview-project/workshop-stakeholder-synthesis.png" alt="Synthesis diagram from the workshop mapping stakeholder goals to three principles: opinionated, contextual, and flexible, with API Shield and Bots business goals organized by column" loading="lazy" class="no-shadow" width="2108" height="1182">
 <figcaption>The synthesis: three principles emerged from the workshop. Opinionated &mdash; is something blocking me? Contextual &mdash; what level should a notification fire at? Flexible &mdash; are the same things &ldquo;red&rdquo; for everyone? These organized the competing goals from API Shield and Bots into a shared framework.</figcaption></figure>
 
 
@@ -99,7 +99,7 @@
         For competitive analysis, we used competing security dashboards directly where we could and worked through YouTube walkthroughs and documentation for platforms we couldn&rsquo;t access. The pattern held: data-heavy overviews were hard to act on; the ones built around action got used.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/wireframe-account-overview.png" alt="Early wireframe of a broad account-level overview showing Alerts, Threat Assessment across Access, Gateway, and Email Security, plus Actions, Recents, and Favorites — annotated with colored circles indicating urgency level" loading="lazy">
+    <img src="../assets/images/appsec-overview-project/wireframe-account-overview.png" alt="Early wireframe of a broad account-level overview showing Alerts, Threat Assessment across Access, Gateway, and Email Security, plus Actions, Recents, and Favorites — annotated with colored circles indicating urgency level" loading="lazy" width="2118" height="1138">
 <figcaption>An early concept: a broader account-level overview spanning Access, Gateway, and Email Security alongside AppSec. Colored annotations mark content by urgency and type. Scope was narrowed to AppSec products before moving into design.</figcaption></figure>
 
     <p>
@@ -125,15 +125,15 @@
         Unification also added scope. The Overview would serve as the landing page for a restructured navigation covering all AppSec products under a single Security section. New users would opt in through a modal, a more gradual rollout given how much was changing at once.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/wireframe-onboarding.png" alt="Two wireframes side by side: Onboarding setting expectations (a step-by-step walkthrough of how AppSec works) and Onboarding security posture (an initial overview state showing domain, risk profile, traffic, and detections enabled)" loading="lazy">
+    <img src="../assets/images/appsec-overview-project/wireframe-onboarding.png" alt="Two wireframes side by side: Onboarding setting expectations (a step-by-step walkthrough of how AppSec works) and Onboarding security posture (an initial overview state showing domain, risk profile, traffic, and detections enabled)" loading="lazy" width="2074" height="1184">
 <figcaption>Onboarding explorations for new users: a walkthrough explaining how Cloudflare AppSec observes and acts on traffic (left), and an initial security posture view showing domain risk profile and active threat detections (right).</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/appsec-overview-project/wireframe-appsec-overview.png" alt="Wireframe of Application Security Overview with traffic summary on the left and prioritized action items on the right, including urgent alerts highlighted in red at the top" loading="lazy">
+    <img src="../assets/images/appsec-overview-project/wireframe-appsec-overview.png" alt="Wireframe of Application Security Overview with traffic summary on the left and prioritized action items on the right, including urgent alerts highlighted in red at the top" loading="lazy" width="1674" height="1112">
 <figcaption>A wireframe showing the layout direction: traffic summary on the left, action items ranked by urgency on the right. Urgent alerts at the top; lower-priority configuration suggestions below.</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/appsec-overview-project/security-overview-early.png" alt="An earlier design exploration for the Security Overview before the direction shifted toward action-oriented suggestions" loading="lazy">
+    <img src="../assets/images/appsec-overview-project/security-overview-early.png" alt="An earlier design exploration for the Security Overview before the direction shifted toward action-oriented suggestions" loading="lazy" width="1463" height="1158">
 <figcaption>An earlier design direction, before the research pushed us toward prioritizing action over metrics.</figcaption></figure>
 
 
@@ -147,14 +147,14 @@
         The shipped page leads with the traffic summary, moves into Security Posture with contextual suggestions, then shows Detection Settings and Rules Activity below. Each suggestion includes customer-specific data so it&rsquo;s clear why it&rsquo;s being surfaced.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/security-overview-launched.png" alt="The shipped Cloudflare Security Overview page showing traffic summary, security posture suggestions, and detection settings" loading="lazy">
+    <img src="../assets/images/appsec-overview-project/security-overview-launched.png" alt="The shipped Cloudflare Security Overview page showing traffic summary, security posture suggestions, and detection settings" loading="lazy" width="2990" height="2032">
 <figcaption>The shipped Security Overview, launched March 17, 2025 during Cloudflare Security Week.</figcaption></figure>
 
     <p>
         Clicking a suggestion opens a detail panel with the relevant data, context, and a direct path to act on it.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/security-overview-action-panel.png" alt="The suggestion detail panel showing a DMARC Record Error with context and a direct call to action" loading="lazy">
+    <img src="../assets/images/appsec-overview-project/security-overview-action-panel.png" alt="The suggestion detail panel showing a DMARC Record Error with context and a direct call to action" loading="lazy" width="3018" height="2030">
 <figcaption>The suggestion detail panel: the problem, the data behind it, and the action, all in one place.</figcaption></figure>
 
 

@@ -19,7 +19,10 @@
     ]) }}
 
   Parameters:
-    images   — array of { src, alt } objects (required). Designed for 2 images;
+    images   — array of { src, alt, width, height } objects (required). width/height
+               are each image's intrinsic pixel dimensions (optional per-image) — combined,
+               they let the browser reserve correct proportional space pre-load even though
+               CSS scales the rendered size, preventing layout shift. Designed for 2 images;
                more will wrap based on the grid CSS.
     caption  — shared caption shown below the row (optional).
                Supports inline HTML via the | safe filter.
@@ -31,7 +34,7 @@
 {% macro gallery(images, caption=none, eager=false) %}
 <div class="img--gallery">
     {% for img in images %}
-    <img class="img--gallery--item" src="{{ img.src }}" alt="{{ img.alt }}"{% if not eager %} loading="lazy"{% endif %}>
+    <img class="img--gallery--item" src="{{ img.src }}" alt="{{ img.alt }}"{% if not eager %} loading="lazy"{% endif %}{% if img.width and img.height %} width="{{ img.width }}" height="{{ img.height }}"{% endif %}>
     {% endfor %}
     {% if caption %}
     <figure>

@@ -13,6 +13,9 @@
   Usage (no drop shadow):
     {{ figure("../assets/images/my-project/photo.png", "Alt text", "Caption.", noShadow=true) }}
 
+  Usage (with intrinsic dimensions, to reserve layout space before the image loads):
+    {{ figure("../assets/images/my-project/photo.png", "Alt text", width=1200, height=800) }}
+
   Parameters:
     src       — image path (required)
     alt       — alt text for the image (required)
@@ -20,10 +23,14 @@
                 Supports inline HTML via the | safe filter, so you can pass
                 things like "Before &rarr; After" or "<b>bold</b> text".
     noShadow  — pass true to suppress the drop shadow (class="no-shadow"). Default: false
+    width     — image's intrinsic pixel width (optional). Combined with height, lets the
+                browser reserve correct proportional space pre-load even though CSS scales
+                the rendered size — prevents layout shift. Omit if unknown.
+    height    — image's intrinsic pixel height (optional, see width).
 #}
-{% macro figure(src, alt, caption=none, noShadow=false) %}
+{% macro figure(src, alt, caption=none, noShadow=false, width=none, height=none) %}
 <figure>
-    <img src="{{ src }}" alt="{{ alt }}" loading="lazy"{% if noShadow %} class="no-shadow"{% endif %}>
+    <img src="{{ src }}" alt="{{ alt }}" loading="lazy"{% if noShadow %} class="no-shadow"{% endif %}{% if width and height %} width="{{ width }}" height="{{ height }}"{% endif %}>
     {% if caption %}<figcaption>{{ caption | safe }}</figcaption>{% endif %}
 </figure>
 {% endmacro %}

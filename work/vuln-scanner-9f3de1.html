@@ -75,8 +75,8 @@
         That distinction shaped the results page most: not just &ldquo;this endpoint is vulnerable,&rdquo; but here is the exact request, the credential used, what was expected, and what the API actually returned.
     </p>
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/miro-wip-15.jpg" alt="Journey Map As-is showing a Security Engineer persona navigating current pain points: missing documentation, needing to manually identify and prioritize vulnerabilities, high frustration at multiple stages" loading="lazy">
-    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/miro-wip-14.jpg" alt="Journey Map To-be showing the desired future state where the Security Engineer gets proactive vulnerability scanning, automated recommendations, and reduced friction throughout the security workflow" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/miro-wip-15.jpg" alt="Journey Map As-is showing a Security Engineer persona navigating current pain points: missing documentation, needing to manually identify and prioritize vulnerabilities, high frustration at multiple stages" loading="lazy" width="1232" height="620">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/miro-wip-14.jpg" alt="Journey Map To-be showing the desired future state where the Security Engineer gets proactive vulnerability scanning, automated recommendations, and reduced friction throughout the security workflow" loading="lazy" width="1046" height="658">
     <figure>
         <figcaption>As-is (left) vs. to-be (right): the Security Engineer persona mapped through current pain points to the desired experience with proactive scanning and automated recommendations.</figcaption>
     </figure>
@@ -96,7 +96,7 @@
         That created a meaningful barrier to adoption. Not all customers had a schema readily available, and creating one from scratch added real friction before the tool could provide any value. The gap between Discovery and Scanner was a recurring frustration during the project and was documented as a roadmap dependency.
     </p>
     <figure>
-    <img src="../assets/images/vuln-scanner-project/miro-wip-09.jpg" alt="API AS-IS diagram showing that the current API outputs its own report with no integration into endpoints or security posture tools, followed by the engineer flow from creating a config to scan completion" loading="lazy">
+    <img src="../assets/images/vuln-scanner-project/miro-wip-09.jpg" alt="API AS-IS diagram showing that the current API outputs its own report with no integration into endpoints or security posture tools, followed by the engineer flow from creating a config to scan completion" loading="lazy" width="1353" height="725">
 <figcaption>The AS-IS state: the scanner operated independently with no connection to Discovery&rsquo;s schema output or security posture tools. The engineer flow below shows the manual steps required to get a scan running.</figcaption></figure>
 
 
@@ -121,7 +121,7 @@
         For Cloudflare-internal alignment we reviewed <b>Investigate</b> (detailed findings with contextual links), <b>Log Explorer</b> (raw request-level data with filtering), and <b>Trace</b> (step-by-step request tracing that directly influenced the scan results&rsquo; per-step breakdown).
     </p>
     <figure>
-    <img src="../assets/images/vuln-scanner-project/miro-wip-19.jpg" alt="Competitive and internal research board showing Akamai, F5 Cloud Web App Scanning, Intruder API Scanner, Wallarm, and Pentest Tools alongside Cloudflare Investigate, Log Explorer, Reports, and Trace with annotated sticky notes" loading="lazy">
+    <img src="../assets/images/vuln-scanner-project/miro-wip-19.jpg" alt="Competitive and internal research board showing Akamai, F5 Cloud Web App Scanning, Intruder API Scanner, Wallarm, and Pentest Tools alongside Cloudflare Investigate, Log Explorer, Reports, and Trace with annotated sticky notes" loading="lazy" width="1023" height="759">
 <figcaption>Market and internal research: competitors on the left annotated with observations on test execution, scheduling, and reporting patterns; Cloudflare-related tools on the right showing where interaction patterns already existed.</figcaption></figure>
 
 
@@ -187,12 +187,12 @@
 
 
     <figure>
-    <img src="../assets/images/vuln-scanner-project/miro-wip-05.jpg" alt="MVP Scan Steps matrix showing the main mission and side quest rows across four columns: Select a target, Choose and configure a scan type, Scan in progress, and Review report, with wireframe screens per phase" loading="lazy">
+    <img src="../assets/images/vuln-scanner-project/miro-wip-05.jpg" alt="MVP Scan Steps matrix showing the main mission and side quest rows across four columns: Select a target, Choose and configure a scan type, Scan in progress, and Review report, with wireframe screens per phase" loading="lazy" width="1302" height="625">
 <figcaption>The scan journey mapped across phases, with main mission flows on top and secondary paths (credential creation, scheduling) below. The &ldquo;Review report&rdquo; column notes users want to test the requests from their own machine.</figcaption></figure>
 
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/start-scan-hifi.png" alt="High-fidelity scan configuration form showing scan type, OpenAPI schema upload, zone validation, and credential setup" loading="lazy">
-    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/scan-list-hifi.png" alt="High-fidelity scan list showing completed scans with outcome indicators and credential sets" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/start-scan-hifi.png" alt="High-fidelity scan configuration form showing scan type, OpenAPI schema upload, zone validation, and credential setup" loading="lazy" width="1265" height="1507">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/scan-list-hifi.png" alt="High-fidelity scan list showing completed scans with outcome indicators and credential sets" loading="lazy" width="1445" height="1169">
     <figure>
         <figcaption>Configuration form with zone validation (left) and the scan list landing page (right).</figcaption>
     </figure>
@@ -212,7 +212,7 @@
         A recurring observation from stakeholder reviews and competitive analysis: users don&rsquo;t take a security tool&rsquo;s word for a finding at face value. The copy-paste terminal call alongside each failing step let both a developer and a security specialist independently confirm what the scanner found before bringing it to a fix conversation.
     </p>
     <figure>
-    <img src="../assets/images/vuln-scanner-project/scan-results-hifi.png" alt="Scan results page showing a four-step BOLA test with Step 2 returning 200 OK when 400-499 was expected, confirming the endpoint is vulnerable" loading="lazy">
+    <img src="../assets/images/vuln-scanner-project/scan-results-hifi.png" alt="Scan results page showing a four-step BOLA test with Step 2 returning 200 OK when 400-499 was expected, confirming the endpoint is vulnerable" loading="lazy" width="1281" height="1677">
 <figcaption>Step 2 returning 200 OK when 400&ndash;499 was expected: the endpoint is vulnerable. Steps 3 and 4 show the attacker was blocked from updating or deleting the resource.</figcaption></figure>
 
 
@@ -229,8 +229,8 @@
         Where the approach hit its limit was visual iteration. Each layout adjustment meant describing the problem to Claude, waiting for it to process and generate a solution, then reviewing whether the change was correct and hadn&rsquo;t modified components outside the intended scope. Unintended edits required additional prompts to undo, compounding both time and token cost. What takes seconds in Figma took several exchanges in code. To bridge that, I used an AI tool to import the coded prototype into Figma and used it as the base for all screens and states for engineering handoff. The coded prototype became the fidelity source; Figma became the documentation layer.
     </p>
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/vuln-scanner-wip.png" alt="Earlier high-fidelity design iteration of the Vulnerability Scanner dashboard" loading="lazy">
-    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/scan-results-hifi.png" alt="Near-final high-fidelity scan results screen" loading="lazy">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/vuln-scanner-wip.png" alt="Earlier high-fidelity design iteration of the Vulnerability Scanner dashboard" loading="lazy" width="1115" height="1051">
+    <img class="img--gallery--item" src="../assets/images/vuln-scanner-project/scan-results-hifi.png" alt="Near-final high-fidelity scan results screen" loading="lazy" width="1281" height="1677">
     <figure>
         <figcaption>Design progression: an earlier iteration (left) and the near-final high-fidelity screen (right).</figcaption>
     </figure>
