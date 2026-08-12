@@ -24,6 +24,7 @@ $bp-project-mobile: 768px;
 
     img {
         max-width: 100%;
+        height: auto; // explicit, so proportions hold regardless of the width/height attrs alone
         margin: 2rem auto;
         display: block;
         border-radius: 12px;
@@ -42,12 +43,12 @@ $bp-project-mobile: 768px;
         display: inline-flex;
         flex-wrap: wrap;
 
+        // .img--gallery--item is the <img> itself (an img can't have a child img,
+        // so a nested `img { }` rule here would never match anything).
         &--item {
             @include list-grid(2);
-            img {
-                width: 100%;
-                display: block;
-            }
+            height: auto;
+            display: block;
 
             @media (max-width: $bp-project-mobile) {
                 width: 100%;
@@ -60,8 +61,8 @@ $bp-project-mobile: 768px;
     &--banner-alert {
         display: inline-flex;
         align-items: center;
-        background-color: rgba(31, 195, 255, 0.08);
-        border: 1px solid rgba(31, 195, 255, 0.20);
+        background-color: rgba(62, 142, 244, 0.08);
+        border: 1px solid rgba(62, 142, 244, 0.20);
         color: var(--accent);
         padding: 10px 16px;
         border-radius: 10px;
@@ -108,7 +109,7 @@ $bp-project-mobile: 768px;
 
         &:hover {
             transform: translateY(-2px);
-            background: rgba(31, 195, 255, 0.04);
+            background: rgba(62, 142, 244, 0.04);
         }
 
         .step-badge {

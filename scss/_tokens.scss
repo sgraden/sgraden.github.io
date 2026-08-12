@@ -5,19 +5,22 @@
 // own values until they are migrated.
 
 :root {
-    // Accent
-    --accent:           #1fc3ff;
-    --accent-text:      #0099cc; // darker tint — used for small labels on light bg
+    // Accent — brand blue is #08428C. On dark backgrounds that's too low-contrast to
+    // read as a live accent (1.94:1 against --bg), so dark mode uses a lightened tint
+    // of the same hue/saturation (5.7:1 against --bg) instead of the literal value.
+    --accent:           #3e8ef4;
+    --accent-text:      #08428c; // exact brand blue — used for small labels on light bg (9.7:1 on white)
 
-    // Panel (left cyan column)
-    --panel-bg:              #1fc3ff;
-    --panel-text:            #050810;
-    --panel-text-secondary:  rgba(5, 8, 16, 0.45);
-    --panel-symbol:          rgba(5, 8, 16, 0.10); // large SR monogram
-    --panel-marker:          rgba(5, 8, 16, 0.25); // dots, triangle
-    --panel-rule:            rgba(5, 8, 16, 0.18); // thin rules
+    // Panel (left brand-blue column) — bg is the literal brand blue, always dark, so
+    // everything drawn on top of it is light instead of the old dark-on-bright-cyan set.
+    --panel-bg:              #08428c;
+    --panel-text:            #ffffff;
+    --panel-text-secondary:  rgba(255, 255, 255, 0.60);
+    --panel-symbol:          rgba(255, 255, 255, 0.08); // large SR monogram
+    --panel-marker:          rgba(255, 255, 255, 0.40); // dots, triangle
+    --panel-rule:            rgba(255, 255, 255, 0.30); // thin rules
 
-    // Page backgrounds — dark blue-navy, softer contrast against the cyan panel
+    // Page backgrounds — dark blue-navy, softer contrast against the brand-blue panel
     --bg:              #0f1218;
     --strip-bg:        #121620;
 
@@ -31,14 +34,14 @@
     --strip-border:    rgba(255, 255, 255, 0.08);
 
     // Work list — featured (top, full brightness)
-    --work-dot-featured:    #1fc3ff;
+    --work-dot-featured:    #3e8ef4; // matches --accent
     --work-title-featured:  rgba(255, 255, 255, 0.95);
     --work-company-featured:rgba(255, 255, 255, 0.50);
     --work-year-featured:   rgba(255, 255, 255, 0.60);
 
     // Work list — secondary (dimmed but still readable without effort)
     // Company/year floor is rgba(255,255,255,0.45) minimum — never lower contrast than this.
-    --work-dot-secondary:    rgba(31, 195, 255, 0.45);
+    --work-dot-secondary:    rgba(62, 142, 244, 0.45); // --work-dot-featured at reduced opacity
     --work-title-secondary:  rgba(255, 255, 255, 0.62);
     --work-company-secondary:rgba(255, 255, 255, 0.45);
     --work-year-secondary:   rgba(255, 255, 255, 0.48);
@@ -68,14 +71,14 @@
         --strip-border:    rgba(0, 0, 0, 0.07);
 
         // Work list — featured
-        --work-dot-featured:    #1fc3ff;
+        --work-dot-featured:    #08428c; // matches --accent-text
         --work-title-featured:  #07090f;
         --work-company-featured:#888888;
         --work-year-featured:   #888888;
 
         // Work list — secondary
         // Title is the row's link label (4.5:1 min); company/year floor is #888 — never lower contrast than this.
-        --work-dot-secondary:    rgba(31, 195, 255, 0.5);
+        --work-dot-secondary:    rgba(8, 66, 140, 0.5); // --work-dot-featured at reduced opacity
         --work-title-secondary:  #767676;
         --work-company-secondary:#888888;
         --work-year-secondary:   #888888;
