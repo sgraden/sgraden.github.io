@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/main.css">
     <title>Steven Raden - Workers Unbound</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="project">
     
@@ -38,12 +40,12 @@
                 <a href="../index.html" class="project-nav__back">← Work</a>
                 <div class="project-nav__links">
                     <a href="https://photo.sraden.com/" target="_blank" rel="noopener">Photography</a>
-                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank">Résumé</a>
+                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank" rel="noopener">Résumé</a>
                 </div>
             </nav>
 
 <div class="section">
-    <h2 class="section--title project--title">Workers Unbound</h2>
+    <h1 class="section--title project--title">Workers Unbound</h1>
     <div class="section--content">
             <p>
         Workers Unbound extended Cloudflare's serverless platform to support CPU-intensive workloads, removing the execution limits that had previously made the original Workers product off-limits for heavier compute jobs.
@@ -60,7 +62,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">The Problem</h3>
+    <h2 class="section--title">The Problem</h2>
     <div class="section--content">
             <p>
         Removing the CPU cap solved an engineering problem but opened a design one: usage-based pricing meant a Worker that used to be predictable could now generate a surprise bill.
@@ -75,15 +77,15 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Research &amp; Discovery</h3>
+    <h2 class="section--title">Research &amp; Discovery</h2>
     <div class="section--content">
             <p>
         We talked to a mix of <b>new</b>, <b>existing</b>, <b>internal</b>, and <b>beta</b> Workers users to understand how they thought about cost, metrics, and alerting on the platform.
         Sessions were affinity-mapped across recurring themes (Onboarding, Pricing, Metrics, Alerting, Usage Setting &amp; Controls, and Productive Use Pricing) to find where the platform was creating anxiety versus confidence.
     </p>
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-participants-session.png" alt="Outline of participant segments and session structure used in the research">
-    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-affinity-map-1.png" alt="Affinity map clustering research notes by theme">
+    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-participants-session.png" alt="Outline of participant segments and session structure used in the research" loading="lazy" width="1000" height="730">
+    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-affinity-map-1.png" alt="Affinity map clustering research notes by theme" loading="lazy" width="1000" height="368">
     <figure>
         <figcaption>Participant segmentation and affinity-mapped session notes, clustered by theme (Onboarding, Pricing, Metrics, Alerting, and more).</figcaption>
     </figure>
@@ -99,7 +101,7 @@
         <li>"If we aren't billed on CPU and still have a 50ms cap." Some users were still thinking in terms of the old limits even after they were gone.</li>
     </ul>
     <figure>
-    <img src="../assets/images/workers-unbound-project/research-scoring-rubric.png" alt="Scoring rubric scoring notification and analytics requirements and ease, with supporting quotes">
+    <img src="../assets/images/workers-unbound-project/research-scoring-rubric.png" alt="Scoring rubric scoring notification and analytics requirements and ease, with supporting quotes" loading="lazy" width="1176" height="1262">
 <figcaption>Scoring notification and analytics needs against ease-of-use, anchored to participant quotes rather than the numbers alone.</figcaption></figure>
 
 
@@ -107,15 +109,15 @@
         From there we synthesized raw notes into highlights and a direction. Two themes kept coming up:
     </p>
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-affinity-map-2.png" alt="Further organization of research themes into journey-specific and non-journey-specific groupings">
-    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-theme-clusters.png" alt="Clustered research themes spanning onboarding, pricing, metrics, alerting, and account management">
+    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-affinity-map-2.png" alt="Further organization of research themes into journey-specific and non-journey-specific groupings" loading="lazy" width="854" height="1000">
+    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/research-theme-clusters.png" alt="Clustered research themes spanning onboarding, pricing, metrics, alerting, and account management" loading="lazy" width="1000" height="731">
     <figure>
         <figcaption>Organizing themes by where they sat in the user&rsquo;s journey helped separate &ldquo;billing&rdquo; problems from &ldquo;engineering&rdquo; ones, a distinction that kept coming up in sessions.</figcaption>
     </figure>
 </div>
 
     <figure>
-    <img src="../assets/images/workers-unbound-project/research-synthesis-direction.png" alt="Synthesis wall moving from raw notes to highlights to direction, calling out cost and actionable metrics">
+    <img src="../assets/images/workers-unbound-project/research-synthesis-direction.png" alt="Synthesis wall moving from raw notes to highlights to direction, calling out cost and actionable metrics" loading="lazy" width="1600" height="861">
 <figcaption>Raw notes &rarr; highlights &rarr; direction. <b>Cost</b> and <b>actionable metrics</b> emerged as the two areas worth designing for first.</figcaption></figure>
 
 
@@ -123,7 +125,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">From Feedback to Direction</h3>
+    <h2 class="section--title">From Feedback to Direction</h2>
     <div class="section--content">
             <p>
         Earlier rounds of design covered a Workers list view, per-Worker metrics, account-level analytics, notification management, and usage-alert emails. Each one turned up the same thing:
@@ -137,7 +139,7 @@
     <div class="flow-step">
         <div class="step-badge">1</div>
         <div class="step-content">
-            <h4>Recap Prior Feedback</h4>
+            <h3>Recap Prior Feedback</h3>
             <p>Across the List View, Worker Metrics, Account Analytics, and notification/email explorations, the same note kept surfacing: <b>CPU time isn't useful without billing context</b>, and generic analytics fall flat for accounts running only one or two Workers.</p>
         </div>
     </div>
@@ -147,7 +149,7 @@
     <div class="flow-step">
         <div class="step-badge">2</div>
         <div class="step-content">
-            <h4>Synthesize &amp; Score</h4>
+            <h3>Synthesize &amp; Score</h3>
             <p>Affinity-mapping sessions against themes like Pricing, Metrics, and Alerting, then scoring each against requirement and ease, showed us where the confusion and anxiety were piling up.</p>
         </div>
     </div>
@@ -157,7 +159,7 @@
     <div class="flow-step">
         <div class="step-badge">3</div>
         <div class="step-content">
-            <h4>Pick a Direction</h4>
+            <h3>Pick a Direction</h3>
             <p>Two things stood out: make <b>cost</b> easy to read, and make <b>metrics actionable</b>, telling people not just what happened, but what to do about it.</p>
         </div>
     </div>
@@ -167,7 +169,7 @@
     <div class="flow-step">
         <div class="step-badge">4</div>
         <div class="step-content">
-            <h4>New Explorations</h4>
+            <h3>New Explorations</h3>
             <p>From there, designs shifted to lead with engineering problems, adding an account usage summary to keep cost visible without making it the whole story.</p>
         </div>
     </div>
@@ -178,11 +180,11 @@
         Plan changes needed to be just as clear. The flow below maps how an account moves from a <b>Bundled</b> plan into <b>Unbound</b>, including the default-plan switch and the confirmation step that only shows up the first time someone completes the upgrade.
     </p>
     <figure>
-    <img src="../assets/images/workers-unbound-project/bundled-to-unbound-flow.png" alt="Flow diagram showing how an account moves from a Bundled plan to Workers Unbound, including default plan switching and confirmation states">
+    <img src="../assets/images/workers-unbound-project/bundled-to-unbound-flow.png" alt="Flow diagram showing how an account moves from a Bundled plan to Workers Unbound, including default plan switching and confirmation states" loading="lazy" width="1600" height="1152">
 <figcaption>Bundled &rarr; Enable Unbound: mapping every screen and decision point in the upgrade path, including the one-time confirmation flow.</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/workers-unbound-project/ia-map-overview.png" alt="Information architecture map of the broader Workers Unbound project">
+    <img src="../assets/images/workers-unbound-project/ia-map-overview.png" alt="Information architecture map of the broader Workers Unbound project" loading="lazy" width="1600" height="1071">
 <figcaption>The broader information-architecture map, used to keep the upgrade flow consistent with the rest of the Workers dashboard.</figcaption></figure>
 
 
@@ -190,28 +192,28 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">The Experience</h3>
+    <h2 class="section--title">The Experience</h2>
     <div class="section--content">
             <p>
         The shipped experience shows a Worker's health up top: requests, duration, egress, and CPU time, broken down by percentile and plotted over time, so a developer can quickly tell if something needs attention.
     </p>
     <figure>
-    <img src="../assets/images/workers-unbound-project/worker-card-summary.png" alt="Worker summary card showing requests, errors, and median CPU time at a glance" class="no-shadow">
+    <img src="../assets/images/workers-unbound-project/worker-card-summary.png" alt="Worker summary card showing requests, errors, and median CPU time at a glance" loading="lazy" class="no-shadow" width="690" height="165">
 <figcaption>The summary card: the first signal a developer sees before deciding whether to look further.</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/workers-unbound-project/worker-metrics-overview.png" alt="Metrics overview panel showing requests, invocation statuses, and CPU time charted over time">
+    <img src="../assets/images/workers-unbound-project/worker-metrics-overview.png" alt="Metrics overview panel showing requests, invocation statuses, and CPU time charted over time" loading="lazy" width="1118" height="1202">
 <figcaption>The full metrics overview, answering &ldquo;is something wrong?&rdquo; before someone has to go looking for it.</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/workers-unbound-project/worker-details-metrics.png" alt="Detailed Worker metrics dashboard showing requests, duration, CPU time, and data egress over a selected time period">
+    <img src="../assets/images/workers-unbound-project/worker-details-metrics.png" alt="Detailed Worker metrics dashboard showing requests, duration, CPU time, and data egress over a selected time period" loading="lazy" width="723" height="1600">
 <figcaption>The full Worker detail view: requests, duration, CPU time, and data egress, each broken into median / 90th / 99th percentile so users can spot outliers, not just averages.</figcaption></figure>
 
     <p>
         For people who didn't want to check a dashboard at all, we designed a <b>weekly usage report</b> email: a digest of total usage and the top Workers by CPU time, so the information comes to you instead.
     </p>
     <figure>
-    <img src="../assets/images/workers-unbound-project/weekly-usage-report-email.png" alt="Weekly usage report email summarizing requests, egress data transfer, and top Workers by CPU time">
+    <img src="../assets/images/workers-unbound-project/weekly-usage-report-email.png" alt="Weekly usage report email summarizing requests, egress data transfer, and top Workers by CPU time" loading="lazy" width="723" height="1600">
 <figcaption>Total usage up top, then the Workers most worth a closer look. Same goal as the dashboard, but for people who'd rather not go looking.</figcaption></figure>
 
 
@@ -219,22 +221,22 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Launch</h3>
+    <h2 class="section--title">Launch</h2>
     <div class="section--content">
             <p>
         Workers Unbound shipped on April 14, 2021. The release graphic below was used across announcement channels, and an enablement walkthrough helped new users find the upgrade path on their own.
     </p>
     <figure>
-    <img src="../assets/images/workers-unbound-project/unbound-enablement-graphic.svg" alt="Workers Unbound enablement graphic illustrating the platform's edge network">
+    <img src="../assets/images/workers-unbound-project/unbound-enablement-graphic.svg" alt="Workers Unbound enablement graphic illustrating the platform's edge network" loading="lazy" width="618" height="260">
 <figcaption>The enablement graphic used to introduce Workers Unbound across announcement channels.</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/workers-unbound-project/unbound-enable-flow.gif" alt="Animated walkthrough of the Workers Unbound enablement flow">
+    <img src="../assets/images/workers-unbound-project/unbound-enable-flow.gif" alt="Animated walkthrough of the Workers Unbound enablement flow" loading="lazy" width="1266" height="953">
 <figcaption>A short walkthrough of the enablement flow, so a developer could go from &ldquo;I heard about Unbound&rdquo; to &ldquo;I'm running on it&rdquo; without needing any help.</figcaption></figure>
 
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/launch-release-call.png" alt="Team video call on launch morning, titled Unbound Release Do-si-do">
-    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/launch-discord-chat.png" alt="Cloudflare Workers Discord community discussing Workers Unbound after its announcement">
+    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/launch-release-call.png" alt="Team video call on launch morning, titled Unbound Release Do-si-do" loading="lazy" width="1000" height="549">
+    <img class="img--gallery--item" src="../assets/images/workers-unbound-project/launch-discord-chat.png" alt="Cloudflare Workers Discord community discussing Workers Unbound after its announcement" loading="lazy" width="1000" height="636">
     <figure>
         <figcaption>Launch morning: the team on our release call, and the Workers Discord community reacting to the announcement in real time.</figcaption>
     </figure>
@@ -245,7 +247,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Related Links</h3>
+    <h2 class="section--title">Related Links</h2>
     <div class="section--content">
             <p>
         <a target="_blank" href="https://blog.cloudflare.com/introducing-workers-unbound/">Introducing Workers Unbound</a>. The launch announcement.
@@ -274,5 +276,67 @@
         </div>
 
     </div>
+
+    
+    <script>
+    (function () {
+        var body = document.querySelector('.project-body');
+        if (!body) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var progress = document.createElement('div');
+        progress.className = 'scroll-progress';
+        body.appendChild(progress);
+
+        var cta = body.querySelector('.project-cta');
+        var titles = Array.prototype.slice.call(
+            body.querySelectorAll('.section > .section--title:not(.project--title)')
+        );
+
+        var titlePos = [], ticking = false;
+
+        function docTop(el) {
+            return el.getBoundingClientRect().top + window.pageYOffset;
+        }
+
+        // Cache title positions; recompute only on load / resize.
+        function measure() {
+            titlePos = titles.map(docTop);
+            update();
+        }
+
+        function update() {
+            var vh = window.innerHeight || document.documentElement.clientHeight || 700;
+            var scrollY = window.pageYOffset;
+            var pageBottom = document.documentElement.scrollHeight;
+            var readLine = scrollY + vh * 0.55;   // a title's underline draws once it passes this
+
+            // Mobile top bar: fills from empty as scroll depth increases.
+            var maxScroll = Math.max(1, pageBottom - vh);
+            progress.style.width = (Math.min(1, Math.max(0, scrollY / maxScroll)) * 100) + '%';
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].classList.toggle('is-drawn', titlePos[i] <= readLine);
+            }
+
+            // Fill the CTA rule once you're near the bottom of the page.
+            if (cta) cta.classList.toggle('is-lit', (scrollY + vh) >= (pageBottom - 24));
+
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', measure);
+        window.addEventListener('load', measure);
+        measure();
+    }());
+    </script>
 </body>
 </html>

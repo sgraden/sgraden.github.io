@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/main.css">
     <title>Steven Raden - CIS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,12 +39,12 @@
                 <a href="../index.html" class="project-nav__back">← Work</a>
                 <div class="project-nav__links">
                     <a href="https://photo.sraden.com/" target="_blank" rel="noopener">Photography</a>
-                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank">Résumé</a>
+                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank" rel="noopener">Résumé</a>
                 </div>
             </nav>
 
 <div class="section">
-    <h2 class="section--title project--title">IBM Cloud Internet Services</h2>
+    <h1 class="section--title project--title">IBM Cloud Internet Services</h1>
     <div class="section--content">
             <p>
         Work with the renown internet security company, Cloudflare, to provide IBM Cloud customers with improved security, technology, and power.
@@ -56,8 +57,8 @@
 </div>
 
     <div class="img--gallery">
-    <img class="img--gallery--item" src="../assets/images/cis-project/cf-overview.png" alt="">
-    <img class="img--gallery--item" src="../assets/images/cis-project/cis-overview.png" alt="Screenshot of CIS overview page">
+    <img class="img--gallery--item" src="../assets/images/cis-project/cf-overview.png" alt="Screenshot of the Cloudflare dashboard overview page for a domain" width="1000" height="719">
+    <img class="img--gallery--item" src="../assets/images/cis-project/cis-overview.png" alt="Screenshot of CIS overview page" width="1000" height="833">
     <figure>
         <figcaption>Overview page from Cloudflare and CIS.</figcaption>
     </figure>
@@ -68,18 +69,18 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Intro</h3>
+    <h2 class="section--title">Intro</h2>
     <div class="section--content">
             <p>
         The Cloud Internet Services offering is a joint partnership between IBM and the internet security and performance company, Cloudflare. In this partnership, IBM gained the suite of world class services that Cloudflare offered while Cloudflare would be able to break through into the enterprise tier clients that IBM has.
     </p>
-    <img class="" src="../assets/images/cis-project/cloudflare-ibm-logo.png" alt="">
+    <img class="" src="../assets/images/cis-project/cloudflare-ibm-logo.png" alt="Cloudflare and IBM Cloud logos joined by a plus sign, representing the partnership" loading="lazy" width="620" height="138">
 
     </div>
 </div>
 
 <div class="section">
-    <h3 class="section--title">Project Kickoff</h3>
+    <h2 class="section--title">Project Kickoff</h2>
     <div class="section--content">
             <p>
         The partnership and project was initiated by our Network Offering Lead, Haechul. He was negotiating the deal with Cloudflare representatives and decided to bring our design team in to demonstrate how we would handle the project.
@@ -95,7 +96,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Understanding</h3>
+    <h2 class="section--title">Understanding</h2>
     <div class="section--content">
             <p>
         At this point I had been working with networking technology for over a year, giving me a relatively deep understanding of the inner workings of the Cloudflare service. For initial release, we were only targeting <b>Caching</b>, <b>WAF</b>, <b>GLB</b>, <b>DDoS Protection</b>, <b>Encryption</b>, <b>DNS Records</b>, and <b>Monitoring/Metrics</b>. A small subset of Cloudflare's total services.
@@ -112,7 +113,7 @@
         As I worked through designing each service, I started by introducing myself to the services as it was offered on Cloudflare's platform. I configured a website and server to properly work with the targeted services, working with the dev teams to get more complex networks configured for testing where needed. Throughout this process I documented the user flows I went through to understand what steps were required and when. As I identified usability issues on the Cloudflare platform, I noted them and brought them to the Cloudflare team to dig deeper.
     </p>
     <figure>
-    <img src="../assets/images/cis-project/cf-sitemap.png" alt="A small sitemap of the target services.">
+    <img src="../assets/images/cis-project/cf-sitemap.png" alt="A small sitemap of the target services." loading="lazy" width="1600" height="638">
 <figcaption>A small sitemap of the target services. (Sorry for the tiny text)</figcaption></figure>
 
     <p>
@@ -126,7 +127,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Research</h3>
+    <h2 class="section--title">Research</h2>
     <div class="section--content">
             <p>
         I created a set of wireframes that I knew worked with our existing design system and maintained consistency with our platform. I used these wireframes to help direct the conversations with our teams. I have found that having a set of visuals, even in the most limited form, aligns the terminology a team uses and quickly identifies what questions still need to be asked.
@@ -134,7 +135,7 @@
     <p>
         I took the time to look at the rest of the market to get an understanding of other CDN and security providers such as Fastly, Akamai, and our own Security Group and Firewall offerings on IBM Cloud. I followed similar steps as my on-boarding to Cloudflare. Looking at competitors offerings and reading their documentation helped me to understand the variety of use cases our users may have.
     </p>
-    <img class="" src="../assets/images/cis-project/competitor-logos.png" alt="IBM Cloud, Fastly, and Akamai Logos">
+    <img class="" src="../assets/images/cis-project/competitor-logos.png" alt="IBM Cloud, Fastly, and Akamai Logos" loading="lazy" width="802" height="303">
     <p>
         I began launching usability tests with UserTesting and Invision prototypes. The tests were conducted remotely with the user having simple steps and goals while their screen was recorded. I configured the test for basic "First Use" situations as well as more complicated Web Application Firewall (WAF) configurations to validate that components and visuals were working as expected. The overall purpose of these was to quickly catch major user flow issues and understand if the taxonomy, hierarchy, and organization of the platform made sense.
     </p>
@@ -142,7 +143,7 @@
         For face-to-face feedback, our offering manager provided us with internal stakeholder teams. While internal is not ideal, these were teams that we expected to adopt the service in the near future. These sessions were monitored and open ended discussions about our UI and offering. Some of these users were engineers from our Kubernetes team as well as solution architects focused on documenting how services can be used together to form a solution.
     </p>
     <figure>
-    <img src="../assets/images/cis-project/internal-user-testers.png" alt="">
+    <img src="../assets/images/cis-project/internal-user-testers.png" alt="Grid of six headshot photos of internal CIS user testing participants" loading="lazy" width="801" height="419">
 <figcaption>A range of internal users of CIS that we spoke to.</figcaption></figure>
 
     <p>
@@ -153,7 +154,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Challenges</h3>
+    <h2 class="section--title">Challenges</h2>
     <div class="section--content">
             <p>
         One of the designs that took the longest to complete was our on-boarding process. Once a user places the order, their browser is navigated to the "overview" page of the service where they can see service functions and the primary navigation on the left. Our initial intent was to lock the user into a particular space with the required steps and guidance to finish setting up. Unfortunately, some technical complexities made that not an option. So the team and I persevered and look into other implementations.
@@ -161,28 +162,28 @@
     <p>
         A huge piece of on-boarding for Cloud Internet Services (and Cloudflare) is the user needs to change their domain's name servers to direct to this service. Until they accomplish that, none of the changes they make on our service will affect them. However, domain name server changes can also make a website unavailable if the configurations aren't setup before the change. So there was a balance of, let people configure and twist the knobs of our service, but keep guiding them back to that required step of changing the name server.
     </p>
-    <img src="../assets/images/cis-project/cis-instance-gettingstarted-3a.png" alt="">
+    <img src="../assets/images/cis-project/cis-instance-gettingstarted-3a.png" alt="CIS onboarding panel showing the new IBM name server records to enter with your domain's DNS provider" loading="lazy" width="1258" height="402">
     <figure>
         <figcaption>Need to get the NS Records provided by us (left box) into the system run be users DNS provider (image below).</figcaption>
     </figure>
-    <img src="../assets/images/cis-project/digitalocean-dns.png" alt="">
+    <img src="../assets/images/cis-project/digitalocean-dns.png" alt="DNS records table in a DigitalOcean domain management panel" loading="lazy" width="1600" height="640">
     <p>
         When they are ready, changing name servers requires the user enters certain information from us on their domain managers site. Trying to guide a user through steps outside of our platform was new to me, so I looked to others with more experience. Using sites like <a target="_blank" href="https://www.useronboard.com">UserOnboard.com</a> I was able to get some strategies such as breaking down steps that go outside of the main experience by creating small, individual tasks that are easy to complete. Hopefully, This will get the user to return for guidance and be kept invested in the flow, regardless of where it takes them.
     </p>
     
     <div class="img--gallery">
-        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-1.png" alt="Screenshot of CIS overview page in on-boarding state">
-        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-3.png" alt="Screenshot of CIS overview page in on-boarding state">
-        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-uploaded records.png" alt="Screenshot of CIS overview page in on-boarding state">
-        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-4.png" alt="Screenshot of CIS overview page in on-boarding state">
-        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-5.png" alt="Screenshot of CIS overview page in on-boarding state">
+        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-1.png" alt="Screenshot of CIS overview page in on-boarding state" loading="lazy" width="1000" height="787">
+        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-3.png" alt="Screenshot of CIS overview page in on-boarding state" loading="lazy" width="1000" height="792">
+        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-uploaded records.png" alt="Screenshot of CIS overview page in on-boarding state" loading="lazy" width="562" height="520">
+        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-4.png" alt="Screenshot of CIS overview page in on-boarding state" loading="lazy" width="1000" height="855">
+        <img class="img--gallery--item" src="../assets/images/cis-project/cis-instance-gettingstarted-5.png" alt="Screenshot of CIS overview page in on-boarding state" loading="lazy" width="1000" height="848">
     </div>
 
     </div>
 </div>
 
 <div class="section">
-    <h3 class="section--title">Results</h3>
+    <h2 class="section--title">Results</h2>
     <div class="section--content">
             <p>
         Our initial offering launched with a bang! John Considine, our GM, announced the partnership and release with the CEO of Cloudflare, Matthew Prince, at IBM's Think conference. It was one of the larger releases I had worked on since starting at IBM. The feedback we began receiving via face-to-face and NPS surveys was positive, and we continued to edit, improve, and grow the service. As an initial suite, it was relatively simple and straightforward as we hoped. The Cloudflare teams actually told us that we were a strong improvement in organization and interaction relative to their UI.
@@ -190,7 +191,7 @@
         Unfortunately, I was only able to continue working on the team for a few more months before transitioning to another project.
     </p>
     <figure>
-    <img src="../assets/images/cis-project/cis-think-announcement.jpg" alt="Image of John Considine (GM IBM Cloud) announcing release of CIS at Think 2018">
+    <img src="../assets/images/cis-project/cis-think-announcement.jpg" alt="Image of John Considine (GM IBM Cloud) announcing release of CIS at Think 2018" loading="lazy" width="1600" height="1140">
 <figcaption>John Considine (GM IBM Cloud) announcing release of CIS at Think 2018</figcaption></figure>
 
 
@@ -198,7 +199,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Related Tasks</h3>
+    <h2 class="section--title">Related Tasks</h2>
     <div class="section--content">
             <p>
         I produced a set of demo videos showcasing the developed UI and providing instructional voice-overs for some of the functionality. These videos were used at IBM's Think conference in Las Vegas at the CIS Demo Booth. <a target="_blank" href="https://drive.google.com/drive/folders/1mzjxrc6w2R_BrwOd16owIxvh4fD8IAC-">Demo videos</a>
@@ -208,7 +209,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Related Links</h3>
+    <h2 class="section--title">Related Links</h2>
     <div class="section--content">
             <ul>
         <li><a target="_blank" href="https://blog.cloudflare.com/ibm-cloud-and-cloudflare/">Cloudflare Announcement Blog</a></li>
@@ -227,5 +228,67 @@
         </div>
 
     </div>
+
+    
+    <script>
+    (function () {
+        var body = document.querySelector('.project-body');
+        if (!body) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var progress = document.createElement('div');
+        progress.className = 'scroll-progress';
+        body.appendChild(progress);
+
+        var cta = body.querySelector('.project-cta');
+        var titles = Array.prototype.slice.call(
+            body.querySelectorAll('.section > .section--title:not(.project--title)')
+        );
+
+        var titlePos = [], ticking = false;
+
+        function docTop(el) {
+            return el.getBoundingClientRect().top + window.pageYOffset;
+        }
+
+        // Cache title positions; recompute only on load / resize.
+        function measure() {
+            titlePos = titles.map(docTop);
+            update();
+        }
+
+        function update() {
+            var vh = window.innerHeight || document.documentElement.clientHeight || 700;
+            var scrollY = window.pageYOffset;
+            var pageBottom = document.documentElement.scrollHeight;
+            var readLine = scrollY + vh * 0.55;   // a title's underline draws once it passes this
+
+            // Mobile top bar: fills from empty as scroll depth increases.
+            var maxScroll = Math.max(1, pageBottom - vh);
+            progress.style.width = (Math.min(1, Math.max(0, scrollY / maxScroll)) * 100) + '%';
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].classList.toggle('is-drawn', titlePos[i] <= readLine);
+            }
+
+            // Fill the CTA rule once you're near the bottom of the page.
+            if (cta) cta.classList.toggle('is-lit', (scrollY + vh) >= (pageBottom - 24));
+
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', measure);
+        window.addEventListener('load', measure);
+        measure();
+    }());
+    </script>
 </body>
 </html>

@@ -28,13 +28,15 @@
         "../assets/images/blog-graphics-project/diagram-api-cache-key.png",
         "Diagram comparing how the cache key is built for authenticated versus anonymous API requests",
         "How the cache key differs between an <b>authenticated</b> request (keyed on the API session) and an <b>anonymous</b> one (keyed on a hash of the request body), so identical-looking calls don't collide in cache.",
-        noShadow=true
+        noShadow=true,
+        width=1453, height=592
     ) }}
     {{ figure(
         "../assets/images/blog-graphics-project/diagram-cache-invalidate-post.png",
         "Sequence diagram showing a cached GET request followed by a POST that invalidates the cache",
         "Cache-on-GET, invalidate-on-POST: the first request is stored, and a later write empties the cache so the next reader doesn't get stale data.",
-        noShadow=true
+        noShadow=true,
+        width=1198, height=758
     ) }}
 {% endcall %}
 
@@ -45,17 +47,18 @@
 
     <p><b>Banners</b>: announcement art built from the Blog illustration toolkit to give each post its own identity.</p>
     {{ gallery([
-        { src: "../assets/images/blog-graphics-project/banner-arm-cpus.png",    alt: "Illustrated blog banner featuring an Arm processor mounted in a server" },
-        { src: "../assets/images/blog-graphics-project/banner-web-crawling.png", alt: "Illustrated blog banner of a search bar over a globe surrounded by foliage" }
+        { src: "../assets/images/blog-graphics-project/banner-arm-cpus.png",    alt: "Illustrated blog banner featuring an Arm processor mounted in a server", width: 1200, height: 675 },
+        { src: "../assets/images/blog-graphics-project/banner-web-crawling.png", alt: "Illustrated blog banner of a search bar over a globe surrounded by foliage", width: 1200, height: 675 }
     ], "Launch banners for an Arm CPU post and a search / web-crawling post.") }}
     {{ gallery([
-        { src: "../assets/images/blog-graphics-project/banner-green-compute.png", alt: "Illustrated banner pairing a code window and a clock with a green globe" },
-        { src: "../assets/images/blog-graphics-project/banner-analytics.png",     alt: "Illustrated banner of a magnifying glass inspecting a dashboard with a performance gauge" }
+        { src: "../assets/images/blog-graphics-project/banner-green-compute.png", alt: "Illustrated banner pairing a code window and a clock with a green globe", width: 1200, height: 675 },
+        { src: "../assets/images/blog-graphics-project/banner-analytics.png",     alt: "Illustrated banner of a magnifying glass inspecting a dashboard with a performance gauge", width: 1200, height: 675 }
     ], "Sustainable-compute and analytics / observability banners.") }}
     {{ figure(
         "../assets/images/blog-graphics-project/banner-black-latinx-security.png",
         "Banner celebrating Black and Latinx voices in security, with cultural patterns and iconography",
-        "A banner for a post spotlighting Black &amp; Latinx voices in security, leaning on the toolkit's flexibility to carry a more cultural, editorial tone."
+        "A banner for a post spotlighting Black &amp; Latinx voices in security, leaning on the toolkit's flexibility to carry a more cultural, editorial tone.",
+        width=2000, height=600
     ) }}
 
     <p><b>Diagrams</b>: custom technical illustrations that walk a reader through how each system works.</p>
@@ -63,31 +66,34 @@
         "../assets/images/blog-graphics-project/diagram-odoh-protocol.png",
         "Diagram of the Oblivious DoH protocol showing client, proxy, target, and resolver with encryption steps",
         "End-to-end flow of the <b>Oblivious DoH</b> protocol: the client encrypts queries to the target, the proxy relays without seeing contents, and a legend maps each encryption / decryption step.",
-        noShadow=true
+        noShadow=true,
+        width=1200, height=931
     ) }}
     {{ gallery([
-        { src: "../assets/images/blog-graphics-project/diagram-magic-transit-1.png", alt: "Magic Transit diagram routing public users through Cloudflare's global edge to a customer origin over Anycast GRE" },
-        { src: "../assets/images/blog-graphics-project/diagram-magic-transit-2.png", alt: "Magic WAN diagram showing a primary data center hub and branch-office spokes connected by Cloudflare Anycast tunnels" }
+        { src: "../assets/images/blog-graphics-project/diagram-magic-transit-1.png", alt: "Magic Transit diagram routing public users through Cloudflare's global edge to a customer origin over Anycast GRE", width: 1200, height: 675 },
+        { src: "../assets/images/blog-graphics-project/diagram-magic-transit-2.png", alt: "Magic WAN diagram showing a primary data center hub and branch-office spokes connected by Cloudflare Anycast tunnels", width: 1200, height: 675 }
     ], "Speed Week, <b>Magic Transit &amp; Magic WAN</b>: public traffic ingresses across the global Anycast network to the origin (left), and offices connect as hub-and-spoke over Anycast tunnels (right).") }}
     {{ gallery([
-        { src: "../assets/images/blog-graphics-project/diagram-signed-exchange-simple.png",    alt: "Signed Exchange explained as a kingdom analogy with the King's Stamp standing in for a cryptographic signature" },
-        { src: "../assets/images/blog-graphics-project/diagram-signed-exchange-technical.png", alt: "Technical Signed Exchange diagram showing the SXG flow between crawler, Google cache, browser, and Cloudflare edge" }
+        { src: "../assets/images/blog-graphics-project/diagram-signed-exchange-simple.png",    alt: "Signed Exchange explained as a kingdom analogy with the King's Stamp standing in for a cryptographic signature", width: 1201, height: 675 },
+        { src: "../assets/images/blog-graphics-project/diagram-signed-exchange-technical.png", alt: "Technical Signed Exchange diagram showing the SXG flow between crawler, Google cache, browser, and Cloudflare edge", width: 1201, height: 675 }
     ], "Speed Week, <b>Signed Exchanges (SXG)</b>: a plain-language kingdom analogy (the &ldquo;King's Stamp&rdquo; as the cryptographic signature) paired with the real crawler &rarr; cache &rarr; edge prefetch flow for readers who wanted the technical version.") }}
     {{ figure(
         "../assets/images/blog-graphics-project/diagram-ipfs-1.png",
         "IPFS node network diagram highlighting your node among peer nodes",
         "<b>IPFS</b> gateway post: where &ldquo;your node&rdquo; sits within the peer-to-peer network.",
-        noShadow=true
+        noShadow=true,
+        width=1200, height=618
     ) }}
     {{ gallery([
-        { src: "../assets/images/blog-graphics-project/diagram-ipfs-2.png", alt: "IPFS diagram showing a node requesting content from a peer via a libp2p WANT message" },
-        { src: "../assets/images/blog-graphics-project/diagram-ipfs-3.png", alt: "IPFS diagram showing content blocks being served back across peers in response to a libp2p WANT" }
+        { src: "../assets/images/blog-graphics-project/diagram-ipfs-2.png", alt: "IPFS diagram showing a node requesting content from a peer via a libp2p WANT message", width: 1200, height: 618 },
+        { src: "../assets/images/blog-graphics-project/diagram-ipfs-3.png", alt: "IPFS diagram showing content blocks being served back across peers in response to a libp2p WANT", width: 1200, height: 618 }
     ], "How a node fetches content across the network: a <code>libp2p</code> &ldquo;WANT&rdquo; request (left), then the matching blocks served back from whichever peers hold them (right).") }}
     {{ figure(
         "../assets/images/blog-graphics-project/diagram-web-analytics-cycle.png",
         "Circular diagram of the Measure, Grade, Improve cycle for web analytics",
         "Speed Week, <b>Web Analytics</b>: the Measure &rarr; Grade &rarr; Improve loop, framing analytics as an ongoing cycle rather than a one-time report.",
-        noShadow=true
+        noShadow=true,
+        width=1200, height=675
     ) }}
 {% endcall %}
 

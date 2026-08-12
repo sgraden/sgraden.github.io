@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/main.css">
     <title>Steven Raden - AppSec Overview</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,12 +39,12 @@
                 <a href="../index.html" class="project-nav__back">← Work</a>
                 <div class="project-nav__links">
                     <a href="https://photo.sraden.com/" target="_blank" rel="noopener">Photography</a>
-                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank">Résumé</a>
+                    <a href="../assets/Steven Raden Resume - 2026.pdf" target="_blank" rel="noopener">Résumé</a>
                 </div>
             </nav>
 
 <div class="section">
-    <h2 class="section--title project--title">AppSec Overview</h2>
+    <h1 class="section--title project--title">AppSec Overview</h1>
     <div class="section--content">
             <p>
         Cloudflare has a suite of application security products including WAF, Bot Management, API Shield, DDoS Protection, and more. Each lived in its own corner of the dashboard. Customers had no shared starting point. Nowhere to land, see their security posture, and understand what actually needed their attention.
@@ -65,7 +66,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">What &ldquo;Overview&rdquo; Even Means</h3>
+    <h2 class="section--title">What &ldquo;Overview&rdquo; Even Means</h2>
     <div class="section--content">
             <p>
         The first question wasn&rsquo;t how to design the page, it was what the page should actually be. There were a lot of opinions. Was it for traffic metrics? We had analytics pages for that. Was it for alerts? We had Security Insights. Was it for onboarding documentation? All reasonable answers. All different pages.
@@ -74,14 +75,14 @@
         To get aligned, we ran a workshop with stakeholders from every AppSec product area using a car dashboard as the framing. A dashboard is a tool people use to understand their vehicle&rsquo;s current status and make adjustments under pressure. The analogy helped us separate what you need at a glance from what belongs one level deeper.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/workshop-car-dashboard.png" alt="Car dashboard photo covered in color-coded sticky notes from a cross-functional stakeholder workshop, mapping proposed AppSec content to dashboard zones">
+    <img src="../assets/images/appsec-overview-project/workshop-car-dashboard.png" alt="Car dashboard photo covered in color-coded sticky notes from a cross-functional stakeholder workshop, mapping proposed AppSec content to dashboard zones" loading="lazy" width="2412" height="1408">
 <figcaption>The workshop artifact: each product team placed sticky notes on a real dashboard photo, assigning their proposed content to zones. Persistent warnings (Doors, Seatbelt), status gauges (RPM, Engine Temp, Speedometer), at-a-glance readings (Gas tank). Where a team placed their note revealed whether they were thinking about the page as monitoring, alerting, or diagnostics.</figcaption></figure>
 
     <p>
         Out of that workshop we identified four common categories: Status, Alerts, Insights, and Recommendations. That framework became the structure of the design and the shared language we used in stakeholder discussions going forward.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/workshop-stakeholder-synthesis.png" alt="Synthesis diagram from the workshop mapping stakeholder goals to three principles: opinionated, contextual, and flexible, with API Shield and Bots business goals organized by column" class="no-shadow">
+    <img src="../assets/images/appsec-overview-project/workshop-stakeholder-synthesis.png" alt="Synthesis diagram from the workshop mapping stakeholder goals to three principles: opinionated, contextual, and flexible, with API Shield and Bots business goals organized by column" loading="lazy" class="no-shadow" width="2108" height="1182">
 <figcaption>The synthesis: three principles emerged from the workshop. Opinionated &mdash; is something blocking me? Contextual &mdash; what level should a notification fire at? Flexible &mdash; are the same things &ldquo;red&rdquo; for everyone? These organized the competing goals from API Shield and Bots into a shared framework.</figcaption></figure>
 
 
@@ -89,7 +90,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Research &amp; Validation</h3>
+    <h2 class="section--title">Research &amp; Validation</h2>
     <div class="section--content">
             <p>
         From there, we turned to validation before locking in a direction.
@@ -98,7 +99,7 @@
         For competitive analysis, we used competing security dashboards directly where we could and worked through YouTube walkthroughs and documentation for platforms we couldn&rsquo;t access. The pattern held: data-heavy overviews were hard to act on; the ones built around action got used.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/wireframe-account-overview.png" alt="Early wireframe of a broad account-level overview showing Alerts, Threat Assessment across Access, Gateway, and Email Security, plus Actions, Recents, and Favorites — annotated with colored circles indicating urgency level">
+    <img src="../assets/images/appsec-overview-project/wireframe-account-overview.png" alt="Early wireframe of a broad account-level overview showing Alerts, Threat Assessment across Access, Gateway, and Email Security, plus Actions, Recents, and Favorites — annotated with colored circles indicating urgency level" loading="lazy" width="2118" height="1138">
 <figcaption>An early concept: a broader account-level overview spanning Access, Gateway, and Email Security alongside AppSec. Colored annotations mark content by urgency and type. Scope was narrowed to AppSec products before moving into design.</figcaption></figure>
 
     <p>
@@ -112,7 +113,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">The Direction</h3>
+    <h2 class="section--title">The Direction</h2>
     <div class="section--content">
             <p>
         Everything pointed the same direction: the page should not be a data dump. The goal was that within 30 seconds of landing, a customer should be able to tell if something needs attention and know what to do about it.
@@ -124,15 +125,15 @@
         Unification also added scope. The Overview would serve as the landing page for a restructured navigation covering all AppSec products under a single Security section. New users would opt in through a modal, a more gradual rollout given how much was changing at once.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/wireframe-onboarding.png" alt="Two wireframes side by side: Onboarding setting expectations (a step-by-step walkthrough of how AppSec works) and Onboarding security posture (an initial overview state showing domain, risk profile, traffic, and detections enabled)">
+    <img src="../assets/images/appsec-overview-project/wireframe-onboarding.png" alt="Two wireframes side by side: Onboarding setting expectations (a step-by-step walkthrough of how AppSec works) and Onboarding security posture (an initial overview state showing domain, risk profile, traffic, and detections enabled)" loading="lazy" width="2074" height="1184">
 <figcaption>Onboarding explorations for new users: a walkthrough explaining how Cloudflare AppSec observes and acts on traffic (left), and an initial security posture view showing domain risk profile and active threat detections (right).</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/appsec-overview-project/wireframe-appsec-overview.png" alt="Wireframe of Application Security Overview with traffic summary on the left and prioritized action items on the right, including urgent alerts highlighted in red at the top">
+    <img src="../assets/images/appsec-overview-project/wireframe-appsec-overview.png" alt="Wireframe of Application Security Overview with traffic summary on the left and prioritized action items on the right, including urgent alerts highlighted in red at the top" loading="lazy" width="1674" height="1112">
 <figcaption>A wireframe showing the layout direction: traffic summary on the left, action items ranked by urgency on the right. Urgent alerts at the top; lower-priority configuration suggestions below.</figcaption></figure>
 
     <figure>
-    <img src="../assets/images/appsec-overview-project/security-overview-early.png" alt="An earlier design exploration for the Security Overview before the direction shifted toward action-oriented suggestions">
+    <img src="../assets/images/appsec-overview-project/security-overview-early.png" alt="An earlier design exploration for the Security Overview before the direction shifted toward action-oriented suggestions" loading="lazy" width="1463" height="1158">
 <figcaption>An earlier design direction, before the research pushed us toward prioritizing action over metrics.</figcaption></figure>
 
 
@@ -140,20 +141,20 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">The Experience</h3>
+    <h2 class="section--title">The Experience</h2>
     <div class="section--content">
             <p>
         The shipped page leads with the traffic summary, moves into Security Posture with contextual suggestions, then shows Detection Settings and Rules Activity below. Each suggestion includes customer-specific data so it&rsquo;s clear why it&rsquo;s being surfaced.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/security-overview-launched.png" alt="The shipped Cloudflare Security Overview page showing traffic summary, security posture suggestions, and detection settings">
+    <img src="../assets/images/appsec-overview-project/security-overview-launched.png" alt="The shipped Cloudflare Security Overview page showing traffic summary, security posture suggestions, and detection settings" loading="lazy" width="2990" height="2032">
 <figcaption>The shipped Security Overview, launched March 17, 2025 during Cloudflare Security Week.</figcaption></figure>
 
     <p>
         Clicking a suggestion opens a detail panel with the relevant data, context, and a direct path to act on it.
     </p>
     <figure>
-    <img src="../assets/images/appsec-overview-project/security-overview-action-panel.png" alt="The suggestion detail panel showing a DMARC Record Error with context and a direct call to action">
+    <img src="../assets/images/appsec-overview-project/security-overview-action-panel.png" alt="The suggestion detail panel showing a DMARC Record Error with context and a direct call to action" loading="lazy" width="3018" height="2030">
 <figcaption>The suggestion detail panel: the problem, the data behind it, and the action, all in one place.</figcaption></figure>
 
 
@@ -161,7 +162,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Results</h3>
+    <h2 class="section--title">Results</h2>
     <div class="section--content">
             <p>
         We measured through Amplitude at two weeks post-launch. Suggestions converted at a higher rate than expected:
@@ -180,7 +181,7 @@
 </div>
 
 <div class="section">
-    <h3 class="section--title">Related Links</h3>
+    <h2 class="section--title">Related Links</h2>
     <div class="section--content">
             <p>
         <a target="_blank" href="https://blog.cloudflare.com/cloudflare-security-posture-management/">Security posture management for Cloudflare&rsquo;s application security suite</a>. The launch blog post covering the Security Overview and posture management.
@@ -206,5 +207,67 @@
         </div>
 
     </div>
+
+    
+    <script>
+    (function () {
+        var body = document.querySelector('.project-body');
+        if (!body) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var progress = document.createElement('div');
+        progress.className = 'scroll-progress';
+        body.appendChild(progress);
+
+        var cta = body.querySelector('.project-cta');
+        var titles = Array.prototype.slice.call(
+            body.querySelectorAll('.section > .section--title:not(.project--title)')
+        );
+
+        var titlePos = [], ticking = false;
+
+        function docTop(el) {
+            return el.getBoundingClientRect().top + window.pageYOffset;
+        }
+
+        // Cache title positions; recompute only on load / resize.
+        function measure() {
+            titlePos = titles.map(docTop);
+            update();
+        }
+
+        function update() {
+            var vh = window.innerHeight || document.documentElement.clientHeight || 700;
+            var scrollY = window.pageYOffset;
+            var pageBottom = document.documentElement.scrollHeight;
+            var readLine = scrollY + vh * 0.55;   // a title's underline draws once it passes this
+
+            // Mobile top bar: fills from empty as scroll depth increases.
+            var maxScroll = Math.max(1, pageBottom - vh);
+            progress.style.width = (Math.min(1, Math.max(0, scrollY / maxScroll)) * 100) + '%';
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].classList.toggle('is-drawn', titlePos[i] <= readLine);
+            }
+
+            // Fill the CTA rule once you're near the bottom of the page.
+            if (cta) cta.classList.toggle('is-lit', (scrollY + vh) >= (pageBottom - 24));
+
+            ticking = false;
+        }
+
+        function onScroll() {
+            if (!ticking) {
+                ticking = true;
+                window.requestAnimationFrame(update);
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', measure);
+        window.addEventListener('load', measure);
+        measure();
+    }());
+    </script>
 </body>
 </html>
