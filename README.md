@@ -83,7 +83,7 @@ Every page extends the base layout and fills in a `content` block:
 {% block content %}
   {# Your page HTML goes here — plain HTML, no special syntax required #}
   <div class="section">
-    <h3 class="section--title">Hello</h3>
+    <h2 class="section--title">Hello</h2>
     <div class="section--content">
       <p>This is normal HTML.</p>
     </div>
@@ -137,12 +137,12 @@ Wraps content in `.section` / `.section--content`. Uses `{% call %}` because the
 ```njk
 {% from "components/_section.njk" import section %}
 
-{# Standard section (h3) #}
+{# Standard section (h2) #}
 {% call section("Research & Discovery") %}
   <p>Section content here.</p>
 {% endcall %}
 
-{# Project title section (h2 + hero styling) — first section on a project page only #}
+{# Project title section (h1 + hero styling) — first section on a project page only #}
 {% call section("Project Name", isTitle=true) %}
   <p>Project intro paragraph.</p>
 {% endcall %}
@@ -232,4 +232,19 @@ Step numbers and arrow connectors are generated automatically. The `body` field 
 {# Custom message and icon (uses Material Icons names) #}
 {{ bannerAlert("Coming soon.", "schedule") }}
 ```
+
+---
+
+#### `workItem` — a row in the homepage work list
+
+```njk
+{% from "components/_work-item.njk" import workItem %}
+
+{{ workItem("./work/cloudflare-appsec-overview.html", "AppSec Overview", "Cloudflare", "2024-2025") }}
+
+{# starred — solid, slowly-pulsing dot marking standout work #}
+{{ workItem("./work/tactile-toolkit.html", "Tactile Toolkit", "IBM", "2019", starred=true) }}
+```
+
+All rows render at the same weight; `starred` only controls the dot. To flag (or unflag) a project later without touching the macro call, just add or remove the `work-item--starred` class directly on its `<li>` in `src/index.njk`.
 

@@ -47,41 +47,27 @@
             <p class="home-bio">Senior product designer who designs and codes using AI-assisted workflows to take complex, ambiguous problems from concept to product. I'm looking for my next thing, so say hi: <a href="mailto:design@sraden.com">design@sraden.com</a>.</p>
         </div>
 
-        {# ── Case Studies — priority pieces with substantial written work ── #}
+        {# ── Work — single chronological list; starred = standout projects ── #}
         <div class="home-work" id="work">
-            <p class="home-work__heading">Favorites</p>
+            <h2 class="home-work__heading">Work</h2>
             <ul class="home-work__list">
-                {{ workItem("./work/cloudflare-appsec-overview.html", "AppSec Overview", "Cloudflare", "2024-2025") }}
-                {{ workItem("./work/blog-graphics.html", "Blog Banners &amp; Diagrams", "Cloudflare", "2022-2023") }}
-                {{ workItem("./work/vpc.html", "IBM Cloud VPC", "IBM", "2020") }}
-                {{ workItem("./work/tactile-toolkit.html", "Tactile Toolkit", "IBM", "2019") }}
-            </ul>
-        </div>
-
-        {# ── Selected Work — full project list ─────────────────────────── #}
-        <div class="home-work home-work--secondary-list">
-            <p class="home-work__heading">Selected Work</p>
-            <ul class="home-work__list">
-                {# Featured — strongest / most recent #}
-                {{ workItem("./work/cloudflare-appsec-overview.html", "AppSec Overview", "Cloudflare", "2024-2025") }}
+                {{ workItem("./work/cloudflare-appsec-overview.html", "Application Security Overview", "Cloudflare", "2024-2025", starred=true) }}
                 {{ workItem("./work/cloudflare-email-routing.html", "Email Routing", "Cloudflare", "2023") }}
-                {{ workItem("./work/blog-graphics.html", "Blog Banners &amp; Diagrams", "Cloudflare", "2022-2023") }}
-
-                {# Secondary — solid work but lower priority in the list #}
-                {{ workItem("./work/cloudflare-workers-unbound.html", "Workers Unbound", "Cloudflare", "2022", featured=false) }}
-                {{ workItem("./work/cis.html", "IBM Cloud Internet Services", "IBM", "2021", featured=false) }}
-                {{ workItem("./work/vpc.html", "IBM Cloud VPC", "IBM", "2020", featured=false) }}
-                {{ workItem("./work/tactile-toolkit.html", "Tactile Toolkit", "IBM", "2019", featured=false) }}
+                {{ workItem("./work/blog-graphics.html", "Blog Banners &amp; Diagrams", "Cloudflare", "2022-2023", starred=true) }}
+                {{ workItem("./work/cloudflare-workers-unbound.html", "Workers Unbound", "Cloudflare", "2022") }}
+                {{ workItem("./work/cis.html", "IBM Cloud Internet Services", "IBM", "2021") }}
+                {{ workItem("./work/vpc.html", "IBM Cloud VPC", "IBM", "2020", starred=true) }}
+                {{ workItem("./work/tactile-toolkit.html", "Tactile Toolkit", "IBM", "2019", starred=true) }}
             </ul>
         </div>
 
         {# ── Other Cloudflare Work ─────────────────────────────────────── #}
         <div class="home-other-work">
-            <p class="home-work__heading">Other Cloudflare Work</p>
+            <h2 class="home-work__heading">Other Cloudflare Work</h2>
             <p class="home-other-work__intro">Projects I shipped at Cloudflare that don&rsquo;t have full case studies &mdash; each links to the launch blog post.</p>
 
             <div class="home-other-work__group">
-                <p class="home-other-work__label">// API Shield</p>
+                <h3 class="home-other-work__label">// API Shield</h3>
                 <ul class="home-other-work__list">
                     <li><a href="https://blog.cloudflare.com/protecting-apis-from-abuse-using-sequence-learning-and-variable-order-markov/" target="_blank" rel="noopener">Block malicious API request sequences at the edge</a></li>
                     <li><a href="https://blog.cloudflare.com/ml-api-discovery-and-schema-learning/" target="_blank" rel="noopener">API Schema Learning and endpoint discovery</a></li>
@@ -95,7 +81,7 @@
             </div>
 
             <div class="home-other-work__group">
-                <p class="home-other-work__label">// Bots &amp; AI</p>
+                <h3 class="home-other-work__label">// Bots &amp; AI</h3>
                 <ul class="home-other-work__list">
                     <li><a href="https://blog.cloudflare.com/ai-audit-enforcing-robots-txt/" target="_blank" rel="noopener">Block AI bots: robots.txt enforcement</a></li>
                     <li><a href="https://blog.cloudflare.com/declaring-your-aindependence-block-ai-bots-scrapers-and-crawlers-with-a-single-click/" target="_blank" rel="noopener">Block AI bots with one click</a></li>
@@ -107,7 +93,7 @@
 
         {# ── Recognition ───────────────────────────────────────────────── #}
         <div class="home-recognition">
-            <p class="home-work__heading">Recognition</p>
+            <h2 class="home-work__heading">Recognition</h2>
             <ul class="home-recognition__list">
 
                 <li class="home-recognition__item">
@@ -129,7 +115,7 @@
 
         {# ── Testimonials carousel ─────────────────────────────────────────── #}
         <div class="home-testimonials">
-            <p class="home-work__heading">// Kind Words</p>
+            <h2 class="home-work__heading">// Kind Words</h2>
 
             <div class="testimonials-carousel" id="testimonialsCarousel">
                 <div class="testimonials-track" id="testimonialsTrack">
