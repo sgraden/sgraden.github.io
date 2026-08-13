@@ -1,30 +1,35 @@
 {#
   _work-item.njk
   --------------
-  A single row in the homepage work lists (Favorites / Selected Work).
-  Renders the <li> with the dot, title, company, and year, plus the
-  featured/secondary modifier that controls brightness.
+  A single row in the homepage work list. Renders the <li> with the dot,
+  title, company, and year. All rows render at the same weight — `starred`
+  only controls whether the dot shows as a solid, slowly-pulsing marker.
 
   Usage:
     {% from "components/_work-item.njk" import workItem %}
-    {{ workItem("./work/cloudflare-appsec-overview.html", "AppSec Overview", "Cloudflare", "2024") }}
-    {{ workItem("./work/cis.html", "IBM Cloud Internet Services", "IBM", "2021", featured=false) }}
+    {{ workItem("./work/cloudflare-appsec-overview.html", "Application Security Overview", "Cloudflare", "2024") }}
+    {{ workItem("./work/tactile-toolkit.html", "Tactile Toolkit", "IBM", "2019", starred=true) }}
 
   Parameters:
     href      — link to the project case study page (required)
     title     — project name (required). May contain inline HTML entities.
     company   — company label shown after the title (required)
     year      — year label, right-aligned (required)
-    featured  — true → full-brightness "--featured"; false → dimmed "--secondary".
-                Default: true
+    starred   — true → shows a solid, pulsing dot marking this as standout work.
+                Default: false. To flag a project by hand later, add the
+                `work-item--starred` class directly to its <li> — no macro
+                change needed.
 #}
-{% macro workItem(href, title, company, year, featured=true) %}
-<li class="work-item work-item--{{ "featured" if featured else "secondary" }}">
+{% macro workItem(href, title, company, year, starred=false) %}
+<li class="work-item{{ ' work-item--starred' if starred }}">
     <a href="{{ href }}">
-        <span class="work-item__dot"></span>
-        <span class="work-item__title">{{ title }}</span>
+        <span class="work-item__title-group">
+            <span class="work-item__title">{{ title }}</span>
+            <span class="work-item__dot"></span>
+        </span>
         <span class="work-item__company">{{ company }}</span>
         <span class="work-item__year">{{ year }}</span>
+        {% if starred %}<span class="sr-only">Featured project</span>{% endif %}
     </a>
 </li>
 {% endmacro %}

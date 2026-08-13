@@ -265,11 +265,6 @@ $bp-home-mobile: 768px;
         margin: 0 0 0;
     }
 
-    // Second list section gets extra top breathing room
-    &--secondary-list {
-        margin-top: 36px;
-    }
-
     &__list {
         list-style: none;
         margin: 0;
@@ -304,16 +299,19 @@ $bp-home-mobile: 768px;
         color: var(--text-primary) !important;
     }
 
-    &:hover .work-item__dot {
-        background: var(--accent) !important;
-    }
-
     &:hover .work-item__year {
         color: var(--text-muted) !important;
     }
 
+    // Grid on desktop so company lines up in its own fixed column across every
+    // row, regardless of title length — [title+dot] | company | year. Title
+    // gets a generous fixed track (widest current title is ~30 characters) plus
+    // an ellipsis fallback so a future longer one degrades instead of breaking
+    // the column. Mobile reverts to the simpler flex-packed row — not enough
+    // width for fixed columns to read as a benefit there.
     a {
-        display: flex;
+        display: grid;
+        grid-template-columns: 320px 110px 1fr;
         align-items: center;
         gap: 14px;
         padding: 18px 0;
@@ -321,17 +319,34 @@ $bp-home-mobile: 768px;
         border-bottom: 0.5px solid var(--work-row-border);
 
         @media (max-width: $bp-home-mobile) {
+            display: flex;
             gap: 10px;
             padding: 12px 0;
         }
     }
 
+    // Title + dot travel together as one unit, so the dot always sits a fixed
+    // 16px from the title text itself — not from the edge of the (fixed-width)
+    // title column, which is what made it read as floating/disconnected on
+    // shorter titles.
+    &__title-group {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 100%;   // fill the fixed 320px grid column so company still aligns
+        min-width: 0;  // lets the title ellipsis truncate inside a flex child
+    }
+
+    // Empty/transparent by default — only .work-item--starred fills it in,
+    // so every row still lines up on the same column whether starred or not.
     &__dot {
+        position: relative; // anchors the pulse ring on starred rows
         width: 5px;
         height: 5px;
+        border-radius: 50%;
         flex-shrink: 0;
         display: block;
-        transition: background 0.2s;
+        background: transparent;
 
         @media (max-width: $bp-home-mobile) {
             width: 4px;
@@ -343,16 +358,23 @@ $bp-home-mobile: 768px;
         font-size: 20px;   // md
         font-weight: 400;
         font-family: "Chakra Petch", sans-serif;
+        color: var(--work-title);
         transition: color 0.15s;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-width: 0; // flex children default to min-width:auto, which blocks ellipsis
 
         @media (max-width: $bp-home-mobile) {
             font-size: 16px;   // base on mobile
+            white-space: normal; // fixed-width column is desktop-only; let it wrap on mobile
         }
     }
 
     &__company {
         font-size: 13px;   // sm
         font-family: "IBM Plex Mono", monospace;
+        color: var(--work-company);
         margin-left: 2px;
         transition: color 0.15s;
     }
@@ -360,25 +382,49 @@ $bp-home-mobile: 768px;
     &__year {
         font-size: 13px;   // sm
         font-family: "IBM Plex Mono", monospace;
+        color: var(--work-year);
         margin-left: auto;
         flex-shrink: 0;
         transition: color 0.15s;
     }
 
-    // Featured — top projects, full brightness
-    &--featured {
-        .work-item__dot     { background: var(--work-dot-featured); }
-        .work-item__title   { color: var(--work-title-featured); }
-        .work-item__company { color: var(--work-company-featured); }
-        .work-item__year    { color: var(--work-year-featured); }
-    }
+    // Standout projects — solid, slowly-pulsing dot. To flag one by hand,
+    // just add this class to its <li> — no other markup changes needed.
+    &--starred {
+        .work-item__dot {
+            background: var(--work-dot-starred);
 
-    // Secondary — older or lower-priority, dimmed
-    &--secondary {
-        .work-item__dot     { background: var(--work-dot-secondary); }
-        .work-item__title   { color: var(--work-title-secondary); }
-        .work-item__company { color: var(--work-company-secondary); }
-        .work-item__year    { color: var(--work-year-secondary); }
+            // Ring expands outward from the dot and fades, on a slow loop.
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 1px solid var(--work-dot-starred);
+                transform: translate(-50%, -50%) scale(1);
+                animation: work-dot-pulse 3s ease-out infinite;
+                pointer-events: none;
+
+                @media (prefers-reduced-motion: reduce) {
+                    animation: none;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+@keyframes work-dot-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.55;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.4);
+        opacity: 0;
     }
 }
 
@@ -458,7 +504,7 @@ $bp-home-mobile: 768px;
         display: block;
         font-size: 20px;   // md
         font-weight: 500;
-        color: var(--work-title-featured);
+        color: var(--work-title);
         margin-bottom: 8px;
 
         @media (max-width: $bp-home-mobile) {
